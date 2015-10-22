@@ -1,0 +1,259 @@
+.bg-main { background-color: #00c49d; }
+.bg-white { background-color: #ffffff; }
+
+.white { color: #ffffff }
+
+.left { float: left; }
+.right { float: right; }
+
+.left-boder { border-left: 1px solid #eeeeee; }
+
+.w48 { width: 48%; }
+.w49 { width: 49%; }
+.w50 { width: 50%; }
+
+.no-margin { margin: 0 }
+.no-border { border: 0 }
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #eeeeee;
+    color: #333333;
+    font-size: 0.15rem;
+    font-family: Helvetica,"华文细黑";
+}
+
+div {
+    box-sizing: border-box;
+}
+
+img {
+    margin: 0 auto;
+    border: 0;
+    display:block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.55rem;
+    line-height: 0.55rem;
+    font-size: 0.24rem;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.6rem;
+    background-color: #ffffff;
+    border-top: 1px solid #dddddd;
+}
+
+.content {
+    margin-top: 0.55rem;
+    margin-bottom: 0.6rem;
+    width: 100%;
+    text-align: center;
+}
+
+.icons {
+    border-bottom: 1px solid #dddddd;
+}
+
+.icons-line {
+    padding-left: 0.12rem;
+    padding-right: 0.12rem;
+    height: 1.17rem;
+    background-color: #ffffff;
+}
+
+.icons-line a {
+    color: #333333;
+}
+
+.icon {
+    margin-top: 0.14rem;
+    width: 25%;
+    float: left;
+}
+
+.icon img {
+    height: 0.6rem;
+}
+
+.icon .title {
+    margin-top: 0.06rem;
+    font-size: 0.16rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.events {
+    margin-top: 0.1rem;
+    padding: 0.08rem;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+
+.events-line {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+.events-line a {
+    color: #333333;
+}
+
+.events-line:last-child {
+    border: none;
+}
+
+.event {
+    padding: 0.1rem;
+    width: 1.71rem;
+    text-align: left;
+}
+
+.event .title {
+    height: 0.37rem;
+    line-height: 0.37rem;
+    font-weight: bold;
+    font-size: 0.18rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event .title.color1 { color: #ff961b; }
+.event .title.color2 { color: #8cd034; }
+.event .title.color3 { color: #ff709b; }
+.event .title.color4 { color: #59bfef; }
+
+.event .desc {
+    height: 0.2rem;
+    font-size: 0.15rem;
+    color: #666666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event img {
+    height: 0.57rem;
+}
+
+.free hr {
+    margin-top: 0.18rem;
+    width: 0.6rem;
+    height: 1px;
+    border: 0;
+    background-color: #cccccc;
+}
+
+.free hr.left {
+    margin-left: 0.9rem;
+}
+
+.free hr.right {
+    margin-right: 0.9rem;
+}
+
+.free .title {
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.175rem;
+    color: #999999;
+}
+
+.free .subject {
+    margin-bottom: 0.1rem;
+    border-bottom: 1px solid #dddddd;
+}
+
+.free .subject:last-child {
+    margin: 0;
+    border: 0;
+}
+
+.free .subject .cover {
+    width: 100%;
+    height: 3rem;
+}
+
+.free .subject .cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.free .subject .desc {
+    position: relative;
+    padding: 0.1rem;
+    width: 100%;
+    height: 1rem;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.free .subject .desc .title {
+    height: 0.32rem;
+    line-height: 0.32rem;
+    font-weight: bold;
+    font-size: 0.2rem;
+    color: #333333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.free .subject .desc .intro {
+    height: 0.25rem;
+    line-height: 0.25rem;
+    color: #999999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.free .subject .desc .tags {
+    height: 0.25rem;
+    line-height: 0.25rem;
+    color: #999999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.free .subject .desc .price {
+    position: absolute;
+    right: 0.1rem;
+    bottom: 0.1rem;
+    color: #f67531
+}
+
+.free .subject .desc .price .number {
+    font-size: 0.24rem;
+}
+
+.more {
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border-top: 1px solid #dddddd;
+    background-color: #ffffff;
+    font-size: 0.175rem;
+    color: #999999;
+}
