@@ -51,7 +51,6 @@ sg.common = {
         var html = "";
         var sections = content.replace("\r", "").split("\n");
         for (var i = 0; i < sections.length; i++) {
-            html += "<div class='left list-dot'>-</div>";
             html += "<div class='left list-content'>" + sections[i] + "</div>";
             html += "<div style='clear:both'></div>";
         }

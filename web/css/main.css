@@ -42,14 +42,8 @@
     text-indent: 0.32rem;
 }
 
-.list-dot {
-    margin-left: 0.1rem;
-    width: 0.15rem;
-    color: #999999;
-}
-
 .list-content {
-    width: 3.5rem;
+    margin-left: 0.1rem;
 }
 
 .overflow-hidden {
