@@ -22,11 +22,38 @@ function render_index_error(resp) {
 }
 
 function render_banners(banners) {
-    if (banners == undefined) return;
-    // TODO
+    if (banners == undefined || banners.length == 0) return;
+
+    var html = "";
+    html += "<div class='banner'>";
+    if (banners.length == 1) {
+        html += "<a href='" + banners[0].action + "'><img src='" + banners[0].cover + "' /></a>";
+    } else {
+        html += "<div id='scroll_img' class='scroll_box'>";
+        html += "<ul id='scroll_wrap' class='scroll_wrap'>";
+        for (var i = 0; i < banners.length; i++) {
+            html += "<li><a href='" + banners[i].action + "'><img src='"+ banners[i].cover +"' /></a></li>";
+        }
+        html += "</ul>";
+
+        html += "<ul id='scroll_position' class='scroll_position'>";
+        for (var i = 0; i < banners.length; i++) {
+            if (i == 0) html += "<li class='on'><a href='javascript:void(0);'></a></li>";
+            else html += "<li><a href='javascript:void(0);'></a></li>";
+        }
+        html += "</ul>";
+        html += "</div>";
+    }
+    html += "</div>";
+
+    $(".content").append(html);
+
+    if (banners.length >= 1) sg.common.scroll_img();
 }
 
 function render_icons(icons) {
+    if (icons == undefined || icons.length == 0) return;
+
     var line = Math.ceil(icons.length / 4);
     var html = "";
     html += "<div class='icons'>";
@@ -48,6 +75,8 @@ function render_icons(icons) {
 }
 
 function render_events(events) {
+    if (events == undefined || events.length == 0) return;
+
     var line = Math.ceil(events.length / 2);
     var html = "";
     html += "<div class='events'>";
@@ -88,8 +117,7 @@ function event_html(event, index) {
 }
 
 function render_subjects(subjects) {
-    if (subjects == undefined) return;
-    if (subjects.totalCount <= 0) return;
+    if (subjects == undefined || subjects.totalCount <= 0) return;
 
     var html = "";
     html += "<div class='free'>";
