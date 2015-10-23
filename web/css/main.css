@@ -1,15 +1,44 @@
-.bg-main { background-color: #00c49d; }
-.bg-white { background-color: #ffffff; }
+.bg-main {
+    background-color: #00c49d;
+    color: #ffffff;
+}
 
+.bg-white {
+    background-color: #ffffff;
+    color: #00c49d;
+}
+
+.main { color: #00c49d; }
 .white { color: #ffffff }
 
 .left { float: left; }
 .right { float: right; }
 
-.left-boder { border-left: 1px solid #eeeeee; }
+.left-border { border-left: 1px solid #e1e1e1; }
+.bottom-border { border-bottom: 1px solid #e1e1e1; }
 
 .no-margin { margin: 0 }
 .no-border { border: 0 }
+
+.top-margin { margin-top: 0.1rem; }
+
+.text {
+    padding: 0.1rem;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: left;
+    color: #333333;
+}
+
+.text-indent {
+    text-indent: 0.32rem;
+}
+
+.overflow-hidden {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 * { box-sizing: border-box; }
 
@@ -19,9 +48,9 @@ html {
 
 body {
     margin: 0;
-    background-color: #eeeeee;
+    background-color: #f0f0f0;
     color: #333333;
-    font-size: 0.15rem;
+    font-size: 0.16rem;
     font-family: Helvetica,"华文细黑";
 }
 
@@ -39,6 +68,13 @@ a {
     text-decoration: none;
 }
 
+div.error {
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.16rem;
+    color: #888888;
+}
+
 .scroll_box {
     overflow: hidden;
     position: relative;
@@ -54,7 +90,6 @@ a {
 .scroll_wrap {
     overflow: hidden;
     position: relative;
-    height: 1.2rem;
 }
 
 .scroll_wrap li {
@@ -98,9 +133,6 @@ a {
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 0.55rem;
     line-height: 0.55rem;
@@ -108,26 +140,40 @@ a {
     text-align: center;
 }
 
-.footer {
+.header.fixed {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
+}
+
+.footer {
     width: 100%;
     height: 0.6rem;
     background-color: #ffffff;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #e1e1e1;
 }
 
+.footer.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.fix-header { padding-top: 0.55rem; }
+.fix-footer { padding-bottom: 0.6rem; }
+
 .content {
-    padding-top: 0.55rem;
-    padding-bottom: 0.6rem;
     width: 100%;
     text-align: center;
 }
 
 .banner {
     width: 100%;
-    height: 1.2rem;
+    height: 1.25rem;
+}
+
+.banner .scroll_wrap {
+    height: 1.25rem;
 }
 
 .banner img {
@@ -136,7 +182,7 @@ a {
 }
 
 .icons {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .icons-line {
@@ -163,21 +209,18 @@ a {
 .icon .title {
     margin-top: 0.06rem;
     font-size: 0.16rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .events {
     margin-top: 0.1rem;
     padding: 0.08rem;
-    border-top: 1px solid #dddddd;
-    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
     background-color: #ffffff;
 }
 
 .events-line {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 
@@ -204,9 +247,6 @@ a {
     line-height: 0.37rem;
     font-weight: bold;
     font-size: 0.18rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .event .title.color1 { color: #ff961b; }
@@ -218,9 +258,6 @@ a {
     height: 0.2rem;
     font-size: 0.15rem;
     color: #666666;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .event img {
@@ -252,18 +289,13 @@ a {
 }
 
 .free .subject {
-    margin-bottom: 0.1rem;
-    border-bottom: 1px solid #dddddd;
-}
-
-.free .subject:last-child {
-    margin: 0;
-    border: 0;
+    margin: 0 0.1rem 0.11rem 0.1rem;
+    box-shadow: 0.02rem 0.02rem 0.01rem #e1e1e1;
 }
 
 .free .subject .cover {
     width: 100%;
-    height: 3rem;
+    height: 2.85rem;
 }
 
 .free .subject .cover img {
@@ -286,27 +318,20 @@ a {
     font-weight: bold;
     font-size: 0.2rem;
     color: #333333;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .free .subject .desc .intro {
     height: 0.25rem;
     line-height: 0.25rem;
+    font-size: 0.15rem;
     color: #999999;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .free .subject .desc .tags {
     height: 0.25rem;
     line-height: 0.25rem;
+    font-size: 0.15rem;
     color: #999999;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .free .subject .desc .price {
@@ -323,8 +348,44 @@ a {
 .more {
     height: 0.4rem;
     line-height: 0.4rem;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #e1e1e1;
     background-color: #ffffff;
     font-size: 0.175rem;
     color: #999999;
+}
+
+.course-detail .title {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.18rem;
+    font-weight: bold;
+}
+
+.course-detail .title .number {
+    margin: 0 0.1rem 0 0;
+    width: 0.28rem;
+    height: 0.28rem;
+    line-height: 0.28rem;
+    border-radius: 0.15rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #00c49d;
+}
+
+.course-detail img {
+    margin: 0.05rem 0;
+    width: 100%;
+    height: 2.85rem;
+}
+
+.institution-detail img {
+    width: 100%;
+    height: 3rem;
+}
+
+.institution-detail .text .name {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.18rem;
+    font-weight: bold;
 }

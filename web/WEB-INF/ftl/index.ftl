@@ -1,9 +1,9 @@
 <@override name="title">松果亲子－孩子体验式成长的第一课</@override>
 
 <@override name="body">
-    <div class="content"></div>
-    <div class="header bg-main white">松果亲子</div>
-    <div class="footer"></div>
+    <div class="content fix-header fix-footer"></div>
+    <div class="header fixed bg-main">松果亲子</div>
+    <div class="footer fixed"></div>
 </@override>
 
 <@override name="js">
