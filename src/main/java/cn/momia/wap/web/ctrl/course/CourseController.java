@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/course")
-public class DetailController extends BaseController {
+public class CourseController extends BaseController {
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public ModelAndView detail() {
         return new ModelAndView("course/detail");
