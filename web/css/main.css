@@ -378,7 +378,7 @@ hr.sep {
 .free .subject .desc .price {
     position: absolute;
     right: 0.1rem;
-    bottom: 0.1rem;
+    bottom: 0;
     color: #f67531
 }
 
@@ -499,8 +499,6 @@ hr.sep {
 }
 
 .course-list .right .region {
-    height: 0.26rem;
-    line-height: 0.26rem;
     font-size: 0.16rem;
     color: #999999;
 }
@@ -508,9 +506,9 @@ hr.sep {
 .course-list .right .price {
     position: absolute;
     right: 0;
-    bottom: 0.06rem;
-    height: 0.15rem;
-    line-height: 0.15rem;
+    bottom: 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
     font-size: 0.14rem;
     color: #f67531
 }
