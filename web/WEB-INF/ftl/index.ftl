@@ -5,7 +5,7 @@
 </@override>
 
 <@override name="body">
-    <div class="content fix-header fix-footer"></div>
+    <div class="content has-fix-header has-fix-footer"></div>
     <div class="header fixed bg-main">松果亲子</div>
     <div class="footer fixed"></div>
 </@override>
