@@ -105,7 +105,7 @@ sg.auth = {
         } else {
             data = resp.data;
             sg.common.cookie.set("utoken", data.token, 365);
-            location.href = "/user";
+            location.href = "/user/profile.html";
         }
     },
 

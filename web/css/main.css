@@ -244,6 +244,22 @@ div.error {
 .header.bg-main a { color: #ffffff; }
 .header.bg-white a { color: #00c49d }
 
+.form {
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #ffffff;
+    font-size: 0.16rem;
+    text-align: left;
+}
+
+.form dl {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0.1rem;
+}
+
 .arrow {
     height: 0.3rem;
     line-height: 0.3rem;
@@ -253,6 +269,6 @@ div.error {
 
 .arrow img {
     margin: 0.06rem 0;
-    width: 0.18rem;
-    height: 0.18rem;
+    width: 0.2rem;
+    height: 0.2rem;
 }

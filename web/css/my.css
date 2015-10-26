@@ -1,0 +1,56 @@
+.form .line {
+    padding: 0.1rem;
+    height: 0.55rem;
+    line-height: 0.55rem;
+}
+
+.form .line.large {
+    height: 0.9rem;
+    line-height: 0.9rem;
+}
+
+.form .line .img {
+    margin-right: 0.1rem;
+}
+
+.form .line .img img {
+    margin-top: 0.05rem;
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+.form .line.large .img img {
+    margin: 0;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
+}
+
+.form .line .info {
+    margin: 0.01rem 0 0 0.1rem;
+    height: 0.8rem;
+}
+
+.form .line .info #nickname {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.18rem;
+    font-weight: bold;
+}
+
+.form .line .title {
+    margin: 0.01rem 0 0 0;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    font-size: 0.16rem;
+}
+
+.form .line .arrow img {
+    margin-top: 0.07rem;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.form .line.large .arrow img {
+    margin-top: 0.25rem;
+}
