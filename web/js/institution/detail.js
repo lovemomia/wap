@@ -16,7 +16,7 @@ sg.institution = {
 
         function render_detail(data) {
             var html = "";
-            html += "<div class='institution-detail'>";
+            html += "<div class='detail'>";
             html += "<img src='" + data.cover + "' />";
             html += "<div class='text'>";
             html += "<div class='name'>" + data.name + "</div>";

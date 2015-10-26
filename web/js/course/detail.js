@@ -30,7 +30,7 @@ sg.course.detail = {
 
             function detail_html(detail, index) {
                 var html = "";
-                html += "<div class='course-detail text top-margin'>";
+                html += "<div class='detail text top-margin'>";
                 html += "<div class='title'>";
                 html += "<div class='number left'>" + index + "</div>";
                 html += "<div class='left overflow-hidden'>" + detail.title + "</div>";

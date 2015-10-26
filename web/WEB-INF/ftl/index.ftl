@@ -1,5 +1,9 @@
 <@override name="title">松果亲子－孩子体验式成长的第一课</@override>
 
+<@override name="css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</@override>
+
 <@override name="body">
     <div class="content fix-header fix-footer"></div>
     <div class="header fixed bg-main">松果亲子</div>

@@ -1,0 +1,22 @@
+.detail .title {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.18rem;
+    font-weight: bold;
+}
+
+.detail .title .number {
+    margin: 0 0.1rem 0 0;
+    width: 0.28rem;
+    height: 0.28rem;
+    line-height: 0.28rem;
+    border-radius: 0.15rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #00c49d;
+}
+
+.detail img {
+    margin: 0.05rem 0;
+    height: 2.85rem;
+}

@@ -1,0 +1,120 @@
+.subject.img {
+    width: 100%;
+    height: 3rem;
+}
+
+.subject.img .scroll_wrap {
+    height: 3rem;
+}
+
+.subject .price {
+    height: 0.45rem;
+    line-height: 0.45rem;
+    font-size: 0.19rem;
+}
+
+.subject .price span {
+    font-size: 0.14rem;
+    color: #f67531
+}
+
+.subject .price span.number {
+    font-size: 0.25rem;
+}
+
+.subject .button {
+    height: 0.45rem;
+    line-height: 0.45rem;
+}
+
+.subject .tag.img {
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+.subject .tag.desc {
+    margin-left: 0.08rem;
+    margin-right: 0.15rem;
+    height: 0.25rem;
+    line-height: 0.25rem;
+    color: #00c49d;
+}
+
+.subject.text .title {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.19rem;
+}
+
+.subject.text .notice {
+    font-size: 0.16rem;
+}
+
+.subject.text .notice.title {
+    color: #999999;
+}
+
+.course-list {
+    padding: 0.1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.course-list:first-child {
+    padding-top: 0;
+}
+
+.course-list:last-child {
+    padding-bottom: 0;
+    border: none;
+}
+
+.course-list .left {
+    width: 1.4rem;
+    height: 1.05rem;
+}
+
+.course-list .left img {
+    border-radius: 0.05rem;
+}
+
+.course-list .right {
+    position: relative;
+    width: 2.3rem;
+    height: 1.05rem;
+}
+
+.course-list .right .title {
+    margin-bottom: 0.05rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-weight: bold;
+    font-size: 0.18rem;
+    color: #333333;
+}
+
+.course-list .right .intro {
+    margin-bottom: 0.05rem;
+    height: 0.26rem;
+    line-height: 0.26rem;
+    font-size: 0.15rem;
+    color: #999999;
+}
+
+.course-list .right .region {
+    font-size: 0.15rem;
+    color: #999999;
+}
+
+.course-list .right .price {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    font-size: 0.14rem;
+    color: #f67531
+}
+
+.course-list .right .price .number {
+    font-size: 0.2rem;
+}
