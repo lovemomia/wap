@@ -222,6 +222,28 @@ div.error {
     border-radius: 4px;
 }
 
+.header .back {
+    margin-left: 0.1rem;
+    margin-right: -0.37rem;
+    height: 0.55rem;
+    line-height: 0.55rem;
+}
+
+.header .back img {
+    margin: 0.14rem 0;
+    width: 0.27rem;
+    height: 0.27rem;
+}
+
+.header .right {
+    margin-left: -0.6rem;
+    margin-right: 0.1rem;
+    width: 0.5rem;
+}
+
+.header.bg-main a { color: #ffffff; }
+.header.bg-white a { color: #00c49d }
+
 .arrow {
     height: 0.3rem;
     line-height: 0.3rem;
