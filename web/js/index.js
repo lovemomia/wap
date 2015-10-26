@@ -156,6 +156,6 @@ sg.index = {
     },
 
     render_index_error: function (resp) {
-        $(".content").append("网络异常，请稍后再试");
+        $(".content").append("<div class='error'>网络异常，请稍后再试</div>");
     }
 };
