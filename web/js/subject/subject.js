@@ -67,7 +67,7 @@ sg.subject = {
             $(".content").append(html);
 
             $("#btn_buy").on("click", function () {
-                // TODO
+                window.location.href = "/subject/placeorder";
             });
         }
 
