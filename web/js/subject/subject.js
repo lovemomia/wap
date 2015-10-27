@@ -67,8 +67,7 @@ sg.subject = {
             $(".content").append(html);
 
             $("#btn_buy").on("click", function () {
-                alert("ok");
-                window.location.href = "/auth/login.html";
+                // TODO
             });
         }
 
@@ -92,7 +91,6 @@ sg.subject = {
             html += "<div class='subject text no-top-border'>";
             html += sg.common.sections_html(intro);
             html += "</div>";
-
 
             $(".content").append(html);
         }

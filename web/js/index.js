@@ -153,6 +153,9 @@ sg.index = {
                 html += "<div class='tags overflow-hidden'>" + subject.tags + "</div>";
                 html += "<div class='price'><span>￥</span><span class='number'>" + subject.price + "</span><span>起</span></div>"
                 html += "</div>";
+                if (subject.joined > 0) {
+                    html += "<div class='joined'>" + subject.joined + "人参加</div>";
+                }
                 html += "</a>";
                 html += "</div>";
 
