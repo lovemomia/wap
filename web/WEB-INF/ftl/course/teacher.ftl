@@ -5,8 +5,8 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>助教老师</div>
-    <div class="content"></div>
+    <div class="header bg-white"><div class="back left"><img src="/img/back3x.png"></div>助教老师</div>
+    <div class="content list top-border bottom-border bg-white"></div>
 </@override>
 
 <@override name="js">
