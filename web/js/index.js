@@ -56,6 +56,7 @@ sg.index = {
             for (var i = 0; i < line; i++) {
                 html += "<div class='icons-line'>";
                 for (var j = 0; j < 4; j++) {
+                    if (j + i * 4 >= icons.length) break;
                     var icon = icons[j + i * 4];
                     html += "<a class='icon' href='" + icon.action + "'>";
                     html += "<img src='" + icon.img + "' />";

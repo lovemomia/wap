@@ -16,4 +16,24 @@ public class UserController {
     public ModelAndView feedback() {
         return new ModelAndView("feedback");
     }
+
+    @RequestMapping(value = "/user/profile", method = RequestMethod.GET)
+    public ModelAndView profile() {
+        return new ModelAndView("user/profile");
+    }
+
+    @RequestMapping(value = "/user/booked", method = RequestMethod.GET)
+    public ModelAndView booked() {
+        return new ModelAndView("user/booked");
+    }
+
+    @RequestMapping(value = "/user/bookable", method = RequestMethod.GET)
+    public ModelAndView bookable() {
+        return new ModelAndView("user/bookable");
+    }
+
+    @RequestMapping(value = "/user/order", method = RequestMethod.GET)
+    public ModelAndView order() {
+        return new ModelAndView("user/order");
+    }
 }

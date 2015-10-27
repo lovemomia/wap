@@ -7,8 +7,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SubjectController {
-    @RequestMapping(value = "subjectdetail", method = RequestMethod.GET)
+    @RequestMapping(value = "/subjectdetail", method = RequestMethod.GET)
     public ModelAndView subject() {
         return new ModelAndView("subject/subject");
+    }
+
+    @RequestMapping(value = "/subject/courses", method = RequestMethod.GET)
+    public ModelAndView courses() {
+        return new ModelAndView("subject/courselist");
+    }
+
+    @RequestMapping(value = "/subject/placeorder", method = RequestMethod.GET)
+    public ModelAndView placeorder() {
+        return new ModelAndView("subject/placeorder");
     }
 }

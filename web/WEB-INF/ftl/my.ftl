@@ -33,7 +33,7 @@
         </div>
 
         <div class="form top-margin">
-            <div class="line" onclick="window.location.href='/user/orders.html'">
+            <div class="line" onclick="window.location.href='/user/order.html'">
                 <div class="img left"><img src="/img/dingdan3x.png" /></div>
                 <div class="title left">我的订单</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
