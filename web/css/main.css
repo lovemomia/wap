@@ -82,8 +82,6 @@ a {
 
 .text-indent { text-indent: 0.32rem; }
 
-.w85 { width: 85%; }
-
 hr.sep {
     margin: 0 0 0 0.1rem;
     height: 1px;
@@ -189,6 +187,8 @@ div.error {
     text-align: center;
 }
 
+.btn { text-align: center; }
+
 .btn-orange {
     display: inline-block;
     padding: 0 0.2rem;
@@ -259,6 +259,45 @@ div.error {
     margin: 0;
     padding: 0 0.1rem;
 }
+.form dt {
+    float: left;
+    margin-left: 0.1rem;
+    margin-right: -0.32rem;
+    padding-top: 0.02rem;
+    height: 0.55rem;
+    line-height: 0.55rem;
+    color: #00c49d;
+    width: 1rem;
+}
+
+.form dd {
+    margin: 0;
+    width: 1.8rem;
+    height: 0.55rem;
+    line-height: 0.55rem;
+}
+
+.form dd i {
+    float: left;
+    margin: 0.21rem 0.1rem 0.17rem 0.1rem;
+    width: 1px;
+    height: 0.17rem;
+    background-color: #e1e1e1;
+    border: none;
+}
+
+.form dd input {
+    float: left;
+    margin: 0.17rem 0 0.13rem 0;
+    width: 1.5rem;
+    height: 0.25rem;
+    font-size: 0.16rem;
+    vertical-align: middle;
+    border: none;
+}
+
+.letter-sp8 { letter-spacing: 0.08rem; }
+.letter-sp32 { letter-spacing: 0.32rem; }
 
 .arrow {
     height: 0.3rem;

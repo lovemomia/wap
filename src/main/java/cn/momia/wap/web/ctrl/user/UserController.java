@@ -11,4 +11,9 @@ public class UserController {
     public ModelAndView my() {
         return new ModelAndView("my");
     }
+
+    @RequestMapping(value = "/feedback", method = RequestMethod.GET)
+    public ModelAndView feedback() {
+        return new ModelAndView("feedback");
+    }
 }
