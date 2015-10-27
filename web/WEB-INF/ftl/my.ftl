@@ -10,13 +10,13 @@
         <div id="profile" class="form top-margin"></div>
 
         <div class="form top-margin">
-            <div class="line" onclick="window.location.href='/user/booked.html'">
+            <div class="line" onclick="window.location.href='/user/booked'">
                 <div class="img left"><img src="/img/yixuanx3x.png" /></div>
                 <div class="title left">已选课程</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
             <hr class="sep" />
-            <div class="line" onclick="window.location.href='/user/bookable.html'">
+            <div class="line" onclick="window.location.href='/user/bookable'">
                 <div class="img left"><img src="/img/daiyuex3x.png" /></div>
                 <div class="title left">待选课程</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form top-margin">
-            <div class="line" onclick="window.location.href='/user/order.html'">
+            <div class="line" onclick="window.location.href='/user/order'">
                 <div class="img left"><img src="/img/dingdan3x.png" /></div>
                 <div class="title left">我的订单</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form top-margin">
-            <div class="line" onclick="window.location.href='/feedback.html'">
+            <div class="line" onclick="window.location.href='/feedback'">
                 <div class="img left"><img src="/img/yijian3x.png" /></div>
                 <div class="title left">意见反馈</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>

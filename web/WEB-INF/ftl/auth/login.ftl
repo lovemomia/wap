@@ -5,7 +5,7 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>用户登录<div class="right"><a href="/auth/register.html">注册</a></div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>用户登录<div class="right"><a href="/auth/register">注册</a></div></div>
     <div class="content">
         <div class="form top-margin">
             <dl>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="password-link"><a href="/auth/password.html">忘记密码</a></div>
+    <div class="password-link"><a href="/auth/password">忘记密码</a></div>
     <div class="btn">
         <button id="btn_login" class="btn-lg-main">登录</button>
     </div>

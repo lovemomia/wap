@@ -88,6 +88,13 @@ sg.common = {
         }
     },
 
+    check_login: function () {
+        var utoken = sg.common.cookie.get("utoken");
+        if (utoken == '') {
+            window.location.href = "/auth/login";
+        }
+    },
+
     url_path: function (url) {
         var splits = url.split("//");
 

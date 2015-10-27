@@ -5,7 +5,7 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>修改密码<div class="right"><a href="/auth/login.html">登录</a></div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>修改密码<div class="right"><a href="/auth/login">登录</a></div></div>
     <div class="content">
         <div class="form top-margin">
             <dl>

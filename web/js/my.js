@@ -34,8 +34,9 @@ sg.my = {
     success: function (resp) {
         if (resp.errno == 100001) {
             sg.common.cookie.del("utoken");
-            window.location.href = "/auth/login.html";
+            sg.my.not_login();
         } else if (resp.errno != 0) {
+            sg.my.not_login();
             alert(resp.errmsg);
         } else {
             data = resp.data;
@@ -44,7 +45,7 @@ sg.my = {
             var nickName = data.nickName;
 
             var html = "";
-            html += "<div class='line large' onclick='window.location.href=\'/user/profile.html\''>";
+            html += "<div class='line large' onclick='window.location.href=\'/user/profile\''>";
             html += "<div class='img left'><img id='avatar' src='" + avatar + "' /></div>";
             html += "<div class='info left'>";
             html += "<div id='nickname'>" + nickName + "</div>";
