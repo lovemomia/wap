@@ -1,5 +1,5 @@
 $(function () {
-    $("#btn_getcode").on('click', function () {
+    $("#btn_getcode").on("click", function () {
         var timer;
         var mobile = $("#mobile").val();
         if (!mobile || mobile == "" || sg.common.invalid_mobile(mobile)) {
@@ -11,7 +11,7 @@ $(function () {
         }
     });
 
-    $('#btn_register').on('click', function () {
+    $("#btn_register").on("click", function () {
         var mobile = $("#mobile").val();
         var password = $("#password").val();
         var nickName = $("#nickName").val();
@@ -34,7 +34,7 @@ $(function () {
         }
     });
 
-    $('#btn_login').on('click', function () {
+    $("#btn_login").on("click", function () {
         var mobile = $("#mobile").val();
         var password = $("#password").val();
         if (!mobile || mobile == "" || sg.common.invalid_mobile(mobile)) {
@@ -49,7 +49,7 @@ $(function () {
         }
     });
 
-    $('#btn_password').on('click', function () {
+    $("#btn_password").on("click", function () {
         var mobile = $("#mobile").val();
         var password = $("#password").val();
         var code = $("#code").val();
@@ -105,7 +105,7 @@ sg.auth = {
         } else {
             data = resp.data;
             sg.common.cookie.set("utoken", data.token, 365);
-            location.href = "/user/profile.html";
+            sg.common.back();
         }
     },
 

@@ -7,16 +7,7 @@
 <@override name="body">
     <div class="header bg-white bottom-border">我的</div>
     <div class="content has-fix-footer">
-        <div class="form top-margin">
-            <div class="line large" onclick="window.location.href='/user/profile.html'">
-                <div class="img left"><img id="avatar" src="" /></div>
-                <div class="info left">
-                    <div id="nickname"></div>
-                    <div id="children"></div>
-                </div>
-                <div class='arrow right'><img src='/img/allow3x.png' /></div>
-            </div>
-        </div>
+        <div id="profile" class="form top-margin"></div>
 
         <div class="form top-margin">
             <div class="line" onclick="window.location.href='/user/booked.html'">

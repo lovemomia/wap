@@ -1,4 +1,5 @@
 $(function () {
+    sg.common.remove_histories();
     sg.common.get(sg.config.api + "/index", {
         city: 1,
         start: 0

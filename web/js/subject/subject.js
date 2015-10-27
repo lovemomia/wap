@@ -59,12 +59,17 @@ sg.subject = {
             var html = "";
             html += "<div class='subject text no-border'>";
             html += "<div class='left price'>课程包<span class='left-margin'>¥</span><span class='number'>" + price + "</span><span>起</span></div>";
-            html += "<div class='right button'><button class='btn-orange'>立即抢购</button></div>";
+            html += "<div class='right button'><button id='btn_buy' class='btn-orange'>立即抢购</button></div>";
             html += "<div style='clear:both'></div>";
             html += "</div>";
             html += "<div class='bg-white'><hr class='sep'/></div>";
 
             $(".content").append(html);
+
+            $("#btn_buy").on("click", function () {
+                alert("ok");
+                window.location.href = "/auth/login.html";
+            });
         }
 
         function render_age_and_join(age, joined) {
@@ -95,7 +100,7 @@ sg.subject = {
         function render_courses(courses) {
             var html = "";
             html += "<div class='subject text no-bottom-border top-margin'>";
-            html += "<a href='/subject/course?id=" + sg.common.param("id") + "'>";
+            html += "<a href='/subject/courses?id=" + sg.common.param("id") + "'>";
             html += "<div class='title left'>可选课程（" + courses.totalCount + "）</div>";
             html += "<div class='arrow right'><img src='/img/allow3x.png' /></div>";
             html += "<div class='arrow right'>更多</div>";
