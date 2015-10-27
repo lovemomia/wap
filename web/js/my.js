@@ -9,6 +9,10 @@ $(function () {
             utoken: utoken
         }, sg.my.success, sg.my.error);
     }
+
+    $("#index").on("click", function () {
+        window.location.href = "/index";
+    });
 });
 
 sg.my = {

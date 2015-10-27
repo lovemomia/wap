@@ -4,6 +4,10 @@ $(function () {
         city: 1,
         start: 0
     }, sg.index.render_index, sg.index.render_index_error);
+
+    $("#my").on("click", function () {
+        window.location.href = "/my";
+    });
 });
 
 sg.index = {

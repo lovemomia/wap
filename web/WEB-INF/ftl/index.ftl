@@ -7,7 +7,16 @@
 <@override name="body">
     <div class="content has-fix-header has-fix-footer"></div>
     <div class="header fixed bg-main">松果亲子</div>
-    <div class="footer fixed"></div>
+    <div class="footer fixed">
+        <div class="left w50">
+            <div><img src="/img/jpk3x02.png"></div>
+            <div>精品课</div>
+        </div>
+        <div id="my" class="right w50">
+            <div><img src="/img/wd3x01.png"></div>
+            <div>我的</div>
+        </div>
+    </div>
 </@override>
 
 <@override name="js">

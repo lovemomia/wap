@@ -39,7 +39,16 @@
             </div>
         </div>
     </div>
-    <div class="footer fixed"></div>
+    <div class="footer fixed">
+        <div id="index" class="left w50">
+            <div><img src="/img/jpk3x01.png"></div>
+            <div>精品课</div>
+        </div>
+        <div class="right w50">
+            <div><img src="/img/wd3x02.png"></div>
+            <div>我的</div>
+        </div>
+    </div>
 </@override>
 
 <@override name="js">
