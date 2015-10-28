@@ -94,11 +94,10 @@
     margin-left: 0.1rem;
     padding-top: 0.07rem;
     font-size: 0.18rem;
-    font-weight: bold;
 }
 
 .footer .number {
-    margin-left: 0.2rem;
+    margin-left: 0.1rem;
     padding-top: 0.05rem;
     color: #f67531;
     font-size: 0.28rem;
@@ -106,4 +105,9 @@
 
 .footer .btn {
     margin-right: 0.1rem;
+}
+
+#btn_submit {
+    padding: 0 0.2rem;
+    height: 0.4rem;
 }
