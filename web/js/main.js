@@ -5,32 +5,35 @@ String.prototype.startWith = function (str) {
 };
 
 $(function () {
-    var url_back = sessionStorage.getItem("url_back");
-    if (url_back == null) {
-        var url_history_str = sessionStorage.getItem("url_history");
-        if (url_history_str == null) url_history_str = JSON.stringify(new Array());
-        var url_history = JSON.parse(url_history_str);
-
-        var referrer_url = document.referrer;
-        if (referrer_url != undefined && referrer_url != "") {
-            var referrer_path = sg.common.url_path(referrer_url);
-            if (!referrer_path.startWith("/auth")) {
-                if (url_history.length == 0 || url_history[url_history.length - 1] != referrer_url) {
-                    url_history.push(referrer_url);
-                    sessionStorage.setItem("url_history", JSON.stringify(url_history));
-                }
-            }
-        }
-    } else {
-        sessionStorage.removeItem("url_back");
-    }
-
+    sg.common.init();
     $(".back").on("click", function () {
         sg.common.back();
     });
 });
 
 sg.common = {
+    cookie: {
+        get: function (key) {
+            var arr = new RegExp('\w?' + key + '=(.*?)(;|$)', 'i').exec(document.cookie);
+            return arr ? decodeURIComponent(arr[1]) : '';
+        },
+
+        set: function (key, val, days) {
+            var reg = key + '=' + encodeURIComponent(val);
+            if (days) {
+                var exp = new Date();
+                exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);
+                reg += "; expires=" + exp.toGMTString();
+            }
+            reg += '; path=/';
+            document.cookie = reg;
+        },
+
+        del: function (key) {
+            sg.common.cookie.set(key, '', -10);
+        }
+    },
+
     param: function (name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
@@ -70,6 +73,41 @@ sg.common = {
         });
     },
 
+    url_path: function (url) {
+        var splits = url.split("//");
+
+        var start = splits[1].indexOf("/");
+        var path = splits[1].substring(start);
+
+        if (path.indexOf("?") != -1) {
+            path = path.split("?")[0];
+        }
+
+        return path;
+    },
+
+    init: function () {
+        var url_back = sessionStorage.getItem("url_back");
+        if (url_back == null) {
+            var url_history_str = sessionStorage.getItem("url_history");
+            if (url_history_str == null) url_history_str = JSON.stringify(new Array());
+            var url_history = JSON.parse(url_history_str);
+
+            var referrer_url = document.referrer;
+            if (referrer_url != undefined && referrer_url != "") {
+                var referrer_path = sg.common.url_path(referrer_url);
+                if (!referrer_path.startWith("/auth/")) {
+                    if (url_history.length == 0 || url_history[url_history.length - 1] != referrer_url) {
+                        url_history.push(referrer_url);
+                        sessionStorage.setItem("url_history", JSON.stringify(url_history));
+                    }
+                }
+            }
+        } else {
+            sessionStorage.removeItem("url_back");
+        }
+    },
+
     back: function () {
         sessionStorage.setItem("url_back", "back");
 
@@ -92,41 +130,6 @@ sg.common = {
         var utoken = sg.common.cookie.get("utoken");
         if (utoken == '') {
             window.location.href = "/auth/login";
-        }
-    },
-
-    url_path: function (url) {
-        var splits = url.split("//");
-
-        var start = splits[1].indexOf("/");
-        var path = splits[1].substring(start);
-
-        if(path.indexOf("?") != -1){
-            path = path.split("?")[0];
-        }
-
-        return path;
-    },
-
-    cookie: {
-        get: function (key) {
-            var arr = new RegExp('\w?' + key + '=(.*?)(;|$)', 'i').exec(document.cookie);
-            return arr ? decodeURIComponent(arr[1]) : '';
-        },
-
-        set: function (key, val, days) {
-            var reg = key + '=' + encodeURIComponent(val);
-            if (days) {
-                var exp = new Date();
-                exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);
-                reg += "; expires=" + exp.toGMTString();
-            }
-            reg += '; path=/';
-            document.cookie = reg;
-        },
-
-        del: function (key) {
-            sg.common.cookie.set(key, '', -10);
         }
     },
 

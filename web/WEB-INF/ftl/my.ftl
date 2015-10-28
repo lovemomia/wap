@@ -7,7 +7,26 @@
 <@override name="body">
     <div class="header bg-white bottom-border">我的</div>
     <div class="content has-fix-footer">
-        <div id="profile" class="form top-margin"></div>
+        <div id="profile" class="form top-margin">
+            <#if user??>
+                <div class="line large" onclick="window.location.href='/user/profile'">
+                    <div class="img left"><img id="avatar" src="${user.avatar}" /></div>
+                    <div class="info left">
+                        <div id="nickname">${user.nickName}</div>
+                        <div id="children"></div>
+                    </div>
+                    <div class="arrow right"><img src="/img/allow3x.png"/></div>
+                </div>
+            <#else>
+                <div class="line large">
+                    <div class="not-login-tips">您还没有登录哦~</div>
+                    <div class="not-login-button">
+                        <button id="btn_login" class="btn btn-sm-main">立即登录</button>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </#if>
+        </div>
 
         <div class="form top-margin">
             <div class="line" onclick="window.location.href='/user/booked'">
@@ -38,6 +57,12 @@
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
         </div>
+        
+        <#if user??>
+            <div class="btn top-margin">
+                <button id="btn_logout" class="btn-lg-main">退出登录</button>
+            </div>
+        </#if>
     </div>
     <div class="footer fixed">
         <div id="index" class="left w50">
