@@ -21,7 +21,7 @@ sg.teacher = {
                 var html = "";
                 var list = resp.data.list;
                 for (var i = 0; i < list.length; i++) {
-                    html += teacher_html(list[i]);
+                    html += generate_teacher_html(list[i]);
                     if (i < list.length - 1) html += "<hr class='sep' />";
                 }
 
@@ -29,7 +29,7 @@ sg.teacher = {
             }
         }
 
-        function teacher_html(teacher) {
+        function generate_teacher_html(teacher) {
             var html = "";
             html += "<div class='element'>";
             html += "<div class='left'>";

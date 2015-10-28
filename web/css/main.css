@@ -196,7 +196,7 @@ div.error {
     height: 0.6rem;
     background-color: #ffffff;
     border-top: 1px solid #e1e1e1;
-    font-size: 0.15rem;
+    font-size: 0.14rem;
     text-align: center;
 }
 
@@ -207,8 +207,8 @@ div.error {
 }
 
 .footer img {
-    width: 0.22rem;
-    height: 0.22rem;
+    width: 0.25rem;
+    height: 0.25rem;
 }
 
 .has-fix-header { padding-top: 0.55rem; }
@@ -223,7 +223,7 @@ div.error {
 
 .btn-orange {
     display: inline-block;
-    padding: 0 0.2rem;
+    padding: 0.1rem 0.2rem;
     height: 100%;
     font-size: 0.19rem;
     color: #ffffff;
@@ -331,3 +331,9 @@ div.error {
     padding: 0.1rem;
     height: 1.25rem;
 }
+
+.list.small .element {
+    padding: 0.1rem;
+    height: 1.05rem;
+}
+
