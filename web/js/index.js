@@ -155,7 +155,7 @@ sg.index = {
         }
 
         function unbind_scrollin() {
-            var last = $(".subject:last-child");
+            var last = $(".subject:last");
             last.unbind("scrollin");
         }
 
@@ -198,7 +198,7 @@ sg.index = {
         }
 
         function bind_scrollin(next_index) {
-            var last = $(".subject:last-child");
+            var last = $(".subject:last");
             last.bind("scrollin", function () {
                 sg.index.read_data(1, next_index);
             });

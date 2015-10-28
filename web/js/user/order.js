@@ -49,7 +49,7 @@ sg.order = {
         }
 
         function unbind_scrollin() {
-            var last = $(".element:last-child");
+            var last = $(".element:last");
             last.unbind("scrollin");
         }
 
@@ -78,7 +78,7 @@ sg.order = {
         }
 
         function bind_scrollin(status, next_index) {
-            var last = $(".element:last-child");
+            var last = $(".element:last");
             last.bind("scrollin", function () {
                 sg.order.more(status, next_index);
             });

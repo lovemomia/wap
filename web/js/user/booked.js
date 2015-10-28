@@ -54,7 +54,7 @@ sg.booked = {
         }
 
         function unbind_scrollin() {
-            var last = $(".element:last-child");
+            var last = $(".element:last");
             last.unbind("scrollin");
         }
 
@@ -78,7 +78,7 @@ sg.booked = {
         }
 
         function bind_scrollin(status, next_index) {
-            var last = $(".element:last-child");
+            var last = $(".element:last");
             last.bind("scrollin", function () {
                 sg.booked.more(status, next_index);
             });

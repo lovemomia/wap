@@ -33,7 +33,7 @@ sg.teacher = {
         }
 
         function unbind_scrollin() {
-            var last = $(".element:last-child");
+            var last = $(".element:last");
             last.unbind("scrollin");
         }
 
@@ -57,7 +57,7 @@ sg.teacher = {
         }
 
         function bind_scrollin(id, next_index) {
-            var last = $(".element:last-child");
+            var last = $(".element:last");
             last.bind("scrollin", function () {
                 sg.teacher.more(id, next_index);
             });

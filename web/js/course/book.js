@@ -23,6 +23,7 @@ sg.book = {
                 html += "<div class='list'>";
                 for (var i = 0; i < list.length; i++) {
                     html += "<div class='img top-margin'><img src='" + list[i] + "' /></div>";
+                    //html += "<div class='img top-margin'></div>";
                 }
                 html += "</div>";
 
@@ -33,12 +34,12 @@ sg.book = {
         }
 
         function unbind_scrollin() {
-            var last = $(".img:last-child");
+            var last = $(".img:last");
             last.unbind("scrollin");
         }
 
         function bind_scrollin(id, next_index) {
-            var last = $(".img:last-child");
+            var last = $(".img:last");
             last.bind("scrollin", function () {
                 sg.book.more(id, next_index);
             });
