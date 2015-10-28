@@ -160,7 +160,7 @@ sg.index = {
         }
 
         function generate_subjects_html(subjects) {
-            if (subjects == undefined || subjects.totalCount <= 0) return;
+            if (subjects == undefined || subjects.list.length <= 0) return;
 
             var html = "";
             var list = subjects.list;

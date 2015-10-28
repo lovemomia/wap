@@ -56,18 +56,20 @@ sg.order = {
         function generate_order_html(order) {
             var html = "";
             html += "<div class='element'>";
+            html += "<a href='/subjectdetail?id=" + order.subjectId + "'>";
             html += "<div class='left'>";
             html += "<img src='" + order.cover + "' />";
             html += "</div>";
+            html += "<div class='left desc'>";
+            html += "<div class='title overflow-hidden'>" + order.title + "</div>";
+            html += "<div class='price overflow-hidden'>总价：" + order.totalFee + "元</div>";
+            html += "<div class='count overflow-hidden'>数量：" + order.count + "</div>";
+            html += "</div>";
+            html += "</a>";
             html += "<div class='right btn'>";
             if (order.status < 3) {
                 html += "<button class='btn-orange' onclick='sg.order.pay(" + order.id +  ")'>付款</button>";
             }
-            html += "</div>";
-            html += "<div class='right'>";
-            html += "<div class='title overflow-hidden'>" + order.title + "</div>";
-            html += "<div class='price overflow-hidden'>总价：" + order.totalFee + "元</div>";
-            html += "<div class='count overflow-hidden'>数量：" + order.count + "</div>";
             html += "</div>";
             html += "<div style='clear: both;'></div>";
             html += "</div>";
