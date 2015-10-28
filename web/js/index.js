@@ -13,21 +13,38 @@ sg.index = {
     },
 
     read_data: function (city, start) {
-        sg.common.get(sg.config.api + "/index", {
-            city: 1,
-            start: 0
-        }, sg.index.success, sg.index.error);
+        if (start == 0) {
+            sg.common.get(sg.config.api + "/index", {
+                city: city,
+                start: start
+            }, sg.index.success_init, sg.index.error);
+        } else {
+            sg.common.get(sg.config.api + "/index", {
+                city: city,
+                start: start
+            }, sg.index.success_more, sg.index.error);
+        }
     },
 
-    success: function (resp) {
+    success_init: function (resp) {
         if (resp.errno != 0) {
-            $(".content").append("<div class='error'>" + resp.errmsg + "</div>");
+            alert(resp.errmsg);
         } else {
             data = resp.data;
             generate_banners_html(data.banners);
             generate_icons_html(data.icons);
             generate_events_html(data.events);
-            generate_subjects_html(data.subjects);
+
+            if (data.subjects.totalCount > 0) {
+                var html = "";
+                html += "<div class='free'>";
+                html += "<div class='title'><hr class='left' />课程试听<hr class='right' /></div>";
+                html += "</div>";
+
+                $(".content").append(html);
+            }
+
+            sg.index.success_more(resp);
         }
 
         function generate_banners_html(banners) {
@@ -125,14 +142,27 @@ sg.index = {
                 return html;
             }
         }
+    },
+
+    success_more: function (resp) {
+        if (resp.errno != 0) {
+            alert(resp.errmsg);
+        } else {
+            unbind_scrollin();
+            data = resp.data;
+            generate_subjects_html(data.subjects);
+            if (data.subjects.nextIndex != undefined) bind_scrollin(data.subjects.nextIndex);
+        }
+
+        function unbind_scrollin() {
+            var last = $(".subject:last-child");
+            last.unbind("scrollin");
+        }
 
         function generate_subjects_html(subjects) {
             if (subjects == undefined || subjects.totalCount <= 0) return;
 
             var html = "";
-            html += "<div class='free'>";
-            html += "<div class='title'><hr class='left' />课程试听<hr class='right' /></div>";
-
             var list = subjects.list;
             for (var i = 0; i < list.length; i++) {
                 html += generate_subject_html(list[i]);
@@ -140,11 +170,7 @@ sg.index = {
 
             html += "</div>";
 
-            if (subjects.nextIndex != undefined) {
-                html += "<div class='more'>查看更多</div>"
-            }
-
-            $(".content").append(html);
+            $(".free").append(html);
 
             function generate_subject_html(subject) {
                 var html = "";
@@ -170,9 +196,16 @@ sg.index = {
                 return html;
             }
         }
+
+        function bind_scrollin(next_index) {
+            var last = $(".subject:last-child");
+            last.bind("scrollin", function () {
+                sg.index.read_data(1, next_index);
+            });
+        }
     },
 
     error: function (resp) {
-        $(".content").append("<div class='error'>网络异常，请稍后再试</div>");
+        alert("网络异常，请稍后再试");
     }
 };

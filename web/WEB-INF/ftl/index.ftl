@@ -21,6 +21,7 @@
 
 <@override name="js">
     <script type="text/javascript" src="/js/hhSwipe.js"></script>
+    <script type="text/javascript" src="/js/jquery.sonar.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
 </@override>
 

@@ -1,4 +1,4 @@
 sg = {}
 sg.config = {
-    api: "http://i.momia.cn/m"
+    api: "http://localhost:8080/m"
 };
