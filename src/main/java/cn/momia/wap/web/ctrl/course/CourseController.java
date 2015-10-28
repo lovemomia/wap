@@ -32,6 +32,11 @@ public class CourseController extends AbstractController {
         return new ModelAndView("course/detail_app");
     }
 
+    @RequestMapping(value = "/book", method = RequestMethod.GET)
+    public ModelAndView book() {
+        return new ModelAndView("course/book");
+    }
+
     @RequestMapping(value = "/teacher", method = RequestMethod.GET)
     public ModelAndView teacher() {
         return new ModelAndView("course/teacher");
