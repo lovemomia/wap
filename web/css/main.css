@@ -232,6 +232,17 @@ div.error {
     border-radius: 4px;
 }
 
+.btn-main {
+    display: inline-block;
+    padding: 0.1rem 0.2rem;
+    height: 100%;
+    font-size: 0.19rem;
+    color: #ffffff;
+    background: #00c49d;
+    border: none;
+    border-radius: 4px;
+}
+
 .btn-sm-main {
     display: inline-block;
     height: 0.24rem;

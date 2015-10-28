@@ -1,13 +1,22 @@
 $(function () {
-    sg.bookable.more(0);
+    var oid = sg.bookable.param_oid();
+    sg.bookable.more(oid, 0);
 });
 
 sg.bookable = {
-    more: function (start) {
+    param_oid: function () {
+        var oid = sg.common.param("oid");
+        if (oid == null) oid = 0;
+
+        return oid;
+    },
+
+    more: function (oid, start) {
         sg.common.check_login();
 
         sg.common.get(sg.config.api + "/user/bookable", {
             utoken: sg.common.cookie.get("utoken"),
+            oid: oid,
             start: start
         }, sg.bookable.success, sg.bookable.error);
     },
@@ -30,7 +39,7 @@ sg.bookable = {
 
                 $(".content").append(html);
 
-                if (resp.data.nextIndex != undefined) bind_scrollin(resp.data.nextIndex);
+                if (resp.data.nextIndex != undefined) bind_scrollin(sg.bookable.param_oid(), resp.data.nextIndex);
             }
         }
 
@@ -58,10 +67,10 @@ sg.bookable = {
             return html;
         }
 
-        function bind_scrollin(next_index) {
+        function bind_scrollin(oid, next_index) {
             var last = $(".element:last");
             last.bind("scrollin", function () {
-                sg.bookable.more(next_index);
+                sg.bookable.more(oid, next_index);
             });
         }
     },
