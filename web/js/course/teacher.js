@@ -36,9 +36,9 @@ sg.teacher = {
             html += "<img src='" + teacher.avatar + "' />";
             html += "</div>";
             html += "<div class='right'>";
-            html += "<div class='name'>" + teacher.name + "</div>";
-            html += "<div class='education'>" + teacher.education + "</div>";
-            html += "<div class='experience'>";
+            html += "<div class='name overflow-hidden'>" + teacher.name + "</div>";
+            html += "<div class='education overflow-hidden'>" + teacher.education + "</div>";
+            html += "<div class='experience overflow-hidden'>";
             html += sg.common.sections_html(teacher.experience);
             html += "</div>";
             html += "</div>";

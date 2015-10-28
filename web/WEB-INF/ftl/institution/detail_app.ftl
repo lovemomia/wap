@@ -5,12 +5,20 @@
 </@override>
 
 <@override name="body">
-    <@block name="header" ></@block>
-<div class="content"></div>
+    <@block name="header"></@block>
+    <div class="content">
+        <div class="detail">
+        <img src="${detail.cover}" />
+        <div class="text no-border">
+            <div class="name">${detail.name}</div>
+            <div class="intro text-indent top-margin">${detail.intro}</div>
+            </div>
+        </div>
+    </div>
 </@override>
 
 <@override name="js">
-<script type="text/javascript" src="/js/institution/detail.js"></script>
+    <script type="text/javascript" src="/js/institution/detail.js"></script>
 </@override>
 
 <@extends name="../base.ftl"/>

@@ -6,11 +6,7 @@
 
 <@override name="body">
     <@block name="header" ></@block>
-    <div class="content"></div>
-</@override>
-
-<@override name="js">
-    <script type="text/javascript" src="/js/course/detail.js"></script>
+    <div class="content"><div class="detail">${detail.detail}</div></div>
 </@override>
 
 <@extends name="../base.ftl"/>

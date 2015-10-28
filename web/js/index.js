@@ -1,9 +1,6 @@
 $(function () {
     sg.common.remove_histories();
-    sg.common.get(sg.config.api + "/index", {
-        city: 1,
-        start: 0
-    }, sg.index.render_index, sg.index.render_index_error);
+    sg.index.init();
 
     $("#my").on("click", function () {
         window.location.href = "/my";
@@ -11,18 +8,29 @@ $(function () {
 });
 
 sg.index = {
-    render_index: function (resp) {
+    init: function () {
+        sg.index.read_data(1, 0); // TODO city
+    },
+
+    read_data: function (city, start) {
+        sg.common.get(sg.config.api + "/index", {
+            city: 1,
+            start: 0
+        }, sg.index.success, sg.index.error);
+    },
+
+    success: function (resp) {
         if (resp.errno != 0) {
             $(".content").append("<div class='error'>" + resp.errmsg + "</div>");
         } else {
             data = resp.data;
-            render_banners(data.banners);
-            render_icons(data.icons);
-            render_events(data.events);
-            render_subjects(data.subjects);
+            generate_banners_html(data.banners);
+            generate_icons_html(data.icons);
+            generate_events_html(data.events);
+            generate_subjects_html(data.subjects);
         }
 
-        function render_banners(banners) {
+        function generate_banners_html(banners) {
             if (banners == undefined || banners.length == 0) return;
 
             var html = "";
@@ -52,7 +60,7 @@ sg.index = {
             if (banners.length >= 1) sg.common.scroll_img();
         }
 
-        function render_icons(icons) {
+        function generate_icons_html(icons) {
             if (icons == undefined || icons.length == 0) return;
 
             var line = Math.ceil(icons.length / 4);
@@ -76,7 +84,7 @@ sg.index = {
             $(".content").append(html);
         }
 
-        function render_events(events) {
+        function generate_events_html(events) {
             if (events == undefined || events.length == 0) return;
 
             var line = Math.ceil(events.length / 2);
@@ -87,13 +95,13 @@ sg.index = {
 
                 var event = events[i * 2];
                 html += "<a class='event left' href='" + event.action + "'>";
-                html += event_html(event, i * 2 + 1);
+                html += generate_event_html(event, i * 2 + 1);
                 html += "</a>";
 
                 if (i * 2 + 1 < events.length) {
                     event = events[i * 2 + 1];
                     html += "<a class='event right left-border' href='" + event.action + "'>";
-                    html += event_html(event, i * 2 + 2);
+                    html += generate_event_html(event, i * 2 + 2);
                     html += "</a>";
                 }
 
@@ -104,7 +112,7 @@ sg.index = {
 
             $(".content").append(html);
 
-            function event_html(event, index) {
+            function generate_event_html(event, index) {
                 var html = "";
                 html += "<div class='left'>";
                 html += "<div class='title overflow-hidden color" + index + "'>" + event.title + "</div>";
@@ -118,7 +126,7 @@ sg.index = {
             }
         }
 
-        function render_subjects(subjects) {
+        function generate_subjects_html(subjects) {
             if (subjects == undefined || subjects.totalCount <= 0) return;
 
             var html = "";
@@ -127,7 +135,7 @@ sg.index = {
 
             var list = subjects.list;
             for (var i = 0; i < list.length; i++) {
-                html += subject_html(list[i]);
+                html += generate_subject_html(list[i]);
             }
 
             html += "</div>";
@@ -138,7 +146,7 @@ sg.index = {
 
             $(".content").append(html);
 
-            function subject_html(subject) {
+            function generate_subject_html(subject) {
                 var html = "";
                 html += "<div class='subject'>";
                 html += "<a href='/subjectdetail?id=" + subject.id + "'>";
@@ -164,7 +172,7 @@ sg.index = {
         }
     },
 
-    render_index_error: function (resp) {
+    error: function (resp) {
         $(".content").append("<div class='error'>网络异常，请稍后再试</div>");
     }
 };

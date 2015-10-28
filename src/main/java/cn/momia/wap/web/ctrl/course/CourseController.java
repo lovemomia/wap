@@ -1,9 +1,11 @@
 package cn.momia.wap.web.ctrl.course;
 
+import cn.momia.common.api.http.MomiaHttpResponse;
 import cn.momia.wap.web.ctrl.AbstractController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -20,8 +22,9 @@ public class CourseController extends AbstractController {
     }
 
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public ModelAndView detail() {
-        return new ModelAndView("course/detail");
+    public ModelAndView detail(@RequestParam long id) {
+        MomiaHttpResponse resp = get("/course/detail?id=" + id);
+        return new ModelAndView("course/detail", "detail", resp.getData());
     }
 
     @RequestMapping(value = "/detail/app", method = RequestMethod.GET)
