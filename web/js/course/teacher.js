@@ -13,11 +13,12 @@ sg.teacher = {
 
     success: function (resp) {
         if (resp.errno != 0) {
-            $(".content").append("<div class='error'>" + resp.errmsg + "</div>");
+            alert(resp.errmsg);
         } else {
-            if (resp.data.totalCount <= 0) {
-                $(".content").html("<div class='error'>本课程暂无助教老师</div>");
-            } else {
+            var list = resp.data.list;
+            if (list.length > 0) {
+                unbind_scrollin();
+
                 var html = "";
                 var list = resp.data.list;
                 for (var i = 0; i < list.length; i++) {
@@ -26,7 +27,14 @@ sg.teacher = {
                 }
 
                 $(".content").append(html);
+
+                if (resp.data.nextIndex != undefined) bind_scrollin(sg.common.param("id"), resp.data.nextIndex);
             }
+        }
+
+        function unbind_scrollin() {
+            var last = $(".element:last-child");
+            last.unbind("scrollin");
         }
 
         function generate_teacher_html(teacher) {
@@ -47,9 +55,16 @@ sg.teacher = {
 
             return html;
         }
+
+        function bind_scrollin(id, next_index) {
+            var last = $(".element:last-child");
+            last.bind("scrollin", function () {
+                sg.teacher.more(id, next_index);
+            });
+        }
     },
 
     error: function (resp) {
-        $(".content").append("<div class='error'>网络异常，请稍后再试</div>");
+        alert("网络异常，请稍后再试");
     }
 };
