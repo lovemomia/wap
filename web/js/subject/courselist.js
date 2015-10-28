@@ -52,7 +52,7 @@ sg.courselist = {
             html += "</div>";
             html += "<div class='right'>";
             html += "<div class='title overflow-hidden'>" + course.title + "</div>";
-            html += "<div class='desc overflow-hidden'>" + course.age + "|" + course.scheduler + "</div>";
+            html += "<div class='desc overflow-hidden'>" + course.age + " | " + course.scheduler + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.region + "</div>";
             html += "</div>";
             html += "<div style='clear: both;'></div>";

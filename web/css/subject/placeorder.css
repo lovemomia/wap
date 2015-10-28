@@ -1,0 +1,109 @@
+.title {
+    padding: 0.1rem;
+    height: 0.55rem;
+    line-height: 0.35rem;
+    color: #999999;
+    text-align: left;
+}
+
+
+.sku {
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #ffffff;
+}
+
+.sku .line {
+    padding: 0.1rem;
+    height: 0.55rem;
+    background-color: #ffffff;
+}
+
+.sku .line.large {
+    height: 0.9rem;
+}
+
+.sku .line .left {
+    margin: 0.01rem 0 0 0;
+    width: 1rem;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    font-size: 0.16rem;
+    text-align: left;
+}
+
+.sku .line.large .left {
+    height: 0.7rem;
+    line-height: 0.7rem;
+}
+
+
+.sku .line .arrow img {
+    margin-top: 0.07rem;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.sku .line.large .arrow img {
+    margin-top: 0.25rem;
+}
+
+.sku .line.large .avatar img {
+    margin-top: 0;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
+}
+
+.sku .line .info {
+    margin: 0.01rem 0.1rem 0 0;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    color: #999999;
+    font-size: 0.16rem;
+    text-align: right;
+}
+
+.sku .line.large .left {
+    width: 2.5rem;
+}
+
+.sku .line.large .left .price {
+    line-height: 0.4rem;
+    font-size: 0.18rem;
+    font-weight: bold;
+}
+
+.sku .line.large .left .desc {
+    line-height: 0.2rem;
+    color: #999999;
+    font-size: 0.15rem;
+}
+
+.sku input {
+    float: left;
+    margin: 0.07rem 0 0.03rem 0;
+    width: 2rem;
+    height: 0.25rem;
+    font-size: 0.16rem;
+    vertical-align: middle;
+    border: none;
+}
+
+.footer .price {
+    margin-left: 0.1rem;
+    padding-top: 0.07rem;
+    font-size: 0.18rem;
+    font-weight: bold;
+}
+
+.footer .number {
+    margin-left: 0.2rem;
+    padding-top: 0.05rem;
+    color: #f67531;
+    font-size: 0.28rem;
+}
+
+.footer .btn {
+    margin-right: 0.1rem;
+}

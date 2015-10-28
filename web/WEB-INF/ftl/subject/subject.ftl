@@ -61,7 +61,7 @@
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
 
         <div class="subject text no-bottom-border top-margin">
-        <a href="/subject/courses?id=${subject.subject.id}">
+        <a href="/subject/courses?sid=${subject.subject.id}">
             <div class="title left">可选课程（${subject.courses.totalCount}）</div>
             <div class="arrow right"><img src="/img/allow3x.png" /></div>
             <div class="arrow right">更多</div>
