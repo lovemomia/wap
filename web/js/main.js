@@ -87,7 +87,7 @@ sg.common = {
     },
 
     url_no_query: function (url) {
-        var index = path.indexOf("?");
+        var index = url.indexOf("?");
         if (index == -1) return url;
         return url.substring(0, index);
     },
