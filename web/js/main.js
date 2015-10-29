@@ -176,5 +176,9 @@ sg.common = {
 
     invalid_mobile: function (mobile) {
         return !(/^1\d{10}$/.test(mobile));
+    },
+
+    is_weixin: function () {
+        return navigator.userAgent.toLowerCase().indexOf('micromessenger') != -1;
     }
 };

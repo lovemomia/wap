@@ -5,5 +5,4 @@ $(function () {
     $("#flow").html(sg.common.sections_html($("#flow").html()));
     $("#tips").html(sg.common.sections_html($("#tips").html()));
     $("#institution").html(sg.common.sections_html($("#institution").html()));
-
 });

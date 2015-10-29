@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="btn top-margin">
+    <div class="btn top-margin-lg">
         <button id="btn_password" class="btn-lg-main">完成</button>
     </div>
 </@override>

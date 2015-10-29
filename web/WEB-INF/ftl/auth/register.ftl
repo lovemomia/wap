@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="btn top-margin">
+    <div class="btn top-margin-lg">
         <button id="btn_register" class="btn-lg-main">注册</button>
     </div>
 </@override>

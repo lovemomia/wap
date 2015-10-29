@@ -50,6 +50,8 @@ a {
 .left-margin { margin-left: 0.1rem; }
 .right-margin { margin-right: 0.1rem; }
 
+.top-margin-lg { margin-top: 0.2rem; }
+
 .top-padding { padding-top: 0.1rem; }
 .bottom-padding { padding-bottom: 0.1rem }
 .left-padding { padding-left: 0.1rem; }
@@ -226,6 +228,18 @@ div.error {
     padding: 0 0.2rem;
     height: 100%;
     font-size: 0.19rem;
+    color: #ffffff;
+    background: #f67531;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-lg-orange {
+    display: inline-block;
+    width: 3.6rem;
+    height: 0.55rem;
+    line-height: 0.55;
+    font-size: 0.20rem;
     color: #ffffff;
     background: #f67531;
     border: none;

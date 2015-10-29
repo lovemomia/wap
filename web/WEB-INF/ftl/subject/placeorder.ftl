@@ -8,19 +8,19 @@
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>提交订单</div>
     <div class="content has-fix-footer">
         <div class="title">选择课程包</div>
-        <div class="sku">
+        <div class="placeorder">
             <#list params.skus as sku>
                 <#if (sku_index > 0)><hr class="sep"></#if>
-                <div class="line large">
+                <div id="${sku.id}" price="${sku.price}" sid="${sku.subjectId}" class="line large sku">
                     <div class="left">
                         <div class="price overflow-hidden">¥${sku.price}元/组</div>
                         <div class="desc overflow-hidden">${sku.desc}</div>
                     </div>
-                    <div class="right"></div>
+                    <div class="right sel"><img src="/img/notsel2x.png" /></div>
                 </div>
             </#list>
         </div>
-        <div class="sku top-margin bottom-margin">
+        <div class="placeorder top-margin bottom-margin">
             <div class="line">
                 <div class="left letter-sp8">联系人</div>
                 <input type="text" id="name" placeholder="输入联系人姓名" value="${params.contact.name}" />
@@ -35,7 +35,7 @@
     </div>
     <div class="footer fixed">
         <div class="left price">总价：¥</div>
-        <div class="left number">0</div>
+        <div id="total_fee" class="left number">0</div>
         <div class="right btn"><button id="btn_submit" class="btn-orange">提交订单</button></div>
     </div>
 </@override>
