@@ -26,28 +26,10 @@
             </div>
         </div>
         <div class="title">选择支付方式</div>
-        <div id="pay_types" class="pay">
-            <div pay_type="ali" class="line large payment">
-                <div class="left img"><img src="/img/ali.png" /></div>
-                <div class="left desc">
-                    <div class="name">支付宝支付</div>
-                    <div class="tip">推荐支付宝用户使用</div>
-                </div>
-                <div class="right sel"><img src="/img/notsel2x.png" /></div>
-            </div>
-            <hr class="sep">
-            <div pay_type="weixin" class="line large payment">
-                <div class="left img"><img src="/img/weixin.png" /></div>
-                <div class="left desc">
-                    <div class="name">微信支付</div>
-                    <div class="tip">推荐已安装微信的用户使用</div>
-                </div>
-                <div class="right sel"><img src="/img/notsel2x.png" /></div>
-            </div>
-        </div>
+        <div id="pay_types" class="pay"></div>
 
         <div class="btn top-margin-lg">
-            <button id="btn_pay" class="btn-lg-orange" oid="${params.oid}">确认支付</button>
+            <button id="btn_pay" class="btn-lg-orange">确认支付</button>
         </div>
     </div>
 </@override>
