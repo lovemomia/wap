@@ -54,3 +54,7 @@
     width: 0.85rem;
     height: 0.85rem;
 }
+
+.list .element .right.btn .btn-orange {
+    padding-top: 0.08rem;
+}

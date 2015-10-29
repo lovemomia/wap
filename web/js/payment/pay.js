@@ -120,7 +120,7 @@ sg.payment = {
                         "paySign": resp.data.paySign
                     }, function(res) {
                         if (res.err_msg == "get_brand_wcpay_request:ok") {
-                            window.location.href = "/payment/result?id=" + oid;
+                            window.location.href = "/payment/result?oid=" + oid;
                         } else {
                             alert("支付失败: " + res.err_msg);
                         }
