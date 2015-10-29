@@ -34,9 +34,9 @@
 
     </div>
     <div class="footer fixed">
-        <div class="left price">总价 ¥</div>
+        <div class="left price">总价：¥</div>
         <div class="left number">0</div>
-        <div class="right btn"><button class="btn-orange">提交订单</button></div>
+        <div class="right btn"><button id="btn_submit" class="btn-orange">提交订单</button></div>
     </div>
 </@override>
 

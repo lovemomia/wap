@@ -19,13 +19,9 @@ public class SubjectController extends AbstractController {
         return new ModelAndView("subject/subject", "subject", resp.getData());
     }
 
-    @RequestMapping(value = "/subject/courses", method = RequestMethod.GET)
-    public ModelAndView courses() {
-        return new ModelAndView("subject/courselist");
-    }
-
     @RequestMapping(value = "/subject/placeorder", method = RequestMethod.GET)
     public ModelAndView placeorder(HttpServletRequest request, @RequestParam long id) {
+        // TODO
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) return new ModelAndView("forward:/auth/login");
 

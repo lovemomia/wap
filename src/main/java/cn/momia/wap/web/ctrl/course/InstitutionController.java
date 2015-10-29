@@ -1,4 +1,4 @@
-package cn.momia.wap.web.ctrl.institution;
+package cn.momia.wap.web.ctrl.course;
 
 import cn.momia.common.api.http.MomiaHttpResponse;
 import cn.momia.wap.web.ctrl.AbstractController;
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class InstitutionController extends AbstractController {
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public ModelAndView detail(@RequestParam long id) {
-        return new ModelAndView("institution/detail", "detail", getDetail(id));
+        return new ModelAndView("course/institution", "detail", getDetail(id));
     }
 
     private JSONObject getDetail(long id) {
@@ -24,6 +24,6 @@ public class InstitutionController extends AbstractController {
 
     @RequestMapping(value = "/detail/app", method = RequestMethod.GET)
     public ModelAndView detailApp(@RequestParam long id) {
-        return new ModelAndView("institution/detail_app", "detail", getDetail(id));
+        return new ModelAndView("course/institution_app", "detail", getDetail(id));
     }
 }

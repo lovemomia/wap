@@ -1,7 +1,7 @@
 <@override name="title">课程列表</@override>
 
 <@override name="css">
-    <link rel="stylesheet" type="text/css" href="/css/subject/courselist.css">
+    <link rel="stylesheet" type="text/css" href="/css/subject/courses.css">
 </@override>
 
 <@override name="body">
@@ -11,7 +11,7 @@
 
 <@override name="js">
     <script type="text/javascript" src="/js/jquery.sonar.min.js"></script>
-    <script type="text/javascript" src="/js/subject/courselist.js"></script>
+    <script type="text/javascript" src="/js/subject/courses.js"></script>
 </@override>
 
 <@extends name="../base.ftl"/>

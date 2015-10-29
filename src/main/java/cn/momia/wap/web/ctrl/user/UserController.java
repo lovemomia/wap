@@ -31,32 +31,13 @@ public class UserController extends AbstractController {
         return new ModelAndView("my");
     }
 
-    @RequestMapping(value = "/feedback", method = RequestMethod.GET)
-    public ModelAndView feedback() {
-        return new ModelAndView("feedback");
-    }
-
     @RequestMapping(value = "/user/profile", method = RequestMethod.GET)
     public ModelAndView profile(HttpServletRequest request) {
+        // TODO
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) return new ModelAndView("forward:/auth/login");
 
         MomiaHttpResponse resp = get("/user?utoken=" + utoken);
         return new ModelAndView("user/profile", "user", resp.getData());
-    }
-
-    @RequestMapping(value = "/user/booked", method = RequestMethod.GET)
-    public ModelAndView booked() {
-        return new ModelAndView("user/booked");
-    }
-
-    @RequestMapping(value = "/user/bookable", method = RequestMethod.GET)
-    public ModelAndView bookable() {
-        return new ModelAndView("user/bookable");
-    }
-
-    @RequestMapping(value = "/user/order", method = RequestMethod.GET)
-    public ModelAndView order() {
-        return new ModelAndView("user/order");
     }
 }

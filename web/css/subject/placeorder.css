@@ -20,7 +20,7 @@
 }
 
 .sku .line.large {
-    height: 0.9rem;
+    height: 0.75rem;
 }
 
 .sku .line .left {
@@ -33,8 +33,8 @@
 }
 
 .sku .line.large .left {
-    height: 0.7rem;
-    line-height: 0.7rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
 }
 
 
@@ -65,11 +65,11 @@
 }
 
 .sku .line.large .left {
-    width: 2.5rem;
+    width: 3rem;
 }
 
 .sku .line.large .left .price {
-    line-height: 0.4rem;
+    line-height: 0.32rem;
     font-size: 0.18rem;
     font-weight: bold;
 }
