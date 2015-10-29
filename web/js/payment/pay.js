@@ -74,13 +74,13 @@ sg.payment = {
     },
 
     weixin_pay: function () {
-        var code = sg.common.param("code");
-        if (code == null || code == "") {
-            var encoded_url = encodeURIComponent(window.location.href);
-            window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + sg.config.appid + "&redirect_uri=" + encoded_url + "&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
-        } else {
-            sg.payment.do_weixin_pay(code);
-        }
+        var url_no_query = sg.common.url_no_query(window.location.href);
+        var oid = sg.common.param("oid");
+        var count = sg.common.param("count");
+        var fee = sg.common.param("fee");
+
+        var encoded_url = encodeURIComponent(url_no_query + "?oid=" + oid + "&count=" + count + "&fee=" + fee);
+        window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + sg.config.appid + "&redirect_uri=" + encoded_url + "&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
     },
 
     do_weixin_pay: function (code) {

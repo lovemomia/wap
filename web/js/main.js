@@ -86,6 +86,12 @@ sg.common = {
         return path;
     },
 
+    url_no_query: function (url) {
+        var index = path.indexOf("?");
+        if (index == -1) return url;
+        return url.substring(0, index);
+    },
+
     init: function () {
         var url_back = sessionStorage.getItem("url_back");
         if (url_back == null) {
