@@ -26,6 +26,7 @@ sg.result = {
                 html += "<div class='right'><button id='btn_order' class='btn-main'>查看订单</button></div>";
                 html += "<div style='clear: both;'></div>";
                 html += "</div>";
+                html += "<div style='clear: both;'></div>";
 
                 $(".content").append(html);
 
