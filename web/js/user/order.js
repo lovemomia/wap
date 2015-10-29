@@ -68,7 +68,7 @@ sg.order = {
             html += "</a>";
             html += "<div class='right btn'>";
             if (order.status < 3) {
-                html += "<button class='btn-orange' onclick='sg.order.pay(" + order.id +  ")'>付款</button>";
+                html += "<button class='btn-orange' onclick='sg.order.pay(" + order.id +  "," + order.count + "," + order.totalFee + ")'>付款</button>";
             }
             html += "</div>";
             html += "<div style='clear: both;'></div>";
@@ -89,7 +89,7 @@ sg.order = {
         alert("网络异常，请稍后再试");
     },
 
-    pay: function (oid) {
-        window.location.href = "/payment/pay?oid=" + oid;
+    pay: function (oid, count, fee) {
+        window.location.href = "/payment/pay?oid=" + oid + "&count=" + count + "&fee=" + fee;
     }
 };

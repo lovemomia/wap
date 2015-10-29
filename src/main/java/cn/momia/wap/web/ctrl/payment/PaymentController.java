@@ -14,7 +14,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/payment")
 public class PaymentController extends AbstractController {
-    @RequestMapping(value = "/pay", method = RequestMethod.POST)
+    @RequestMapping(value = "/pay", method = RequestMethod.GET)
     public ModelAndView pay(@RequestParam long oid, @RequestParam int count, @RequestParam BigDecimal fee) {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("oid", oid);

@@ -59,34 +59,8 @@ sg.placeorder = {
         if (resp.errno != 0) {
             alert(resp.errmsg);
         } else {
-            pay(resp);
-        }
-
-        function pay(resp) {
-            var form = document.createElement("form");
-            form.action = "/payment/pay";
-            form.method = "post";
-            form.style.display = "none";
-
             var data = resp.data;
-            var oid = document.createElement("input");
-            oid.name = "oid";
-            oid.value = data.id;
-            form.appendChild(oid);
-
-            var count = document.createElement("input");
-            count.name = "count";
-            count.value = data.count;
-            form.appendChild(count);
-
-            var fee = document.createElement("input");
-            fee.name = "fee";
-            fee.value = data.totalFee;
-            form.appendChild(fee);
-
-            document.body.appendChild(form);
-
-            form.submit();
+            window.location.href = "/payment/pay?oid=" + data.id + "&count=" + data.count + "&fee=" + data.totalFee;
         }
     },
 
