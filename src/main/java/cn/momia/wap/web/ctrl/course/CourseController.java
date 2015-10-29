@@ -13,8 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/course")
 public class CourseController extends AbstractController {
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView course() {
-        return new ModelAndView("course/course");
+    public ModelAndView course(@RequestParam long id) {
+        MomiaHttpResponse resp = get("/course?id=" + id);
+        return new ModelAndView("course/course", "course", resp.getData());
     }
 
     @RequestMapping(value = "/skuplace", method = RequestMethod.GET)

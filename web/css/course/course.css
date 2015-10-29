@@ -1,0 +1,85 @@
+.course.img {
+    width: 100%;
+    height: 3rem;
+}
+
+.course.img .scroll_wrap {
+    height: 3rem;
+}
+
+.course .price {
+    height: 0.45rem;
+    line-height: 0.45rem;
+    font-size: 0.14rem;
+}
+
+.course .price span {
+    font-size: 0.14rem;
+    color: #f67531
+}
+
+.course .price span.number {
+    font-size: 0.25rem;
+}
+
+.course .tag.img {
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+.course .tag.desc {
+    margin-left: 0.08rem;
+    margin-right: 0.15rem;
+    height: 0.25rem;
+    line-height: 0.25rem;
+    color: #00c49d;
+}
+
+.course .right.tag.desc {
+    margin-right: 0;
+    color: #999999;
+}
+
+.course.text .title {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.19rem;
+}
+
+.course.place .img {
+    line-height: 0.25rem;
+}
+
+.course.place .img img {
+    margin: 0.04rem 0;
+    width: 0.17rem;
+    height: 0.17rem;
+}
+
+.course.place .name {
+    line-height: 0.3rem;
+}
+
+.course.place .info {
+    line-height: 0.25rem;
+    font-size: 0.14rem;
+    color: #999999;
+}
+
+.course .bookimg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.course .bookimg img {
+    border-radius: 0.05rem;
+}
+
+.course .teacher {
+    width: 0.55rem;
+    height: 0.55rem;
+}
+
+.course .teacher img {
+    border-radius: 0.3rem;
+}
