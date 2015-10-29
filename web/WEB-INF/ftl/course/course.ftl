@@ -74,6 +74,7 @@
                 <div class="name">${course.place.name}</div>
                 <div class="info"><div class="left img right-margin"><img src="/img/weizhi3x.png" /></div>${course.place.address}</div>
                 <div class="info"><div class="left img right-margin"><img src="/img/shijian3x.png" /></div>${course.place.scheduler}</div>
+                <div style="clear:both"></div>
             </div>
         </#if>
 
