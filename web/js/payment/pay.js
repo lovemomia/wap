@@ -93,6 +93,7 @@ sg.payment = {
     },
 
     weixin_pre_success: function (resp) {
+        var oid = sg.common.param("oid");
         if (resp.errno != 0) {
             alert(resp.errmsg);
         } else {
@@ -118,7 +119,9 @@ sg.payment = {
                         "signType": resp.data.signType,
                         "paySign": resp.data.paySign
                     }, function(res) {
-                        if (res.err_msg != "get_brand_wcpay_request:ok") {
+                        if (res.err_msg == "get_brand_wcpay_request:ok") {
+                            window.location.href = "/payment/result?id=" + oid;
+                        } else {
                             alert("支付失败: " + res.err_msg);
                         }
                     }

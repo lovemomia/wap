@@ -6,7 +6,7 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>
-        <#if (params.payed == true)>
+        <#if (result.payed == true)>
         购买成功
         <#else>
         付款失败
@@ -14,7 +14,7 @@
     </div>
     <div class="content">
         <div class="logo"><img src="/img/logo3x.png"></div>
-        <#if (params.payed == true)>
+        <#if (result.payed == true)>
             <div class="title">购买成功</div>
             <div class="desc">您已购买成功，请提前选课，并预约</div>
             <div class="btn">
