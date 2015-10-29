@@ -99,11 +99,12 @@ sg.common = {
             if (url_history_str == null) url_history_str = JSON.stringify(new Array());
             var url_history = JSON.parse(url_history_str);
 
+            var current_url = window.location.href;
             var referrer_url = document.referrer;
             if (referrer_url != undefined && referrer_url != "") {
                 var referrer_path = sg.common.url_path(referrer_url);
-                if (!referrer_path.startWith("/auth/")) {
-                    if (url_history.length == 0 || url_history[url_history.length - 1] != referrer_url) {
+                if (!referrer_path.startWith("/auth/") && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
+                    if (url_history.length == 0 || sg.common.url_no_query(url_history[url_history.length - 1]) != sg.common.url_no_query(referrer_url)) {
                         url_history.push(referrer_url);
                         sessionStorage.setItem("url_history", JSON.stringify(url_history));
                     }
