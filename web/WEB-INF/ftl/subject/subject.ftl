@@ -51,8 +51,10 @@
         <div class="subject text no-top-border">
             <div class="left tag img"><img src="/img/tag3x.png"/></div>
             <div class="left tag desc">适合${subject.subject.age}</div>
-            <div class="left tag img"><img src="/img/tag3x.png"/></div>
-            <div class="left tag desc">${subject.subject.joined}人已参加</div>
+            <#if (subject.subject.joined > 0)>
+                <div class="right tag desc">${subject.subject.joined}人已参加</div>
+                <div class="right tag img"><img src="/img/tag_gray3x.png"/></div>
+            </#if>
             <div style="clear:both"></div>
         </div>
 

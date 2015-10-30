@@ -44,6 +44,11 @@
     color: #00c49d;
 }
 
+.subject .right.tag.desc {
+    margin-right: 0;
+    color: #999999;
+}
+
 .subject.text .title {
     height: 0.3rem;
     line-height: 0.3rem;

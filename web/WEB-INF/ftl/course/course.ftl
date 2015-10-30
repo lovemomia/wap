@@ -52,8 +52,10 @@
                 <div class="left tag img"><img src="/img/tag3x.png"/></div>
                 <div class="left tag desc">送保险</div>
             </#if>
-            <div class="right tag desc">${course.joined}人已参加</div>
-            <div class="right tag img"><img src="/img/tag_gray3x.png"/></div>
+            <#if (course.joined > 0)>
+                <div class="right tag desc">${course.joined}人已参加</div>
+                <div class="right tag img"><img src="/img/tag_gray3x.png"/></div>
+            </#if>
             <div style="clear:both"></div>
         </div>
 
