@@ -74,7 +74,7 @@ sg.index = {
 
             $(".content").append(html);
 
-            if (banners.length >= 1) sg.common.scroll_img();
+            if (banners.length > 1) sg.common.scroll_img();
         }
 
         function generate_icons_html(icons) {
