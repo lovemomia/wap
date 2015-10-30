@@ -8,11 +8,11 @@
     <@block name="header"></@block>
     <div class="content">
         <div class="detail">
-        <img src="${detail.cover}" />
-        <div class="text no-border">
-            <div class="name">${detail.name}</div>
-            <div class="intro text-indent top-margin">${detail.intro}</div>
-            </div>
+            <img src="${detail.cover}" />
+            <div class="text no-border">
+                <div class="name">${detail.name}</div>
+                <div class="intro text-indent top-margin">${detail.intro}</div>
+                </div>
         </div>
     </div>
 </@override>
