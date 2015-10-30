@@ -60,8 +60,8 @@ sg.booked = {
 
         function generate_course_html(course) {
             var html = "";
-            html += "<div class='element'>";
             html += "<a href='/course?id=" + course.id + "'>";
+            html += "<div class='element'>";
             html += "<div class='left'>";
             html += "<img src='" + course.cover + "' />";
             html += "</div>";
@@ -71,8 +71,8 @@ sg.booked = {
             html += "<div class='desc overflow-hidden'>" + course.scheduler + "</div>";
             html += "</div>";
             html += "<div style='clear: both;'></div>";
-            html += "</a>";
             html += "</div>";
+            html += "</a>";
 
             return html;
         }

@@ -174,8 +174,8 @@ sg.index = {
 
             function generate_subject_html(subject) {
                 var html = "";
-                html += "<div class='subject'>";
                 html += "<a href='/subjectdetail?id=" + subject.id + "'>";
+                html += "<div class='subject'>";
                 html += "<div class='cover'>";
                 html += "<img src='" + subject.cover + "' />";
                 html += "</div>";
@@ -190,8 +190,8 @@ sg.index = {
                 if (subject.joined > 0) {
                     html += "<div class='joined'>" + subject.joined + "人参加</div>";
                 }
-                html += "</a>";
                 html += "</div>";
+                html += "</a>";
 
                 return html;
             }

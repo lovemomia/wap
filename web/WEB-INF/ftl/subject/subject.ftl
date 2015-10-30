@@ -60,20 +60,20 @@
         <div class="bg-white"><hr class="sep"/></div>
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
 
-        <div class="subject text no-bottom-border top-margin">
         <a href="/subject/courses?sid=${subject.subject.id}">
+        <div class="subject text no-bottom-border top-margin">
             <div class="title left">可选课程（${subject.courses.totalCount}）</div>
             <div class="arrow right"><img src="/img/allow3x.png" /></div>
             <div class="arrow right">更多</div>
             <div style="clear:both"></div>
-            </a>
         </div>
+        </a>
         <div class="bg-white"><hr class="sep"/></div>
         <div class="subject list bg-white no-top-border">
             <#list subject.courses.list as course>
                 <#if (course_index > 0)><hr class='sep' /></#if>
+                <a href="/course?id=${course.id}">
                 <div class="element">
-                    <a href="/course?id=${course.id}">
                     <div class="left"><img src="${course.cover}"></div>
                     <div class="right">
                         <div class="title overflow-hidden">${course.title}</div>
@@ -82,8 +82,8 @@
                         <div class="price"><span>￥</span><span class="number">${course.price}</span><span>起</span></div>
                     </div>
                     <div style="clear:both"></div>
-                    </a>
                 </div>
+                </a>
             </#list>
         </div>
 

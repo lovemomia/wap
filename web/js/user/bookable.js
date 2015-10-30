@@ -50,8 +50,8 @@ sg.bookable = {
 
         function generate_package_html(package) {
             var html = "";
-            html += "<div class='element'>";
             html += "<a href='/subject/courses?sid=" + package.subjectId + "&pid=" + package.packageId + "'>";
+            html += "<div class='element'>";
             html += "<div class='left'>";
             html += "<img src='" + package.cover + "' />";
             html += "</div>";
@@ -61,8 +61,8 @@ sg.bookable = {
             html += "<div class='desc overflow-hidden'>还可约" + package.bookableCourseCount + "次课</div>";
             html += "</div>";
             html += "<div style='clear: both;'></div>";
-            html += "</a>";
             html += "</div>";
+            html += "</a>";
 
             return html;
         }

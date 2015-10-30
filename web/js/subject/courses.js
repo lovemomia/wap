@@ -41,12 +41,12 @@ sg.courselist = {
 
         function generate_course_html(course, pid) {
             var html = "";
-            html += "<div class='element'>";
             if (pid == null) {
                 html += "<a href='/course?id=" + course.id + "'>";
             } else {
                 html += "<a href='/course/skuplace?id=" + course.id + "&pid=" + pid + "'>";
             }
+            html += "<div class='element'>";
             html += "<div class='left'>";
             html += "<img src='" + course.cover + "' />";
             html += "</div>";
@@ -56,8 +56,8 @@ sg.courselist = {
             html += "<div class='desc overflow-hidden'>" + course.region + "</div>";
             html += "</div>";
             html += "<div style='clear: both;'></div>";
-            html += "</a>";
             html += "</div>";
+            html += "</a>";
 
             return html;
         }

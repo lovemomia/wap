@@ -62,13 +62,13 @@
         <div id="goal" class="course text no-top-border">${course.goal}</div>
 
         <#if course.place??>
+            <a href="/course/skuplace?id=${course.id}">
             <div class="course text no-bottom-border top-margin">
-                <a href="/course/skuplace?id=${course.id}">
                 <div class="title left">课程表</div>
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>
                 <div style="clear:both"></div>
-                </a>
             </div>
+            </a>
             <div class="bg-white"><hr class="sep"/></div>
             <div class="course place text no-top-border">
                 <div class="name">${course.place.name}</div>
@@ -80,13 +80,13 @@
 
         <#if course.book??>
             <#if (course.book.imgs?size > 0)>
+                <a href="/course/book?id=${course.id}">
                 <div class="course text no-bottom-border top-margin">
-                    <a href="/course/book?id=${course.id}">
-                        <div class="title left">课前绘本</div>
-                        <div class="arrow right"><img src="/img/allow3x.png" /></div>
-                        <div style="clear:both"></div>
-                    </a>
+                    <div class="title left">课前绘本</div>
+                    <div class="arrow right"><img src="/img/allow3x.png" /></div>
+                    <div style="clear:both"></div>
                 </div>
+                </a>
                 <div class="bg-white"><hr class="sep"/></div>
                 <div class="course text no-top-border">
                     <#list course.book.imgs as img>
@@ -103,24 +103,24 @@
             </#if>
         </#if>
 
+        <a href="/course/detail?id=${course.id}">
         <div class="course text no-bottom-border top-margin">
-            <a href="/course/detail?id=${course.id}">
-                <div class="title left">课程内容</div>
-                <div class="arrow right"><img src="/img/allow3x.png" /></div>
-                <div style="clear:both"></div>
-            </a>
+            <div class="title left">课程内容</div>
+            <div class="arrow right"><img src="/img/allow3x.png" /></div>
+            <div style="clear:both"></div>
         </div>
+        </a>
         <div class="bg-white"><hr class="sep"/></div>
         <div id="flow" class="course text no-top-border">${course.flow}</div>
 
         <#if course.teachers??>
+            <a href="/course/teacher?id=${course.id}">
             <div class="course text no-bottom-border top-margin">
-                <a href="/course/teacher?id=${course.id}">
-                    <div class="title left">讲师团</div>
-                    <div class="arrow right"><img src="/img/allow3x.png" /></div>
-                    <div style="clear:both"></div>
-                </a>
+                <div class="title left">讲师团</div>
+                <div class="arrow right"><img src="/img/allow3x.png" /></div>
+                <div style="clear:both"></div>
             </div>
+            </a>
             <div class="bg-white"><hr class="sep"/></div>
             <div class="course text no-top-border">
                 <#list course.teachers as teacher>
@@ -141,13 +141,13 @@
         <div id="tips" class="course text no-top-border">${course.tips}</div>
 
         <#if course.institution??>
+            <a href="/institution/detail?id=${course.id}">
             <div class="course text no-bottom-border top-margin">
-                <a href="/institution/detail?id=${course.id}">
-                    <div class="title left">合作机构介绍</div>
-                    <div class="arrow right"><img src="/img/allow3x.png" /></div>
-                    <div style="clear:both"></div>
-                </a>
+                <div class="title left">合作机构介绍</div>
+                <div class="arrow right"><img src="/img/allow3x.png" /></div>
+                <div style="clear:both"></div>
             </div>
+            </a>
             <div class="bg-white"><hr class="sep"/></div>
             <div id="institution" class="course text no-top-border">${course.institution}</div>
         </#if>

@@ -64,6 +64,7 @@ sg.order = {
             html += "<div class='title overflow-hidden'>" + order.title + "</div>";
             html += "<div class='price overflow-hidden'>总价：" + order.totalFee + "元</div>";
             html += "<div class='count overflow-hidden'>数量：" + order.count + "</div>";
+            html += "<div style='clear: both;'></div>";
             html += "</div>";
             html += "</a>";
             html += "<div class='right btn'>";
