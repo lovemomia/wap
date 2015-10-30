@@ -103,7 +103,7 @@ sg.common = {
             var referrer_url = document.referrer;
             if (referrer_url != undefined && referrer_url != "") {
                 var referrer_path = sg.common.url_path(referrer_url);
-                if (!referrer_path.startWith("/auth/") && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
+                if (!referrer_path.startWith("/auth/") && !referrer_path.startWith("/payment/pay") && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
                     if (url_history.length == 0 || sg.common.url_no_query(url_history[url_history.length - 1]) != sg.common.url_no_query(referrer_url)) {
                         url_history.push(referrer_url);
                         sessionStorage.setItem("url_history", JSON.stringify(url_history));
