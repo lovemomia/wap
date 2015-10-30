@@ -1,5 +1,5 @@
 $(function () {
-    if ($("#scroll_img").length > 0) sg.common.scroll_img();
+    if ($("#scroll_img").length > 0) sg.scroll.scroll_img();
 
     var id = sg.common.param("id");
 
