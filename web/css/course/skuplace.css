@@ -34,7 +34,7 @@
 }
 
 .sku.text .day {
-    margin-top: 0.06rem;
+    margin-top: 0.05rem;
     padding-right: 0.05rem;
     font-size: 0.35rem;
     font-weight: bold;
@@ -67,18 +67,19 @@
 }
 
 .sku.place .element .name {
-    line-height: 0.3rem;
-    font-size: 0.2rem;
+    line-height: 0.28rem;
+    font-size: 0.18rem;
 }
 
 .sku.place .element .address {
     color: #999999;
-    font-size: 0.1rem;
+    font-size: 0.14rem;
 }
 
 .sku.place .element .stock {
+    padding-top: 0.06rem;
     color: #f67531;
-    font-size: 0.08rem;
+    font-size: 0.12rem;
 }
 
 .sku.place .element .stock.full {
