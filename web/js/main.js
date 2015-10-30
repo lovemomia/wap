@@ -6,6 +6,7 @@ String.prototype.startWith = function (str) {
 
 $(function () {
     sg.common.init();
+
     $(".back").on("click", function () {
         sg.common.back();
     });
@@ -53,7 +54,10 @@ sg.common = {
     success: function (resp, success_callback) {
         if (resp.errno != 0) {
             alert(resp.errmsg);
-            if (resp.errno == 100001) window.location.href = "/auth/login";
+            if (resp.errno == 100001) {
+                sg.common.cookie.del("utoken");
+                window.location.href = "/auth/login";
+            }
         } else {
             success_callback(resp.data);
         }
@@ -153,21 +157,6 @@ sg.common = {
     remove_histories: function () {
         sessionStorage.removeItem("url_back");
         sessionStorage.removeItem("url_history");
-    },
-
-    scroll_img: function () {
-        var slider = Swipe(document.getElementById('scroll_img'), {
-            auto: 3000,
-            continuous: true,
-            callback: function (pos) {
-                var i = bullets.length;
-                while (i--) {
-                    bullets[i].className = ' ';
-                }
-                bullets[pos].className = 'on';
-            }
-        });
-        var bullets = document.getElementById('scroll_position').getElementsByTagName('li');
     },
 
     sections_html: function (content) {

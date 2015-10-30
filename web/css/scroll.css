@@ -1,0 +1,56 @@
+
+.scroll_box {
+    position: relative;
+    margin-bottom: -0.16rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.scroll_box ul {
+    margin: 0;
+    padding: 0;
+}
+
+.scroll_wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll_wrap li {
+    list-style-type: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+.scroll_wrap li a {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.scroll_position {
+    position: relative;
+    bottom: 0.25rem;
+    z-index: 400;
+    text-align: center;
+}
+
+.scroll_position li {
+    display: inline-block;
+    margin-left: 0.04rem;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 0.08rem;
+    background: #cccccc;
+    opacity: 0.8;
+}
+
+.scroll_position li a {
+    font-size: 0;
+}
+
+.scroll_position li.on {
+    background-color: #00c49d;
+}

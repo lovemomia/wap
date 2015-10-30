@@ -1,6 +1,7 @@
 <@override name="title">课程详情</@override>
 
 <@override name="css">
+    <link rel="stylesheet" type="text/css" href="/css/scroll.css">
     <link rel="stylesheet" type="text/css" href="/css/course/course.css">
 </@override>
 
@@ -149,6 +150,7 @@
 
 <@override name="js">
     <script type="text/javascript" src="/js/hhSwipe.js"></script>
+    <script type="text/javascript" src="/js/scroll.js"></script>
     <script type="text/javascript" src="/js/course/course.js"></script>
 </@override>
 

@@ -1,6 +1,7 @@
 <@override name="title">${subject.subject.title}</@override>
 
 <@override name="css">
+    <link rel="stylesheet" type="text/css" href="/css/scroll.css">
     <link rel="stylesheet" type="text/css" href="/css/subject/subject.css">
 </@override>
 
@@ -99,6 +100,7 @@
 
 <@override name="js">
     <script type="text/javascript" src="/js/hhSwipe.js"></script>
+    <script type="text/javascript" src="/js/scroll.js"></script>
     <script type="text/javascript" src="/js/subject/subject.js"></script>
 </@override>
 
