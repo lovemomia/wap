@@ -4,7 +4,7 @@
 <html lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, user-scalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title><@block name="title" ></@block></title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
