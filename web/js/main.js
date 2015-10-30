@@ -95,23 +95,27 @@ sg.common = {
     init: function () {
         var url_back = sessionStorage.getItem("url_back");
         if (url_back == null) {
-            var url_history_str = sessionStorage.getItem("url_history");
-            if (url_history_str == null) url_history_str = JSON.stringify(new Array());
-            var url_history = JSON.parse(url_history_str);
-
             var current_url = window.location.href;
             var referrer_url = document.referrer;
-            if (referrer_url != undefined && referrer_url != "") {
-                var referrer_path = sg.common.url_path(referrer_url);
-                if (!referrer_path.startWith("/auth/") && !referrer_path.startWith("/payment/pay") && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
-                    if (url_history.length == 0 || sg.common.url_no_query(url_history[url_history.length - 1]) != sg.common.url_no_query(referrer_url)) {
-                        url_history.push(referrer_url);
-                        sessionStorage.setItem("url_history", JSON.stringify(url_history));
-                    }
-                }
-            }
+            sg.common.push_history(current_url, referrer_url);
         } else {
             sessionStorage.removeItem("url_back");
+        }
+    },
+
+    push_history: function (current_url, referrer_url) {
+        var url_history_str = sessionStorage.getItem("url_history");
+        if (url_history_str == null) url_history_str = JSON.stringify(new Array());
+        var url_history = JSON.parse(url_history_str);
+
+        if (referrer_url != undefined && referrer_url != "") {
+            var referrer_path = sg.common.url_path(referrer_url);
+            if (!referrer_path.startWith("/auth/") && !referrer_path.startWith("/payment/pay") && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
+                if (url_history.length == 0 || sg.common.url_no_query(url_history[url_history.length - 1]) != sg.common.url_no_query(referrer_url)) {
+                    url_history.push(referrer_url);
+                    sessionStorage.setItem("url_history", JSON.stringify(url_history));
+                }
+            }
         }
     },
 

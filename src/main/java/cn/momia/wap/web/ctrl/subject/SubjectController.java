@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.URLEncoder;
 
 @Controller
 public class SubjectController extends AbstractController {
@@ -21,9 +22,12 @@ public class SubjectController extends AbstractController {
 
     @RequestMapping(value = "/subject/placeorder", method = RequestMethod.GET)
     public ModelAndView placeorder(HttpServletRequest request, @RequestParam long id) {
-        // TODO
         String utoken = getUtoken(request);
-        if (StringUtils.isBlank(utoken)) return new ModelAndView("forward:/auth/login");
+        if (StringUtils.isBlank(utoken)) {
+            StringBuffer url = request.getRequestURL();
+            url.append("?id=").append(id);
+            return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()));
+        }
 
         MomiaHttpResponse resp = get("/subject/sku?utoken=" + utoken + "&id=" + id);
         return new ModelAndView("subject/placeorder", "params", resp.getData());
