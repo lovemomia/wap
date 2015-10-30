@@ -40,7 +40,7 @@ sg.booked = {
                 unbind_scrollin();
 
                 var html = "";
-                html += "<div class='list small bottom-border'>";
+                html += "<div class='list bottom-border'>";
                 for (var i = 0; i < list.length; i++) {
                     html += generate_course_html(list[i]);
                     if (i < list.length - 1) html += "<hr class='sep' />";

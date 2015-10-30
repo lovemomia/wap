@@ -13,36 +13,3 @@
     border-bottom: 0.02rem solid #00c49d;
     color: #00c49d;
 }
-
-.list {
-    background-color: #ffffff;
-}
-
-.list .element .left {
-    width: 1.15rem;
-    height: 0.85rem;
-}
-
-.list .element .left img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.05rem;
-}
-
-.list .element .right {
-    width: 2.55rem;
-}
-
-.list .element .right .title {
-    height: 0.3rem;
-    line-height: 0.3rem;
-    font-size: 0.18rem;
-    font-weight: bold;
-}
-
-.list .element .right .desc {
-    height: 0.3rem;
-    line-height: 0.3rem;
-    font-size: 0.16rem;
-    color: #999999;
-}

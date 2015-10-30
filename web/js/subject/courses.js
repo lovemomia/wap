@@ -20,7 +20,7 @@ sg.courselist = {
                 unbind_scrollin();
 
                 var html = "";
-                html += "<div class='list small bottom-border'>";
+                html += "<div class='list bottom-border'>";
                 var pid = sg.common.param("pid")
                 for (var i = 0; i < list.length; i++) {
                     html += generate_course_html(list[i], pid);

@@ -69,7 +69,7 @@
         </div>
         </a>
         <div class="bg-white"><hr class="sep"/></div>
-        <div class="subject list bg-white no-top-border">
+        <div class="subject list bg-white bottom-border">
             <#list subject.courses.list as course>
                 <#if (course_index > 0)><hr class='sep' /></#if>
                 <a href="/course?id=${course.id}">
@@ -77,8 +77,8 @@
                     <div class="left"><img src="${course.cover}"></div>
                     <div class="right">
                         <div class="title overflow-hidden">${course.title}</div>
-                        <div class="intro overflow-hidden">${course.age} | ${course.scheduler}</div>
-                        <div class="region overflow-hidden">${course.region}</div>
+                        <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
+                        <div class="desc overflow-hidden">${course.region}</div>
                         <div class="price"><span>￥</span><span class="number">${course.price}</span><span>起</span></div>
                     </div>
                     <div style="clear:both"></div>

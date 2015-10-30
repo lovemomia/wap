@@ -35,7 +35,7 @@ sg.order = {
                 unbind_scrollin();
 
                 var html = "";
-                html += "<div class='list small bottom-border'>";
+                html += "<div class='list bottom-border'>";
                 for (var i = 0; i < list.length; i++) {
                     html += generate_order_html(list[i]);
                     if (i < list.length - 1) html += "<hr class='sep' />";
@@ -61,11 +61,10 @@ sg.order = {
             html += "<div class='left'>";
             html += "<img src='" + order.cover + "' />";
             html += "</div>";
-            html += "<div class='left desc'>";
+            html += "<div class='right'>";
             html += "<div class='title overflow-hidden'>" + order.title + "</div>";
-            html += "<div class='price overflow-hidden'>总价：" + order.totalFee + "元</div>";
-            html += "<div class='count overflow-hidden'>数量：" + order.count + "</div>";
-            html += "<div style='clear: both;'></div>";
+            html += "<div class='desc overflow-hidden'>总价：" + order.totalFee + "元</div>";
+            html += "<div class='desc overflow-hidden'>数量：" + order.count + "</div>";
             html += "</div>";
             html += "<div style='clear: both;'></div>";
             html += "</div>";
