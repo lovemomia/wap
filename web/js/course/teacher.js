@@ -14,7 +14,7 @@ sg.teacher = {
     success: function (data) {
         var list = data.list;
         if (list.length > 0) {
-            unbind_scrollin();
+            sg.common.unbind_scrollin();
 
             var html = "";
             var list = resp.data.list;
@@ -25,17 +25,14 @@ sg.teacher = {
 
             $(".content").append(html);
 
-            if (data.nextIndex != undefined) bind_scrollin(sg.common.param("id"), data.nextIndex);
-        }
-
-        function unbind_scrollin() {
-            var last = $(".element:last");
-            last.unbind("scrollin");
+            if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
+                sg.teacher.more(sg.common.param("id"), data.nextIndex);
+            });
         }
 
         function generate_teacher_html(teacher) {
             var html = "";
-            html += "<div class='element'>";
+            html += "<div class='element scrollable'>";
             html += "<div class='left'>";
             html += "<img src='" + teacher.avatar + "' />";
             html += "</div>";
@@ -50,13 +47,6 @@ sg.teacher = {
             html += "</div>";
 
             return html;
-        }
-
-        function bind_scrollin(id, next_index) {
-            var last = $(".element:last");
-            last.bind("scrollin", function () {
-                sg.teacher.more(id, next_index);
-            });
         }
     }
 };

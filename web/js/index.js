@@ -140,14 +140,11 @@ sg.index = {
     },
 
     success_more: function (data) {
-        unbind_scrollin();
+        sg.common.unbind_scrollin();
         generate_subjects_html(data.subjects);
-        if (data.subjects.nextIndex != undefined) bind_scrollin(data.subjects.nextIndex);
-
-        function unbind_scrollin() {
-            var last = $(".subject:last");
-            last.unbind("scrollin");
-        }
+        if (data.subjects.nextIndex != undefined) sg.common.bind_scrollin(function () {
+            sg.index.read_data(1, data.subjects.nextIndex);
+        });
 
         function generate_subjects_html(subjects) {
             if (subjects == undefined || subjects.list.length <= 0) return;
@@ -165,7 +162,7 @@ sg.index = {
             function generate_subject_html(subject) {
                 var html = "";
                 html += "<a href='/subjectdetail?id=" + subject.id + "'>";
-                html += "<div class='subject'>";
+                html += "<div class='subject scrollable'>";
                 html += "<div class='cover' style='background-image: url(" + subject.cover + ")'>";
                 html += "</div>";
                 html += "<div class='desc'>";
@@ -184,13 +181,6 @@ sg.index = {
 
                 return html;
             }
-        }
-
-        function bind_scrollin(next_index) {
-            var last = $(".subject:last");
-            last.bind("scrollin", function () {
-                sg.index.read_data(1, next_index);
-            });
         }
     }
 };

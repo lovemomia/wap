@@ -26,7 +26,7 @@ sg.bookable = {
     success: function (data) {
         var list = data.list;
         if (list.length > 0) {
-            unbind_scrollin();
+            sg.common.unbind_scrollin();
 
             var html = "";
             html += "<div class='list bottom-border'>";
@@ -38,18 +38,15 @@ sg.bookable = {
 
             $(".content").append(html);
 
-            if (resp.data.nextIndex != undefined) bind_scrollin(sg.bookable.param_oid(), resp.data.nextIndex);
-        }
-
-        function unbind_scrollin() {
-            var last = $(".element:last");
-            last.unbind("scrollin");
+            if (resp.data.nextIndex != undefined) sg.common.bind_scrollin(function () {
+                sg.bookable.more(sg.bookable.param_oid(), resp.data.nextIndex);
+            });
         }
 
         function generate_package_html(package) {
             var html = "";
             html += "<a href='/subject/courses?sid=" + package.subjectId + "&pid=" + package.packageId + "'>";
-            html += "<div class='element'>";
+            html += "<div class='element scrollable'>";
             html += "<div class='left'>";
             html += "<img src='" + package.cover + "' />";
             html += "</div>";
@@ -63,13 +60,6 @@ sg.bookable = {
             html += "</a>";
 
             return html;
-        }
-
-        function bind_scrollin(oid, next_index) {
-            var last = $(".element:last");
-            last.bind("scrollin", function () {
-                sg.bookable.more(oid, next_index);
-            });
         }
     }
 };

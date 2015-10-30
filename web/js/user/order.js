@@ -31,7 +31,7 @@ sg.order = {
         var list = data.list;
         if (list.length > 0) {
             var status = sg.order.param_status();
-            unbind_scrollin();
+            sg.common.unbind_scrollin();
 
             var html = "";
             html += "<div class='list bottom-border'>";
@@ -43,19 +43,16 @@ sg.order = {
 
             $(".content").append(html);
 
-            if (resp.data.nextIndex != undefined) bind_scrollin(status, resp.data.nextIndex);
-        }
-
-        function unbind_scrollin() {
-            var last = $(".element:last");
-            last.unbind("scrollin");
+            if (resp.data.nextIndex != undefined) sg.common.bind_scrollin(function () {
+                sg.order.more(status, resp.data.nextIndex);
+            });
         }
 
         function generate_order_html(order) {
             var html = "";
             html += "<div class='order'>";
             html += "<a href='/subjectdetail?id=" + order.subjectId + "'>";
-            html += "<div class='element'>";
+            html += "<div class='element scrollable'>";
             html += "<div class='left'>";
             html += "<img src='" + order.cover + "' />";
             html += "</div>";
@@ -75,13 +72,6 @@ sg.order = {
             html += "</div>";
 
             return html;
-        }
-
-        function bind_scrollin(status, next_index) {
-            var last = $(".element:last");
-            last.bind("scrollin", function () {
-                sg.order.more(status, next_index);
-            });
         }
     },
 

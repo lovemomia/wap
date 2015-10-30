@@ -159,6 +159,18 @@ sg.common = {
         sessionStorage.removeItem("url_history");
     },
 
+    bind_scrollin: function (callback) {
+        var last = $(".scrollable:last");
+        last.bind("scrollin", function () {
+            callback();
+        });
+    },
+
+    unbind_scrollin: function () {
+        var last = $(".scrollable:last");
+        last.unbind("scrollin");
+    },
+
     sections_html: function (content) {
         var html = "";
         var sections = content.replace("\r", "").split("\n");
