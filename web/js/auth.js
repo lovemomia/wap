@@ -17,16 +17,16 @@ $(function () {
     });
 
     $("#btn_register").on("click", function () {
-        var mobile = $("#mobile").val();
-        var password = $("#password").val();
         var nickName = $("#nickName").val();
+        var password = $("#password").val();
+        var mobile = $("#mobile").val();
         var code = $("#code").val();
-        if (!mobile || mobile == "" || sg.common.invalid_mobile(mobile)) {
-            alert("无效的手机号吗");
+        if (!nickName || nickName == "") {
+            alert("用户昵称不能为空");
         } else if (!password || password == "") {
             alert("密码不能为空");
-        } else if (!nickName || nickName == "") {
-            alert("用户昵称不能为空");
+        } else if (!mobile || mobile == "" || sg.common.invalid_mobile(mobile)) {
+            alert("无效的手机号吗");
         } else if (!code || code == "") {
             alert("验证码不能为空");
         } else {

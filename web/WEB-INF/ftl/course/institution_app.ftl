@@ -1,7 +1,7 @@
 <@override name="title">机构介绍</@override>
 
 <@override name="css">
-    <link rel="stylesheet" type="text/css" href="/css/cpourse/institution.css">
+    <link rel="stylesheet" type="text/css" href="/css/course/institution.css">
 </@override>
 
 <@override name="body">

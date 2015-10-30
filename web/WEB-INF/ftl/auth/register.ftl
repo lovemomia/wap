@@ -9,10 +9,10 @@
     <div class="content">
         <div class="form top-margin">
             <dl>
-                <dt class="letter-sp8">手机号</dt>
+                <dt class="letter-sp32">昵称</dt>
                 <dd class="left">
                     <i></i>
-                    <input type="tel" id="mobile" placeholder="输入手机号码">
+                    <input type="text" id="nickName" placeholder="输入昵称">
                 </dd>
             </dl>
             <hr class="sep" />
@@ -25,10 +25,10 @@
             </dl>
             <hr class="sep" />
             <dl>
-                <dt class="letter-sp32">昵称</dt>
+                <dt class="letter-sp8">手机号</dt>
                 <dd class="left">
                     <i></i>
-                    <input type="text" id="nickName" placeholder="输入昵称">
+                    <input type="tel" id="mobile" placeholder="输入手机号码">
                 </dd>
             </dl>
             <hr class="sep" />
