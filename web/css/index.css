@@ -129,6 +129,8 @@
 .free .subject .cover {
     width: 100%;
     height: 2.06rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .free .subject .joined {

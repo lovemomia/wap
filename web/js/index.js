@@ -176,8 +176,7 @@ sg.index = {
                 var html = "";
                 html += "<a href='/subjectdetail?id=" + subject.id + "'>";
                 html += "<div class='subject'>";
-                html += "<div class='cover'>";
-                html += "<img src='" + subject.cover + "' />";
+                html += "<div class='cover' style='background-image: url(" + subject.cover + ")'>";
                 html += "</div>";
                 html += "<div class='desc'>";
                 html += "<div class='title overflow-hidden'>" + subject.title + "</div>";
