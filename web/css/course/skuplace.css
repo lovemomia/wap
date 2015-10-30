@@ -1,0 +1,93 @@
+.tab {
+    width: 100%;
+    height: 0.55rem;
+    color: #333333;
+}
+
+.tab .left {
+    width: 33%;
+    line-height: 0.53rem;
+}
+
+.tab .left.on {
+    border-bottom: 0.02rem solid #00c49d;
+    color: #00c49d;
+}
+
+.logo {
+    padding: 0.5rem 0 0.2rem 0;
+    width: 100%;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.tips {
+    height: 0.6rem;
+    font-size: 0.16rem;
+    color: #888888;
+}
+
+.tips p {
+    margin: 0.1rem 0;
+}
+
+.sku.text .day {
+    margin-top: 0.06rem;
+    padding-right: 0.05rem;
+    font-size: 0.35rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sku.text .month {
+    line-height: 0.2rem;
+    font-size: 0.12rem;
+}
+
+.sku.text .weekday {
+    line-height: 0.15rem;
+    font-size: 0.1rem;
+    color: #888888;
+}
+
+.sku.place {
+    background-color: #ffffff;
+    color: #333333;
+    text-align: left;
+}
+
+.sku.place .element {
+    padding: 0.1rem;
+}
+
+.sku.place .element.disable {
+    background-color: #fafafa;
+}
+
+.sku.place .element .name {
+    line-height: 0.3rem;
+    font-size: 0.2rem;
+}
+
+.sku.place .element .address {
+    color: #999999;
+    font-size: 0.1rem;
+}
+
+.sku.place .element .stock {
+    color: #f67531;
+    font-size: 0.08rem;
+}
+
+.sku.place .element .stock.full {
+    color: #999999;
+}
+
+.sku.place .element .right.sel {
+    margin-top: 0.20rem;
+    margin-right: 0.15rem;
+    width: 0.3rem;
+    height: 0.3rem;
+}

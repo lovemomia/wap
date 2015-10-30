@@ -1,0 +1,64 @@
+$(function () {
+    sessionStorage.removeItem("selPid");
+    sessionStorage.removeItem("selSid");
+
+    var status = sg.skuplace.param_status();
+    if (status == 1) $("#week").addClass("on");
+    else if (status == 2) $("#cur_month").addClass("on");
+    else $("#next_month").addClass("on");
+
+    var pid = sg.common.param("pid");
+    if (pid > 0) {
+        sessionStorage.setItem("selPid", pid);
+
+        $(".sku.place .element.active").on("click", function () {
+            sessionStorage.removeItem("selSid");
+
+            $(".right.sel").each(function() {
+                $(this).html("");
+            });
+
+            $(this).children(".right.sel").html("<img src='/img/sel2x.png' />");
+
+            sessionStorage.setItem("selSid", $(this).attr("sid"));
+        });
+
+        $("#btn_submit").on("click", function () {
+            var pid = sessionStorage.getItem("selPid");
+            var sid = sessionStorage.getItem("selSid");
+            if (pid > 0) {
+                if (sid == null || sid <= 0) {
+                    alert("请先选择一个时间地点");
+                } else {
+                    sg.common.post(sg.config.api + "/course/booking", {
+                        utoken: sg.common.cookie.get("utoken"),
+                        pid: pid,
+                        sid: sid
+                    }, sg.skuplace.booking_success, sg.skuplace.booking_error);
+                }
+            }
+        });
+    }
+});
+
+sg.skuplace = {
+    param_status: function () {
+        var status = sg.common.param("status");
+        if (status == null) status = 1;
+
+        return status;
+    },
+
+    booking_success: function (resp) {
+        if (resp.errno != 0) {
+            alert(resp.errmsg);
+        } else {
+            alert("预约成功");
+            sg.common.back();
+        }
+    },
+
+    booking_error: function (resp) {
+        alert("网络异常，请稍后再试");
+    }
+}
