@@ -377,12 +377,11 @@ div.error {
     height: 0.3rem;
     line-height: 0.3rem;
     font-size: 0.18rem;
-    font-weight: bold;
 }
 
 .list .element .right .desc {
     height: 0.3rem;
     line-height: 0.3rem;
     font-size: 0.16rem;
-    color: #999999;
+    color: #888888;
 }

@@ -157,23 +157,22 @@
 .free .subject .desc .title {
     height: 0.32rem;
     line-height: 0.32rem;
-    font-weight: bold;
     font-size: 0.2rem;
-    color: #333333;
+    color: #222222;
 }
 
 .free .subject .desc .intro {
     height: 0.25rem;
     line-height: 0.25rem;
     font-size: 0.15rem;
-    color: #999999;
+    color: #666666;
 }
 
 .free .subject .desc .tags {
     height: 0.25rem;
     line-height: 0.25rem;
     font-size: 0.15rem;
-    color: #999999;
+    color: #666666;
 }
 
 .free .subject .desc .price {
