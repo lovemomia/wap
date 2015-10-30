@@ -1,6 +1,10 @@
 $(function () {
-    var oid = sg.bookable.param_oid();
-    sg.bookable.more(oid, 0);
+    if (!sg.common.is_login()) {
+        window.location.href = "/auth/login";
+    } else {
+        var oid = sg.bookable.param_oid();
+        sg.bookable.more(oid, 0);
+    }
 });
 
 sg.bookable = {
@@ -12,8 +16,6 @@ sg.bookable = {
     },
 
     more: function (oid, start) {
-        sg.common.check_login();
-
         sg.common.get(sg.config.api + "/user/bookable", {
             utoken: sg.common.cookie.get("utoken"),
             oid: oid,

@@ -137,11 +137,9 @@ sg.common = {
         }
     },
 
-    check_login: function () {
+    is_login: function () {
         var utoken = sg.common.cookie.get("utoken");
-        if (utoken == '') {
-            window.location.href = "/auth/login";
-        }
+        return utoken != '';
     },
 
     remove_histories: function () {

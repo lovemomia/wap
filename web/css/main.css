@@ -307,7 +307,7 @@ div.error {
 
 .form dd {
     margin: 0;
-    width: 1.8rem;
+    width: 2.9rem;
     height: 0.55rem;
     line-height: 0.55rem;
 }
@@ -324,7 +324,7 @@ div.error {
 .form dd input {
     float: left;
     margin: 0.17rem 0 0.13rem 0;
-    width: 1.5rem;
+    width: 2.5rem;
     height: 0.25rem;
     font-size: 0.16rem;
     vertical-align: middle;

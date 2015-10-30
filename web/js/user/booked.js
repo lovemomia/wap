@@ -3,7 +3,11 @@ $(function () {
     if (status == 2) $("#finished").addClass("on");
     else $("#notfinished").addClass("on");
 
-    sg.booked.more(status, 0);
+    if (!sg.common.is_login()) {
+        window.location.href = "/auth/login";
+    } else {
+        sg.booked.more(status, 0);
+    }
 });
 
 sg.booked = {
@@ -15,8 +19,6 @@ sg.booked = {
     },
 
     more: function (status, start) {
-        sg.common.check_login();
-
         if (status == 2) {
             sg.common.get(sg.config.api + "/user/course/finished", {
                 utoken: sg.common.cookie.get("utoken"),

@@ -4,7 +4,11 @@ $(function () {
     else if (status == 2) $("#not_payed").addClass("on");
     else $("#payed").addClass("on");
 
-    sg.order.more(status, 0);
+    if (!sg.common.is_login()) {
+        window.location.href = "/auth/login";
+    } else {
+        sg.order.more(status, 0);
+    }
 });
 
 sg.order = {
@@ -16,8 +20,6 @@ sg.order = {
     },
 
     more: function (status, start) {
-        sg.common.check_login();
-
         sg.common.get(sg.config.api + "/user/order", {
             utoken: sg.common.cookie.get("utoken"),
             status: status,

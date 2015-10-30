@@ -1,11 +1,13 @@
 $(function () {
-    sg.common.check_login();
-
-    var oid = sg.common.param("oid");
-    sg.common.post(sg.config.api_ssl + "/payment/check", {
-        utoken: sg.common.cookie.get("utoken"),
-        oid: oid
-    }, sg.result.success, sg.result.error);
+    if (!sg.common.is_login()) {
+        window.location.href = "/auth/login";
+    } else {
+        var oid = sg.common.param("oid");
+        sg.common.post(sg.config.api_ssl + "/payment/check", {
+            utoken: sg.common.cookie.get("utoken"),
+            oid: oid
+        }, sg.result.success, sg.result.error);
+    }
 });
 
 sg.result = {

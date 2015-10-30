@@ -24,7 +24,7 @@
                 </dd>
             </dl>
             <hr class="sep" />
-            <dl id="last">
+            <dl class="code">
                 <dt class="letter-sp8">验证码</dt>
                 <dd class="left">
                     <i></i>

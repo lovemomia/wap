@@ -1,10 +1,12 @@
 $(function () {
-    sg.common.check_login();
-
-    $("#browsefile").change(sg.profile.update_avatar);
-    $("#nickname").on("click", sg.profile.update_nickname);
-    $("#sex").on("click", sg.profile.update_sex);
-    $("#address").on("click", sg.profile.update_address);
+    if (!sg.common.is_login()) {
+        window.location.href = "/auth/login";
+    } else {
+        $("#browsefile").change(sg.profile.update_avatar);
+        $("#nickname").on("click", sg.profile.update_nickname);
+        $("#sex").on("click", sg.profile.update_sex);
+        $("#address").on("click", sg.profile.update_address);
+    }
 });
 
 sg.profile = {
