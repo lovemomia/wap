@@ -55,8 +55,9 @@ sg.order = {
 
         function generate_order_html(order) {
             var html = "";
-            html += "<div class='element'>";
+            html += "<div class='order'>";
             html += "<a href='/subjectdetail?id=" + order.subjectId + "'>";
+            html += "<div class='element'>";
             html += "<div class='left'>";
             html += "<img src='" + order.cover + "' />";
             html += "</div>";
@@ -66,13 +67,14 @@ sg.order = {
             html += "<div class='count overflow-hidden'>数量：" + order.count + "</div>";
             html += "<div style='clear: both;'></div>";
             html += "</div>";
-            html += "</a>";
-            html += "<div class='right btn'>";
-            if (order.status < 3) {
-                html += "<button class='btn-orange' onclick='sg.order.pay(" + order.id +  "," + order.count + "," + order.totalFee + ")'>付款</button>";
-            }
-            html += "</div>";
             html += "<div style='clear: both;'></div>";
+            html += "</div>";
+            html += "</a>";
+            if (order.status < 3) {
+                html += "<div class='btn'>";
+                html += "<button class='btn-orange' onclick='sg.order.pay(" + order.id +  "," + order.count + "," + order.totalFee + ")'>付款</button>";
+                html += "</div>";
+            }
             html += "</div>";
 
             return html;

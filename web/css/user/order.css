@@ -18,6 +18,10 @@
     background-color: #ffffff;
 }
 
+.list .order {
+    position: relative;
+}
+
 .list .element .left {
     width: 1.15rem;
     height: 0.85rem;
@@ -49,12 +53,14 @@
     color: #999999;
 }
 
-.list .element .right.btn {
-    padding: 0.2rem 0;
+.list .order .btn {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.1rem;
     width: 0.85rem;
-    height: 0.85rem;
+    height: 0.4rem;
 }
 
-.list .element .right.btn .btn-orange {
+.list .order .btn .btn-orange {
     padding-top: 0.08rem;
 }
