@@ -34,7 +34,7 @@ $(function () {
                         utoken: sg.common.cookie.get("utoken"),
                         pid: pid,
                         sid: sid
-                    }, sg.skuplace.booking_success, sg.skuplace.booking_error);
+                    }, sg.skuplace.booking_success, sg.common.error);
                 }
             }
         });
@@ -56,9 +56,5 @@ sg.skuplace = {
             alert("预约成功");
             sg.common.back();
         }
-    },
-
-    booking_error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
-}
+};

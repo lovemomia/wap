@@ -8,7 +8,7 @@ sg.courselist = {
         sg.common.get(sg.config.api + "/subject/course", {
             id: id,
             start: start
-        }, sg.courselist.success, sg.courselist.error);
+        }, sg.courselist.success, sg.common.error);
     },
 
     success: function (resp) {
@@ -68,9 +68,5 @@ sg.courselist = {
                 sg.courselist.more(status, next_index);
             });
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

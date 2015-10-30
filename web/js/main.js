@@ -187,5 +187,9 @@ sg.common = {
 
     is_weixin: function () {
         return navigator.userAgent.toLowerCase().indexOf('micromessenger') != -1;
+    },
+
+    error: function () {
+        alert("网络异常，请稍后再试");
     }
 };

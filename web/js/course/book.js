@@ -8,7 +8,7 @@ sg.book = {
         sg.common.get(sg.config.api + "/course/book", {
             id: id,
             start: start
-        }, sg.book.success, sg.book.error);
+        }, sg.book.success, sg.common.error);
     },
 
     success: function (resp) {
@@ -44,9 +44,5 @@ sg.book = {
                 sg.book.more(id, next_index);
             });
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

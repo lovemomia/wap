@@ -59,7 +59,7 @@ sg.payment = {
             utoken: sg.common.cookie.get("utoken"),
             oid: sg.common.param("oid"),
             type: "wap"
-        }, sg.payment.ali_pre_success, sg.payment.error);
+        }, sg.payment.ali_pre_success, sg.common.error);
     },
 
     ali_pre_success: function (resp) {
@@ -89,7 +89,7 @@ sg.payment = {
             oid: sg.common.param("oid"),
             code: code,
             type: "JSAPI"
-        }, sg.payment.weixin_pre_success, sg.payment.error);
+        }, sg.payment.weixin_pre_success, sg.common.error);
     },
 
     weixin_pre_success: function (resp) {
@@ -129,9 +129,5 @@ sg.payment = {
 
             }
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

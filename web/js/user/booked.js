@@ -21,12 +21,12 @@ sg.booked = {
             sg.common.get(sg.config.api + "/user/course/finished", {
                 utoken: sg.common.cookie.get("utoken"),
                 start: start
-            }, sg.booked.success, sg.booked.error);
+            }, sg.booked.success, sg.common.error);
         } else {
             sg.common.get(sg.config.api + "/user/course/notfinished", {
                 utoken: sg.common.cookie.get("utoken"),
                 start: start
-            }, sg.booked.success, sg.booked.error);
+            }, sg.booked.success, sg.common.error);
         }
     },
 
@@ -66,7 +66,7 @@ sg.booked = {
                                 parent_div.remove();
                                 $(".list .booked .element:last").removeClass("bottom-border");
                             }
-                        }, sg.booked.error);
+                        }, sg.common.error);
                     }
                 });
             }
@@ -111,9 +111,5 @@ sg.booked = {
                 sg.booked.more(status, next_index);
             });
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

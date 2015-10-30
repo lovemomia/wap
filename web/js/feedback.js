@@ -12,7 +12,7 @@ $(function () {
             sg.common.post(sg.config.api + "/feedback", {
                 content: content,
                 contact: contact
-            }, sg.feedback.success, sg.feedback.error);
+            }, sg.feedback.success, sg.common.error);
         }
     });
 });
@@ -24,9 +24,5 @@ sg.feedback = {
         } else {
             alert("反馈提交成功");
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

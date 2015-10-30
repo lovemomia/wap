@@ -22,7 +22,7 @@ sg.order = {
             utoken: sg.common.cookie.get("utoken"),
             status: status,
             start: start
-        }, sg.order.success, sg.order.error);
+        }, sg.order.success, sg.common.error);
     },
 
     success: function (resp) {
@@ -85,10 +85,6 @@ sg.order = {
                 sg.order.more(status, next_index);
             });
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     },
 
     pay: function (oid, count, fee) {

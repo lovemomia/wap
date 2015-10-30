@@ -53,6 +53,15 @@
     border-radius: 0.35rem;
 }
 
+#browsefile{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    height: 0.7rem;
+    outline: none;
+    opacity: 0;
+}
+
 .profile .line .info {
     margin: 0.01rem 0.1rem 0 0;
     height: 0.35rem;

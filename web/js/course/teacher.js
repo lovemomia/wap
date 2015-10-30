@@ -8,7 +8,7 @@ sg.teacher = {
         sg.common.get(sg.config.api + "/course/teacher", {
             id: id,
             start: start
-        }, sg.teacher.success, sg.teacher.error);
+        }, sg.teacher.success, sg.common.error);
     },
 
     success: function (resp) {
@@ -62,9 +62,5 @@ sg.teacher = {
                 sg.teacher.more(id, next_index);
             });
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

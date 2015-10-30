@@ -18,7 +18,7 @@ sg.bookable = {
             utoken: sg.common.cookie.get("utoken"),
             oid: oid,
             start: start
-        }, sg.bookable.success, sg.bookable.error);
+        }, sg.bookable.success, sg.common.error);
     },
 
     success: function (resp) {
@@ -73,9 +73,5 @@ sg.bookable = {
                 sg.bookable.more(oid, next_index);
             });
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

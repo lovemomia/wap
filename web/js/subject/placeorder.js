@@ -49,7 +49,7 @@ $(function () {
             sg.common.post(sg.config.api + "/subject/order", {
                 utoken: sg.common.cookie.get("utoken"),
                 order: JSON.stringify(order)
-            }, sg.placeorder.success, sg.placeorder.error);
+            }, sg.placeorder.success, sg.common.error);
         }
     });
 });
@@ -62,9 +62,5 @@ sg.placeorder = {
             var data = resp.data;
             window.location.href = "/payment/pay?oid=" + data.id + "&count=" + data.count + "&fee=" + data.totalFee;
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
-}
+};

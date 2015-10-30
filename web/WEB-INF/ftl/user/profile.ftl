@@ -13,9 +13,10 @@
                 <div class="left letter-sp32">头像</div>
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>
                 <div class="avatar right"><img id="avatar" src="${user.avatar}" /></div>
+                <input type="file" id="browsefile" name="file">
             </div>
             <hr class="sep">
-            <div class="line">
+            <div id="nickname" class="line">
                 <div class="left letter-sp32">昵称</div>
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>
                 <div class="info right">${user.nickName}</div>
@@ -27,13 +28,13 @@
             </div>
         </div>
         <div class="profile top-margin">
-            <div class="line">
+            <div id="sex" class="line">
                 <div class="left letter-sp32">性别</div>
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>
                 <div class="info right">${user.sex}</div>
             </div>
             <hr class="sep">
-            <div class="line">
+            <div id="address" class="line">
                 <div class="left letter-sp8">常住地</div>
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>
                 <div class="info right">${user.address}</div>

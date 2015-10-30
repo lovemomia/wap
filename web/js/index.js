@@ -17,12 +17,12 @@ sg.index = {
             sg.common.get(sg.config.api + "/index", {
                 city: city,
                 start: start
-            }, sg.index.success_init, sg.index.error);
+            }, sg.index.success_init, sg.common.error);
         } else {
             sg.common.get(sg.config.api + "/index", {
                 city: city,
                 start: start
-            }, sg.index.success_more, sg.index.error);
+            }, sg.index.success_more, sg.common.error);
         }
     },
 
@@ -202,9 +202,5 @@ sg.index = {
                 sg.index.read_data(1, next_index);
             });
         }
-    },
-
-    error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };

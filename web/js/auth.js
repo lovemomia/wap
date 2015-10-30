@@ -7,7 +7,7 @@ $(function () {
         } else {
             sg.common.post(sg.config.api + "/auth/send", {
                 mobile: mobile
-            }, sg.auth.auth_send_success, sg.auth.auth_error);
+            }, sg.auth.auth_send_success, sg.common.error);
         }
     });
 
@@ -30,7 +30,7 @@ $(function () {
                 password: password,
                 nickname: nickName,
                 code: code
-            }, sg.auth.auth_success, sg.auth.auth_error);
+            }, sg.auth.auth_success, sg.common.error);
         }
     });
 
@@ -107,9 +107,5 @@ sg.auth = {
             sg.common.cookie.set("utoken", data.token, 365);
             sg.common.back();
         }
-    },
-
-    auth_error: function (resp) {
-        alert("网络异常，请稍后再试");
     }
 };
