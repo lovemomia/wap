@@ -59,7 +59,7 @@
         </div>
         
         <#if user??>
-            <div class="btn top-margin">
+            <div class="btn top-margin-lg">
                 <button id="btn_logout" class="btn-lg-main">退出登录</button>
             </div>
         </#if>

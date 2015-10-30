@@ -43,7 +43,7 @@ a {
 
 .no-margin { margin: 0 }
 .no-padding { padding: 0; }
-.no-border { border: 0 }
+.no-border { border: none }
 
 .top-margin { margin-top: 0.1rem; }
 .bottom-margin { margin-bottom: 0.1rem }
