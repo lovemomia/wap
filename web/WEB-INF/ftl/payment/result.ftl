@@ -5,7 +5,7 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>支付结果</div>
     <div class="content">
         <div class="logo"><img src="/img/logo3x.png"></div>
         <div class="title"></div>

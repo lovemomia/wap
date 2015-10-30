@@ -28,7 +28,7 @@ $(function () {
             alert("请选择一个课程包");
         } else if (!name || name == "") {
             alert("联系人姓名不能为空");
-        } else if (!mobile || mobile == "" || sg.common.invalid_mobile(mobile)) {
+        } else if (!mobile || mobile == "" || sg.common.is_invalid_mobile(mobile)) {
             alert("无效的手机号吗");
         } else {
             var order = {
@@ -49,18 +49,13 @@ $(function () {
             sg.common.post(sg.config.api + "/subject/order", {
                 utoken: sg.common.cookie.get("utoken"),
                 order: JSON.stringify(order)
-            }, sg.placeorder.success, sg.common.error);
+            }, sg.placeorder.success);
         }
     });
 });
 
 sg.placeorder = {
-    success: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            var data = resp.data;
-            window.location.href = "/payment/pay?oid=" + data.id + "&count=" + data.count + "&fee=" + data.totalFee;
-        }
+    success: function (data) {
+        window.location.href = "/payment/pay?oid=" + data.id + "&count=" + data.count + "&fee=" + data.totalFee;
     }
 };

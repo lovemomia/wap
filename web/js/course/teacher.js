@@ -8,28 +8,24 @@ sg.teacher = {
         sg.common.get(sg.config.api + "/course/teacher", {
             id: id,
             start: start
-        }, sg.teacher.success, sg.common.error);
+        }, sg.teacher.success);
     },
 
-    success: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
+    success: function (data) {
+        var list = data.list;
+        if (list.length > 0) {
+            unbind_scrollin();
+
+            var html = "";
             var list = resp.data.list;
-            if (list.length > 0) {
-                unbind_scrollin();
-
-                var html = "";
-                var list = resp.data.list;
-                for (var i = 0; i < list.length; i++) {
-                    html += generate_teacher_html(list[i]);
-                    if (i < list.length - 1) html += "<hr class='sep' />";
-                }
-
-                $(".content").append(html);
-
-                if (resp.data.nextIndex != undefined) bind_scrollin(sg.common.param("id"), resp.data.nextIndex);
+            for (var i = 0; i < list.length; i++) {
+                html += generate_teacher_html(list[i]);
+                if (i < list.length - 1) html += "<hr class='sep' />";
             }
+
+            $(".content").append(html);
+
+            if (data.nextIndex != undefined) bind_scrollin(sg.common.param("id"), data.nextIndex);
         }
 
         function unbind_scrollin() {

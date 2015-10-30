@@ -34,14 +34,7 @@ sg.common = {
         }
     },
 
-    param: function (name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]);
-        return null;
-    },
-
-    get: function (url, params, success_callback, error_callback) {
+    get: function (url, params, success_callback) {
         $.ajax({
             url: url,
             data: params,
@@ -49,15 +42,28 @@ sg.common = {
             dataType: "json",
             timeout: 5000,
             success: function (resp) {
-                success_callback(resp);
+                sg.common.success(resp, success_callback);
             },
-            error: function (resp) {
-                error_callback(resp);
+            error: function () {
+                sg.common.error();
             }
         });
     },
 
-    post: function (url, params, success_callback, error_callback) {
+    success: function (resp, success_callback) {
+        if (resp.errno != 0) {
+            alert(resp.errmsg);
+            if (resp.errno == 100001) window.location.href = "/auth/login";
+        } else {
+            success_callback(resp.data);
+        }
+    },
+
+    error: function () {
+        alert("网络异常，请稍后再试");
+    },
+
+    post: function (url, params, success_callback) {
         $.ajax({
             url: url,
             data: params,
@@ -65,12 +71,19 @@ sg.common = {
             dataType: "json",
             timeout: 5000,
             success: function (resp) {
-                success_callback(resp);
+                sg.common.success(resp);
             },
-            error: function (resp) {
-                error_callback(resp);
+            error: function () {
+                sg.common.error();
             }
         });
+    },
+
+    param: function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
     },
 
     url_path: function (url) {
@@ -137,11 +150,6 @@ sg.common = {
         }
     },
 
-    is_login: function () {
-        var utoken = sg.common.cookie.get("utoken");
-        return utoken != '';
-    },
-
     remove_histories: function () {
         sessionStorage.removeItem("url_back");
         sessionStorage.removeItem("url_history");
@@ -183,15 +191,16 @@ sg.common = {
         return html;
     },
 
-    invalid_mobile: function (mobile) {
+    is_login: function () {
+        var utoken = sg.common.cookie.get("utoken");
+        return utoken != '';
+    },
+
+    is_invalid_mobile: function (mobile) {
         return !(/^1\d{10}$/.test(mobile));
     },
 
     is_weixin: function () {
         return navigator.userAgent.toLowerCase().indexOf('micromessenger') != -1;
-    },
-
-    error: function () {
-        alert("网络异常，请稍后再试");
     }
 };

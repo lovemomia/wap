@@ -20,29 +20,25 @@ sg.bookable = {
             utoken: sg.common.cookie.get("utoken"),
             oid: oid,
             start: start
-        }, sg.bookable.success, sg.common.error);
+        }, sg.bookable.success);
     },
 
-    success: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            var list = resp.data.list;
-            if (list.length > 0) {
-                unbind_scrollin();
+    success: function (data) {
+        var list = data.list;
+        if (list.length > 0) {
+            unbind_scrollin();
 
-                var html = "";
-                html += "<div class='list bottom-border'>";
-                for (var i = 0; i < list.length; i++) {
-                    html += generate_package_html(list[i]);
-                    if (i < list.length - 1) html += "<hr class='sep' />";
-                }
-                html += "</div>";
-
-                $(".content").append(html);
-
-                if (resp.data.nextIndex != undefined) bind_scrollin(sg.bookable.param_oid(), resp.data.nextIndex);
+            var html = "";
+            html += "<div class='list bottom-border'>";
+            for (var i = 0; i < list.length; i++) {
+                html += generate_package_html(list[i]);
+                if (i < list.length - 1) html += "<hr class='sep' />";
             }
+            html += "</div>";
+
+            $(".content").append(html);
+
+            if (resp.data.nextIndex != undefined) bind_scrollin(sg.bookable.param_oid(), resp.data.nextIndex);
         }
 
         function unbind_scrollin() {

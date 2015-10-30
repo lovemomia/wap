@@ -34,7 +34,7 @@ $(function () {
                         utoken: sg.common.cookie.get("utoken"),
                         pid: pid,
                         sid: sid
-                    }, sg.skuplace.booking_success, sg.common.error);
+                    }, sg.skuplace.booking_success);
                 }
             }
         });
@@ -49,12 +49,8 @@ sg.skuplace = {
         return status;
     },
 
-    booking_success: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            alert("预约成功");
-            sg.common.back();
-        }
+    booking_success: function (data) {
+        alert("预约成功");
+        sg.common.back();
     }
 };

@@ -17,35 +17,30 @@ sg.index = {
             sg.common.get(sg.config.api + "/index", {
                 city: city,
                 start: start
-            }, sg.index.success_init, sg.common.error);
+            }, sg.index.success_init);
         } else {
             sg.common.get(sg.config.api + "/index", {
                 city: city,
                 start: start
-            }, sg.index.success_more, sg.common.error);
+            }, sg.index.success_more);
         }
     },
 
-    success_init: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            data = resp.data;
-            generate_banners_html(data.banners);
-            generate_icons_html(data.icons);
-            generate_events_html(data.events);
+    success_init: function (data) {
+        generate_banners_html(data.banners);
+        generate_icons_html(data.icons);
+        generate_events_html(data.events);
 
-            if (data.subjects.totalCount > 0) {
-                var html = "";
-                html += "<div class='free'>";
-                html += "<div class='title'><hr class='left' />课程试听<hr class='right' /></div>";
-                html += "</div>";
+        if (data.subjects.totalCount > 0) {
+            var html = "";
+            html += "<div class='free'>";
+            html += "<div class='title'><hr class='left' />课程试听<hr class='right' /></div>";
+            html += "</div>";
 
-                $(".content").append(html);
-            }
-
-            sg.index.success_more(resp);
+            $(".content").append(html);
         }
+
+        sg.index.success_more(data);
 
         function generate_banners_html(banners) {
             if (banners == undefined || banners.length == 0) return;
@@ -144,15 +139,10 @@ sg.index = {
         }
     },
 
-    success_more: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            unbind_scrollin();
-            data = resp.data;
-            generate_subjects_html(data.subjects);
-            if (data.subjects.nextIndex != undefined) bind_scrollin(data.subjects.nextIndex);
-        }
+    success_more: function (data) {
+        unbind_scrollin();
+        generate_subjects_html(data.subjects);
+        if (data.subjects.nextIndex != undefined) bind_scrollin(data.subjects.nextIndex);
 
         function unbind_scrollin() {
             var last = $(".subject:last");

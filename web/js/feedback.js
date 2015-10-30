@@ -12,17 +12,13 @@ $(function () {
             sg.common.post(sg.config.api + "/feedback", {
                 content: content,
                 contact: contact
-            }, sg.feedback.success, sg.common.error);
+            }, sg.feedback.success);
         }
     });
 });
 
 sg.feedback = {
-    success: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            alert("反馈提交成功");
-        }
+    success: function (data) {
+        alert("反馈提交成功");
     }
 };

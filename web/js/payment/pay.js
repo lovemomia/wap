@@ -59,18 +59,13 @@ sg.payment = {
             utoken: sg.common.cookie.get("utoken"),
             oid: sg.common.param("oid"),
             type: "wap"
-        }, sg.payment.ali_pre_success, sg.common.error);
+        }, sg.payment.ali_pre_success);
     },
 
-    ali_pre_success: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            data = resp.data;
-            var param = "_input_charset=" + data.input_charset + "&body=" + data.body + "&it_b_pay=" + data.it_b_pay + "&notify_url=" + encodeURIComponent(data.notify_url) + "&out_trade_no=" + data.out_trade_no + "&partner=" + data.partner + "&payment_type=" + data.payment_type + "&seller_id=" + data.seller_id + "&service=" + data.service + "&sign=" + data.sign + "&sign_type=" + data.sign_type + "&subject=" + data.subject + "&total_fee=" + data.total_fee + "&show_url=" + encodeURIComponent(data.show_url) + "&return_url=" + encodeURIComponent(data.return_url) + "";
-            var url = "https://mapi.alipay.com/gateway.do?" + param;
-            window.location.href = url;
-        }
+    ali_pre_success: function (data) {
+        var param = "_input_charset=" + data.input_charset + "&body=" + data.body + "&it_b_pay=" + data.it_b_pay + "&notify_url=" + encodeURIComponent(data.notify_url) + "&out_trade_no=" + data.out_trade_no + "&partner=" + data.partner + "&payment_type=" + data.payment_type + "&seller_id=" + data.seller_id + "&service=" + data.service + "&sign=" + data.sign + "&sign_type=" + data.sign_type + "&subject=" + data.subject + "&total_fee=" + data.total_fee + "&show_url=" + encodeURIComponent(data.show_url) + "&return_url=" + encodeURIComponent(data.return_url) + "";
+        var url = "https://mapi.alipay.com/gateway.do?" + param;
+        window.location.href = url;
     },
 
     weixin_pay: function () {
@@ -89,45 +84,40 @@ sg.payment = {
             oid: sg.common.param("oid"),
             code: code,
             type: "JSAPI"
-        }, sg.payment.weixin_pre_success, sg.common.error);
+        }, sg.payment.weixin_pre_success);
     },
 
-    weixin_pre_success: function (resp) {
+    weixin_pre_success: function (data) {
         var oid = sg.common.param("oid");
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
+        //判断是否有内置对象
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
         } else {
-            //判断是否有内置对象
-            if (typeof WeixinJSBridge == "undefined") {
-                if (document.addEventListener) {
-                    document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-                } else if (document.attachEvent) {
-                    document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-                    document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-                }
-            } else {
-                onBridgeReady();
-            }
+            onBridgeReady();
+        }
 
-            function onBridgeReady() {
-                WeixinJSBridge.invoke(
-                    'getBrandWCPayRequest', {
-                        "appId": resp.data.appId,
-                        "timeStamp": resp.data.timeStamp,
-                        "nonceStr": resp.data.nonceStr,
-                        "package": resp.data.prepayId,
-                        "signType": resp.data.signType,
-                        "paySign": resp.data.paySign
-                    }, function(res) {
-                        if (res.err_msg == "get_brand_wcpay_request:ok") {
-                            window.location.href = "/payment/result?oid=" + oid;
-                        } else {
-                            alert("支付失败: " + res.err_msg);
-                        }
+        function onBridgeReady() {
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest', {
+                    "appId": data.appId,
+                    "timeStamp": data.timeStamp,
+                    "nonceStr": data.nonceStr,
+                    "package": data.prepayId,
+                    "signType": data.signType,
+                    "paySign": data.paySign
+                }, function(res) {
+                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+                        window.location.href = "/payment/result?oid=" + oid;
+                    } else {
+                        alert("支付失败: " + res.err_msg);
                     }
-                );
-
-            }
+                }
+            );
         }
     }
 };

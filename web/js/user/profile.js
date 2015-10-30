@@ -40,13 +40,9 @@ sg.profile = {
                             sg.common.post(sg.config.api + "/user/avatar", {
                                 utoken: sg.common.cookie.get("utoken"),
                                 avatar: path
-                            }, function (resp) {
-                                if (resp.errno != 0) {
-                                    alert(resp.errmsg);
-                                } else {
-                                    avatar_img.attr("src", resp.data.avatar);
-                                }
-                            }, sg.common.error);
+                            }, function (data) {
+                                avatar_img.attr("src", data.avatar);
+                            });
                         }
                     },
                     error: function () {
@@ -64,13 +60,9 @@ sg.profile = {
             sg.common.post(sg.config.api + "/user/nickname", {
                 utoken: sg.common.cookie.get("utoken"),
                 nickname: nickname
-            }, function (resp) {
-                if (resp.errno != 0) {
-                    alert(resp.errmsg);
-                } else {
-                    nickname_div.html(nickname);
-                }
-            }, sg.common.error);
+            }, function (data) {
+                nickname_div.html(data.nickName);
+            });
         }
     },
 
@@ -81,13 +73,9 @@ sg.profile = {
             sg.common.post(sg.config.api + "/user/sex", {
                 utoken: sg.common.cookie.get("utoken"),
                 sex: sex
-            }, function (resp) {
-                if (resp.errno != 0) {
-                    alert(resp.errmsg);
-                } else {
-                    sex_div.html(sex);
-                }
-            }, sg.common.error);
+            }, function (data) {
+                sex_div.html(data.sex);
+            });
         }
     },
 
@@ -98,13 +86,9 @@ sg.profile = {
             sg.common.post(sg.config.api + "/user/address", {
                 utoken: sg.common.cookie.get("utoken"),
                 address: address
-            }, function (resp) {
-                if (resp.errno != 0) {
-                    alert(resp.errmsg);
-                } else {
-                    address_div.html(address);
-                }
-            }, sg.common.error);
+            }, function (data) {
+                address_div.html(data.address);
+            });
         }
     }
 };

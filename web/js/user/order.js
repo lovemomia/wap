@@ -24,30 +24,26 @@ sg.order = {
             utoken: sg.common.cookie.get("utoken"),
             status: status,
             start: start
-        }, sg.order.success, sg.common.error);
+        }, sg.order.success);
     },
 
-    success: function (resp) {
-        if (resp.errno != 0) {
-            alert(resp.errmsg);
-        } else {
-            var list = resp.data.list;
-            if (list.length > 0) {
-                var status = sg.order.param_status();
-                unbind_scrollin();
+    success: function (data) {
+        var list = data.list;
+        if (list.length > 0) {
+            var status = sg.order.param_status();
+            unbind_scrollin();
 
-                var html = "";
-                html += "<div class='list bottom-border'>";
-                for (var i = 0; i < list.length; i++) {
-                    html += generate_order_html(list[i]);
-                    if (i < list.length - 1) html += "<hr class='sep' />";
-                }
-                html += "</div>";
-
-                $(".content").append(html);
-
-                if (resp.data.nextIndex != undefined) bind_scrollin(status, resp.data.nextIndex);
+            var html = "";
+            html += "<div class='list bottom-border'>";
+            for (var i = 0; i < list.length; i++) {
+                html += generate_order_html(list[i]);
+                if (i < list.length - 1) html += "<hr class='sep' />";
             }
+            html += "</div>";
+
+            $(".content").append(html);
+
+            if (resp.data.nextIndex != undefined) bind_scrollin(status, resp.data.nextIndex);
         }
 
         function unbind_scrollin() {
