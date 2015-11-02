@@ -47,8 +47,8 @@ sg.booked = {
 
             $(".content").append(html);
 
-            if (resp.data.nextIndex != undefined) sg.common.bind_scrollin(function () {
-                sg.booked.more(status, resp.data.nextIndex);
+            if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
+                sg.booked.more(status, data.nextIndex);
             });
 
             $(".list .booked .element:last").removeClass("bottom-border");

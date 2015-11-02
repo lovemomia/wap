@@ -43,8 +43,8 @@ sg.order = {
 
             $(".content").append(html);
 
-            if (resp.data.nextIndex != undefined) sg.common.bind_scrollin(function () {
-                sg.order.more(status, resp.data.nextIndex);
+            if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
+                sg.order.more(status, data.nextIndex);
             });
         }
 

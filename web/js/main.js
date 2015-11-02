@@ -75,7 +75,7 @@ sg.common = {
             dataType: "json",
             timeout: 5000,
             success: function (resp) {
-                sg.common.success(resp);
+                sg.common.success(resp, success_callback);
             },
             error: function () {
                 sg.common.error();
@@ -114,6 +114,10 @@ sg.common = {
         if (url_back == null) {
             var current_url = window.location.href;
             var referrer_url = document.referrer;
+
+            var path = sg.common.url_path(current_url);
+            if (path.startWith("/auth/")) sessionStorage.removeItem("authRef");
+
             sg.common.push_history(current_url, referrer_url);
         } else {
             sessionStorage.removeItem("url_back");

@@ -38,8 +38,8 @@ sg.bookable = {
 
             $(".content").append(html);
 
-            if (resp.data.nextIndex != undefined) sg.common.bind_scrollin(function () {
-                sg.bookable.more(sg.bookable.param_oid(), resp.data.nextIndex);
+            if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
+                sg.bookable.more(sg.bookable.param_oid(), data.nextIndex);
             });
         }
 

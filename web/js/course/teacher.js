@@ -17,7 +17,6 @@ sg.teacher = {
             sg.common.unbind_scrollin();
 
             var html = "";
-            var list = resp.data.list;
             for (var i = 0; i < list.length; i++) {
                 html += generate_teacher_html(list[i]);
                 if (i < list.length - 1) html += "<hr class='sep' />";
