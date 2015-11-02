@@ -42,12 +42,12 @@
 
 .sku.text .month {
     line-height: 0.2rem;
-    font-size: 0.12rem;
+    font-size: 0.13rem;
 }
 
 .sku.text .weekday {
     line-height: 0.15rem;
-    font-size: 0.1rem;
+    font-size: 0.11rem;
     color: #888888;
 }
 
