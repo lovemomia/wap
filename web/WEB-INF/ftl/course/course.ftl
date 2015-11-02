@@ -39,7 +39,7 @@
         </#if>
         <div class="course-title">${course.title}</div>
 
-        <div class="course text no-border">
+        <div class="course text no-top-padding no-border">
             <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span><span>元/次</span></div>
             <div style="clear:both"></div>
         </div>

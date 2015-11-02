@@ -1,6 +1,6 @@
 .course-title {
     padding: 0.1rem 0.1rem 0 0.1rem;
-    font-size: 0.22rem;
+    font-size: 0.19rem;
     background-color: #ffffff;
     color: #222222;
     text-align: left;
@@ -13,6 +13,10 @@
 
 .course.img .scroll_wrap {
     height: 2.5rem;
+}
+
+.course.text.no-top-padding {
+    padding-top: 0
 }
 
 .course .price {
