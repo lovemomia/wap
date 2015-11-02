@@ -34,7 +34,7 @@ sg.booked = {
             var html = "";
             html += "<div class='list bottom-border'>";
             for (var i = 0; i < list.length; i++) {
-                html += generate_course_html(list[i], i, list.length);
+                html += generate_course_html(list[i]);
             }
             html += "</div>";
 
@@ -45,49 +45,31 @@ sg.booked = {
             });
 
             $(".list .booked .element:last").removeClass("bottom-border");
-            $(".btn-delete").on("click", function () {
-                var parent_div = $(this).parent().parent();
-                var bid = parent_div.attr("bid");
-
-                if (window.confirm('确定要删除这门课程吗？')) {
-                    sg.common.post(sg.config.api + "/course/cancel", {
-                        utoken: sg.common.cookie.get("utoken"),
-                        bid: bid
-                    }, function (data) {
-                        parent_div.remove();
-                        $(".list .booked .element:last").removeClass("bottom-border");
-                    });
-                }
-            });
         }
 
-        function generate_course_html(course, index, count) {
+        function generate_course_html(course) {
             var status = sg.common.param("status", 1);
 
             var html = "";
-            html += "<div bid=" + course.bookingId + " class='booked'>";
-            html += "<a href='/course?id=" + course.id + "'>";
+            html += "<div class='booked'>";
+            if (status == 1) {
+                html += "<a href='/course/cancelable?id=" + course.id + '&bid=' + course.bookingId + "'>";
+            } else {
+                html += "<a href='/course?id=" + course.id + "'>";
+            }
             html += "<div class='element scrollable bottom-border'>";
             html += "<div class='left'>";
             html += "<img src='" + course.cover + "' />";
             html += "</div>";
-            if (status == 1) {
-                html += "<div class='right delete'>";
-            } else {
-                html += "<div class='right'>";
-            }
+            html += "<div class='right'>";
             html += "<div class='title overflow-hidden'>" + course.title + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.place.address + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.scheduler + "</div>";
+            html += "<div class='price'><span>价值 </span><span class='number'>" + course.price + "</span><span>/次</span></div>";
             html += "</div>";
             html += "<div style='clear: both;'></div>";
             html += "</div>";
             html += "</a>";
-            if (status == 1) {
-                html += "<div class='btn'>";
-                html += "<button class='btn-orange btn-delete'>删除</button>";
-                html += "</div>";
-            }
             html += "</div>";
 
             return html;

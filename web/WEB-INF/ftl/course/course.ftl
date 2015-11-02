@@ -9,40 +9,57 @@
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>课程详情</div>
     <div class="content">
 
-        <#if course.imgs?size == 0>
-        <#else>
-            <div class="course img">
-                <#if course.imgs?size == 1>
-                    <#list course.imgs as img>
-                        <img src="${img}" />
-                    </#list>
-                <#else>
-                    <div id="scroll_img" class="scroll_box">
-                        <ul id="scroll_wrap" class="scroll_wrap">
-                            <#list course.imgs as img>
-                                <li><img src="${img}" /></li>
-                            </#list>
-                        </ul>
-
-                        <ul id="scroll_position" class="scroll_position">
-                            <#list course.imgs as img>
-                                <#if img_index == 0>
-                                    <li class="on"><a href="javascript:void(0);"></a></li>
-                                <#else>
-                                    <li><a href="javascript:void(0);"></a></li>
-                                </#if>
-                            </#list>
-                        </ul>
+        <#if (course.cancelable?? && course.cancelable == true)>
+        <div class="list">
+            <div class="element">
+                <div class="left"><img src="${course.cover}" /></div>
+                <div class="right">
+                    <div class="title overflow-hidden">${course.title}</div>
+                    <div class="desc overflow-hidden">${course.place.address}</div>
+                    <div class="desc overflow-hidden">${course.scheduler}</div>
+                    <div class="price"><span>价值 </span><span class="number">${course.price}</span><span>/次</span>
                     </div>
-                </#if>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+        <#else>
+            <#if course.imgs?size == 0>
+            <#else>
+                <div class="course img">
+                    <#if course.imgs?size == 1>
+                        <#list course.imgs as img>
+                            <img src="${img}" />
+                        </#list>
+                    <#else>
+                        <div id="scroll_img" class="scroll_box">
+                            <ul id="scroll_wrap" class="scroll_wrap">
+                                <#list course.imgs as img>
+                                    <li><img src="${img}" /></li>
+                                </#list>
+                            </ul>
+
+                            <ul id="scroll_position" class="scroll_position">
+                                <#list course.imgs as img>
+                                    <#if img_index == 0>
+                                        <li class="on"><a href="javascript:void(0);"></a></li>
+                                    <#else>
+                                        <li><a href="javascript:void(0);"></a></li>
+                                    </#if>
+                                </#list>
+                            </ul>
+                        </div>
+                    </#if>
+                </div>
+            </#if>
+            <div class="course-title">${course.title}</div>
+
+            <div class="course text no-top-padding no-border">
+                <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span><span>元/次</span></div>
+                <div style="clear:both"></div>
             </div>
         </#if>
-        <div class="course-title">${course.title}</div>
-
-        <div class="course text no-top-padding no-border">
-            <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span><span>元/次</span></div>
-            <div style="clear:both"></div>
-        </div>
+        
         <div class="bg-white">
             <hr class="sep" />
         </div>
@@ -60,6 +77,12 @@
             </#if>
             <div style="clear:both"></div>
         </div>
+
+        <#if (course.cancelable?? && course.cancelable == true)>
+        <div id="btn_cancel" class="top-margin">
+            <button class="btn-lg-main">取消预约</button>
+        </div>
+        </#if>
 
         <div class="course text no-bottom-border top-margin"><div class="title">课程目标</div></div>
         <div class="bg-white"><hr class="sep"/></div>
