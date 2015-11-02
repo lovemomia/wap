@@ -1,7 +1,7 @@
 $(function () {
     var ref = sg.common.param("ref");
     if (ref != null && ref != "") {
-        sg.common.push_history(window.location.href, ref);
+        sessionStorage.setItem("authRef", ref);
     }
 
     $("#btn_getcode").on("click", function () {
