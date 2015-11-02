@@ -110,15 +110,15 @@ sg.common = {
     },
 
     init: function () {
+        var current_url = window.location.href;
+        var path = sg.common.url_path(current_url);
+        if (!path.startWith("/auth/")) sessionStorage.removeItem("authRef");
+
+        var param_ref = sg.common.param("ref");
+        var referrer_url = document.referrer;
         var url_back = sessionStorage.getItem("url_back");
         if (url_back == null) {
-            var current_url = window.location.href;
-            var referrer_url = document.referrer;
-
-            var path = sg.common.url_path(current_url);
-            if (!path.startWith("/auth/")) sessionStorage.removeItem("authRef");
-
-            sg.common.push_history(current_url, referrer_url);
+            if (!path.startWith("/auth/") || param_ref == null) sg.common.push_history(current_url, referrer_url);
         } else {
             sessionStorage.removeItem("url_back");
         }
