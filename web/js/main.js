@@ -185,17 +185,6 @@ sg.common = {
         return html;
     },
 
-    list_html: function (content) {
-        var html = "";
-        var sections = content.replace("\r", "").split("\n");
-        for (var i = 0; i < sections.length; i++) {
-            html += "<div class='left left-margin'>" + sections[i] + "</div>";
-            html += "<div style='clear:both'></div>";
-        }
-
-        return html;
-    },
-
     is_login: function () {
         var utoken = sg.common.cookie.get("utoken");
         return utoken != '';
