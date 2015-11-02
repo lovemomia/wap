@@ -35,7 +35,7 @@ public class UserController extends AbstractController {
     @RequestMapping(value = "/user/profile", method = RequestMethod.GET)
     public ModelAndView profile(HttpServletRequest request) {
         String utoken = getUtoken(request);
-        if (StringUtils.isBlank(utoken)) return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(request.getRequestURL().toString()));
+        if (StringUtils.isBlank(utoken)) return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(request.getRequestURL().toString()) + "&back=" + request.getHeader("Referer"));
 
         MomiaHttpResponse resp = get("/user?utoken=" + utoken);
         return new ModelAndView("user/profile", "user", resp.getData());

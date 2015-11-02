@@ -115,10 +115,12 @@ sg.common = {
         if (!path.startWith("/auth/")) sessionStorage.removeItem("authRef");
 
         var param_ref = sg.common.param("ref");
+        var param_back = sg.common.param("back");
         var referrer_url = document.referrer;
         var url_back = sessionStorage.getItem("url_back");
         if (url_back == null) {
             if (!path.startWith("/auth/") || param_ref == null) sg.common.push_history(current_url, referrer_url);
+            else if (param_back != null) sg.common.push_history(current_url, param_back);
         } else {
             sessionStorage.removeItem("url_back");
         }

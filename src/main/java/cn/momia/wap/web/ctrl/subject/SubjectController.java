@@ -24,9 +24,9 @@ public class SubjectController extends AbstractController {
     public ModelAndView placeorder(HttpServletRequest request, @RequestParam long id) {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) {
-            StringBuffer url = request.getRequestURL();
-            url.append("?id=").append(id);
-            return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()));
+            String referer = request.getHeader("Referer");
+            StringBuffer url = request.getRequestURL().append("?id=").append(id);
+            return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()) + "&back=" + URLEncoder.encode(referer));
         }
 
         MomiaHttpResponse resp = get("/subject/sku?utoken=" + utoken + "&id=" + id);
