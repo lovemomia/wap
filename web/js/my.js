@@ -10,7 +10,9 @@ $(function () {
     });
 
     $("#btn_logout").on("click", function () {
-        sg.common.cookie.del("utoken");
-        window.location.href = "/my";
+        if (window.confirm('确定要退出登录吗？')) {
+            sg.common.cookie.del("utoken");
+            window.location.href = "/my";
+        }
     });
 });
