@@ -1,6 +1,6 @@
 $(function () {
     if (!sg.common.is_login()) {
-        window.location.href = "/auth/login";
+        sg.common.redirect_login();
     } else {
         var oid = sg.common.param("oid");
         sg.common.post(sg.config.api_ssl + "/payment/check", {

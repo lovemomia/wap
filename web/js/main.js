@@ -83,11 +83,11 @@ sg.common = {
         });
     },
 
-    param: function (name) {
+    param: function (name, defaultValue) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]);
-        return null;
+        return defaultValue == undefined ? null : defaultValue;
     },
 
     url_path: function (url) {
@@ -116,7 +116,7 @@ sg.common = {
             var referrer_url = document.referrer;
 
             var path = sg.common.url_path(current_url);
-            if (path.startWith("/auth/")) sessionStorage.removeItem("authRef");
+            if (!path.startWith("/auth/")) sessionStorage.removeItem("authRef");
 
             sg.common.push_history(current_url, referrer_url);
         } else {
@@ -199,6 +199,11 @@ sg.common = {
     is_login: function () {
         var utoken = sg.common.cookie.get("utoken");
         return utoken != '';
+    },
+
+    redirect_login: function () {
+        var current_url = window.location.href;
+        window.location.href = "/auth/login?ref=" + encodeURIComponent(current_url);
     },
 
     is_invalid_mobile: function (mobile) {

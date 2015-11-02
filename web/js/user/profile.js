@@ -1,6 +1,6 @@
 $(function () {
     if (!sg.common.is_login()) {
-        window.location.href = "/auth/login";
+        sg.common.redirect_login();
     } else {
         $("#browsefile").change(sg.profile.update_avatar);
         $("#nickname").on("click", sg.profile.update_nickname);

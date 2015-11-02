@@ -102,6 +102,11 @@ sg.auth = {
 
     auth_success: function (data) {
         sg.common.cookie.set("utoken", data.token, 365);
-        sg.common.back();
+        var ref = sessionStorage.getItem("authRef");
+        if (ref != null) {
+            window.location.href = ref;
+        } else {
+            sg.common.back();
+        }
     }
 };

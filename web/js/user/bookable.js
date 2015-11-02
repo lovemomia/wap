@@ -1,20 +1,13 @@
 $(function () {
     if (!sg.common.is_login()) {
-        window.location.href = "/auth/login";
+        sg.common.redirect_login();
     } else {
-        var oid = sg.bookable.param_oid();
+        var oid = sg.common.param("oid", 0);
         sg.bookable.more(oid, 0);
     }
 });
 
 sg.bookable = {
-    param_oid: function () {
-        var oid = sg.common.param("oid");
-        if (oid == null) oid = 0;
-
-        return oid;
-    },
-
     more: function (oid, start) {
         sg.common.get(sg.config.api + "/user/bookable", {
             utoken: sg.common.cookie.get("utoken"),

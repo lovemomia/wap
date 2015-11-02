@@ -1,24 +1,17 @@
 $(function () {
-    var status = sg.order.param_status();
+    var status = sg.common.param("status", 2);
     if (status == 1) $("#all").addClass("on");
     else if (status == 2) $("#not_payed").addClass("on");
     else $("#payed").addClass("on");
 
     if (!sg.common.is_login()) {
-        window.location.href = "/auth/login";
+        sg.common.redirect_login();
     } else {
         sg.order.more(status, 0);
     }
 });
 
 sg.order = {
-    param_status: function () {
-        var status = sg.common.param("status");
-        if (status == null) status = 2;
-
-        return status;
-    },
-
     more: function (status, start) {
         sg.common.get(sg.config.api + "/user/order", {
             utoken: sg.common.cookie.get("utoken"),
@@ -30,7 +23,7 @@ sg.order = {
     success: function (data) {
         var list = data.list;
         if (list.length > 0) {
-            var status = sg.order.param_status();
+            var status = sg.common.param("status", 2);
             sg.common.unbind_scrollin();
 
             var html = "";

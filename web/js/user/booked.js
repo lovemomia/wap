@@ -1,23 +1,16 @@
 $(function () {
-    var status = sg.booked.param_status();
+    var status = sg.common.param("status", 1);
     if (status == 2) $("#finished").addClass("on");
     else $("#notfinished").addClass("on");
 
     if (!sg.common.is_login()) {
-        window.location.href = "/auth/login";
+        sg.common.redirect_login();
     } else {
         sg.booked.more(status, 0);
     }
 });
 
 sg.booked = {
-    param_status: function () {
-        var status = sg.common.param("status");
-        if (status == null || status != 2) status = 1;
-
-        return status;
-    },
-
     more: function (status, start) {
         if (status == 2) {
             sg.common.get(sg.config.api + "/user/course/finished", {
@@ -35,7 +28,7 @@ sg.booked = {
     success: function (data) {
         var list = data.list;
         if (list.length > 0) {
-            var status = sg.booked.param_status();
+            var status = sg.common.param("status", 1);
             sg.common.unbind_scrollin();
 
             var html = "";
@@ -69,7 +62,7 @@ sg.booked = {
         }
 
         function generate_course_html(course, index, count) {
-            var status = sg.booked.param_status();
+            var status = sg.common.param("status", 1);
 
             var html = "";
             html += "<div bid=" + course.bookingId + " class='booked'>";

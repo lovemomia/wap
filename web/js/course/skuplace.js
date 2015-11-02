@@ -2,7 +2,7 @@ $(function () {
     sessionStorage.removeItem("selPid");
     sessionStorage.removeItem("selSid");
 
-    var status = sg.skuplace.param_status();
+    var status = sg.common.param("status",1);
     if (status == 1) $("#week").addClass("on");
     else if (status == 2) $("#cur_month").addClass("on");
     else $("#next_month").addClass("on");
@@ -34,23 +34,12 @@ $(function () {
                         utoken: sg.common.cookie.get("utoken"),
                         pid: pid,
                         sid: sid
-                    }, sg.skuplace.booking_success);
+                    }, function (data) {
+                        alert("预约成功");
+                        sg.common.back();
+                    });
                 }
             }
         });
     }
 });
-
-sg.skuplace = {
-    param_status: function () {
-        var status = sg.common.param("status");
-        if (status == null) status = 1;
-
-        return status;
-    },
-
-    booking_success: function (data) {
-        alert("预约成功");
-        sg.common.back();
-    }
-};
