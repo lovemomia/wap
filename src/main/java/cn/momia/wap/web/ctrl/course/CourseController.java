@@ -49,7 +49,7 @@ public class CourseController extends AbstractController {
 
     @RequestMapping(value = "/skuplace", method = RequestMethod.GET)
     public ModelAndView skuplace(@RequestParam long id,
-                                 @RequestParam(required = false, defaultValue = "1") int status,
+                                 @RequestParam(required = false, defaultValue = "2") int status,
                                  @RequestParam(required = false, defaultValue = "0") long pid) {
         MomiaHttpResponse resp;
         Calendar calendar = Calendar.getInstance();
