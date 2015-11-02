@@ -2,9 +2,8 @@ $(function () {
     sessionStorage.removeItem("selPid");
     sessionStorage.removeItem("selSid");
 
-    var status = sg.common.param("status",1);
-    if (status == 1) $("#week").addClass("on");
-    else if (status == 2) $("#cur_month").addClass("on");
+    var status = sg.common.param("status", 2);
+    if (status == 2) $("#cur_month").addClass("on");
     else $("#next_month").addClass("on");
 
     var pid = sg.common.param("pid");

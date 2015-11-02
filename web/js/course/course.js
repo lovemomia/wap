@@ -6,7 +6,7 @@ $(function () {
     $("#btn_cancel").on("click", function () {
         var bid = sg.common.param("bid");
 
-        if (window.confirm('确定要删除这门课程吗？')) {
+        if (window.confirm('确定要取消预约这门课程吗？')) {
             sg.common.post(sg.config.api + "/course/cancel", {
                 utoken: sg.common.cookie.get("utoken"),
                 bid: bid

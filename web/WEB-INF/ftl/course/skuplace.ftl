@@ -8,7 +8,6 @@
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>上课地点<#if (params.pid > 0)><div id="btn_submit" class="right">提交</div></#if></div>
     <div class="content">
         <div class="tab bg-white bottom-border">
-            <div id="week" class="left" onclick="window.location.href='/course/skuplace?id=${params.id}&pid=${params.pid}&status=1'">一周内</div>
             <div id="cur_month" class="left" onclick="window.location.href='/course/skuplace?id=${params.id}&pid=${params.pid}&status=2'">${params.cur_month}</div>
             <div id="next_month" class="left" onclick="window.location.href='/course/skuplace?id=${params.id}&pid=${params.pid}&status=3'">${params.next_month}</div>
             <div style="clear: both;"></div>

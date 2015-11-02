@@ -5,7 +5,7 @@
 </@override>
 
 <@override name="body">
-<div class="header bg-white bottom-border">敬请期待</div>
+<div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>敬请期待</div>
 <div class="content">
     <div class="incoming">
         <img src="/img/incoming.png" />
