@@ -71,7 +71,11 @@ sg.booked = {
             html += "<div class='left'>";
             html += "<img src='" + course.cover + "' />";
             html += "</div>";
-            html += "<div class='right'>";
+            if (status == 1) {
+                html += "<div class='right delete'>";
+            } else {
+                html += "<div class='right'>";
+            }
             html += "<div class='title overflow-hidden'>" + course.title + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.place.address + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.scheduler + "</div>";

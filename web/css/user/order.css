@@ -18,6 +18,11 @@
     position: relative;
 }
 
+
+.list .order .right.pay {
+    padding-right: 0.85rem;
+}
+
 .list .order .btn {
     position: absolute;
     top: 0.35rem;

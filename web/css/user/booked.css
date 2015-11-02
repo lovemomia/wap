@@ -23,6 +23,10 @@
     padding-left: 0;
 }
 
+.list .booked .element .right.delete {
+    padding-right: 0.85rem;
+}
+
 .list .booked .btn {
     position: absolute;
     top: 0.35rem;

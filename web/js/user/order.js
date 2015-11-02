@@ -49,7 +49,11 @@ sg.order = {
             html += "<div class='left'>";
             html += "<img src='" + order.cover + "' />";
             html += "</div>";
-            html += "<div class='right'>";
+            if (order.status < 3) {
+                html += "<div class='right pay'>";
+            } else {
+                html += "<div class='right'>";
+            }
             html += "<div class='title overflow-hidden'>" + order.title + "</div>";
             html += "<div class='desc overflow-hidden'>总价：" + order.totalFee + "元</div>";
             html += "<div class='desc overflow-hidden'>数量：" + order.count + "</div>";
