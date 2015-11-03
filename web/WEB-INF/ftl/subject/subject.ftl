@@ -79,7 +79,7 @@
                         <div class="title overflow-hidden">${course.title}</div>
                         <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
                         <div class="desc overflow-hidden">${course.region}</div>
-                        <div class="price"><span>￥</span><span class="number">${course.price}</span><span>起</span></div>
+                        <div class="price">价值<span>￥</span><span class="number">${course.price}</span></div>
                     </div>
                     <div style="clear:both"></div>
                 </div>
