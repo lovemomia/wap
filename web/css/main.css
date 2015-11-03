@@ -330,3 +330,7 @@ div.error {
     font-size: 0.16rem;
     color: #666666;
 }
+
+.scrollable {
+    min-height: 0.5rem;
+}
