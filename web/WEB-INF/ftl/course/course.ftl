@@ -17,8 +17,7 @@
                     <div class="title overflow-hidden">${course.title}</div>
                     <div class="desc overflow-hidden">${course.place.address}</div>
                     <div class="desc overflow-hidden">${course.scheduler}</div>
-                    <div class="price"><span>价值 </span><span class="number">${course.price}</span>
-                    </div>
+                    <div class="price"><span>价值 </span><span class="number">${course.price}</span><span>元</span></div>
                 </div>
                 <div style="clear: both;"></div>
             </div>

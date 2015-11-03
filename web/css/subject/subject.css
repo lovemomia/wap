@@ -67,11 +67,13 @@
     line-height: 0.2rem;
     font-size: 0.14rem;
 }
+
 .subject.list .element .right .price span {
-    color: #f67531
+    color: #333333;
 }
 
 .subject.list .element .right .price .number {
+    color: #f67531;
     font-size: 0.2rem;
 }
 
