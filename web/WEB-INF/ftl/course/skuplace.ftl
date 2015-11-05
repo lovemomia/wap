@@ -1,3 +1,5 @@
+<#setting datetime_format="HH:mm" />
+
 <@override name="title">上课地点</@override>
 
 <@override name="css">
@@ -34,7 +36,7 @@
                             </#if>
                                 <div class="left">
                                     <div class="name">${sku.place.name}</div>
-                                    <div class="address">${sku.place.address}</div>
+                                    <div class="address">${sku.place.address} (${sku.time?datetime("yyyy-MM-dd HH:mm:ss")})</div>
                                     <#if sku.stock == 0>
                                         <div class="stock full">名额已满</div>
                                     <#elseif (sku.stock < 10)>
