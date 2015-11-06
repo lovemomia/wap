@@ -25,8 +25,13 @@
 }
 
 .list .element .right .price span.number {
-    font-size: 0.2rem;
     color: #f67531;
+    font-size: 0.2rem;
+}
+
+.list .element .right .price span.free {
+    color: #f67531;
+    font-size: 0.18rem;
 }
 
 .course.img {
@@ -55,6 +60,10 @@
 
 .course .price span.number {
     font-size: 0.25rem;
+}
+
+.course .price span.free {
+    font-size: 0.22rem;
 }
 
 .course .tag.img {

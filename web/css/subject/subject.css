@@ -77,6 +77,11 @@
     font-size: 0.2rem;
 }
 
+.subject.list .element .right .price .free {
+    color: #f67531;
+    font-size: 0.18rem;
+}
+
 .subject.text .notice {
     font-size: 0.16rem;
 }

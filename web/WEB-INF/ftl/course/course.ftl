@@ -17,7 +17,11 @@
                     <div class="title overflow-hidden">${course.title}</div>
                     <div class="desc overflow-hidden">${course.place.address}</div>
                     <div class="desc overflow-hidden">${course.scheduler}</div>
-                    <div class="price"><span>价值 </span><span class="number">${course.price}</span><span>元</span></div>
+                    <#if (course.price > 0)>
+                        <div class="price"><span>价值 </span><span class="number">${course.price}</span><span>元</span></div>
+                    <#else>
+                        <div class="price"><span class="free">公益课</span></div>
+                    </#if>
                 </div>
                 <div style="clear: both;"></div>
             </div>
@@ -54,7 +58,11 @@
             <div class="course-title">${course.title}</div>
 
             <div class="course text no-top-padding no-border">
-                <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span></div>
+                <#if (course.price > 0)>
+                    <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span></div>
+                <#else>
+                    <div class="left price"><span class="free">公益课</span></div>
+                </#if>
                 <div style="clear:both"></div>
             </div>
         </#if>

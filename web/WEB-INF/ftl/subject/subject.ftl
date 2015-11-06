@@ -79,7 +79,13 @@
                         <div class="title overflow-hidden">${course.title}</div>
                         <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
                         <div class="desc overflow-hidden">${course.region}</div>
-                        <div class="price"><span>价值 </span><span class="number">${course.price}</span><span>元</span></div>
+                        <div class="price">
+                            <#if (course.price > 0)>
+                                <span>价值 </span><span class="number">${course.price}</span><span>元</span>
+                            <#else>
+                                <span class="free">公益课</span>
+                            </#if>
+                        </div>
                     </div>
                     <div style="clear:both"></div>
                 </div>

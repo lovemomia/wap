@@ -65,7 +65,11 @@ sg.booked = {
             html += "<div class='title overflow-hidden'>" + course.title + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.place.address + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.scheduler + "</div>";
-            html += "<div class='price'><span>价值 </span><span class='number'>" + course.price + "</span><span>元</span></div>";
+            if (course.price > 0) {
+                html += "<div class='price'><span>价值 </span><span class='number'>" + course.price + "</span><span>元</span></div>";
+            } else {
+                html += "<div class='price'><span class='free'>公益课</span></div>";
+            }
             html += "</div>";
             html += "<div style='clear: both;'></div>";
             html += "</div>";
