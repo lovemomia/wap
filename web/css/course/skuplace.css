@@ -85,6 +85,10 @@
     color: #999999;
 }
 
+.sku.place .element .left {
+    width: 3.35rem;
+}
+
 .sku.place .element .right.sel {
     margin-top: 0.20rem;
     margin-right: 0.15rem;
