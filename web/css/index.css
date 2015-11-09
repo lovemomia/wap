@@ -145,7 +145,7 @@
     right: 0;
     padding: 0.02rem 0.1rem 0.03rem 0.15rem;
     background-image: url("/img/label3x.png");
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #ffffff;
     font-size: 0.12rem;
