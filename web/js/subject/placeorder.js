@@ -31,6 +31,8 @@ $(function () {
         } else if (!mobile || mobile == "" || sg.common.is_invalid_mobile(mobile)) {
             alert("无效的手机号吗");
         } else {
+            var invite = sessionStorage.getItem("invite");
+            if (invite == null) invite = "";
             var order = {
                 skus: [
                     {
@@ -43,7 +45,8 @@ $(function () {
                 contact: {
                     name: name,
                     mobile: mobile
-                }
+                },
+                inviteCode: invite
             };
 
             sg.common.post(sg.config.api + "/subject/order", {

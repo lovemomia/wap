@@ -124,6 +124,9 @@ sg.common = {
         } else {
             sessionStorage.removeItem("url_back");
         }
+
+        var invite = sg.common.param("invite");
+        if (invite != null) sessionStorage.setItem("invite", invite);
     },
 
     push_history: function (current_url, referrer_url) {
