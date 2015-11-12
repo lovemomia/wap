@@ -35,15 +35,14 @@
                                 <div class="left">
                                     <div class="name">${sku.place.name}</div>
                                     <div class="address">${sku.place.address}</div>
-                                    <div class="left time">${sku.time} </div>
+                                    <div class="time">${sku.time} </div>
                                     <#if sku.stock == 0>
-                                        <div class="left stock full">名额已满</div>
+                                        <div class="stock full">名额已满</div>
                                     <#elseif (sku.stock < 10)>
-                                        <div class="left stock">仅剩${sku.stock}个名额</div>
+                                        <div class="stock">仅剩${sku.stock}个名额</div>
                                     <#else>
-                                        <div class="left stock">还有${sku.stock}个名额</div>
+                                        <div class="stock">还有${sku.stock}个名额</div>
                                     </#if>
-                                    <div style="clear: both;"></div>
                                 </div>
                                 <#if (sku.stock > 0)>
                                     <div class="right sel"></div>

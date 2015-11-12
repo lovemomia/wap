@@ -75,20 +75,18 @@
     font-size: 0.14rem;
 }
 
-.sku.place .element .left.time {
-    padding-top: 0.06rem;
-    padding-right: 0.1rem;
+.sku.place .element .time {
     color: #999999;
     font-size: 0.14rem;
 }
 
-.sku.place .element .left.stock {
+.sku.place .element .stock {
     padding-top: 0.06rem;
     color: #f67531;
     font-size: 0.12rem;
 }
 
-.sku.place .element .left.stock.full {
+.sku.place .element .stock.full {
     color: #999999;
 }
 
