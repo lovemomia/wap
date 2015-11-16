@@ -21,6 +21,22 @@ $(function () {
     }
     $("#pay_types").html(html);
 
+    var coupon_id = sessionStorage.getItem("couponId");
+    var discount = sessionStorage.getItem("discount");
+    if (coupon_id != null && discount != null) {
+        sg.common.get_sync(sg.config.api + "/subject/order/coupon", {
+            utoken: sg.common.cookie.get("utoken"),
+            oid: sg.common.param("oid"),
+            coupon: coupon_id
+        }, sg.payment.coupon_success, sg.payment.coupon_error);
+    } else {
+        sg.common.clean_coupon();
+    }
+
+    $(".line.coupon").on("click", function () {
+        window.location.href = "/payment/coupon";
+    });
+
     $(".payment").on("click", function () {
         $(".payment.on .sel img").attr("src", "/img/notsel2x.png");
         $(".payment.on").removeClass("on");
@@ -54,10 +70,22 @@ $(function () {
 });
 
 sg.payment = {
+    coupon_success: function (data) {
+        $("span.coupon").html("减" + sessionStorage.getItem("discount"));
+        $("#total_fee").html(data + "元");
+    },
+
+    coupon_error: function (data) {
+        sg.common.clean_coupon();
+    },
+
     ali_pay: function () {
+        var coupon = sessionStorage.getItem("couponId");
+        if (coupon == null) coupon = 0;
         sg.common.post(sg.config.api_ssl + "/payment/prepay/alipay", {
             utoken: sg.common.cookie.get("utoken"),
             oid: sg.common.param("oid"),
+            coupon: coupon,
             type: "wap"
         }, sg.payment.ali_pre_success);
     },
@@ -79,9 +107,12 @@ sg.payment = {
     },
 
     do_weixin_pay: function (code) {
+        var coupon = sessionStorage.getItem("couponId");
+        if (coupon == null) coupon = 0;
         sg.common.post(sg.config.api_ssl + "/payment/prepay/weixin", {
             utoken: sg.common.cookie.get("utoken"),
             oid: sg.common.param("oid"),
+            coupon: coupon,
             code: code,
             type: "JSAPI"
         }, sg.payment.weixin_pre_success);

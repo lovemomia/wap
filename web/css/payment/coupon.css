@@ -1,0 +1,61 @@
+.coupon {
+    position: relative;
+}
+
+.coupon .label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.5rem;
+}
+
+.list .coupon .element {
+    height: 0.8rem;
+}
+
+.list .coupon .element .left {
+    position: relative;
+    width: 0.6rem;
+    height: 0.6rem;
+}
+
+.list .coupon .element .discount {
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.2rem;
+    color: #ffcc66;
+}
+
+.list .coupon .element .right {
+    width: 3.1rem;
+}
+
+.list .coupon .element .right .title {
+    font-size: 0.18rem;
+}
+
+.list .coupon .element .right .desc {
+    height: 0.16rem;
+    line-height: 0.16rem;
+    font-size: 0.14rem;
+    color: #999999;
+}
+
+.list .coupon .element .right .time {
+    height: 0.16rem;
+    line-height: 0.16rem;
+    font-size: 0.13rem;
+    color: #999999;
+}
+
+.link {
+    padding: 0.1rem 0;
+    font-size: 0.15rem;
+}
+
+.link a {
+    color: #1e90ff;
+}

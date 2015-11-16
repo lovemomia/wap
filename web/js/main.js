@@ -35,6 +35,24 @@ sg.common = {
         }
     },
 
+    get_sync: function (url, params, success_callback, error_callback) {
+        $.ajax({
+            url: url,
+            async: false,
+            data: params,
+            type: "get",
+            dataType: "json",
+            timeout: 5000,
+            success: function (resp) {
+                if (resp.errno != 0) error_callback();
+                sg.common.success(resp, success_callback);
+            },
+            error: function () {
+                error_callback();
+            }
+        });
+    },
+
     get: function (url, params, success_callback) {
         $.ajax({
             url: url,
@@ -113,6 +131,7 @@ sg.common = {
         var current_url = window.location.href;
         var path = sg.common.url_path(current_url);
         if (!path.startWith("/auth/")) sessionStorage.removeItem("authRef");
+        if (!path.startWith("/payment/pay") && !path.startWith("/payment/coupon")) sg.common.clean_coupon();
 
         var param_ref = sg.common.param("ref");
         var param_back = sg.common.param("back");
@@ -129,6 +148,11 @@ sg.common = {
         if (invite != null) sessionStorage.setItem("invite", invite);
     },
 
+    clean_coupon: function () {
+        sessionStorage.removeItem("couponId");
+        sessionStorage.removeItem("discount")
+    },
+
     push_history: function (current_url, referrer_url) {
         var url_history_str = sessionStorage.getItem("url_history");
         if (url_history_str == null) url_history_str = JSON.stringify(new Array());
@@ -136,7 +160,8 @@ sg.common = {
 
         if (referrer_url != undefined && referrer_url != "") {
             var referrer_path = sg.common.url_path(referrer_url);
-            if (!referrer_path.startWith("/auth/") && !referrer_path.startWith("/payment/pay") && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
+            var current_path = sg.common.url_path(current_url);
+            if (!referrer_path.startWith("/auth/") && (!referrer_path.startWith("/payment/pay") || current_path.startWith("/payment/coupon")) && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
                 if (url_history.length == 0 || sg.common.url_no_query(url_history[url_history.length - 1]) != sg.common.url_no_query(referrer_url)) {
                     url_history.push(referrer_url);
                     sessionStorage.setItem("url_history", JSON.stringify(url_history));
