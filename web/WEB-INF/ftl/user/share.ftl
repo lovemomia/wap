@@ -8,7 +8,7 @@
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>邀请好友</div>
     <div class="content">
         <div><img src="/img/yaoqing.png"></div>
-        <div class="top-margin bottom-margin"><button id="btn_share" class="btn-lg-orange">邀请好友</button></div>
+        <div><button id="btn_share" class="btn-lg-orange">邀请好友</button></div>
         <div class="desc">
             <p>发红包邀请新用户好友，好友使用你的红包后，</p>
             <p>你可以获得50元返现哦~</p>
