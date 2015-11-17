@@ -1,6 +1,10 @@
 $(function () {
     $("#btn_share").on("click", function () {
-        sg.share.share_tips();
+        if (sg.common.is_weixin()) {
+            sg.share.share_tips();
+        } else {
+            alert("分享功能只能在微信中使用哦~");
+        }
     });
 });
 
