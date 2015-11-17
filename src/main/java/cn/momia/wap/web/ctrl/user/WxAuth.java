@@ -60,6 +60,7 @@ public class WxAuth {
             String entity = EntityUtils.toString(response.getEntity(), "UTF-8");
             JSONObject responseJson = JSON.parseObject(entity);
             accessToken = responseJson.getString("access_token");
+            LOGGER.info("new access token: {}", accessToken);
         } catch (Exception e) {
             LOGGER.error("fail to update access token", e);
         }
