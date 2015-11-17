@@ -8,4 +8,13 @@
         <Http>http://i.momia.cn/m</Http>
         <Https>https://i.momia.cn/m</Https>
     </Api>
+
+    <Share>
+        <Url>http://m.momia.cn/share/coupon</Url>
+    </Share>
+
+    <Weixin>
+        <JsApiAppId>wxc4ca5800d28b5650</JsApiAppId>
+        <JsApiKey>0plmnko98ijbvhu76ygc5tfxzdr43esa</JsApiKey>
+    </Weixin>
 </Configuration>
