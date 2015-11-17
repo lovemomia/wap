@@ -139,7 +139,7 @@ sg.common = {
         var url_back = sessionStorage.getItem("url_back");
         if (url_back == null) {
             if (!path.startWith("/auth/") || param_ref == null) sg.common.push_history(current_url, referrer_url);
-            else if (param_back != null) sg.common.push_history(current_url, param_back);
+            else if (param_back != null && param_back != "null") sg.common.push_history(current_url, param_back);
         } else {
             sessionStorage.removeItem("url_back");
         }
@@ -163,7 +163,7 @@ sg.common = {
         if (url_history_str == null) url_history_str = JSON.stringify(new Array());
         var url_history = JSON.parse(url_history_str);
 
-        if (referrer_url != undefined && referrer_url != "") {
+        if (referrer_url != undefined && referrer_url != null  && referrer_url != "") {
             var referrer_path = sg.common.url_path(referrer_url);
             var current_path = sg.common.url_path(current_url);
             if (!referrer_path.startWith("/auth/") && (!referrer_path.startWith("/payment/pay") || current_path.startWith("/payment/coupon")) && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
