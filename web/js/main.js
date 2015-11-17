@@ -146,6 +146,11 @@ sg.common = {
 
         var invite = sg.common.param("invite");
         if (invite != null) sessionStorage.setItem("invite", invite);
+
+        if (sg.common.param("_src") != null) {
+            $(".header").remove();
+            $(".content").removeClass("has-fix-header");
+        }
     },
 
     clean_coupon: function () {
