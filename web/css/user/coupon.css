@@ -6,55 +6,47 @@
 
 .coupon {
     position: relative;
+    margin: 0.1rem 0.2rem 0.2rem 0.2rem;
+    height: 1.45rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.coupon:last-child {
+    margin-bottom: 0;
 }
 
 .coupon .label {
     position: absolute;
     top: 0;
     right: 0;
-    width: 0.5rem;
+    width: 0.8rem;
+}
+
+.list {
+    background-color: #f0f0f0;
 }
 
 .list .coupon .element {
     height: 0.8rem;
 }
 
-.list .coupon .element .left {
-    position: relative;
-    width: 0.6rem;
-    height: 0.6rem;
-}
-
 .list .coupon .element .discount {
-    position: absolute;
-    left: 0;
-    top: 0.3rem;
-    width: 100%;
+    margin-top: 0.15rem;
     text-align: center;
     font-size: 0.2rem;
-    color: #ffcc66;
+    color: #00c49d;
 }
 
-.list .coupon .element .right {
-    width: 3.1rem;
+.list .coupon .element .discount .number {
+    font-size: 0.4rem;
 }
 
-.list .coupon .element .right .title {
-    font-size: 0.18rem;
-}
-
-.list .coupon .element .right .desc {
-    height: 0.16rem;
-    line-height: 0.16rem;
-    font-size: 0.14rem;
-    color: #999999;
-}
-
-.list .coupon .element .right .time {
-    height: 0.16rem;
-    line-height: 0.16rem;
-    font-size: 0.13rem;
-    color: #999999;
+.list .coupon .element .desc {
+    padding-top: 0.03rem;
+    text-align: center;
+    font-size: 0.16rem;
+    color: #aaaaaa;
 }
 
 .link {

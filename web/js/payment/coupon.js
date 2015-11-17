@@ -17,10 +17,9 @@ sg.payment_coupon = {
             sg.common.unbind_scrollin();
 
             var html = "";
-            html += "<div class='list bottom-border'>";
+            html += "<div class='list'>";
             for (var i = 0; i < list.length; i++) {
                 html += generate_coupon_html(list[i]);
-                if (i < list.length - 1) html += "<hr class='sep' />";
             }
             html += "</div>";
 
@@ -39,18 +38,11 @@ sg.payment_coupon = {
 
         function generate_coupon_html(coupon) {
             var html = "";
-            html += "<div class='coupon' coupon_id='" + coupon.id + "' discount='" + coupon.discount + "'>";
+            html += "<div class='coupon' coupon_id='" + coupon.id + "' discount='" + coupon.discount + "' style='background-image: url(/img/hongbao2x.png)'>";
             html += "<div class='element scrollable'>";
-            html += "<div class='left'>";
-            html += "<img src='/img/coupon3x.png' />";
-            html += "<div class='discount'>¥" + coupon.discount + "</div>";
-            html += "</div>";
-            html += "<div class='right'>";
-            html += "<div class='title overflow-hidden'>" + coupon.title + "</div>";
-            html += "<div class='desc overflow-hidden'>" + coupon.desc + "元</div>";
-            html += "<div class='time overflow-hidden'>有效期：" + coupon.startTime + "至" + coupon.endTime + "</div>";
-            html += "<div style='clear: both;'></div>";
-            html += "</div>";
+            html += "<div class='discount'><span class='number'>" + coupon.discount + "</span>元</div>";
+            html += "<div class='desc'>使用说明: " + coupon.desc + "</div>";
+            html += "<div class='desc'>有效期: " + coupon.startTime + "至" + coupon.endTime + "</div>";
             html += "</div>";
             html += "</div>";
 
