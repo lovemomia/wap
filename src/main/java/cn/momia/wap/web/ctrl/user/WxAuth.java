@@ -80,6 +80,7 @@ public class WxAuth {
             String entity = EntityUtils.toString(response.getEntity(), "UTF-8");
             JSONObject responseJson = JSON.parseObject(entity);
             if (responseJson.getInteger("errcode") == 0) jsapiTicket = responseJson.getString("ticket");
+            LOGGER.info("new jsapi ticket: {}", jsapiTicket);
         } catch (Exception e) {
             LOGGER.error("fail to update jsapi ticket", e);
         }

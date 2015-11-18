@@ -109,6 +109,10 @@ div.error {
     text-align: center;
 }
 
+.header.bg-white {
+    color: #333333;
+}
+
 .header.fixed {
     position: fixed;
     top: 0;

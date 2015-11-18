@@ -1,5 +1,5 @@
 $(function () {
-    var status = sg.common.param("status", 1);
+    var status = sg.common.param("status", 0);
     if (!sg.common.is_login()) {
         sg.common.redirect_login();
     } else {
@@ -17,9 +17,22 @@ sg.coupon = {
     },
 
     success: function (data) {
+        var status = sg.common.param("status", 0);
         var list = data.list;
-        if (list.length > 0) {
-            var status = sg.common.param("status", 1);
+        if (data.totalCount == 0) {
+            var html = "";
+            html += "<div class='wuhongbao'><img src='/img/wuhongbao2x.png' /></div>";
+            if (status == 3) {
+                html += "<div class='tip'>暂无过期红包</div>";
+                html += "<div class='link'><a href='/user/coupon?status=0&start=0'>可用红包</a></div>";
+            } else {
+                html += "<div class='tip'>暂无可用红包</div>";
+                html += "<div class='link'><a href='/user/coupon?status=3&start=0'>过期红包</a></div>";
+            }
+
+            $("body").addClass("bg-white");
+            $(".content").html(html);
+        } else if (list.length > 0) {
             sg.common.unbind_scrollin();
 
             var html = "";
@@ -29,7 +42,7 @@ sg.coupon = {
             }
             html += "</div>";
             if (status == 3) {
-                html += "<div class='link'><a href='/user/coupon?status=1&start=0'>可用红包</a></div>";
+                html += "<div class='link'><a href='/user/coupon?status=0&start=0'>可用红包</a></div>";
             } else {
                 html += "<div class='link'><a href='/user/coupon?status=3&start=0'>过期红包</a></div>";
             }

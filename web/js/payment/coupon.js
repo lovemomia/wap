@@ -13,7 +13,14 @@ sg.payment_coupon = {
 
     success: function (data) {
         var list = data.list;
-        if (list.length > 0) {
+        if (data.totalCount == 0) {
+            var html = "";
+            html += "<div class='wuhongbao'><img src='/img/wuhongbao2x.png' /></div>";
+            html += "<div class='tip'>暂无可用红包</div>";
+
+            $("body").addClass("bg-white");
+            $(".content").html(html);
+        } else if (list.length > 0) {
             sg.common.unbind_scrollin();
 
             var html = "";
