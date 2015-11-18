@@ -21,7 +21,7 @@ $(function () {
                     mobile: mobile,
                     invite: inviteCode
                 }, function () {
-                    alert("您已成功领取红包，赶快下载APP注册吧~");
+                    window.location.href = "/hongbao_result?mobile=" + mobile;
                 });
             }
         }
