@@ -63,7 +63,7 @@
             $("#mobile").html(sg.common.param("mobile"));
 
             $("#btn_download").on("click", function () {
-                window.location.href = "https://itunes.apple.com/cn/app/song-guo-qin-zi/id1019473117?mt=8";
+                window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.youxing.duola";
             });
 
             $("#btn_home").on("click", function () {
