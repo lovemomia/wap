@@ -47,8 +47,16 @@
     color: #00c49d;
 }
 
+.list .coupon .element .discount.disable {
+    color: #aaaaaa;
+}
+
 .list .coupon .element .discount .number {
     font-size: 0.4rem;
+}
+
+.list .coupon .element .discount .number.disable {
+    color: #aaaaaa;
 }
 
 .list .coupon .element .desc {

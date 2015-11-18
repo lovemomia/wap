@@ -48,8 +48,8 @@ sg.payment_coupon = {
             html += "<div class='coupon' coupon_id='" + coupon.id + "' discount='" + coupon.discount + "' style='background-image: url(/img/hongbao2x.png)'>";
             html += "<div class='element scrollable'>";
             html += "<div class='discount'><span class='number'>" + coupon.discount + "</span>元</div>";
-            html += "<div class='desc'>使用说明: " + coupon.desc + "</div>";
-            html += "<div class='desc'>有效期: " + coupon.startTime + "至" + coupon.endTime + "</div>";
+            html += "<div class='desc'>" + coupon.desc + "</div>";
+            html += "<div class='desc'>" + coupon.startTime + "至" + coupon.endTime + "</div>";
             html += "</div>";
             html += "</div>";
 
