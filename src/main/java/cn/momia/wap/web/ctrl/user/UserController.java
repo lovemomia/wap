@@ -45,7 +45,7 @@ public class UserController extends AbstractController {
         return new ModelAndView("user/profile", "user", resp.getData());
     }
 
-    @RequestMapping(value = "/user/share", method = RequestMethod.GET)
+    @RequestMapping(value = { "/share", "/user/share" }, method = RequestMethod.GET)
     public ModelAndView share(HttpServletRequest request) {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(request.getRequestURL().toString()) + "&back=" + request.getHeader("Referer"));
