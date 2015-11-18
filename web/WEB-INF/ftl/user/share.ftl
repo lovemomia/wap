@@ -36,13 +36,13 @@
                     title: '${share.title}',
                     desc: '${share.abstracts}',
                     link: '${share.url}',
-                    imgUrl: 'http://s.sogokids.com/2015-11-17/4420a00e1af555d397888ffdf8101d4a.jpg'
+                    imgUrl: '${share.cover}'
                 });
 
                 wx.onMenuShareTimeline({
                     title: '${share.title}',
                     link: '${share.url}',
-                    imgUrl: 'http://s.sogokids.com/2015-11-17/4420a00e1af555d397888ffdf8101d4a.jpg'
+                    imgUrl: '${share.cover}'
                 });
             });
         }
