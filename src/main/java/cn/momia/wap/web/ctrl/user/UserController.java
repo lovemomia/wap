@@ -53,11 +53,10 @@ public class UserController extends AbstractController {
         MomiaHttpResponse resp = get("/user?utoken=" + utoken);
         String shareUrl = Configuration.getString("Share.Url") + "?invite=" + ((JSONObject) resp.getData()).getString("inviteCode");
 
-        Map<String, Object> share = new HashMap<String, Object>();
-        share.put("title", "50元松果亲子课程红包等你拿！");
-        share.put("abstracts", "最有同理心的课堂，最有性价比的价格。和孩子一起成长，不错过他给你带来的每一次惊喜！");
-        share.put("url", shareUrl);
-        share.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), request.getRequestURL() + "?" + request.getQueryString()));
+        MomiaHttpResponse shareResp = get("/coupon/share?utoken=" + utoken);
+        JSONObject share = (JSONObject) shareResp.getData();
+        String queryString = request.getQueryString();
+        share.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), request.getRequestURL() + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));
 
         return new ModelAndView("user/share", "share", share);
     }
