@@ -50,11 +50,8 @@ public class UserController extends AbstractController {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(request.getRequestURL().toString()) + "&back=" + request.getHeader("Referer"));
 
-        MomiaHttpResponse resp = get("/user?utoken=" + utoken);
-        String shareUrl = Configuration.getString("Share.Url") + "?invite=" + ((JSONObject) resp.getData()).getString("inviteCode");
-
-        MomiaHttpResponse shareResp = get("/coupon/share?utoken=" + utoken);
-        JSONObject share = (JSONObject) shareResp.getData();
+        MomiaHttpResponse resp = get("/coupon/share?utoken=" + utoken);
+        JSONObject share = (JSONObject) resp.getData();
         String queryString = request.getQueryString();
         share.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), request.getRequestURL() + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));
 
