@@ -14,7 +14,7 @@ $(function () {
         var test1_ids = sessionStorage.getItem("test1_ids");
         if (test1_ids == null) {
             test1_ids = JSON.stringify({});
-            test1_ids = sessionStorage.setItem("test1_ids", test1_ids);
+            sessionStorage.setItem("test1_ids", test1_ids);
         }
 
         var ids = JSON.parse(test1_ids);
