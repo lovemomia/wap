@@ -36,6 +36,7 @@
                         sessionStorage.getItem("test1_7"),
                         sessionStorage.getItem("test1_8"));
 
+                sg.test1.reset();
                 window.location.href = "/test/1/result?scores=" + encodeURIComponent(scores);
             });
         })

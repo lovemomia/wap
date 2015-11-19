@@ -48,3 +48,17 @@ $(function () {
         sessionStorage.setItem("test1_ids", JSON.stringify(ids));
     });
 });
+
+sg.test1 = {
+    reset: function () {
+        sessionStorage.setItem("test1_1", 0);
+        sessionStorage.setItem("test1_2", 0);
+        sessionStorage.setItem("test1_3", 0);
+        sessionStorage.setItem("test1_4", 0);
+        sessionStorage.setItem("test1_5", 0);
+        sessionStorage.setItem("test1_6", 0);
+        sessionStorage.setItem("test1_7", 0);
+        sessionStorage.setItem("test1_8", 0);
+        sessionStorage.setItem("test1_ids", JSON.stringify(new Array()));
+    }
+};

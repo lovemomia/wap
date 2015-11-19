@@ -37,9 +37,11 @@
 </@override>
 
 <@override name="js">
+    <script type="text/javascript" src="/js/test/1.js"></script>
     <script type="text/javascript">
         $(function () {
             $("#btn_start").on("click", function () {
+                sg.test1.reset();
                 window.location.href = "/test/1/1";
             });
         })
