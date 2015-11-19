@@ -1,0 +1,76 @@
+.header .right {
+    margin-top: 0.14rem;
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+.wuhongbao {
+    padding: 1.5rem 1.4rem 0.3rem 1.4rem;
+}
+
+.tip {
+    padding-bottom: 0.3rem;
+    color: #aaaaaa;
+}
+
+.coupon {
+    position: relative;
+    margin: 0.1rem 0.2rem 0.2rem 0.2rem;
+    height: 1.45rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.coupon:last-child {
+    margin-bottom: 0;
+}
+
+.coupon .label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.8rem;
+}
+
+.list {
+    background-color: #f0f0f0;
+}
+
+.list .coupon .element {
+    height: 0.8rem;
+}
+
+.list .coupon .element .discount {
+    margin-top: 0.15rem;
+    text-align: center;
+    font-size: 0.2rem;
+    color: #00c49d;
+}
+
+.list .coupon .element .discount.disable {
+    color: #aaaaaa;
+}
+
+.list .coupon .element .discount .number {
+    font-size: 0.4rem;
+}
+
+.list .coupon .element .discount .number.disable {
+    color: #aaaaaa;
+}
+
+.list .coupon .element .desc {
+    padding-top: 0.03rem;
+    text-align: center;
+    font-size: 0.16rem;
+    color: #aaaaaa;
+}
+
+.link {
+    padding: 0.1rem 0;
+    font-size: 0.15rem;
+}
+
+.link a {
+    color: #1e90ff;
+}

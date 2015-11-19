@@ -1,4 +1,4 @@
-<@override name="title">松果亲子－孩子体验式成长的第一课</@override>
+<@override name="title">敬请期待</@override>
 
 <@override name="css">
     <link rel="stylesheet" type="text/css" href="/css/incoming.css">

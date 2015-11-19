@@ -2,6 +2,9 @@ $(function () {
     if (!sg.common.is_login()) {
         sg.common.redirect_login();
     } else {
+        var avatar = $("#avatar").attr("src");
+        if (avatar == "") $("#avatar").attr("src", "/img/avatar01.png");
+
         $("#browsefile").change(sg.profile.update_avatar);
         $("#nickname").on("click", sg.profile.update_nickname);
         $("#sex").on("click", sg.profile.update_sex);

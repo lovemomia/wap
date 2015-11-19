@@ -28,6 +28,14 @@ a {
 
 .color-main { color: #00c49d; }
 .color-white { color: #ffffff }
+.color-chi { color: #c3272b; }
+.color-cheng { color: #fa8c35; }
+.color-huang { color: #fff143; }
+.color-lv { color: #00e500; }
+.color-qing { color: #00ffff; }
+.color-lan { color: #0000ff; }
+.color-zi { color: #8000ff; }
+.color-gray { color: #888888; }
 
 .bg-main {
     background-color: #00c49d;
@@ -109,6 +117,10 @@ div.error {
     text-align: center;
 }
 
+.header.bg-white {
+    color: #333333;
+}
+
 .header.fixed {
     position: fixed;
     top: 0;
@@ -182,8 +194,7 @@ div.error {
 .btn-lg-orange {
     display: inline-block;
     width: 3.6rem;
-    height: 0.55rem;
-    line-height: 0.55;
+    height: 0.45rem;
     font-size: 0.20rem;
     color: #ffffff;
     background: #f67531;
@@ -215,8 +226,7 @@ div.error {
 .btn-lg-main {
     display: inline-block;
     width: 3.6rem;
-    height: 0.55rem;
-    line-height: 0.55;
+    height: 0.45rem;
     font-size: 0.20rem;
     color: #ffffff;
     background: #00c49d;
@@ -287,7 +297,7 @@ div.error {
 }
 
 .arrow img {
-    margin: 0.06rem 0;
+    margin: 0.09rem 0 0 0;
     width: 0.2rem;
     height: 0.2rem;
 }

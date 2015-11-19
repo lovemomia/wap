@@ -8,6 +8,10 @@ $(function () {
             oid: oid
         }, sg.result.success);
     }
+
+    $(".back").on("click", function () {
+        window.location.href = "/";
+    });
 });
 
 sg.result = {

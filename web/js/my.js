@@ -1,6 +1,9 @@
 $(function () {
     sg.common.remove_histories();
 
+    var avatar = $("#avatar").attr("src");
+    if (avatar == "") $("#avatar").attr("src", "/img/avatar01.png");
+
     $("#index").on("click", function () {
         window.location.href = "/index";
     });

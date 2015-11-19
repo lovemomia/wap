@@ -1,7 +1,9 @@
 package cn.momia.wap.web.ctrl.user;
 
 import cn.momia.common.api.http.MomiaHttpResponse;
+import cn.momia.common.webapp.config.Configuration;
 import cn.momia.wap.web.ctrl.AbstractController;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class UserController extends AbstractController {
@@ -39,5 +43,18 @@ public class UserController extends AbstractController {
 
         MomiaHttpResponse resp = get("/user?utoken=" + utoken);
         return new ModelAndView("user/profile", "user", resp.getData());
+    }
+
+    @RequestMapping(value = { "/share", "/user/share" }, method = RequestMethod.GET)
+    public ModelAndView share(HttpServletRequest request) {
+        String utoken = getUtoken(request);
+        if (StringUtils.isBlank(utoken)) return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(request.getRequestURL().toString()) + "&back=" + request.getHeader("Referer"));
+
+        MomiaHttpResponse resp = get("/coupon/share?utoken=" + utoken);
+        JSONObject share = (JSONObject) resp.getData();
+        String queryString = request.getQueryString();
+        share.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), request.getRequestURL() + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));
+
+        return new ModelAndView("user/share", "share", share);
     }
 }

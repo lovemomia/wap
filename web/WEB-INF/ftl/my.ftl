@@ -48,6 +48,12 @@
                 <div class="title left">我的订单</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
+            <hr class="sep" />
+            <div class="line" onclick="window.location.href='/user/coupon'">
+                <div class="img left"><img src="/img/hongbao3x.png" /></div>
+                <div class="title left">我的红包</div>
+                <div class='arrow right'><img src='/img/allow3x.png' /></div>
+            </div>
         </div>
 
         <div class="form top-margin">

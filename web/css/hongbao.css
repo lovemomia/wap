@@ -1,0 +1,56 @@
+input {
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+    width: 3.2rem;
+    height: 0.45rem;
+    border: none;
+    font-size: 0.18rem;
+    text-align: center;
+}
+
+button {
+    margin-top: 0.2rem;
+}
+
+.btn-lg-main {
+    width: 3.2rem;
+}
+
+.btn-lg-orange {
+    width: 3.2rem;
+}
+
+.btn-lg-orange.disable {
+    background-color: #cccccc;
+}
+
+hr {
+    margin-top: 0.18rem;
+    width: 0.6rem;
+    height: 1px;
+    border: 0;
+    background-color: #cccccc;
+}
+
+hr.left {
+    margin-left: 0.9rem;
+}
+
+hr.right {
+    margin-right: 0.9rem;
+}
+
+.rules {
+    padding-top: 0.2rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.175rem;
+    color: #999999;
+}
+
+.desc {
+    padding: 0.1rem 0.4rem;
+    text-align: left;
+    color: #999999;
+}

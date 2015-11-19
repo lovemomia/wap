@@ -8,4 +8,13 @@
         <Http>http://i.momia.cn/m</Http>
         <Https>https://i.momia.cn/m</Https>
     </Api>
+
+    <Share>
+        <Url>http://m.momia.cn/hongbao</Url>
+    </Share>
+
+    <Weixin>
+        <JsApiAppId>wxc4ca5800d28b5650</JsApiAppId>
+        <JsApiKey>7cb8aa4aac60b73f280e8b62b434e205</JsApiKey>
+    </Weixin>
 </Configuration>

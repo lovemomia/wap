@@ -20,9 +20,15 @@
         </div>
 
         <div class="pay top-margin">
+            <div class="line coupon">
+                <div class="left letter-sp32">红包</div>
+                <div class="arrow right"><img src="/img/allow3x.png"/></div>
+                <div class="info right"><span class="coupon">使用红包</span></div>
+            </div>
+            <hr class="sep">
             <div class="line">
                 <div class="left">还需支付</div>
-                <div class="info right">${params.fee}元</div>
+                <div id="total_fee" class="info right">${params.fee}元</div>
             </div>
         </div>
         <div class="title">选择支付方式</div>
