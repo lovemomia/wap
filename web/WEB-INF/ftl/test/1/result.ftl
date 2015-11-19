@@ -20,7 +20,7 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>测试结果</div>
+    <div class="header bg-white bottom-border"><div class="back home left"><img src="/img/back3x.png"></div>测试结果</div>
     <div class="content">
         <#list results as result>
             <div class="result top-margin top-border bottom-border">
@@ -30,6 +30,16 @@
             </div>
         </#list>
     </div>
+</@override>
+
+<@override name="js">
+    <script type="text/javascript">
+        $(function () {
+            $(".back").on("click", function () {
+                window.location.href = "/";
+            });
+        });
+    </script>
 </@override>
 
 <@extends name="../../base.ftl"/>
