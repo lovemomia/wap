@@ -18,7 +18,7 @@
             <hr class="sep" />
             <div class="question" category="test1_8" id="40">很关心生态系统的话题（例如对于大鱼吃小鱼，小鱼吃虾米的问题感到好奇）</div>
         </div>
-        <div class="bottom-margin"><button id="btn_next" class="btn-lg-main">查看结果</button></div>
+        <div class="bottom-margin"><button id="btn_submit" class="btn-lg-main">查看结果</button></div>
     </div>
 </@override>
 
@@ -26,8 +26,17 @@
     <script type="text/javascript" src="/js/test/1.js"></script>
     <script type="text/javascript">
         $(function () {
-            $("#btn_next").on("click", function () {
-                window.location.href = "/test/1/result";
+            $("#btn_submit").on("click", function () {
+                var scores = new Array(sessionStorage.getItem("test1_1"),
+                        sessionStorage.getItem("test1_2"),
+                        sessionStorage.getItem("test1_3"),
+                        sessionStorage.getItem("test1_4"),
+                        sessionStorage.getItem("test1_5"),
+                        sessionStorage.getItem("test1_6"),
+                        sessionStorage.getItem("test1_7"),
+                        sessionStorage.getItem("test1_8"));
+
+                window.location.href = "/test/1/result?scores=" + encodeURIComponent(scores);
             });
         })
     </script>
