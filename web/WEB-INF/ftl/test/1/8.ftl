@@ -36,8 +36,20 @@
                         sessionStorage.getItem("test1_7"),
                         sessionStorage.getItem("test1_8"));
 
+                var form = $("<form method='post'></form>");
+                form.attr({"action": "/test/1/result"});
+                var ids_input = $("<input type='hidden'>");
+                ids_input.attr({ "name": "ids" });
+                ids_input.val(sessionStorage.getItem("test1_ids"));
+                form.append(ids_input);
+                var scores_input = $("<input type='hidden'>");
+                scores_input.attr({ "name": "scores" });
+                scores_input.val(scores);
+                form.append(scores_input);
+
                 sg.test1.reset();
-                window.location.href = "/test/1/result?scores=" + encodeURIComponent(scores);
+
+                form.submit();
             });
         })
     </script>

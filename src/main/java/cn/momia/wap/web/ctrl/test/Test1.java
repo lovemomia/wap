@@ -1,15 +1,19 @@
 package cn.momia.wap.web.ctrl.test;
 
+import cn.momia.common.api.http.MomiaHttpResponse;
 import cn.momia.wap.web.ctrl.AbstractController;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,6 +24,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("/test/1")
 public class Test1 extends AbstractController {
+    @Autowired JdbcTemplate jdbcTemplate;
+
     private static final Map<Integer, JSONObject> results = new HashMap<Integer, JSONObject>();
     static {
         JSONObject chi = new JSONObject();
@@ -89,8 +95,14 @@ public class Test1 extends AbstractController {
         hui.put("img", "http://s.sogokids.com/2015-11-19/c07f3a164e197a9c1ca6f284e98aa39f.jpg");
     }
 
-    @RequestMapping(value = "/result", method = RequestMethod.GET)
-    public ModelAndView result(@RequestParam String scores) {
+    @RequestMapping(value = "/result", method = RequestMethod.POST)
+    public ModelAndView result(HttpServletRequest request, @RequestParam String ids, @RequestParam String scores) {
+        String utoken = getUtoken(request);
+        MomiaHttpResponse resp = get("/user?utoken=" + utoken);
+        JSONObject userJson = (JSONObject) resp.getData();
+        long userId = userJson.getLong("id");
+        saveResult(userId, ids, scores);
+
         List<Pair> scoresList = new ArrayList<Pair>();
         String[] strs = StringUtils.split(scores, ",");
         if (strs.length != 8) return new ModelAndView("error", "msg", "服务器内部错误");
@@ -113,6 +125,15 @@ public class Test1 extends AbstractController {
         }
 
         return new ModelAndView("test/1/result", "results", resultJson);
+    }
+
+    private void saveResult(long userId, String ids, String scores) {
+        JSONObject resultJson = new JSONObject();
+        resultJson.put("ids", JSONObject.parse(ids));
+        resultJson.put("scores", scores);
+
+        String sql = "INSERT INTO SG_TestResult (UserId, TestId, Result, AddTime) VALUES (?, 1, ?, NOW())";
+        jdbcTemplate.update(sql, new Object[] { userId, resultJson.toJSONString() });
     }
 }
 
