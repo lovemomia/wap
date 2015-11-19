@@ -13,6 +13,7 @@
         }
 
         .result .left img {
+            margin-top: 0.03rem;
             width: 1.2rem;
             height: 1.23rem;
         }
