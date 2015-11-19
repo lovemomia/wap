@@ -8,13 +8,27 @@
             background-color: #ffffff;
         }
 
-        h3 {
-            margin-top: 0;
-            margin-bottom: 0.1rem;
+        .result .left {
+            width: 1.2rem;
+        }
+
+        .result .left img {
+            width: 1.2rem;
+            height: 1.23rem;
         }
 
         .people {
+            font-size: 0.12rem;
+            color: #777777;
+        }
 
+        .result .right {
+            width: 2.5rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.05rem;
         }
     </style>
 </@override>
@@ -24,9 +38,15 @@
     <div class="content">
         <#list results as result>
             <div class="result top-margin top-border bottom-border">
-                <h3>${result.title}</h3>
-                <div>${result.desc}</div>
-                <div class="people top-margin">代表人物: ${result.people}</div>
+                <div class="left">
+                    <img src="${result.img}" />
+                    <div class="people top-margin">代表人物: ${result.people}</div>
+                </div>
+                <div class="right">
+                    <h3 style="color: ${result.color}">${result.title}</h3>
+                    <div>${result.desc}</div>
+                </div>
+                <div style="clear: both;"></div>
             </div>
         </#list>
     </div>
