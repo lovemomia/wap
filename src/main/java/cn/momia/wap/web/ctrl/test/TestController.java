@@ -27,7 +27,7 @@ public class TestController {
     }
 
     private List<Test> getTests() {
-        String sql = "SELECT A.Id, A.Title, A.Cover, COUNT(DISTINCT B.UserId) AS Joined FROM SG_Test A INNER JOIN SG_TestResult B ON A.Id=B.TestId WHERE A.Status=1 AND B.Status=1 GROUP BY A.Id";
+        String sql = "SELECT A.Id, A.Title, A.Cover, COUNT(DISTINCT B.UserId) AS Joined FROM SG_Test A LEFT JOIN SG_TestResult B ON A.Id=B.TestId WHERE A.Status=1 GROUP BY A.Id";
         final List<Test> tests = new ArrayList<Test>();
         jdbcTemplate.query(sql, new RowCallbackHandler() {
             @Override
