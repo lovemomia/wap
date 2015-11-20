@@ -147,7 +147,9 @@ sg.common = {
         var invite = sg.common.param("invite");
         if (invite != null) sessionStorage.setItem("invite", invite);
 
-        if (sg.common.param("_src") != null) {
+        var src = sg.common.param("_src");
+        if (src != null) sessionStorage.setItem("_src", src);
+        if (sessionStorage.getItem("_src") != null) {
             $(".header").remove();
             $(".content").removeClass("has-fix-header");
         }
