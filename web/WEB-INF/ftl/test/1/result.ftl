@@ -43,7 +43,7 @@
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back home left"><img src="/img/back3x.png"></div>孩子的天赋密码</div>
     <div class="content top-padding">
-        <div class="title bottom-margin">你孩子的这些小天赋很突出哦！</div>
+        <div class="title bottom-margin">您孩子的这些小天赋很突出哦！</div>
         <#list results as result>
             <div class="result bottom-margin top-border bottom-border">
                 <div class="left">

@@ -48,7 +48,9 @@
                 <div class="test scrollable">
                     <div class="cover" style="background-image: url('${test.cover}')"></div>
                     <div class="title overflow-hidden">${test.title}</div>
-                    <div class="joined">${test.joined}人已参加</div>
+                    <#if (test.joined > 0)>
+                        <div class="joined">${test.joined}人已参加</div>
+                    </#if>
                 </div>
             </a>
         </#list>

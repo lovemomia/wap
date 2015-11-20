@@ -49,7 +49,7 @@ public class Test1Controller extends AbstractController {
         chi.put("color", "#f91b1b");
         chi.put("title", "赤: 语言智能");
         chi.put("desc", "这类小朋友对语言和文字很敏感，听说读写能力突出；在作家、演说家、记者、编辑、节目主持人、播音员、律师等职业上会有喜人的表现。");
-        chi.put("people", "马丁·路德·金、丘吉尔");
+        chi.put("people", "马丁·路德·金");
         chi.put("img", "http://s.sogokids.com/2015-11-19/7f922eab9c8d58822535a802a9e93883.jpg");
 
         cheng.put("color", "#ff5b02");
@@ -73,7 +73,7 @@ public class Test1Controller extends AbstractController {
         qin.put("color", "#0fd3ba");
         qin.put("title", "青：音乐智能");
         qin.put("desc", "在音调、旋律、节奏等方面出色的感知是这类智能小朋友的天赋。这种智能在作曲家、指挥家、歌唱家、乐师、乐器制作者、音乐评论家等人员那里都有出色的表现。");
-        qin.put("people", "贝多芬、巴赫、莫扎特");
+        qin.put("people", "贝多芬");
         qin.put("img", "http://s.sogokids.com/2015-11-19/72cef070e2b4ba5c1b4eba2d82628f51.jpg");
 
         lan.put("color", "#129afa");
