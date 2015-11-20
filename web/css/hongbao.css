@@ -25,6 +25,11 @@ button {
     background-color: #cccccc;
 }
 
+.msg {
+    font-size: 0.14rem;
+    color: #ff0000;
+}
+
 hr {
     margin-top: 0.18rem;
     width: 0.6rem;

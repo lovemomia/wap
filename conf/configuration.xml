@@ -4,6 +4,18 @@
         <Level>INFO</Level>
     </Logger>
 
+    <Database>
+        <SogoKids>
+            <JdbcUrl><![CDATA[jdbc:mysql://120.55.102.12:3306/sogokids?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull]]></JdbcUrl>
+            <Username>sogokids</Username>
+            <Password>SogoKids</Password>
+        </SogoKids>
+    </Database>
+
+    <Image>
+        <Domain>http://s.momia.cn</Domain>
+    </Image>
+
     <Api>
         <Http>http://i.momia.cn/m</Http>
         <Https>https://i.momia.cn/m</Https>
