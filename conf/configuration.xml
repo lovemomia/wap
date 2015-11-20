@@ -12,6 +12,10 @@
         </SogoKids>
     </Database>
 
+    <Image>
+        <Domain>http://s.momia.cn</Domain>
+    </Image>
+
     <Api>
         <Http>http://i.momia.cn/m</Http>
         <Https>https://i.momia.cn/m</Https>

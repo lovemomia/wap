@@ -1,7 +1,13 @@
-<@override name="title">测试结果</@override>
+<@override name="title">孩子的天赋密码</@override>
 
 <@override name="css">
     <style type="text/css">
+        .title {
+            padding-left: 0.1rem;
+            text-align: left;
+            font-size: 0.18rem;
+        }
+
         .result {
             padding: 0.1rem;
             text-align: left;
@@ -35,10 +41,11 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back home left"><img src="/img/back3x.png"></div>测试结果</div>
-    <div class="content">
+    <div class="header bg-white bottom-border"><div class="back home left"><img src="/img/back3x.png"></div>孩子的天赋密码</div>
+    <div class="content top-padding">
+        <div class="title bottom-margin">你孩子的这些小天赋很突出哦！</div>
         <#list results as result>
-            <div class="result top-margin top-border bottom-border">
+            <div class="result bottom-margin top-border bottom-border">
                 <div class="left">
                     <img src="${result.img}" />
                     <div class="people top-margin">代表人物: ${result.people}</div>
