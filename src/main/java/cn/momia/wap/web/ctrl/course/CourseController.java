@@ -34,7 +34,7 @@ public class CourseController extends AbstractController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView course(@RequestParam long id) {
-        MomiaHttpResponse resp = get("/course?id=" + id);
+        MomiaHttpResponse resp = get("/v2/course?id=" + id);
         return new ModelAndView("course/course", "course", resp.getData());
     }
 

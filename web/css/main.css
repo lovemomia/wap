@@ -102,6 +102,10 @@ hr.sep {
     border: none;
 }
 
+hr.sep.full {
+    margin: 0;
+}
+
 div.error {
     height: 0.6rem;
     line-height: 0.6rem;

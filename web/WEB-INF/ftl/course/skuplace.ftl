@@ -1,11 +1,11 @@
-<@override name="title">上课地点</@override>
+<@override name="title">课程表</@override>
 
 <@override name="css">
     <link rel="stylesheet" type="text/css" href="/css/course/skuplace.css">
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>上课地点<#if (params.pid > 0)><div id="btn_submit" class="right">提交</div></#if></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>课程表<#if (params.pid > 0)><div id="btn_submit" class="right">提交</div></#if></div>
     <div class="content">
         <div class="tab bg-white bottom-border">
             <div id="cur_month" class="left" onclick="window.location.href='/course/skuplace?id=${params.id}&pid=${params.pid}&status=2'">${params.cur_month}</div>

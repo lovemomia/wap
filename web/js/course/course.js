@@ -37,7 +37,11 @@ $(function () {
     });
 
     $("#goal").html(sg.common.sections_html($("#goal").html()));
-    $("#flow").html(sg.common.sections_html($("#flow").html()));
+    $(".detail-text").each(function () {
+        $(this).html(sg.common.sections_html($(this).html()));
+    });
+    $(".experience").html(sg.common.sections_html($(".experience").html()));
     $("#tips").html(sg.common.sections_html($("#tips").html()));
+    $("#notice").html(sg.common.sections_html($("#notice").html()));
     $("#institution").html(sg.common.sections_html($("#institution").html()));
 });
