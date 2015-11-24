@@ -14,12 +14,12 @@ sg.index = {
 
     read_data: function (city, start) {
         if (start == 0) {
-            sg.common.get(sg.config.api + "/index", {
+            sg.common.get(sg.config.api + "/v2/index", {
                 city: city,
                 start: start
             }, sg.index.success_init);
         } else {
-            sg.common.get(sg.config.api + "/index", {
+            sg.common.get(sg.config.api + "/v2/index", {
                 city: city,
                 start: start
             }, sg.index.success_more);
@@ -31,10 +31,10 @@ sg.index = {
         generate_icons_html(data.icons);
         generate_events_html(data.events);
 
-        if (data.subjects.totalCount > 0) {
+        if (data.courses.totalCount > 0) {
             var html = "";
             html += "<div class='free'>";
-            html += "<div class='title'><hr class='left' />课程试听<hr class='right' /></div>";
+            html += "<div class='title'><hr class='left' />热门推荐<hr class='right' /></div>";
             html += "</div>";
 
             $(".content").append(html);
@@ -141,40 +141,40 @@ sg.index = {
 
     success_more: function (data) {
         sg.common.unbind_scrollin();
-        generate_subjects_html(data.subjects);
-        if (data.subjects.nextIndex != undefined) sg.common.bind_scrollin(function () {
-            sg.index.read_data(1, data.subjects.nextIndex);
+        generate_courses_html(data.courses);
+        if (data.courses.nextIndex != undefined) sg.common.bind_scrollin(function () {
+            sg.index.read_data(1, data.courses.nextIndex);
         });
 
-        function generate_subjects_html(subjects) {
-            if (subjects == undefined || subjects.list.length <= 0) return;
+        function generate_courses_html(courses) {
+            if (courses == undefined || courses.list.length <= 0) return;
 
             var html = "";
-            var list = subjects.list;
+            var list = courses.list;
             for (var i = 0; i < list.length; i++) {
-                html += generate_subject_html(list[i]);
+                html += generate_course_html(list[i]);
             }
 
             html += "</div>";
 
             $(".free").append(html);
 
-            function generate_subject_html(subject) {
+            function generate_course_html(course) {
                 var html = "";
-                html += "<a href='/subjectdetail?id=" + subject.id + "'>";
+                html += "<a href='/course?id=" + course.id + "'>";
                 html += "<div class='subject scrollable'>";
-                html += "<div class='cover' style='background-image: url(" + subject.cover + ")'>";
+                html += "<div class='cover' style='background-image: url(" + course.cover + ")'>";
                 html += "</div>";
                 html += "<div class='desc'>";
-                html += "<div class='title overflow-hidden'>" + subject.title + "</div>";
-                var intro = subject.age + " | " + subject.scheduler + " | " + subject.region;
+                html += "<div class='title overflow-hidden'>" + course.title + "</div>";
+                var intro = course.age + " | " + course.scheduler + " | " + course.region;
                 if (intro.length == 6) intro = "";
                 html += "<div class='intro overflow-hidden'>" + intro + "</div>";
-                html += "<div class='tags overflow-hidden'>" + subject.tags + "</div>";
-                html += "<div class='price'><span>￥</span><span class='number'>" + subject.price + "</span><span>起</span></div>"
+                html += "<div class='tags overflow-hidden'>" + course.subject + "</div>";
+                html += "<div class='price'><span>￥</span><span class='number'>" + course.price + "</span><span>起</span></div>"
                 html += "</div>";
-                if (subject.joined > 0) {
-                    html += "<div class='joined'>" + subject.joined + "人参加</div>";
+                if (course.joined > 0) {
+                    html += "<div class='joined'>" + course.joined + "人参加</div>";
                 }
                 html += "</div>";
                 html += "</a>";
