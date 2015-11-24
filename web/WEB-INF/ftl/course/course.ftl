@@ -7,7 +7,11 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>课程详情</div>
-    <div class="content">
+    <#if !(course.cancelable?? && course.cancelable == true) && course.buyable>
+        <div class="content has-fix-footer bottom-margin">
+    <#else>
+        <div class="content bottom-margin">
+    </#if>
 
         <#if (course.cancelable?? && course.cancelable == true)>
         <div class="list">
@@ -57,14 +61,16 @@
             </#if>
             <div class="course-title">${course.title}</div>
 
-            <div class="course text no-top-padding no-bottom-padding no-border">
-                <#if (course.price > 0)>
-                    <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span></div>
-                <#else>
-                    <div class="left price"><span class="free">公益课</span></div>
-                </#if>
-                <div style="clear:both"></div>
-            </div>
+            <#if !course.buyable>
+                <div class="course text no-top-padding no-bottom-padding no-border">
+                    <#if (course.price > 0)>
+                        <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span></div>
+                    <#else>
+                        <div class="left price"><span class="free">公益课</span></div>
+                    </#if>
+                    <div style="clear:both"></div>
+                </div>
+            </#if>
         </#if>
         
         <div class="bg-white">
@@ -85,7 +91,7 @@
             <div style="clear:both"></div>
         </div>
 
-        <#if (course.cancelable?? && course.cancelable == true)>
+        <#if (course.cancelable?? && course.cancelable==true)>
         <div id="btn_cancel" class="top-margin">
             <button class="btn-lg-main">取消预约</button>
         </div>
@@ -229,13 +235,17 @@
             </div>
         </#if>
 
-        <div class="course text no-bottom-border top-margin"><div class="title">特别提示</div></div>
-        <div class="bg-white"><hr class="sep"/></div>
-        <div id="tips" class="course text no-top-border">${course.tips}</div>
+        <#if (course.tips?length>0)>
+            <div class="course text no-bottom-border top-margin"><div class="title">特别提示</div></div>
+            <div class="bg-white"><hr class="sep"/></div>
+            <div id="tips" class="course text no-top-border">${course.tips}</div>
+        </#if>
 
-        <div class="course text no-bottom-border top-margin"><div class="title">购买须知</div></div>
-        <div class="bg-white"><hr class="sep"/></div>
-        <div id="notice" class="course text no-top-border">${course.notice}</div>
+        <#if (course.notice?length>0)>
+            <div class="course text no-bottom-border top-margin"><div class="title">购买须知</div></div>
+            <div class="bg-white"><hr class="sep"/></div>
+            <div id="notice" class="course text no-top-border">${course.notice}</div>
+        </#if>
 
         <#if course.institution??>
             <div id="institution" class="course text no-bottom-border top-margin">
@@ -248,6 +258,10 @@
         </#if>
 
     </div>
+
+    <#if !(course.cancelable?? && course.cancelable == true) && course.buyable>
+        <div class="footer fixed"></div>
+    </#if>
 </@override>
 
 <@override name="js">
