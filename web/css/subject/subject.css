@@ -101,7 +101,7 @@
 }
 
 .has-fix-footer {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.6rem;
 }
 
 .footer .left {
@@ -122,4 +122,58 @@
     width: 1.5rem;
     height: 0.5rem;
     border-radius: 0;
+}
+
+.tabs {
+    padding: 0;
+    border-radius: 0;
+    border: 1px solid #e1e1e1;
+    border-left: none;
+    border-right: none;
+}
+
+.ui-tabs .ui-tabs-nav {
+    margin: 0;
+    padding: 0;
+    height: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 0;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 1.333rem;
+    height: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    float: left;
+    text-decoration: none;
+    padding: 0.15rem 0.1rem 0 0.1rem;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+    width: 100%;
+    height: 0.5rem;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    border-bottom: 0.02rem solid #00c49d;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+    color: #00c49d;
 }

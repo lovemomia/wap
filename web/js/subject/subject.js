@@ -18,4 +18,6 @@ $(function () {
     $("#btn_buy").on("click", function () {
         window.location.href = "/subject/placeorder?id=" + sg.common.param("id");
     });
+
+    $(".tabs").tabs();
 });

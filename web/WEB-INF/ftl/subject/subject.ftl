@@ -7,7 +7,7 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>${subject.subject.title}</div>
-    <div class="content has-fix-footer bottom-margin">
+    <div class="content has-fix-footer">
 
         <#if subject.subject.imgs?size == 0>
         <#else>
@@ -38,7 +38,7 @@
             </div>
         </#if>
 
-        <div class="subject text no-top-border">
+        <div class="subject text no-border">
             <div class="left tag img"><img src="/img/tag3x.png"/></div>
             <div class="left tag desc">适合${subject.subject.age}</div>
             <#if (subject.subject.joined > 0)>
@@ -47,49 +47,46 @@
             </#if>
             <div style="clear:both"></div>
         </div>
-
-        <div class="subject text no-bottom-border top-margin"><div class="title">课程目标</div></div>
         <div class="bg-white"><hr class="sep"/></div>
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
 
-        <div id="courses" class="subject text no-bottom-border top-margin">
-            <div class="title left">可选课程（${subject.courses.totalCount}）</div>
-            <div class="arrow right"><img src="/img/allow3x.png" /></div>
-            <div class="arrow right">更多</div>
-            <div style="clear:both"></div>
-        </div>
-        <div class="bg-white"><hr class="sep"/></div>
-        <div class="subject list bg-white bottom-border">
-            <#list subject.courses.list as course>
-                <#if (course_index > 0)><hr class='sep' /></#if>
-                <div class="element course" cid="${course.id}">
-                    <div class="left"><img src="${course.cover}"></div>
-                    <div class="right">
-                        <div class="title overflow-hidden">${course.title}</div>
-                        <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
-                        <div class="desc overflow-hidden">${course.region}</div>
-                        <div class="price">
-                            <#if (course.price > 0)>
-                                <span>价值 </span><span class="number">${course.price}</span><span>元</span>
-                            <#else>
-                                <span class="free">公益课</span>
-                            </#if>
+        <div class="tabs top-margin">
+            <ul>
+                <li><a href="#panel-1">可选课程</a></li>
+                <li><a href="#panel-2">购买须知</a></li>
+            </ul>
+            <div id="panel-1">
+                <div class="subject list bg-white">
+                    <#list subject.courses.list as course>
+                        <#if (course_index > 0)><hr class='sep' /></#if>
+                        <div class="element course" cid="${course.id}">
+                            <div class="left"><img src="${course.cover}"></div>
+                            <div class="right">
+                                <div class="title overflow-hidden">${course.title}</div>
+                                <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
+                                <div class="desc overflow-hidden">${course.region}</div>
+                                <div class="price">
+                                    <#if (course.price > 0)>
+                                        <span>价值 </span><span class="number">${course.price}</span><span>元</span>
+                                    <#else>
+                                        <span class="free">公益课</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
                         </div>
-                    </div>
-                    <div style="clear:both"></div>
+                    </#list>
                 </div>
-            </#list>
+            </div>
+            <div id="panel-2">
+                <div class="subject text no-border">
+                    <#list subject.subject.notice as notice>
+                        <div class="notice title">${notice.title}</div>
+                        <div class="notice content">${notice.content}</div>
+                    </#list>
+                </div>
+            </div>
         </div>
-
-        <div class="subject text no-bottom-border top-margin"><div class="title">购买须知</div></div>
-        <div class="bg-white"><hr class="sep"/></div>
-        <div class="subject text no-top-border">
-            <#list subject.subject.notice as notice>
-                <div class="notice title">${notice.title}</div>
-                <div class="notice content">${notice.content}</div>
-            </#list>
-        </div>
-
     </div>
 
     <div class="footer fixed">
@@ -102,6 +99,7 @@
 <@override name="js">
     <script type="text/javascript" src="/js/hhSwipe.js"></script>
     <script type="text/javascript" src="/js/scroll.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/js/subject/subject.js"></script>
 </@override>
 

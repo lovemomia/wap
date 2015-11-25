@@ -8,9 +8,9 @@
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>课程详情</div>
     <#if !(course.cancelable?? && course.cancelable == true) && course.buyable>
-        <div class="content has-fix-footer bottom-margin">
+        <div class="content has-fix-footer">
     <#else>
-        <div class="content bottom-margin">
+        <div class="content bottom-padding">
     </#if>
 
         <#if (course.cancelable?? && course.cancelable == true)>

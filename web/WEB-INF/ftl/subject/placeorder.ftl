@@ -6,7 +6,7 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>提交订单</div>
-    <div class="content has-fix-footer bottom-margin">
+    <div class="content has-fix-footer">
         <#if params.courseOrder?? && params.courseOrder==true>
             <div class="title">购买单次课程</div>
         <#else>
