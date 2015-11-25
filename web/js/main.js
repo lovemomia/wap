@@ -213,6 +213,8 @@ sg.common = {
     },
 
     sections_html: function (content) {
+        if (content == undefined) return "";
+
         var html = "";
         var sections = content.replace("\r", "").split("\n");
         for (var i = 0; i < sections.length; i++) {

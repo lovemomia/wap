@@ -260,7 +260,11 @@
     </div>
 
     <#if !(course.cancelable?? && course.cancelable == true) && course.buyable>
-        <div class="footer fixed"></div>
+        <div class="footer fixed">
+            <div class="left top-border">价格: ¥ <span class="number">${course.price}</span></div>
+            <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+            <div style="clear:both"></div>
+        </div>
     </#if>
 </@override>
 

@@ -171,7 +171,7 @@ sg.index = {
                 if (intro.length == 6) intro = "";
                 html += "<div class='intro overflow-hidden'>" + intro + "</div>";
                 html += "<div class='tags overflow-hidden'>" + course.subject + "</div>";
-                html += "<div class='price'><span>￥</span><span class='number'>" + course.price + "</span><span>起</span></div>"
+                html += "<div class='price'>￥<span class='number'>" + course.price + "</span>/次</div>"
                 html += "</div>";
                 if (course.joined > 0) {
                     html += "<div class='joined'>" + course.joined + "人参加</div>";

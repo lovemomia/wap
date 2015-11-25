@@ -36,6 +36,10 @@ $(function () {
         window.location.href = "/institution/detail?id=" + id;
     });
 
+    $("#btn_buy").on('click', function () {
+        window.location.href = "/subject/placeorder?id=" + $(this).attr("sid") + "&coid=" + id;
+    });
+
     $("#goal").html(sg.common.sections_html($("#goal").html()));
     $(".detail-text").each(function () {
         $(this).html(sg.common.sections_html($(this).html()));

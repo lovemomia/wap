@@ -226,10 +226,31 @@
 }
 
 .footer {
-    height: 0.45rem;
+    padding: 0;
+    height: 0.5rem;
     border: none;
 }
 
 .has-fix-footer {
-    padding-bottom: 0.45rem;
+    padding-bottom: 0.5rem;
+}
+
+.footer .left {
+    padding: 0.1rem;
+    width: 2.5rem;
+    height: 0.5rem;
+    line-height: 0.3rem;
+    font-size: 0.18rem;
+    text-align: left;
+}
+
+.footer .left .number {
+    font-size: 0.2rem;
+    color: #f67531;
+}
+
+.btn-orange {
+    width: 1.5rem;
+    height: 0.5rem;
+    border-radius: 0;
 }

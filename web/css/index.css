@@ -187,11 +187,11 @@
     bottom: 0;
     height: 0.45rem;
     line-height: 0.45rem;
-    color: #f67531
 }
 
 .free .subject .desc .price .number {
     font-size: 0.24rem;
+    color: #f67531
 }
 
 .more {
