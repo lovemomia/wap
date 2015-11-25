@@ -27,8 +27,8 @@ sg.courselist = {
 
             $(".content").append(html);
 
-            if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
-                sg.courselist.more(sg.common.param("sid"), data.nextIndex);
+            if (data.courses.nextIndex != undefined) sg.common.bind_scrollin(function () {
+                sg.courselist.more(sg.common.param("sid"), data.courses.nextIndex);
             });
         }
 

@@ -59,9 +59,9 @@
                     </#if>
                 </div>
             </#if>
-            <div class="course-title">${course.title}</div>
 
             <#if !course.buyable>
+                <div class="course-title no-bottom-padding">${course.title}</div>
                 <div class="course text no-top-padding no-bottom-padding no-border">
                     <#if (course.price > 0)>
                         <div class="left price">价值<span class="left-margin">¥</span><span class="number">${course.price}</span></div>
@@ -70,6 +70,8 @@
                     </#if>
                     <div style="clear:both"></div>
                 </div>
+            <#else>
+                <div class="course-title">${course.title}</div>
             </#if>
         </#if>
         

@@ -127,9 +127,8 @@
 .tabs {
     padding: 0;
     border-radius: 0;
-    border: 1px solid #e1e1e1;
-    border-left: none;
-    border-right: none;
+    border: none;
+    border-top: 1px solid #e1e1e1;
 }
 
 .ui-tabs .ui-tabs-nav {
@@ -176,4 +175,9 @@
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
     color: #00c49d;
+}
+
+.more {
+    padding: 0.1rem;
+    text-align: center;
 }

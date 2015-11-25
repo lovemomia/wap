@@ -17,7 +17,7 @@ import java.net.URLEncoder;
 public class SubjectController extends AbstractController {
     @RequestMapping(value = "/subjectdetail", method = RequestMethod.GET)
     public ModelAndView subject(@RequestParam long id) {
-        MomiaHttpResponse resp = get("/subject?id=" + id);
+        MomiaHttpResponse resp = get("/v2/subject?id=" + id);
         return new ModelAndView("subject/subject", "subject", resp.getData());
     }
 

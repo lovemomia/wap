@@ -6,6 +6,10 @@
     text-align: left;
 }
 
+.course-title.no-bottom-padding {
+    padding-bottom: 0;
+}
+
 .list .element .right {
     position: relative;
 }
