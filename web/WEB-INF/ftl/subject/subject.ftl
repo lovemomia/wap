@@ -58,7 +58,7 @@
                 <li><a href="#panel-3">成长说</a></li>
             </ul>
             <div id="panel-1">
-                <#if subject.courses??>
+                <#if (subject.courses?? && subject.courses.totalCount>0)>
                 <div class="subject list bottom-border">
                     <#list subject.courses.list as course>
                         <a href="/course?id=${course.id}">
@@ -83,7 +83,7 @@
                         </#if>
                         </a>
                     </#list>
-                    <#if (subject.courses.nextIndex > 0)>
+                    <#if (subject.courses.nextIndex?? && subject.courses.nextIndex > 0)>
                         <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
                     </#if>
                 </div>
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div id="panel-3">
-                <#if subject.feeds??>
+                <#if (subject.feeds?? && subject.feeds.totalCount>0)>
                     <div class="subject list bottom-border">
                         <#list subject.feeds.list as feed>
                             <div class="feed">
@@ -142,7 +142,7 @@
                                 <hr class="sep" />
                             </#if>
                         </#list>
-                        <#if (subject.feeds.nextIndex > 0)>
+                        <#if (subject.feeds.nextIndex?? && subject.feeds.nextIndex > 0)>
                             <div class="more top-border"><a href="/subject/feeds?sid=${subject.subject.id}">查看更多</a></div>
                         </#if>
                     </div>
