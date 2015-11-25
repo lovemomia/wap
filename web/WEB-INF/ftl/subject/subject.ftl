@@ -7,7 +7,7 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>${subject.subject.title}</div>
-    <div class="content">
+    <div class="content has-fix-footer bottom-margin">
 
         <#if subject.subject.imgs?size == 0>
         <#else>
@@ -37,17 +37,6 @@
                 </#if>
             </div>
         </#if>
-
-        <div class="subject text no-border">
-            <div class="left price">课程包<span class="left-margin">¥</span><span class="number">${subject.subject.price}</span><span>起</span></div>
-            <div class="right button">
-                <button id="btn_buy" class="btn-orange">立即抢购</button>
-            </div>
-            <div style="clear:both"></div>
-        </div>
-        <div class="bg-white">
-            <hr class="sep" />
-        </div>
 
         <div class="subject text no-top-border">
             <div class="left tag img"><img src="/img/tag3x.png"/></div>
@@ -101,6 +90,12 @@
             </#list>
         </div>
 
+    </div>
+
+    <div class="footer fixed">
+        <div class="left price top-border">课程包<span class="left-margin">¥ </span><span class="number">${subject.subject.price}</span><span>起</span></div>
+        <div class="right"><button id="btn_buy" class="btn-orange">立即抢购</button></div>
+        <div style="clear:both"></div>
     </div>
 </@override>
 

@@ -17,6 +17,10 @@ $(function () {
         sessionStorage.setItem("subjectId", $(this).attr("sid"));
     });
 
+    $("#packages").on("click", function () {
+        window.location.href = "/subjectdetail?id=" + sg.common.param("id");
+    });
+
     $("#btn_submit").on("click", function () {
         var skuId = sessionStorage.getItem("skuId");
         var price = sessionStorage.getItem("price");
