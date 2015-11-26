@@ -33,7 +33,7 @@ sg.trial = {
 
                 function generate_course_html(course) {
                     var html = "";
-                    html += "<a href='/course?id=" + course.id + "'>";
+                    html += "<a href='/course/trial?id=" + course.id + "'>";
                     html += "<div class='course scrollable'>";
                     html += "<div class='cover' style='background-image: url(" + course.cover + ")'>";
                     html += "</div>";
