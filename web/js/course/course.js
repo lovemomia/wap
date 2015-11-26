@@ -40,6 +40,10 @@ $(function () {
         window.location.href = "/subject/placeorder?id=" + $(this).attr("sid") + "&coid=" + id;
     });
 
+    $("#btn_try").on('click', function () {
+        window.location.href = "/subject/placeorder?id=" + $(this).attr("sid");
+    });
+
     $("#goal").html(sg.common.sections_html($("#goal").html()));
     $(".detail-text").each(function () {
         $(this).html(sg.common.sections_html($(this).html()));

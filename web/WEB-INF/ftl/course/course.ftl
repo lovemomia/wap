@@ -7,7 +7,7 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>课程详情</div>
-    <#if !(course.cancelable?? && course.cancelable == true) && course.buyable>
+    <#if !(course.cancelable?? && course.cancelable == true) && (course.buyable || course.trial??)>
         <div class="content has-fix-footer">
     <#else>
         <div class="content bottom-padding">
@@ -261,12 +261,20 @@
 
     </div>
 
-    <#if !(course.cancelable?? && course.cancelable == true) && course.buyable>
-        <div class="footer fixed">
-            <div class="left top-border">价格: ¥ <span class="number">${course.price}</span></div>
-            <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
-            <div style="clear:both"></div>
-        </div>
+    <#if !(course.cancelable?? && course.cancelable == true)>
+        <#if course.buyable>
+            <div class="footer fixed">
+                <div class="left top-border">价格: ¥ <span class="number">${course.price}</span></div>
+                <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+                <div style="clear:both"></div>
+            </div>
+        <#elseif course.trial?? && course.trial>
+            <div class="footer fixed">
+                <div class="left top-border">价格: ¥ <span class="number">1</span></div>
+                <div class="right"><button id="btn_try" sid="${course.subjectId}" class="btn-orange">加入试听</button></div>
+                <div style="clear:both"></div>
+            </div>
+        </#if>
     </#if>
 </@override>
 

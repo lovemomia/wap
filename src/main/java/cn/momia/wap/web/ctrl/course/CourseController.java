@@ -38,6 +38,15 @@ public class CourseController extends AbstractController {
         return new ModelAndView("course/course", "course", resp.getData());
     }
 
+    @RequestMapping(value = "/trial", method = RequestMethod.GET)
+    public ModelAndView trial(@RequestParam long id) {
+        MomiaHttpResponse resp = get("/v2/course?id=" + id);
+        JSONObject courseJson = (JSONObject) resp.getData();
+        courseJson.put("trial", true);
+
+        return new ModelAndView("course/course", "course", courseJson);
+    }
+
     @RequestMapping(value = "cancelable", method = RequestMethod.GET)
     public ModelAndView cancelable(@RequestParam long id) {
         MomiaHttpResponse resp = get("/course?id=" + id);
