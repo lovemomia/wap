@@ -19,7 +19,7 @@
                 <div class="left"><img src="${course.cover}" /></div>
                 <div class="right">
                     <div class="title overflow-hidden">${course.title}</div>
-                    <div class="desc overflow-hidden">${course.place.address}</div>
+                    <div class="desc overflow-hidden">${course.address}</div>
                     <div class="desc overflow-hidden">${course.scheduler}</div>
                     <#if (course.price > 0)>
                         <div class="price"><span>价值 </span><span class="number">${course.price}</span><span>元</span></div>
