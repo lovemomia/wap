@@ -142,9 +142,6 @@
                                 <hr class="sep" />
                             </#if>
                         </#list>
-                        <#if (subject.feeds.nextIndex?? && subject.feeds.nextIndex > 0)>
-                            <div class="more top-border"><a href="/subject/feeds?sid=${subject.subject.id}">查看更多</a></div>
-                        </#if>
                     </div>
                 </#if>
             </div>

@@ -44,7 +44,11 @@ sg.order = {
         function generate_order_html(order) {
             var html = "";
             html += "<div class='order'>";
-            html += "<a href='/subjectdetail?id=" + order.subjectId + "'>";
+            if (order.courseId > 0) {
+                html += "<a href='/course?id=" + order.courseId + "'>";
+            } else {
+                html += "<a href='/subjectdetail?id=" + order.subjectId + "'>";
+            }
             html += "<div class='element scrollable'>";
             html += "<div class='left'>";
             html += "<img src='" + order.cover + "' />";

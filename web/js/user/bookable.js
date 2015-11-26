@@ -38,7 +38,11 @@ sg.bookable = {
 
         function generate_package_html(package) {
             var html = "";
-            html += "<a href='/subject/courses?sid=" + package.subjectId + "&pid=" + package.packageId + "'>";
+            if (package.courseId > 0) {
+                html += "<a href='/course/skuplace?id=" + package.courseId + "&pid=" + package.packageId + "'>";
+            } else {
+                html += "<a href='/subject/courses?sid=" + package.subjectId + "&pid=" + package.packageId + "'>";
+            }
             html += "<div class='element scrollable'>";
             html += "<div class='left'>";
             html += "<img src='" + package.cover + "' />";
