@@ -33,7 +33,11 @@ sg.trial = {
 
                 function generate_course_html(course) {
                     var html = "";
-                    html += "<a href='/course/trial?id=" + course.id + "'>";
+                    if (sessionStorage.getItem("_src") != null) {
+                        html += "<a href='duola://coursedetail?id=" + course.id + "'>";
+                    } else {
+                        html += "<a href='/course/trial?id=" + course.id + "'>";
+                    }
                     html += "<div class='course scrollable'>";
                     html += "<div class='cover' style='background-image: url(" + course.cover + ")'>";
                     html += "</div>";
