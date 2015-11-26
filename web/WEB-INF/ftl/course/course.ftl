@@ -243,7 +243,7 @@
             <div id="tips" class="course text no-top-border">${course.tips}</div>
         </#if>
 
-        <#if (course.notice?length>0)>
+        <#if (course.notice?? && course.notice?length>0)>
             <div class="course text no-bottom-border top-margin"><div class="title">购买须知</div></div>
             <div class="bg-white"><hr class="sep"/></div>
             <div id="notice" class="course text no-top-border">${course.notice}</div>
