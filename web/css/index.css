@@ -71,13 +71,21 @@
 }
 
 .event {
-    padding: 0.1rem;
+    padding: 0.05rem;
     width: 1.92rem;
     text-align: left;
 }
 
+.event.left {
+    padding-right: 0.1rem;
+}
+
+.event.right {
+    padding-left: 0.1rem;
+}
+
 .event .left {
-    width: 1.1rem;
+    width: 1.15rem;
 }
 
 .event .title {
@@ -94,7 +102,7 @@
 
 .event .desc {
     height: 0.2rem;
-    font-size: 0.15rem;
+    font-size: 0.14rem;
     color: #666666;
 }
 
