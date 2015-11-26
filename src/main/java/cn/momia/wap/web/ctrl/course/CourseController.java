@@ -48,10 +48,11 @@ public class CourseController extends AbstractController {
     }
 
     @RequestMapping(value = "cancelable", method = RequestMethod.GET)
-    public ModelAndView cancelable(@RequestParam long id) {
+    public ModelAndView cancelable(@RequestParam long id, @RequestParam String scheduler) {
         MomiaHttpResponse resp = get("/course?id=" + id);
         JSONObject courseJson = (JSONObject) resp.getData();
         courseJson.put("cancelable", true);
+        courseJson.put("scheduler", scheduler);
 
         return new ModelAndView("course/course", "course", courseJson);
     }
