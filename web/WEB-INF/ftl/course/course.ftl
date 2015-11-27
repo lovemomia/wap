@@ -102,7 +102,7 @@
         <#if (course.comments?? && course.comments.totalCount>0)>
             <div id="comment" class="course text no-bottom-border top-margin">
                 <div class="title left">用户点评</div>
-                <div class="arrow right"><img src="/img/allow3x.png" /></div>
+                <#--<div class="arrow right"><img src="/img/allow3x.png" /></div>-->
                 <div style="clear:both"></div>
             </div>
             <div class="course comment bottom-border">

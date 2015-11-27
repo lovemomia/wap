@@ -32,7 +32,7 @@
             <p>孩子带着一个天然进度表降临人世。尽管知他们认知无法与成人相比，但对于内在需要，他们比成人更加敏锐，每个孩子都非常“聪明”。</p>
             <p class="top-margin">（量表依据哈佛心理学学家加德纳的多元智能理论开发）</p>
         </div>
-        <div class="bottom-margin"><button id="btn_start" class="btn-lg-orange">开始测试</button></div>
+        <div class="top-margin bottom-margin"><button id="btn_start" class="btn-lg-orange">开始测试</button></div>
     </div>
 </@override>
 

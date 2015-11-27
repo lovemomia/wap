@@ -5,8 +5,9 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>青<div class="right"><span class="color-main">5</span>/8</div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
     <div class="content">
+        <div class="title"><span class="color-main">5</span>/8 青</div>
         <div class="questions">
             <div class="question" category="test1_5" id="21">说话、活动有节奏感</div>
             <hr class="sep" />
