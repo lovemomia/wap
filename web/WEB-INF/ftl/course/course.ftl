@@ -265,7 +265,11 @@
         <#if course.buyable>
             <div class="footer fixed">
                 <div class="left top-border">价格: ¥ <span class="number">${course.price}</span></div>
-                <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+                <#if course.status==1>
+                    <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+                <#else>
+                    <div class="right"><button class="btn-gray">已经售完</button></div>
+                </#if>
                 <div style="clear:both"></div>
             </div>
         <#elseif course.trial?? && course.trial>
