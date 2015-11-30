@@ -164,7 +164,13 @@
         <#if course.detail??>
         <div class="course detail bottom-border bottom-padding">
             <#list course.detail as detailblock>
-                <div class="title overflow-hidden"><div class="idx">${detailblock_index+1}</div>${detailblock.title}</div>
+                <#if (detailblock_index > 0)>
+                    <div class="title top-margin overflow-hidden">
+                <#else>
+                    <div class="title overflow-hidden">
+                </#if>
+                    <div class="idx">${detailblock_index+1}</div>${detailblock.title}
+                </div>
                 <#list detailblock.content as contentblock>
                     <#if contentblock.img??>
                         <div class="img"><img src="${contentblock.img}" /></div>

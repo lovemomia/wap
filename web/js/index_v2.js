@@ -161,7 +161,7 @@ sg.index = {
 
             function generate_course_html(course) {
                 var html = "";
-                html += "<a href='/course?id=" + course.id + "'>";
+                html += "<a href='/course/buyable?id=" + course.id + "'>";
                 html += "<div class='subject scrollable'>";
                 html += "<div class='cover' style='background-image: url(" + course.cover + ")'>";
                 if (course.status == 2) {
