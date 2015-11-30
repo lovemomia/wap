@@ -118,7 +118,7 @@
     color: #f67531;
 }
 
-.btn-orange {
+.btn-orange,.btn-gray {
     width: 1.5rem;
     height: 0.5rem;
     border-radius: 0;

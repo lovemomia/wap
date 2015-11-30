@@ -271,7 +271,11 @@
         <#elseif course.trial?? && course.trial>
             <div class="footer fixed">
                 <div class="left top-border">价格: ¥ <span class="number">1</span></div>
-                <div class="right"><button id="btn_try" sid="${course.subjectId}" class="btn-orange">加入试听</button></div>
+                <#if course.status==1>
+                    <div class="right"><button id="btn_try" sid="${course.subjectId}" class="btn-orange">加入试听</button></div>
+                <#else>
+                    <div class="right"><button class="btn-gray">已经售完</button></div>
+                </#if>
                 <div style="clear:both"></div>
             </div>
         </#if>
