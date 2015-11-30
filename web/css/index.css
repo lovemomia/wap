@@ -141,10 +141,19 @@
 }
 
 .free .subject .cover {
+    position: relative;
     width: 100%;
     height: 2.06rem;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.free .subject .sold-out {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.8rem;
+    height: 0.8rem;
 }
 
 .free .subject .joined {

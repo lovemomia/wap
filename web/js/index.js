@@ -164,6 +164,9 @@ sg.index = {
                 html += "<a href='/course?id=" + course.id + "'>";
                 html += "<div class='subject scrollable'>";
                 html += "<div class='cover' style='background-image: url(" + course.cover + ")'>";
+                if (course.status == 2) {
+                    html += "<img class='sold-out' src='/img/full.png'>";
+                }
                 html += "</div>";
                 html += "<div class='desc'>";
                 html += "<div class='title overflow-hidden'>" + course.title + "</div>";
