@@ -5,8 +5,9 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>赤<div class="right"><span class="color-main">1</span>/8</div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
     <div class="content">
+        <div class="title"><span class="color-main">1</span>/8 赤</div>
         <div class="questions">
             <div class="question" category="test1_1" id="1">善于讲故事、说笑话、会编谎话</div>
             <hr class="sep" />

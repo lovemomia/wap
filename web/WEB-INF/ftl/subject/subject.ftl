@@ -150,7 +150,11 @@
 
     <div class="footer fixed">
         <div class="left price top-border">课程包<span class="left-margin">¥ </span><span class="number">${subject.subject.price}</span><span>起</span></div>
-        <div class="right"><button id="btn_buy" class="btn-orange">立即抢购</button></div>
+        <#if subject.subject.status==1>
+            <div class="right"><button id="btn_buy" class="btn-orange">立即抢购</button></div>
+        <#else>
+            <div class="right"><button class="btn-gray">已经售完</button></div>
+        </#if>
         <div style="clear:both"></div>
     </div>
 </@override>

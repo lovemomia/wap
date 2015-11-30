@@ -5,8 +5,9 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>灰<div class="right"><span class="color-main">8</span>/8</div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
     <div class="content">
+        <div class="title"><span class="color-main">8</span>/8 灰</div>
         <div class="questions">
             <div class="question" category="test1_4" id="36">显示出手工艺技巧（例如：折纸、拼贴等手工）或在其他方面表现出良好的动作协调性（例如：跳舞、手指操）</div>
             <hr class="sep" />

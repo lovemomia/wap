@@ -5,8 +5,9 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>蓝<div class="right"><span class="color-main">6</span>/8</div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
     <div class="content">
+        <div class="title"><span class="color-main">6</span>/8 蓝</div>
         <div class="questions">
             <div class="question" category="test1_2" id="26">喜欢将物品按类别、层次分类而不是将他们混合在一起</div>
             <hr class="sep" />

@@ -19,7 +19,7 @@
                 <div class="left"><img src="${course.cover}" /></div>
                 <div class="right">
                     <div class="title overflow-hidden">${course.title}</div>
-                    <div class="desc overflow-hidden">${course.place.address}</div>
+                    <div class="desc overflow-hidden">${course.address}</div>
                     <div class="desc overflow-hidden">${course.scheduler}</div>
                     <#if (course.price > 0)>
                         <div class="price"><span>价值 </span><span class="number">${course.price}</span><span>元</span></div>
@@ -102,7 +102,7 @@
         <#if (course.comments?? && course.comments.totalCount>0)>
             <div id="comment" class="course text no-bottom-border top-margin">
                 <div class="title left">用户点评</div>
-                <div class="arrow right"><img src="/img/allow3x.png" /></div>
+                <#--<div class="arrow right"><img src="/img/allow3x.png" /></div>-->
                 <div style="clear:both"></div>
             </div>
             <div class="course comment bottom-border">
@@ -164,7 +164,13 @@
         <#if course.detail??>
         <div class="course detail bottom-border bottom-padding">
             <#list course.detail as detailblock>
-                <div class="title overflow-hidden"><div class="idx">${detailblock_index+1}</div>${detailblock.title}</div>
+                <#if (detailblock_index > 0)>
+                    <div class="title top-margin overflow-hidden">
+                <#else>
+                    <div class="title overflow-hidden">
+                </#if>
+                    <div class="idx">${detailblock_index+1}</div>${detailblock.title}
+                </div>
                 <#list detailblock.content as contentblock>
                     <#if contentblock.img??>
                         <div class="img"><img src="${contentblock.img}" /></div>
@@ -265,13 +271,21 @@
         <#if course.buyable>
             <div class="footer fixed">
                 <div class="left top-border">价格: ¥ <span class="number">${course.price}</span></div>
-                <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+                <#if course.status==1>
+                    <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+                <#else>
+                    <div class="right"><button class="btn-gray">已经售完</button></div>
+                </#if>
                 <div style="clear:both"></div>
             </div>
         <#elseif course.trial?? && course.trial>
             <div class="footer fixed">
                 <div class="left top-border">价格: ¥ <span class="number">1</span></div>
-                <div class="right"><button id="btn_try" sid="${course.subjectId}" class="btn-orange">加入试听</button></div>
+                <#if course.status==1>
+                    <div class="right"><button id="btn_try" sid="${course.subjectId}" class="btn-orange">加入试听</button></div>
+                <#else>
+                    <div class="right"><button class="btn-gray">已经售完</button></div>
+                </#if>
                 <div style="clear:both"></div>
             </div>
         </#if>

@@ -53,7 +53,7 @@ sg.booked = {
             var html = "";
             html += "<div class='booked'>";
             if (status == 1) {
-                html += "<a href='/course/cancelable?id=" + course.id + '&bid=' + course.bookingId + "'>";
+                html += "<a href='/course/cancelable?id=" + course.id + '&bid=' + course.bookingId + "&address=" + encodeURIComponent(course.place.address) + "&scheduler=" + encodeURIComponent(course.scheduler) + "'>";
             } else {
                 html += "<a href='/course?id=" + course.id + "'>";
             }

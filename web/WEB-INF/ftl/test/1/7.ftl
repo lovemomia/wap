@@ -5,8 +5,9 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>紫<div class="right"><span class="color-main">7</span>/8</div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
     <div class="content">
+        <div class="title"><span class="color-main">7</span>/8 紫</div>
         <div class="questions">
             <div class="question" category="test1_7" id="31">更喜欢独立学习、玩耍而非与同伴一起</div>
             <hr class="sep" />

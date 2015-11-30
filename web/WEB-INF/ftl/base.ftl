@@ -14,7 +14,7 @@
     <@block name="body"></@block>
     <script type="text/javascript">document.getElementsByTagName("html")[0].style.fontSize=document.documentElement.clientWidth/4+"px";</script>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/config.js"></script>
+    <script type="text/javascript" src="/js/config_v2.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
     <@block name="js" ></@block>
 </body>

@@ -5,8 +5,9 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>绿<div class="right"><span class="color-main">4</span>/8</div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
     <div class="content">
+        <div class="title"><span class="color-main">4</span>/8 绿</div>
         <div class="questions">
             <div class="question" category="test1_8" id="16">显示出对自然界构成的兴趣（例如：户外玩耍时会注意到山和云；在城市环境里会对运动鞋或汽车款式显示出敏感性</div>
             <hr class="sep" />
