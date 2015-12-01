@@ -34,8 +34,8 @@
                             </#if>
                                 <div class="left">
                                     <div class="name">${sku.place.name}</div>
-                                    <div class="address">${sku.place.address}</div>
-                                    <div class="time">${sku.time} </div>
+                                    <div class="address"><div class="img right-margin"><img src="/img/weizhi3x.png" /></div>${sku.place.address}<div style="clear: both;"></div></div>
+                                    <div class="time"><div class="img right-margin"><img src="/img/shijian3x.png" /></div>${sku.time}<div style="clear: both;"></div></div>
                                     <#if sku.stock == 0>
                                         <div class="stock full">名额已满</div>
                                     <#elseif (sku.stock < 10)>
