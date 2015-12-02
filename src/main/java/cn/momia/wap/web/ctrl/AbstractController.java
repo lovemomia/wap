@@ -1,6 +1,6 @@
 package cn.momia.wap.web.ctrl;
 
-import cn.momia.common.api.exception.MomiaFailedException;
+import cn.momia.common.api.exception.MomiaErrorException;
 import cn.momia.common.api.exception.MomiaLoginException;
 import cn.momia.common.api.http.MomiaHttpResponse;
 import cn.momia.common.api.util.CastUtil;
@@ -48,11 +48,11 @@ public class AbstractController {
 
             MomiaHttpResponse momiaHttpResponse = buildResponse(response);
             if (momiaHttpResponse.isTokenExpired()) throw new MomiaLoginException();
-            if (!momiaHttpResponse.isSuccessful()) throw new MomiaFailedException(momiaHttpResponse.getErrmsg());
+            if (!momiaHttpResponse.isSuccessful()) throw new MomiaErrorException(momiaHttpResponse.getErrmsg());
 
             return momiaHttpResponse;
         } catch (IOException e) {
-            throw new MomiaFailedException(e.getMessage());
+            throw new MomiaErrorException(e.getMessage());
         }
     }
 
@@ -67,7 +67,7 @@ public class AbstractController {
     public ModelAndView exception(Exception exception) throws Exception {
         LOGGER.error("exception!!", exception);
 
-        if (exception instanceof MomiaFailedException) {
+        if (exception instanceof MomiaErrorException) {
             return new ModelAndView("error", "msg", exception.getMessage());
         } else if (exception instanceof MomiaLoginException) {
             return new ModelAndView("auth/login");
