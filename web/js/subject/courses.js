@@ -12,8 +12,9 @@ sg.courselist = {
     },
 
     success: function (data) {
-        var list = data.courses.list;
-        if (list.length > 0) {
+        var totalCount = data.courses.totalCount;
+        if (totalCount > 0) {
+            var list = data.courses.list;
             sg.common.unbind_scrollin();
 
             var html = "";
@@ -30,6 +31,14 @@ sg.courselist = {
             if (data.courses.nextIndex != undefined) sg.common.bind_scrollin(function () {
                 sg.courselist.more(sg.common.param("sid"), data.courses.nextIndex);
             });
+        } else {
+            var html = "";
+            html += "<div class='logo'><img src='/img/logo3x.png'></div>";
+            html += "<div class='tips'>";
+            html += "<p>目前还没有可选课程，我们会尽快推出的哦~</p>";
+            html += "</div>";
+
+            $(".content").html(html);
         }
 
         function generate_course_html(course, pid) {

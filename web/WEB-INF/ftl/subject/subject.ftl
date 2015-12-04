@@ -87,6 +87,11 @@
                         <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
                     </#if>
                 </div>
+                <#else>
+                    <div class="logo"><img src="/img/logo3x.png"></div>
+                    <div class="tips">
+                        <p>目前还没有可选课程，我们会尽快推出的哦~</p>
+                    </div>
                 </#if>
             </div>
             <div id="panel-2">
@@ -142,6 +147,11 @@
                                 <hr class="sep" />
                             </#if>
                         </#list>
+                    </div>
+                <#else>
+                    <div class="logo"><img src="/img/logo3x.png"></div>
+                    <div class="tips">
+                        <p>目前还没有内容哦~</p>
                     </div>
                 </#if>
             </div>

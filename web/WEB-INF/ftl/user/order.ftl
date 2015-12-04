@@ -13,6 +13,7 @@
             <div id="all" class="left" onclick="window.location.href='/user/order?status=1'">全部</div>
             <div style="clear: both;"></div>
         </div>
+        <div class="orders"></div>
     </div>
 </@override>
 

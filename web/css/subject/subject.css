@@ -96,18 +96,18 @@
 
 .footer {
     padding: 0;
-    height: 0.5rem;
+    height: 0.64rem;
     border: none;
 }
 
 .has-fix-footer {
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.74rem;
 }
 
 .footer .left {
-    padding: 0.1rem;
+    padding: 0.15rem 0.1rem;
     width: 2.5rem;
-    height: 0.5rem;
+    height: 0.64rem;
     line-height: 0.3rem;
     font-size: 0.18rem;
     text-align: left;
@@ -120,7 +120,7 @@
 
 .btn-orange,.btn-gray {
     width: 1.5rem;
-    height: 0.5rem;
+    height: 0.64rem;
     border-radius: 0;
 }
 
@@ -175,6 +175,25 @@
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
     color: #00c49d;
+}
+
+.logo {
+    padding: 0.5rem 0 0.2rem 0;
+    width: 100%;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.tips {
+    height: 0.6rem;
+    font-size: 0.16rem;
+    color: #888888;
+}
+
+.tips p {
+    margin: 0.1rem 0;
 }
 
 .more {
