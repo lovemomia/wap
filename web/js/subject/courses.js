@@ -1,12 +1,14 @@
 $(function () {
     var id = sg.common.param("sid");
-    sg.courselist.more(id, 0);
+    var pid = sg.common.param("pid", 0);
+    sg.courselist.more(id, pid, 0);
 });
 
 sg.courselist = {
-    more: function (id, start) {
+    more: function (id, pid, start) {
         sg.common.get(sg.config.api + "/subject/course", {
             id: id,
+            pid: pid,
             start: start
         }, sg.courselist.success);
     },
@@ -29,7 +31,7 @@ sg.courselist = {
             $(".content").append(html);
 
             if (data.courses.nextIndex != undefined) sg.common.bind_scrollin(function () {
-                sg.courselist.more(sg.common.param("sid"), data.courses.nextIndex);
+                sg.courselist.more(sg.common.param("sid"), sg.common.param("pid", 0), data.courses.nextIndex);
             });
         } else {
             var html = "";
