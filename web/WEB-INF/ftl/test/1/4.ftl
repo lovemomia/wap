@@ -5,7 +5,7 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div></div>
+    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>绿</div>
     <div class="content">
         <div class="title"><span class="color-main">4</span>/8 绿</div>
         <div class="questions">
