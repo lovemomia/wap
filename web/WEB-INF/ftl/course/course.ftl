@@ -249,7 +249,7 @@
             <div id="tips" class="course text no-top-border">${course.tips}</div>
         </#if>
 
-        <#if (course.trial?? && course.trial && course.notice?? && course.notice?length>0)>
+        <#if ((course.buyable?? && course.buyable) || (course.trial?? && course.trial)) && course.notice?? && course.notice?length>0)>
             <div class="course text no-bottom-border top-margin"><div class="title">购买须知</div></div>
             <div class="bg-white"><hr class="sep"/></div>
             <div id="notice" class="course text no-top-border">${course.notice}</div>
@@ -268,7 +268,7 @@
     </div>
 
     <#if !(course.cancelable?? && course.cancelable == true)>
-        <#if course.buyable>
+        <#if (course.buyable?? && course.buyable)>
             <div class="footer fixed">
                 <div class="left top-border">价格: ¥ <span class="number">${course.price}</span></div>
                 <#if course.status==1>
