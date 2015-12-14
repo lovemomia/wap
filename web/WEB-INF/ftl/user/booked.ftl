@@ -12,6 +12,7 @@
             <div id="finished" class="left" onclick="window.location.href='/user/booked?status=2'">已上课</div>
             <div style="clear: both;"></div>
         </div>
+        <div class="courses"></div>
     </div>
 </@override>
 

@@ -17,8 +17,9 @@ sg.bookable = {
     },
 
     success: function (data) {
-        var list = data.list;
-        if (list.length > 0) {
+        var totalCount = data.totalCount;
+        if (totalCount > 0) {
+            var list = data.list;
             sg.common.unbind_scrollin();
 
             var html = "";
@@ -34,6 +35,14 @@ sg.bookable = {
             if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
                 sg.bookable.more(sg.bookable.param_oid(), data.nextIndex);
             });
+        } else {
+            var html = "";
+            html += "<div class='logo'><img src='/img/logo3x.png'></div>";
+            html += "<div class='tips'>";
+            html += "<p>您还没购买任何课程包，快去看看吧~</p>";
+            html += "</div>";
+
+            $(".content").html(html);
         }
 
         function generate_package_html(package) {

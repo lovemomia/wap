@@ -94,6 +94,16 @@
     width: 3.35rem;
 }
 
+.sku.place .element .img {
+    float: left;
+}
+
+.sku.place .element .img img {
+    margin-top: 0.02rem;
+    width: 0.17rem;
+    height: 0.17rem;
+}
+
 .sku.place .element .right.sel {
     margin-top: 0.38rem;
     margin-right: 0.15rem;

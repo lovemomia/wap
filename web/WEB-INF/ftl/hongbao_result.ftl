@@ -50,8 +50,8 @@
             <p>使用该手机号登录或注册即可使用</p>
         </div>
         <div class="btn">
-            <div class="left"><button id="btn_download" class="btn-main">下载APP</button></div>
-            <div class="right"><button id="btn_home" class="btn-main">立即使用</button></div>
+            <#--<div class="left"><button id="btn_download" class="btn-main">下载APP</button></div>-->
+            <div><button id="btn_home" class="btn-main">立即使用</button></div>
             <div style="clear: both;"></div>
         </div>
     </div>

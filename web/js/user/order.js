@@ -21,8 +21,9 @@ sg.order = {
     },
 
     success: function (data) {
-        var list = data.list;
-        if (list.length > 0) {
+        var totalCount = data.totalCount;
+        if (totalCount > 0) {
+            var list = data.list;
             var status = sg.common.param("status", 2);
             sg.common.unbind_scrollin();
 
@@ -34,11 +35,19 @@ sg.order = {
             }
             html += "</div>";
 
-            $(".content").append(html);
+            $(".orders").append(html);
 
             if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
                 sg.order.more(status, data.nextIndex);
             });
+        } else {
+            var html = "";
+            html += "<div class='logo'><img src='/img/logo3x.png'></div>";
+            html += "<div class='tips'>";
+            html += "<p>没有相应的订单哦~</p>";
+            html += "</div>";
+
+            $(".orders").html(html);
         }
 
         function generate_order_html(order) {

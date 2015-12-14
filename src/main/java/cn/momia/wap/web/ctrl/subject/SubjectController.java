@@ -26,7 +26,7 @@ public class SubjectController extends AbstractController {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) {
             String referer = request.getHeader("Referer");
-            StringBuffer url = request.getRequestURL().append("?id=").append(id);
+            StringBuffer url = request.getRequestURL().append("?").append(request.getQueryString());
             return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()) + "&back=" + URLEncoder.encode(referer));
         }
 

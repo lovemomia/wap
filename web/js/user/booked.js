@@ -26,8 +26,9 @@ sg.booked = {
     },
 
     success: function (data) {
-        var list = data.list;
-        if (list.length > 0) {
+        var totalCount = data.totalCount;
+        if (totalCount > 0) {
+            var list = data.list;
             var status = sg.common.param("status", 1);
             sg.common.unbind_scrollin();
 
@@ -38,13 +39,21 @@ sg.booked = {
             }
             html += "</div>";
 
-            $(".content").append(html);
+            $(".courses").append(html);
 
             if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
                 sg.booked.more(status, data.nextIndex);
             });
 
             $(".list .booked .element:last").removeClass("bottom-border");
+        } else {
+            var html = "";
+            html += "<div class='logo'><img src='/img/logo3x.png'></div>";
+            html += "<div class='tips'>";
+            html += "<p>您还没有选课，快去看看吧~</p>";
+            html += "</div>";
+
+            $(".courses").html(html);
         }
 
         function generate_course_html(course) {

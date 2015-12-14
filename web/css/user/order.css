@@ -34,3 +34,22 @@
 .list .order .btn .btn-orange {
     padding-top: 0.05rem;
 }
+
+.logo {
+    padding: 0.5rem 0 0.2rem 0;
+    width: 100%;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.tips {
+    height: 0.6rem;
+    font-size: 0.16rem;
+    color: #888888;
+}
+
+.tips p {
+    margin: 0.1rem 0;
+}
