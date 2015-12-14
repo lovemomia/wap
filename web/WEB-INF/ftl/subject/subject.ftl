@@ -55,7 +55,7 @@
             <ul>
                 <li><a href="#panel-1">可选课程</a></li>
                 <li><a href="#panel-2">购买须知</a></li>
-                <li><a href="#panel-3">成长说</a></li>
+                <#--<li><a href="#panel-3">成长说</a></li>-->
             </ul>
             <div id="panel-1">
                 <#if (subject.courses?? && subject.courses.totalCount>0)>
@@ -102,59 +102,59 @@
                     </#list>
                 </div>
             </div>
-            <div id="panel-3">
-                <#if (subject.feeds?? && subject.feeds.totalCount>0)>
-                    <div class="subject list bottom-border">
-                        <#list subject.feeds.list as feed>
-                            <div class="feed">
-                            <div class="feed-avatar left">
-                                <#if (feed.avatar?length > 0)>
-                                    <img src="${feed.avatar}" />
-                                <#else>
-                                    <img src="/img/avatar02.png" />
-                                </#if>
-                            </div>
-                            <div class="feed-info right top-margin bottom-margin">
-                                <div>
-                                    <div class="nickname left">${feed.nickName}</div>
-                                    <div class="addtime right">${feed.addTime}</div>
-                                    <div style="clear:both"></div>
-                                    </div>
-                                <div>
-                                    <#if (feed.children?size > 0)>
-                                        <div class="children left">${feed.children[0]}</div>
-                                    </#if>
-                                    <div style="clear:both"></div>
-                                    </div>
-                                <hr class="sep full"/>
-                                <#if (feed.content?length > 0)><div class="feed-content">${feed.content}</div></#if>
-                                <#if (feed.imgs?size>0)>
-                                    <#list feed.imgs as img>
-                                        <#if (img_index%3==0)>
-                                        <div class="feed-img">
-                                        </#if>
-                                        <img src="${img}" />
-                                        <#if (img_index%3==2 || (img_index+1) == feed.imgs?size)>
-                                            <div style="clear:both"></div>
-                                        </div>
-                                        </#if>
-                                    </#list>
-                                </#if>
-                                </div>
-                            <div style="clear:both"></div>
-                            </div>
-                            <#if (feed_index < subject.feeds.list?size - 1)>
-                                <hr class="sep" />
-                            </#if>
-                        </#list>
-                    </div>
-                <#else>
-                    <div class="logo"><img src="/img/logo3x.png"></div>
-                    <div class="tips">
-                        <p>目前还没有内容哦~</p>
-                    </div>
-                </#if>
-            </div>
+            <#--<div id="panel-3">-->
+                <#--<#if (subject.feeds?? && subject.feeds.totalCount>0)>-->
+                    <#--<div class="subject list bottom-border">-->
+                        <#--<#list subject.feeds.list as feed>-->
+                            <#--<div class="feed">-->
+                            <#--<div class="feed-avatar left">-->
+                                <#--<#if (feed.avatar?length > 0)>-->
+                                    <#--<img src="${feed.avatar}" />-->
+                                <#--<#else>-->
+                                    <#--<img src="/img/avatar02.png" />-->
+                                <#--</#if>-->
+                            <#--</div>-->
+                            <#--<div class="feed-info right top-margin bottom-margin">-->
+                                <#--<div>-->
+                                    <#--<div class="nickname left">${feed.nickName}</div>-->
+                                    <#--<div class="addtime right">${feed.addTime}</div>-->
+                                    <#--<div style="clear:both"></div>-->
+                                    <#--</div>-->
+                                <#--<div>-->
+                                    <#--<#if (feed.children?size > 0)>-->
+                                        <#--<div class="children left">${feed.children[0]}</div>-->
+                                    <#--</#if>-->
+                                    <#--<div style="clear:both"></div>-->
+                                    <#--</div>-->
+                                <#--<hr class="sep full"/>-->
+                                <#--<#if (feed.content?length > 0)><div class="feed-content">${feed.content}</div></#if>-->
+                                <#--<#if (feed.imgs?size>0)>-->
+                                    <#--<#list feed.imgs as img>-->
+                                        <#--<#if (img_index%3==0)>-->
+                                        <#--<div class="feed-img">-->
+                                        <#--</#if>-->
+                                        <#--<img src="${img}" />-->
+                                        <#--<#if (img_index%3==2 || (img_index+1) == feed.imgs?size)>-->
+                                            <#--<div style="clear:both"></div>-->
+                                        <#--</div>-->
+                                        <#--</#if>-->
+                                    <#--</#list>-->
+                                <#--</#if>-->
+                                <#--</div>-->
+                            <#--<div style="clear:both"></div>-->
+                            <#--</div>-->
+                            <#--<#if (feed_index < subject.feeds.list?size - 1)>-->
+                                <#--<hr class="sep" />-->
+                            <#--</#if>-->
+                        <#--</#list>-->
+                    <#--</div>-->
+                <#--<#else>-->
+                    <#--<div class="logo"><img src="/img/logo3x.png"></div>-->
+                    <#--<div class="tips">-->
+                        <#--<p>目前还没有内容哦~</p>-->
+                    <#--</div>-->
+                <#--</#if>-->
+            <#--</div>-->
         </div>
     </div>
 
