@@ -7,6 +7,21 @@ String.prototype.startWith = function (str) {
 $(function () {
     sg.common.init();
 
+    $(document).ajaxStart(function () {
+        var html = "";
+        html += "<div id='loading' onclick='$(this).remove()'>";
+        html += "<div class='loading_tips'>";
+        html += "<img src='/img/loading.gif' />";
+        html += "<div class='left'>加载中，请稍后...</div>"
+        html += "</div>";
+        html += "</div>";
+        $(document.body).append(html);
+    });
+
+    $(document).ajaxStop(function () {
+        $("#loading").remove();
+    });
+
     $(".back").on("click", function () {
         sg.common.back();
     });
