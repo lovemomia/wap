@@ -12,7 +12,7 @@ sg.share = {
     share_tips: function () {
         var html = "";
         html += "<div class='share_tips' onclick='$(this).remove()'>";
-        html += "<img src='/img/share.png' />"
+        html += "<img src='/img/share.png' />";
         html += "</div>";
         $(document.body).append(html);
     }
