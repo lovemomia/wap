@@ -78,13 +78,13 @@ public class CourseController extends AbstractController {
         if (nextMonth > 12) nextMonth = 1;
         switch (status) {
             case SKU_PLACE_STATUS_CURRENT_MONTH:
-                resp = get("/course/sku/month" + (pid > 0 ? "/bookable" : "") + "?id=" + id + "&month=" + month);
+                resp = get("/course/sku/month" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id + "&month=" + month);
                 break;
             case SKU_PLACE_STATUS_NEXT_MONTH:
-                resp = get("/course/sku/month" + (pid > 0 ? "/bookable" : "") + "?id=" + id + "&month=" + nextMonth);
+                resp = get("/course/sku/month" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id + "&month=" + nextMonth);
                 break;
             default:
-                resp = get("/course/sku/week" + (pid > 0 ? "/bookable" : "") + "?id=" + id);
+                resp = get("/course/sku/week" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id);
         }
 
         List<JSONObject> dates = new ArrayList<JSONObject>();
