@@ -36,7 +36,9 @@
                                     <div class="name">${sku.place.name}</div>
                                     <div class="address"><div class="img right-margin"><img src="/img/weizhi3x.png" /></div>${sku.place.address}<div style="clear: both;"></div></div>
                                     <div class="time"><div class="img right-margin"><img src="/img/shijian3x.png" /></div>${sku.time}<div style="clear: both;"></div></div>
-                                    <#if sku.stock == 0>
+                                    <#if (sku.closed?? && sku.closed == true)>
+                                        <div class="stock full">报名已截止</div>
+                                    <#elseif sku.stock == 0>
                                         <div class="stock full">名额已满</div>
                                     <#elseif (sku.stock < 10)>
                                         <div class="stock">仅剩${sku.stock}个名额</div>
@@ -44,7 +46,7 @@
                                         <div class="stock">还有${sku.stock}个名额</div>
                                     </#if>
                                 </div>
-                                <#if (sku.stock > 0)>
+                                <#if (sku.stock > 0 && sku.closed?? && sku.closed == false)>
                                     <div class="right sel"></div>
                                 </#if>
                                 <div style="clear: both;"></div>
