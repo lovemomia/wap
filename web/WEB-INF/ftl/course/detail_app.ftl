@@ -6,7 +6,7 @@
 
 <@override name="body">
     <@block name="header" ></@block>
-    <div class="content"><div class="detail">${detail.detail}</div></div>
+    <div class="content"><div class="detail">目前版本暂不支持图文详情</div></div>
 </@override>
 
 <@extends name="../base.ftl"/>

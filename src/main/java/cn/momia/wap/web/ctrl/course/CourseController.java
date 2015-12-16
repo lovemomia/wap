@@ -113,19 +113,4 @@ public class CourseController extends AbstractController {
 
         return new ModelAndView("course/skuplace", "params", params);
     }
-
-    @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public ModelAndView detail(@RequestParam long id) {
-        return new ModelAndView("course/detail", "detail", getDetail(id));
-    }
-
-    private JSONObject getDetail(long id) {
-        MomiaHttpResponse resp = get("/course/detail?id=" + id);
-        return (JSONObject) resp.getData();
-    }
-
-    @RequestMapping(value = "/detail/app", method = RequestMethod.GET)
-    public ModelAndView detailApp(@RequestParam long id) {
-        return new ModelAndView("course/detail_app", "detail", getDetail(id));
-    }
 }
