@@ -1,6 +1,6 @@
 package cn.momia.wap.web.ctrl.test;
 
-import cn.momia.common.api.http.MomiaHttpResponse;
+import cn.momia.common.core.http.MomiaHttpResponse;
 import cn.momia.wap.web.ctrl.AbstractController;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
