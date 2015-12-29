@@ -1,7 +1,7 @@
 package cn.momia.wap.web.ctrl.course;
 
 import cn.momia.common.api.http.MomiaHttpResponse;
-import cn.momia.common.util.TimeUtil;
+import cn.momia.common.api.util.TimeUtil;
 import cn.momia.wap.web.ctrl.AbstractController;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
