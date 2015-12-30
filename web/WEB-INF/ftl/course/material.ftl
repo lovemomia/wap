@@ -1,7 +1,7 @@
 <@override name="title">教材教具</@override>
 
 <@override name="css">
-    <link rel="stylesheet" type="text/css" href="/css/teacher/material.css">
+    <link rel="stylesheet" type="text/css" href="/css/course/material.css">
 </@override>
 
 <@override name="body">
