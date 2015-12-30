@@ -6,7 +6,7 @@
 
     <groupId>cn.momia</groupId>
     <artifactId>duola-wap</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>Momia Wap</name>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>cn.momia</groupId>
             <artifactId>duola-common-webapp</artifactId>
-            <version>1.1.0</version>
+            <version>1.2.0</version>
         </dependency>
 
         <!-- Spring -->
