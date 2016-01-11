@@ -1,9 +1,9 @@
 package cn.momia.wap.web.ctrl;
 
-import cn.momia.common.api.exception.MomiaErrorException;
-import cn.momia.common.api.exception.MomiaLoginException;
-import cn.momia.common.api.http.MomiaHttpResponse;
-import cn.momia.common.api.util.CastUtil;
+import cn.momia.common.core.exception.MomiaErrorException;
+import cn.momia.common.core.exception.MomiaLoginException;
+import cn.momia.common.core.http.MomiaHttpResponse;
+import cn.momia.common.core.util.CastUtil;
 import cn.momia.common.webapp.config.Configuration;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

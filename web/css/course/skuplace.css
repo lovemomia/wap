@@ -71,11 +71,13 @@
 }
 
 .sku.place .element .address {
+    line-height: 0.24rem;
     color: #999999;
     font-size: 0.14rem;
 }
 
 .sku.place .element .time {
+    line-height: 0.24rem;
     color: #999999;
     font-size: 0.14rem;
 }

@@ -1,6 +1,6 @@
 package cn.momia.wap.web.ctrl.user;
 
-import cn.momia.common.api.http.MomiaHttpResponse;
+import cn.momia.common.core.http.MomiaHttpResponse;
 import cn.momia.common.webapp.config.Configuration;
 import cn.momia.wap.web.ctrl.AbstractController;
 import com.alibaba.fastjson.JSONObject;
@@ -14,8 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 public class UserController extends AbstractController {
