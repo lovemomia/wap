@@ -29,15 +29,15 @@
         </div>
 
         <div class="form top-margin">
-            <div class="line" onclick="window.location.href='/user/booked'">
-                <div class="img left"><img src="/img/yixuanx3x.png" /></div>
-                <div class="title left">已选课程</div>
+            <div class="line" onclick="window.location.href='/user/bookable'">
+                <div class="img left"><img src="/img/daiyuex3x.png" /></div>
+                <div class="title left">预约课程</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
             <hr class="sep" />
-            <div class="line" onclick="window.location.href='/user/bookable'">
-                <div class="img left"><img src="/img/daiyuex3x.png" /></div>
-                <div class="title left">待选课程</div>
+            <div class="line" onclick="window.location.href='/user/booked'">
+                <div class="img left"><img src="/img/yixuanx3x.png" /></div>
+                <div class="title left">已选课程</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
         </div>
