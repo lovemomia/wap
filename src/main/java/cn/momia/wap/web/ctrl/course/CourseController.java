@@ -59,13 +59,19 @@ public class CourseController extends AbstractController {
         return new ModelAndView("course/course", "course", resp.getData());
     }
 
-    @RequestMapping(value = "cancelable", method = RequestMethod.GET)
-    public ModelAndView cancelable(@RequestParam long id, @RequestParam(defaultValue = "") String address, @RequestParam(defaultValue = "") String scheduler) {
+    @RequestMapping(value = "/cancelable", method = RequestMethod.GET)
+    public ModelAndView cancelable(HttpServletRequest request, @RequestParam long id, @RequestParam(value = "bid") long bookingId) {
+        String utoken = getUtoken(request);
+
         MomiaHttpResponse resp = get("/course?id=" + id);
         JSONObject courseJson = (JSONObject) resp.getData();
         courseJson.put("cancelable", true);
-        courseJson.put("address", address);
-        courseJson.put("scheduler", scheduler);
+
+        MomiaHttpResponse skuResp = get("/user/booked/sku?utoken=" + utoken + "&bid=" + bookingId);
+        JSONObject skuJson = (JSONObject) skuResp.getData();
+        JSONObject placeJson = skuJson.getJSONObject("place");
+        courseJson.put("address", placeJson == null ? "" : placeJson.getString("address"));
+        courseJson.put("scheduler", skuJson.getString("scheduler"));
 
         return new ModelAndView("course/course", "course", courseJson);
     }
