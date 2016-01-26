@@ -1,0 +1,29 @@
+.subject {
+    position: relative;
+    margin: 0 0.1rem 0.11rem 0.1rem;
+    box-shadow: 0.03rem 0.04rem 0.02rem #e6e6e6;
+}
+
+.subject .cover {
+    position: relative;
+    width: 100%;
+    height: 2.06rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.subject .desc {
+    position: relative;
+    padding: 0.1rem;
+    width: 100%;
+    height: 0.5rem;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.subject .desc .title {
+    height: 0.32rem;
+    line-height: 0.32rem;
+    font-size: 0.19rem;
+    color: #222222;
+}
