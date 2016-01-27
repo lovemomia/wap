@@ -24,7 +24,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/test/1")
 public class Test1Controller extends AbstractController {
-    @Autowired JdbcTemplate jdbcTemplate;
+    @Autowired private JdbcTemplate jdbcTemplate;
 
     private static final Map<Integer, JSONObject> results = new HashMap<Integer, JSONObject>();
     static {
