@@ -4,10 +4,6 @@ $(function () {
         window.location.href = "/";
     }
 
-    $(".back").on("click", function () {
-        window.location.href = "/";
-    });
-
     $("#btn_receive").on("click", function () {
         if (!sg.common.is_login()) {
             sg.common.redirect_login();
@@ -23,7 +19,6 @@ $(function () {
             }, function (data) {
                 if (data == true) {
                     alert("新年礼物领取成功，快去选课吧~");
-                    sg.common.remove_histories();
                     window.location.href = "/user/bookable";
                 } else {
                     alert("新年礼物领取失败，请与客服联系");
