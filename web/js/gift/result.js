@@ -17,14 +17,6 @@ $(function () {
     $(".back").on("click", function () {
         window.location.href = "/";
     });
-
-    $("#btn_send").on("click", function () {
-        var html = "";
-        html += "<div class='share_tips' onclick='$(this).remove()'>";
-        html += "<img src='/img/share.png' />";
-        html += "</div>";
-        $(document.body).append(html);
-    });
 });
 
 sg.result = {
@@ -41,7 +33,11 @@ sg.result = {
             $(".content").append(html);
 
             $("#btn_send").on("click", function () {
-                alert("ok");
+                var html = "";
+                html += "<div class='share_tips' onclick='$(this).remove()'>";
+                html += "<img src='/img/share.png' />";
+                html += "</div>";
+                $(document.body).append(html);
             });
         } else {
             $(".content .title").html("付款失败");
