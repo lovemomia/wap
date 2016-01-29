@@ -5,8 +5,7 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white"><div class="back left"><img src="/img/back3x.png"></div>领取礼包</div>
-    <div class="content top-border bg-white">
+    <div class="content bg-white">
         <button id="btn_receive" class="btn-lg-orange top-margin">领取礼包</button>
     </div>
 </@override>

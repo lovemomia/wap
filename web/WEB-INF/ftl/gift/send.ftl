@@ -5,8 +5,7 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white"><div class="back left"><img src="/img/back3x.png"></div>新年送礼</div>
-    <div class="content top-border bg-white">
+    <div class="content bg-white">
         <button id="btn_send" class="btn-lg-orange top-margin">点我送礼</button>
         <button id="btn_share" class="btn-lg-orange top-margin bottom-margin">分享给好友</button>
     </div>
