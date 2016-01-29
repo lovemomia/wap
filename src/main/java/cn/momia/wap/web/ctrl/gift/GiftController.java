@@ -5,6 +5,7 @@ import cn.momia.common.webapp.config.Configuration;
 import cn.momia.wap.web.ctrl.AbstractController;
 import cn.momia.wap.web.ctrl.user.WxConfig;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,8 +61,15 @@ public class GiftController extends AbstractController {
 
     @RequestMapping(value = "/result", method = RequestMethod.GET)
     public ModelAndView result(HttpServletRequest request, @RequestParam long oid) {
+        String utoken = getUtoken(request);
+        if (StringUtils.isBlank(utoken)) {
+            String referer = request.getHeader("Referer");
+            StringBuffer url = request.getRequestURL().append("?").append(request.getQueryString());
+            return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()) + "&back=" + URLEncoder.encode(referer));
+        }
+
         JSONObject share = new JSONObject();
-        share.put("url", buildReceiveUrl());
+        share.put("url", buildReceiveUrl(utoken, oid));
         String url = request.getRequestURL().toString();
         String queryString = request.getQueryString();
         share.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), url + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));
@@ -68,7 +77,12 @@ public class GiftController extends AbstractController {
         return new ModelAndView("gift/result", "share", share);
     }
 
-    private String buildReceiveUrl() {
-        return Configuration.getString("Gift.ReceiveUrl");
+    private String buildReceiveUrl(String utoken, long orderId) {
+        MomiaHttpResponse resp = get("/user?utoken=" + utoken);
+        JSONObject user = (JSONObject) resp.getData();
+
+        long expired = new Date().getTime() + 10L * 24 * 60 * 60 * 1000;
+        String giftsign = DigestUtils.md5Hex(user.getLong("id") + "|" + orderId + "|" + expired + "|" + Configuration.getString("Validation.Key"));
+        return Configuration.getString("Gift.ReceiveUrl") + "?oid=" + orderId + "&expired=" + expired + "&giftsign=" + giftsign;
     }
 }
