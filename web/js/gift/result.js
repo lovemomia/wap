@@ -1,8 +1,8 @@
 $(function () {
-    //if (!sg.common.is_weixin()) {
-    //    alert("送礼功能目前只支持微信哦~");
-    //    window.location.href = "/";
-    //}
+    if (!sg.common.is_weixin()) {
+        alert("送礼功能目前只支持微信哦~");
+        window.location.href = "/";
+    }
 
     if (!sg.common.is_login()) {
         sg.common.redirect_login();
