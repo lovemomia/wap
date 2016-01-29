@@ -1,4 +1,9 @@
 $(function () {
+    //if (!sg.common.is_weixin()) {
+    //    alert("送礼功能目前只支持微信哦~");
+    //    window.location.href = "/";
+    //}
+
     if (!sg.common.is_login()) {
         sg.common.redirect_login();
     } else {
@@ -11,6 +16,14 @@ $(function () {
 
     $(".back").on("click", function () {
         window.location.href = "/";
+    });
+
+    $("#btn_send").on("click", function () {
+        var html = "";
+        html += "<div class='share_tips' onclick='$(this).remove()'>";
+        html += "<img src='/img/share.png' />";
+        html += "</div>";
+        $(document.body).append(html);
     });
 });
 

@@ -25,6 +25,10 @@
         <Url>http://m.momia.cn/hongbao</Url>
     </Share>
 
+    <Gift>
+        <ReceiveUrl>http://m.momia.cn/gift/receive</ReceiveUrl>
+    </Gift>
+
     <Weixin>
         <JsApiAppId>wxc4ca5800d28b5650</JsApiAppId>
         <JsApiKey>7cb8aa4aac60b73f280e8b62b434e205</JsApiKey>

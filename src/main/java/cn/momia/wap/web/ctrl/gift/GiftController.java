@@ -22,7 +22,7 @@ import java.util.Map;
 @RequestMapping("/gift")
 public class GiftController extends AbstractController {
     @RequestMapping(value = "/send", method = RequestMethod.GET)
-    public ModelAndView share(HttpServletRequest request) {
+    public ModelAndView send(HttpServletRequest request) {
         JSONObject share = new JSONObject();
         String url = request.getRequestURL().toString();
         String queryString = request.getQueryString();
@@ -55,5 +55,20 @@ public class GiftController extends AbstractController {
         params.put("fee", fee);
 
         return new ModelAndView("gift/pay", "params", params);
+    }
+
+    @RequestMapping(value = "/result", method = RequestMethod.GET)
+    public ModelAndView result(HttpServletRequest request, @RequestParam long oid) {
+        JSONObject share = new JSONObject();
+        share.put("url", buildReceiveUrl());
+        String url = request.getRequestURL().toString();
+        String queryString = request.getQueryString();
+        share.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), url + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));
+
+        return new ModelAndView("gift/result", "share", share);
+    }
+
+    private String buildReceiveUrl() {
+        return Configuration.getString("Gift.ReceiveUrl");
     }
 }
