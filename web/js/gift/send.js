@@ -5,7 +5,7 @@ $(function () {
     }
 
     $("#btn_send").on("click", function () {
-        window.location.href = "/gift/placeorder?id=1";
+        window.location.href = "/subjectdetail?id=1&gift=1";
     });
 
     $("#btn_share").on("click", function () {
