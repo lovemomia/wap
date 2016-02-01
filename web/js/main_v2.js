@@ -146,7 +146,7 @@ sg.common = {
         var current_url = window.location.href;
         var path = sg.common.url_path(current_url);
         if (!path.startWith("/auth/")) sessionStorage.removeItem("authRef");
-        if (!path.startWith("/payment/pay") && !path.startWith("/payment/coupon")) sg.common.clean_coupon();
+        if (!path.startWith("/gift/pay") && !path.startWith("/payment/pay") && !path.startWith("/payment/coupon")) sg.common.clean_coupon();
 
         var param_ref = sg.common.param("ref");
         var param_back = sg.common.param("back");
