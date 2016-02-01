@@ -30,10 +30,10 @@ sg.receive = {
             giftsign: giftsign
         }, function (data) {
             if (data == true) {
-                alert("新年礼物领取成功，快去选课吧~");
+                alert("新年礼包领取成功，快去选课吧~");
                 window.location.href = "/user/bookable";
             } else {
-                alert("新年礼物领取失败，请与客服联系");
+                alert("新年礼包领取失败，请与客服联系");
             }
         });
     }
