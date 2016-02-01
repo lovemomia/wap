@@ -22,7 +22,7 @@
                 timestamp: ${share.config.timeStamp}, // 必填，生成签名的时间戳
                 nonceStr: '${share.config.nonceStr}', // 必填，生成签名的随机串
                 signature: '${share.config.sign}',// 必填，签名，见附录1
-                jsApiList: ['onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'hideMenuItems' ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
 
             wx.ready(function() {
@@ -31,6 +31,31 @@
                     desc: '新年送礼',
                     link: '${share.url}',
                     imgUrl: 'http://m.momia.cn/'
+                });
+
+                wx.onMenuShareTimeline({
+                    title: '新年送礼',
+                    link: '${share.url}',
+                    imgUrl: 'http://m.momia.cn/'
+                });
+
+                wx.hideMenuItems({
+                    menuList: [
+                        'menuItem:share:qq',
+                        'menuItem:share:weiboApp',
+                        'menuItem:favorite',
+                        'menuItem:share:facebook',
+                        'menuItem:share:QZone',
+                        'menuItem:editTag',
+                        'menuItem:delete',
+                        'menuItem:copyUrl',
+                        'menuItem:originPage',
+                        'menuItem:readMode',
+                        'menuItem:openWithQQBrowser',
+                        'menuItem:openWithSafari',
+                        'menuItem:share:email',
+                        'menuItem:share:brand'
+                    ] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
                 });
             });
         }
