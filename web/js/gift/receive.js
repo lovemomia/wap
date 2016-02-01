@@ -6,7 +6,7 @@ $(function () {
 
     $("#btn_receive").on("click", function () {
         if (!sg.common.is_login()) {
-            alert("本新年礼包只有松果亲子的注册用户才能领取哦，您还没有登录，点击“确定”前往登录页面（未注册的用户需要先注册），登录后再来领取吧~")
+            alert("本新年礼包只有松果亲子的注册用户才能领取哦，您还没有登录，快去登录后再来领取吧~（未注册的用户需要先注册）")
             sg.common.redirect_login();
         } else {
             var oid = sg.common.param("oid");
