@@ -146,7 +146,7 @@ sg.common = {
         var current_url = window.location.href;
         var path = sg.common.url_path(current_url);
         if (!path.startWith("/auth/")) sessionStorage.removeItem("authRef");
-        if (!path.startWith("/payment/pay") && !path.startWith("/payment/coupon")) sg.common.clean_coupon();
+        if (!path.startWith("/gift/pay") && !path.startWith("/payment/pay") && !path.startWith("/payment/coupon")) sg.common.clean_coupon();
 
         var param_ref = sg.common.param("ref");
         var param_back = sg.common.param("back");
@@ -183,7 +183,7 @@ sg.common = {
         if (referrer_url != undefined && referrer_url != null  && referrer_url != "") {
             var referrer_path = sg.common.url_path(referrer_url);
             var current_path = sg.common.url_path(current_url);
-            if (!referrer_path.startWith("/auth/") && (!referrer_path.startWith("/payment/pay") || current_path.startWith("/payment/coupon")) && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
+            if (!referrer_path.startWith("/gift/receive") && !referrer_path.startWith("/auth/") && (!referrer_path.startWith("/payment/pay") || current_path.startWith("/payment/coupon")) && sg.common.url_no_query(current_url) != sg.common.url_no_query(referrer_url)) {
                 if (url_history.length == 0 || sg.common.url_no_query(url_history[url_history.length - 1]) != sg.common.url_no_query(referrer_url)) {
                     url_history.push(referrer_url);
                     sessionStorage.setItem("url_history", JSON.stringify(url_history));
