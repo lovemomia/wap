@@ -5,9 +5,28 @@
 </@override>
 
 <@override name="body">
-    <div class="content bg-white">
-        <button id="btn_send" class="btn-lg-orange top-margin">点我送礼</button>
-        <button id="btn_share" class="btn-lg-orange top-margin bottom-margin">分享给好友</button>
+    <div class="content">
+        <div id="cover">
+
+        </div>
+        <div id="desc">
+
+        </div>
+        <div>
+            <button id="btn_send"></button>
+            <button id="btn_share"></button>
+        </div>
+        <div id="rule" class="top-margin">
+            <div class="title"><hr class='left' />&bull;<span style="margin-left: 0.3rem; margin-right:0.3rem;">活动规则</span>&bull;<hr class='right' /></div>
+            <ol>
+                <li>活动时间：2月1日——2月22日</li>
+                <li>每个新春压岁礼仅限一人领取</li>
+                <li>若新春压岁礼在10天内还未被对方领取，则自动退回到送礼人的松果亲子账户</li>
+                <li>被退回的新春压岁礼可自己享用或联系客服退款</li>
+                <li>如有任何疑问可添加客服微信：dorakids01，随时进行咨询</li>
+            </ol>
+        </div>
+        <div id="footer"></div>
     </div>
 </@override>
 
