@@ -4,11 +4,39 @@ body {
     background-repeat: repeat;
 }
 
-div#cover {
-    height: 4.5rem;
+div#header {
+    min-height: 1.4rem;
     background-image: url("/img/gift_header.png");
+    background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+div#header .title {
+    padding: 0.4rem 0.5rem;
+}
+
+div#desc {
+    padding: 0.3rem 0.3rem;
+}
+
+div.course {
+    float: left;
+    padding-top: 0.08rem;
+    width: 1rem;
+}
+
+div.toy {
+    float: left;
+    margin-left: 0.2rem;
+    width: 1rem;
+}
+
+div.bag {
+    float: left;
+    margin-left: 0.2rem;
+    padding-top: 0.16rem;
+    width: 1rem;
 }
 
 #btn_send {
@@ -69,6 +97,10 @@ div#rule ol {
     text-align: left;
     line-height: 0.25rem;
     font-size: 0.15rem;
+}
+
+div#logo {
+    padding: 0.1rem 1.7rem;
 }
 
 div#footer {

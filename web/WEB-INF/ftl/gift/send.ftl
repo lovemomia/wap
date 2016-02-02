@@ -6,11 +6,20 @@
 
 <@override name="body">
     <div class="content">
+        <div id="header">
+            <div class="title"><img src="/img/gift_header_title.png" /></div>
+        </div>
         <div id="cover">
 
         </div>
         <div id="desc">
-
+            <div style="margin-bottom: 0.3rem;"><img src="/img/gift_desc.png" /></div>
+            <div>
+                <div class="course"><img src="/img/gift_course.png" /></div>
+                <div class="toy"><img src="/img/gift_toy.png" /></div>
+                <div class="bag"><img src="/img/gift_bag.png" /></div>
+                <div style="clear:both;"></div>
+            </div>
         </div>
         <div>
             <button id="btn_send"></button>
@@ -24,7 +33,11 @@
                 <li>若新春压岁礼在10天内还未被对方领取，则自动退回到送礼人的松果亲子账户</li>
                 <li>被退回的新春压岁礼可自己享用或联系客服退款</li>
                 <li>如有任何疑问可添加客服微信：dorakids01，随时进行咨询</li>
+                <li>本次活动最终解释权归松果亲子所有</li>
             </ol>
+        </div>
+        <div id="logo">
+            <img src="/img/gift_logo.png" />
         </div>
         <div id="footer"></div>
     </div>
