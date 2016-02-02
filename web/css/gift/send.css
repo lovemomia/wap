@@ -1,8 +1,7 @@
 body {
     background-color: #842002;
     background-image: url("/img/gift_bg.png");
-    background-size: contain;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
 }
 
 div#cover {
