@@ -39,7 +39,7 @@ $(function () {
     }
 
     $(".line.coupon").on("click", function () {
-        window.location.href = "/payment/coupon";
+        window.location.href = "/payment/coupon&_src=gift";
     });
 
     $(".payment").on("click", function () {

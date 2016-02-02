@@ -5,7 +5,6 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>提交订单</div>
     <div class="content has-fix-footer">
         <div class="title">选择课程包</div>
 

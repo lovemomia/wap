@@ -19,7 +19,7 @@
         <div id="rule" class="top-margin">
             <div class="title"><hr class='left' />&bull;<span style="margin-left: 0.3rem; margin-right:0.3rem;">活动规则</span>&bull;<hr class='right' /></div>
             <ol>
-                <li>活动时间：2月1日——2月22日</li>
+                <li>活动时间：2月1日—2月22日</li>
                 <li>每个新春压岁礼仅限一人领取</li>
                 <li>若新春压岁礼在10天内还未被对方领取，则自动退回到送礼人的松果亲子账户</li>
                 <li>被退回的新春压岁礼可自己享用或联系客服退款</li>
