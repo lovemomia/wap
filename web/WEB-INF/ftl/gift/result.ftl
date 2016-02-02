@@ -12,15 +12,15 @@
             z-index: 20;
             top: 0;
             left: 0;
-            padding: 0 0.1rem;
+            padding: 0 0.2rem;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.8);
         }
 
         .share_tips img {
-            width: 3.8rem;
-            height: 0.9rem;
+            width: 3.6rem;
+            height: 1.1rem;
         }
     </style>
 </@override>
@@ -49,8 +49,8 @@
 
             wx.ready(function() {
                 wx.onMenuShareAppMessage({
-                    title: '新年送礼',
-                    desc: '新年送礼',
+                    title: '您的好友给您送了一个新春压岁礼',
+                    desc: '这不是演习！这不是演习！这不是演习！一个超值大礼包正等着你去拆开！',
                     link: '${share.url}',
                     imgUrl: 'http://m.momia.cn/',
                     success: function () {

@@ -59,14 +59,14 @@
 
             wx.ready(function() {
                 wx.onMenuShareAppMessage({
-                    title: '新年送礼',
-                    desc: '新年送礼',
+                    title: '大过年的，只送压岁钱怎么行？',
+                    desc: '新年，我们到底需要什么？一份互换的压岁钱？ or 一份走心的压岁礼？',
                     link: '${share.url}',
                     imgUrl: 'http://m.momia.cn/'
                 });
 
                 wx.onMenuShareTimeline({
-                    title: '新年送礼',
+                    title: '大过年的，只送压岁钱怎么行？',
                     link: '${share.url}',
                     imgUrl: 'http://m.momia.cn/'
                 });

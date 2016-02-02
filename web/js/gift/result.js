@@ -35,7 +35,7 @@ sg.result = {
             $("#btn_send").on("click", function () {
                 var html = "";
                 html += "<div class='share_tips' onclick='$(this).remove()'>";
-                html += "<img src='/img/share.png' />";
+                html += "<img src='/img/gift_send_tips.png' />";
                 html += "</div>";
                 $(document.body).append(html);
             });
