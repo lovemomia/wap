@@ -11,7 +11,7 @@ $(function () {
     $("#btn_share").on("click", function () {
         var html = "";
         html += "<div class='share_tips' onclick='$(this).remove()'>";
-        html += "<img src='/img/share.png' />";
+        html += "<img src='/img/gift_share_tips.png' />";
         html += "</div>";
         $(document.body).append(html);
     });

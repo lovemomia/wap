@@ -13,7 +13,11 @@ div#header {
 }
 
 div#header .title {
-    padding: 0.4rem 0.5rem;
+    padding: 0.6rem 0.5rem 0.3rem 0.5rem;
+}
+
+div#cover {
+    padding: 0 0.3rem;
 }
 
 div#desc {
@@ -74,7 +78,7 @@ div#rule .title {
 }
 
 div#rule .title hr.left {
-    margin-top: 0.27rem;
+    margin-top: 0.26rem;
     margin-left: 0.4rem;
     width: 0.5rem;
     height: 1px;
@@ -83,7 +87,7 @@ div#rule .title hr.left {
 }
 
 div#rule .title hr.right {
-    margin-top: 0.27rem;
+    margin-top: 0.26rem;
     margin-right: 0.4rem;
     width: 0.5rem;
     height: 1px;
@@ -100,7 +104,7 @@ div#rule ol {
 }
 
 div#logo {
-    padding: 0.1rem 1.7rem;
+    padding: 0.05rem 1.75rem;
 }
 
 div#footer {
@@ -124,5 +128,5 @@ div#footer {
 
 .share_tips img {
     width: 3.8rem;
-    height: 0.9rem;
+    height: 1.157rem;
 }

@@ -10,7 +10,7 @@
             <div class="title"><img src="/img/gift_header_title.png" /></div>
         </div>
         <div id="cover">
-
+            <img src="/img/gift_cover.png" />
         </div>
         <div id="desc">
             <div style="margin-bottom: 0.3rem;"><img src="/img/gift_desc.png" /></div>
