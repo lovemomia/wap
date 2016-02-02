@@ -51,22 +51,6 @@ div#rule .title {
     font-size: 0.12rem;
 }
 
-div#rule .title hr.left {
-    margin-top: 0.26rem;
-    width: 0.2rem;
-    height: 1px;
-    border: 0;
-    background-color: #e7d5bf;
-}
-
-div#rule .title hr.right {
-    margin-top: 0.26rem;
-    width: 0.2rem;
-    height: 1px;
-    border: 0;
-    background-color: #e7d5bf;
-}
-
 div#footer {
     min-height: 0.4rem;
     background-image: url("/img/gift_footer.png");

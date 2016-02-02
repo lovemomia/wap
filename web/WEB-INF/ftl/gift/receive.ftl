@@ -20,7 +20,7 @@
             <div class="usage"></div>
         </div>
         <div id="rule">
-            <div class="title"><hr class='left' />&bull;<span style="margin-left: 0.1rem; margin-right:0.1rem;">本次活动最终解释权归松果亲子所有</span>&bull;<hr class='right' /></div>
+            <div class="title">&bull;<span style="margin-left: 0.1rem; margin-right:0.1rem;">本次活动最终解释权归松果亲子所有</span>&bull;</div>
         </div>
         <div id="footer"></div>
     </div>
