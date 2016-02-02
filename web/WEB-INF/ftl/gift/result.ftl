@@ -50,7 +50,7 @@
             wx.ready(function() {
                 wx.onMenuShareAppMessage({
                     title: '您的好友给您送了一个新春压岁礼',
-                    desc: '这不是演习！这不是演习！这不是演习！一个超值大礼包正等着你去拆开！',
+                    desc: '这不是演习！这不是演习！一个超值大礼包正等着你去拆开！',
                     link: '${share.url}',
                     imgUrl: 'http://m.momia.cn/',
                     success: function () {
