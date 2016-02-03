@@ -30,9 +30,10 @@
             <ol>
                 <li>活动时间：2月1日 — 2月22日</li>
                 <li>每个新春压岁礼仅限一人领取</li>
-                <li>玩具和书包将于2月15日起陆续寄出，请添加客服微信：dorakids01，留下寄送地址和手机号</li>
+                <li>玩具和书包将于2月15日起陆续寄出，松果微信客服会与收礼人联系寄送事宜</li>
                 <li>若新春压岁礼在10天内未被对方领取，会自动退回到送礼人的松果亲子账户</li>
                 <li>礼包中的体验课堂限上海地区使用</li>
+                <li>如有任何疑问，请添加微信客服：dorakids01，随时进行咨询</li>
                 <li>本次活动最终解释权归松果亲子所有</li>
             </ol>
         </div>
@@ -62,13 +63,13 @@
                     title: '大过年的，只送压岁钱怎么行？',
                     desc: '新年，我们到底需要什么？一份互换的压岁钱？ or 一份走心的压岁礼？',
                     link: '${share.url}',
-                    imgUrl: 'http://s.sogokids.com/2016-02-03/1f71a4ea679fbdd9976995d56e41dd99.jpg'
+                    imgUrl: 'http://s.sogokids.com/2016-02-03/b38426e08424c228653a79ae760ef226.jpg'
                 });
 
                 wx.onMenuShareTimeline({
                     title: '大过年的，只送压岁钱怎么行？',
                     link: '${share.url}',
-                    imgUrl: 'http://s.sogokids.com/2016-02-03/1f71a4ea679fbdd9976995d56e41dd99.jpg'
+                    imgUrl: 'http://s.sogokids.com/2016-02-03/b38426e08424c228653a79ae760ef226.jpg'
                 });
 
                 wx.hideMenuItems({
