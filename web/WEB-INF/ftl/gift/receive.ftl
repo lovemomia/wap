@@ -27,7 +27,7 @@
                     <img id="flow1" src="/img/gift_flow1.jpg" />
                     <div>（3）点击右下角 [我的]，进入个人中心</div>
                     <img id="flow2" src="/img/gift_flow2.jpg" />
-                    <div>（5）在个人中心，进入 [预约课程] 去选课</div>
+                    <div>（4）在个人中心，进入 [预约课程] 去选课</div>
                     <img id="flow4" src="/img/gift_flow4.jpg" />
                     <li>如有任何疑问，请添加微信客服：dorakids01，随时进行咨询</li>
                 </ol>

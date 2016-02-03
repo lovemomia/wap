@@ -17,6 +17,17 @@
     color: #00c49d;
 }
 
+.register-link {
+    width: 100%;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    text-align: center;
+}
+
+.register-link a {
+    color: #00c49d;
+}
+
 .colddown {
     background: #999;
 }

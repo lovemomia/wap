@@ -30,6 +30,7 @@
     <div class="btn">
         <button id="btn_login" class="btn-lg-main">登录</button>
     </div>
+    <div class="register-link"><a href="/auth/register">注册</a></div>
 </@override>
 
 <@override name="js">
