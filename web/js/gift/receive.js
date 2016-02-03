@@ -20,30 +20,43 @@ $(function () {
 
 sg.receive = {
     receive: function () {
-        var address = prompt("请输入您的收件地址\n玩具和书包将于2月15日后为您寄出", "");
-        if (address) {
-            sg.common.post(sg.config.api + "/user/address", {
-                utoken: sg.common.cookie.get("utoken"),
-                address: address
-            }, function (data) {
-                var oid = sg.common.param("oid");
-                var expired = sg.common.param("expired");
-                var giftsign = sg.common.param("giftsign");
-                sg.common.post(sg.config.api + "/subject/order/gift/receive", {
-                    utoken: sg.common.cookie.get("utoken"),
-                    oid: oid,
-                    expired: expired,
-                    giftsign: giftsign
-                }, function (data) {
-                    if (data == true) {
-                        alert("新年礼包领取成功，如何使用礼包可参考下面的[礼包使用说明]哦~");
-                    } else {
-                        alert("新年礼包领取失败，请与客服联系");
-                    }
-                });
-            });
-        } else {
-            alert("收件地址不能为空");
-        }
+        var oid = sg.common.param("oid");
+        sg.common.get(sg.config.api + "/subject/order/gift/status", {
+            utoken: sg.common.cookie.get("utoken"),
+            oid: oid
+        }, function (data) {
+            if (data == 1) {
+                alert("您已经领取了礼包，请按照下面的使用说明来使用哦~");
+            } else if (data == 2) {
+                alert("手慢了，礼包已经被别人领走了");
+            } else if (data == 3) {
+                alert("手慢了，礼包已经过期了");
+            } else {
+                var address = prompt("请输入您的收件地址\n玩具和书包将于2月15日后为您寄出", "");
+                if (address) {
+                    sg.common.post(sg.config.api + "/user/address", {
+                        utoken: sg.common.cookie.get("utoken"),
+                        address: address
+                    }, function (data) {
+                        var expired = sg.common.param("expired");
+                        var giftsign = sg.common.param("giftsign");
+                        sg.common.post(sg.config.api + "/subject/order/gift/receive", {
+                            utoken: sg.common.cookie.get("utoken"),
+                            oid: oid,
+                            expired: expired,
+                            giftsign: giftsign
+                        }, function (data) {
+                            if (data == true) {
+                                alert("新年礼包领取成功，如何使用礼包可参考下面的[礼包使用说明]哦~");
+                            } else {
+                                alert("新年礼包领取失败，请与客服联系");
+                            }
+                        });
+                    });
+                } else {
+                    alert("收件地址不能为空");
+                }
+            }
+        });
     }
 };
