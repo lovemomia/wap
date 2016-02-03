@@ -16,7 +16,9 @@ $(function () {
     });
 
     $("#btn_buy").on("click", function () {
-        window.location.href = "/subject/placeorder?id=" + sg.common.param("id");
+        var gift = sg.common.param("gift", 0);
+        if (gift == 1) window.location.href = "/gift/placeorder?id=" + sg.common.param("id") + "&_src=gift";
+        else window.location.href = "/subject/placeorder?id=" + sg.common.param("id");
     });
 
     $(".tabs").tabs();

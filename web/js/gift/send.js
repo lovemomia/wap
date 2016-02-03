@@ -5,13 +5,13 @@ $(function () {
     }
 
     $("#btn_send").on("click", function () {
-        window.location.href = "/gift/placeorder?id=1";
+        window.location.href = "/subjectdetail?id=1&gift=1&_src=gift";
     });
 
     $("#btn_share").on("click", function () {
         var html = "";
         html += "<div class='share_tips' onclick='$(this).remove()'>";
-        html += "<img src='/img/share.png' />";
+        html += "<img src='/img/gift_share_tips.png' />";
         html += "</div>";
         $(document.body).append(html);
     });

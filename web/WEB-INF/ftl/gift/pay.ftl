@@ -5,7 +5,6 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>收银台</div>
     <div class="content">
         <div class="pay top-margin">
             <div class="line">

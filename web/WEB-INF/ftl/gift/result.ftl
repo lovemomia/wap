@@ -12,21 +12,20 @@
             z-index: 20;
             top: 0;
             left: 0;
-            padding: 0 0.1rem;
+            padding: 0 0.2rem;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.8);
         }
 
         .share_tips img {
-            width: 3.8rem;
-            height: 0.9rem;
+            width: 3.6rem;
+            height: 1.1rem;
         }
     </style>
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>支付结果</div>
     <div class="content">
         <div class="logo"><img src="/img/logo3x.png"></div>
         <div class="title"></div>
@@ -45,15 +44,15 @@
                 timestamp: ${share.config.timeStamp}, // 必填，生成签名的时间戳
                 nonceStr: '${share.config.nonceStr}', // 必填，生成签名的随机串
                 signature: '${share.config.sign}',// 必填，签名，见附录1
-                jsApiList: ['onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                jsApiList: ['onMenuShareAppMessage', 'hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
 
             wx.ready(function() {
                 wx.onMenuShareAppMessage({
-                    title: '新年送礼',
-                    desc: '新年送礼',
+                    title: '您的好友给您送了个新春压岁礼',
+                    desc: '这不是演习！这不是演习！这不是演习！一个超值大礼包正等着你去拆开！',
                     link: '${share.url}',
-                    imgUrl: 'http://m.momia.cn/',
+                    imgUrl: 'http://s.sogokids.com/2016-02-03/f613e9d02c856a8230615a42bcab5f47.jpg',
                     success: function () {
                         sg.common.post(sg.config.api + "/subject/order/gift/send", {
                             utoken: sg.common.cookie.get("utoken"),
@@ -67,6 +66,26 @@
                             }
                         });
                     }
+                });
+
+                wx.hideMenuItems({
+                    menuList: [
+                        'menuItem:share:timeline',
+                        'menuItem:share:qq',
+                        'menuItem:share:weiboApp',
+                        'menuItem:favorite',
+                        'menuItem:share:facebook',
+                        'menuItem:share:QZone',
+                        'menuItem:editTag',
+                        'menuItem:delete',
+                        'menuItem:copyUrl',
+                        'menuItem:originPage',
+                        'menuItem:readMode',
+                        'menuItem:openWithQQBrowser',
+                        'menuItem:openWithSafari',
+                        'menuItem:share:email',
+                        'menuItem:share:brand'
+                    ] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
                 });
             });
         }
