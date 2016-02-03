@@ -60,7 +60,7 @@
                         }, function (data) {
                             if (data == true) {
                                 alert("新年礼物已经发送给朋友了哦~");
-                                window.location.href = "/";
+                                window.location.href = "/gift/send";
                             } else {
                                 alert("新年礼物赠送失败，请与客服联系");
                             }
