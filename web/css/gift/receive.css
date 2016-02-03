@@ -64,6 +64,7 @@ div#desc .title hr.right {
 
 div#desc .usage {
     min-height: 4rem;
+    font-size: 0.15rem;
 }
 
 div#desc .usage ol {
