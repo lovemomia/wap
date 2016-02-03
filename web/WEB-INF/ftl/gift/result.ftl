@@ -49,8 +49,8 @@
 
             wx.ready(function() {
                 wx.onMenuShareAppMessage({
-                    title: '您的好友给您送了一个新春压岁礼',
-                    desc: '这不是演习！这不是演习！一个超值大礼包正等着你去拆开！',
+                    title: '您的好友给您送了个新春压岁礼',
+                    desc: '这不是演习！这不是演习！这不是演习！一个超值大礼包正等着你去拆开！',
                     link: '${share.url}',
                     imgUrl: 'http://s.sogokids.com/2016-02-03/f613e9d02c856a8230615a42bcab5f47.jpg',
                     success: function () {
