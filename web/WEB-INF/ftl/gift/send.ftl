@@ -62,13 +62,13 @@
                     title: '大过年的，只送压岁钱怎么行？',
                     desc: '新年，我们到底需要什么？一份互换的压岁钱？ or 一份走心的压岁礼？',
                     link: '${share.url}',
-                    imgUrl: 'http://m.momia.cn/'
+                    imgUrl: 'http://s.sogokids.com/2016-02-03/1f71a4ea679fbdd9976995d56e41dd99.jpg'
                 });
 
                 wx.onMenuShareTimeline({
                     title: '大过年的，只送压岁钱怎么行？',
                     link: '${share.url}',
-                    imgUrl: 'http://m.momia.cn/'
+                    imgUrl: 'http://s.sogokids.com/2016-02-03/1f71a4ea679fbdd9976995d56e41dd99.jpg'
                 });
 
                 wx.hideMenuItems({

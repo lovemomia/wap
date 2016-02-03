@@ -46,7 +46,7 @@ div.bag {
 #btn_send {
     display: inline-block;
     width: 2.68rem;
-    height: 0.55rem;
+    height: 0.59rem;
     border: none;
     background-color:transparent;
     background-image: url("/img/gift_send.png");
@@ -58,7 +58,7 @@ div.bag {
     display: inline-block;
     margin-top: 0.3rem;
     width: 2.68rem;
-    height: 0.55rem;
+    height: 0.59rem;
     border: none;
     background-color:transparent;
     background-image: url("/img/gift_share.png");
