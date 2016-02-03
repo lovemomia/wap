@@ -63,7 +63,7 @@ public class CourseController extends AbstractController {
     public ModelAndView cancelable(HttpServletRequest request, @RequestParam long id, @RequestParam(value = "bid") long bookingId) {
         String utoken = getUtoken(request);
 
-        MomiaHttpResponse resp = get("/course?id=" + id);
+        MomiaHttpResponse resp = get("/v2/course?id=" + id);
         JSONObject courseJson = (JSONObject) resp.getData();
         courseJson.put("cancelable", true);
 

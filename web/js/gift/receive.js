@@ -26,10 +26,12 @@ sg.receive = {
             oid: oid
         }, function (data) {
             if (data == 1) {
-                alert("您已经领取了礼包，请按照下面的使用说明来使用哦~");
+                alert("您不能领取自己的礼包");
             } else if (data == 2) {
-                alert("手慢了，礼包已经被别人领走了");
+                alert("您已经领取了礼包，请按照下面的使用说明来使用哦~");
             } else if (data == 3) {
+                alert("手慢了，礼包已经被别人领走了");
+            } else if (data == 4) {
                 alert("手慢了，礼包已经过期了");
             } else {
                 var address = prompt("请输入您的收件地址\n玩具和书包将于2月15日后为您寄出", "");
