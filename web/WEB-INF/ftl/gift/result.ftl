@@ -70,7 +70,6 @@
 
                 wx.hideMenuItems({
                     menuList: [
-                        'menuItem:share:timeline',
                         'menuItem:share:qq',
                         'menuItem:share:weiboApp',
                         'menuItem:favorite',
