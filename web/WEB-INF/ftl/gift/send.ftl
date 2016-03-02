@@ -37,6 +37,10 @@
                 <li>本次活动最终解释权归松果亲子所有</li>
             </ol>
         </div>
+        <div id="rule" class="top-margin">
+            <div style="text-align: center"><img src="/img/code.png" style="width: 117px;height: 117px;"></div>
+            <p style="text-align: left;font-size: 0.15rem;">松果亲子是国内第一家互联网亲子教育品牌，运用英国早期儿童教育课程大纲（Early years foundation stage，简称EYFS），结合独具特色的“社会大学”模式，为3-7岁的孩子提供实境的、体验式的、寓教于乐的亲子课堂，让孩子和父母，一起在玩中认识世界，快乐成长。</p>
+        </div>
         <div id="logo">
             <img src="/img/gift_logo.png" />
         </div>
