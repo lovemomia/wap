@@ -46,11 +46,11 @@ sg.trial = {
                     html += "</div>";
                     html += "<div class='desc'>";
                     html += "<div class='title overflow-hidden'>" + course.title + "</div>";
-                    var intro = course.age + " | " + course.scheduler + " | " + course.region;
+                    var intro = course.subject + " | " + course.age + " | " + course.region;
                     if (intro.length == 6) intro = "";
                     html += "<div class='intro overflow-hidden'>" + intro + "</div>";
-                    html += "<div class='tags overflow-hidden'>" + course.subject + "</div>";
-                    html += "<div class='price'>￥<span class='number'>" + course.price + "</span>/次</div>"
+                    html += "<div class='price'>￥<span class='number'>1</span></div>"
+                    html += "<div class='origin-price'>￥" + course.price + "</div>"
                     html += "</div>";
                     if (course.joined > 0) {
                         html += "<div class='joined'>" + course.joined + "人参加</div>";
