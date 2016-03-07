@@ -36,6 +36,7 @@ sg.booked = {
             html += "<div class='list bottom-border'>";
             for (var i = 0; i < list.length; i++) {
                 html += generate_course_html(list[i]);
+                if (i < list.length - 1) html += "<hr class='left-margin' />";
             }
             html += "</div>";
 
@@ -50,7 +51,7 @@ sg.booked = {
             var html = "";
             html += "<div class='logo'><img src='/img/logo3x.png'></div>";
             html += "<div class='tips'>";
-            html += "<p>您还没有选课，快去看看吧~</p>";
+            html += "<p>没有待上课程，快去选课吧~</p>";
             html += "</div>";
 
             $(".courses").html(html);
@@ -66,7 +67,7 @@ sg.booked = {
             } else {
                 html += "<a href='/course?id=" + course.id + "'>";
             }
-            html += "<div class='element scrollable bottom-border'>";
+            html += "<div class='element scrollable'>";
             html += "<div class='left'>";
             html += "<img src='" + course.cover + "' />";
             html += "</div>";
@@ -74,11 +75,6 @@ sg.booked = {
             html += "<div class='title overflow-hidden'>" + course.title + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.place.address + "</div>";
             html += "<div class='desc overflow-hidden'>" + course.scheduler + "</div>";
-            if (course.price > 0) {
-                html += "<div class='price'><span>价值 </span><span class='number'>" + course.price + "</span><span>元</span></div>";
-            } else {
-                html += "<div class='price'><span class='free'>公益课</span></div>";
-            }
             html += "</div>";
             html += "<div style='clear: both;'></div>";
             html += "</div>";

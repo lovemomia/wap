@@ -1,7 +1,7 @@
 .title {
-    padding: 0.1rem;
+    padding: 0.125rem;
     height: 0.45rem;
-    line-height: 0.25rem;
+    line-height: 0.2rem;
     color: #999999;
     text-align: left;
 }
@@ -13,20 +13,20 @@
 }
 
 .pay .line {
-    padding: 0.1rem;
-    height: 0.55rem;
+    padding: 0.125rem;
+    height: 0.5rem;
     background-color: #ffffff;
 }
 
 .pay .line.large {
-    height: 0.7rem;
+    height: 0.74rem;
 }
 
 .pay .line .left {
-    margin: 0.01rem 0 0 0;
+    margin: 0;
     width: 1rem;
-    height: 0.35rem;
-    line-height: 0.35rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
     font-size: 0.16rem;
     text-align: left;
 }
@@ -43,12 +43,17 @@
 }
 
 .pay .line .info {
-    margin: 0.01rem 0.1rem 0 0;
-    height: 0.35rem;
-    line-height: 0.35rem;
-    color: #333333;
+    margin: 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
     font-size: 0.16rem;
     text-align: right;
+}
+
+.pay .line .arrow img {
+    margin-top: 0.04rem;
+    width: 0.2rem;
+    height: 0.2rem;
 }
 
 .pay .line .desc {

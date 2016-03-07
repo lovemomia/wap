@@ -6,8 +6,8 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>用户注册<div class="right"><a href="/auth/login">登录</a></div></div>
-    <div class="content">
-        <div class="form top-margin">
+    <div class="content top-padding">
+        <div class="form bottom-margin">
             <dl>
                 <dt class="letter-sp32">昵称</dt>
                 <dd class="left">
@@ -15,7 +15,7 @@
                     <input type="text" id="nickName" placeholder="输入昵称">
                 </dd>
             </dl>
-            <hr class="sep" />
+            <hr class="left-margin" />
             <dl>
                 <dt class="letter-sp32">密码</dt>
                 <dd class="left">
@@ -23,7 +23,7 @@
                     <input type="password" id="password" placeholder="输入密码">
                 </dd>
             </dl>
-            <hr class="sep" />
+            <hr class="left-margin" />
             <dl>
                 <dt class="letter-sp8">手机号</dt>
                 <dd class="left">
@@ -31,7 +31,7 @@
                     <input type="tel" id="mobile" placeholder="输入手机号码">
                 </dd>
             </dl>
-            <hr class="sep" />
+            <hr class="left-margin" />
             <dl class="code">
                 <dt class="letter-sp8">验证码</dt>
                 <dd class="left">
@@ -40,14 +40,14 @@
                 </dd>
 
                 <dd class="right btn">
-                    <button id="btn_getcode" class="btn-sm-main">获取验证码</button>
+                    <button id="btn_getcode" class="btn-main-sm">获取验证码</button>
                 </dd>
             </dl>
         </div>
     </div>
 
-    <div class="btn top-margin-lg">
-        <button id="btn_register" class="btn-lg-main">注册</button>
+    <div class="btn top-padding">
+        <button id="btn_register" class="btn-main-lg">注册</button>
     </div>
 </@override>
 

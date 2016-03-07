@@ -1,6 +1,5 @@
 package cn.momia.wap.web.ctrl.subject;
 
-import cn.momia.common.core.http.MomiaHttpResponse;
 import cn.momia.wap.web.ctrl.AbstractController;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
@@ -17,8 +16,7 @@ import java.net.URLEncoder;
 public class SubjectController extends AbstractController {
     @RequestMapping(value = "/subjectdetail", method = RequestMethod.GET)
     public ModelAndView subject(@RequestParam long id) {
-        MomiaHttpResponse resp = get("/v2/subject?id=" + id);
-        return new ModelAndView("subject/subject", "subject", resp.getData());
+        return new ModelAndView("subject/subject", "subject", get("/v2/subject?id=" + id));
     }
 
     @RequestMapping(value = "/subject/placeorder", method = RequestMethod.GET)
@@ -30,9 +28,9 @@ public class SubjectController extends AbstractController {
             return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()) + "&back=" + URLEncoder.encode(referer));
         }
 
-        MomiaHttpResponse resp = get("/v2/subject/sku?utoken=" + utoken + "&id=" + id + (courseId > 0 ? "&coid=" + courseId : ""));
-        JSONObject params = (JSONObject) resp.getData();
+        JSONObject params = (JSONObject) get("/v2/subject/sku?utoken=" + utoken + "&id=" + id + (courseId > 0 ? "&coid=" + courseId : ""));
         if (courseId > 0) params.put("courseOrder", true);
+
         return new ModelAndView("subject/placeorder", "params", params);
     }
 }

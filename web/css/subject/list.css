@@ -1,6 +1,10 @@
+a {
+    color: #666666;
+}
+
 .subject {
     position: relative;
-    margin: 0 0.1rem 0.11rem 0.1rem;
+    margin: 0 0.125rem 0.135rem 0.125rem;
     box-shadow: 0.03rem 0.04rem 0.02rem #e6e6e6;
 }
 
@@ -25,5 +29,4 @@
     height: 0.32rem;
     line-height: 0.32rem;
     font-size: 0.19rem;
-    color: #222222;
 }

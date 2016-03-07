@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping({"/"})
 public class IndexController extends AbstractController {
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
     public ModelAndView index() {
         return new ModelAndView("index");
     }

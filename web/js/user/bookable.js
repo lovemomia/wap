@@ -26,7 +26,7 @@ sg.bookable = {
             html += "<div class='list bottom-border'>";
             for (var i = 0; i < list.length; i++) {
                 html += generate_package_html(list[i]);
-                if (i < list.length - 1) html += "<hr class='sep' />";
+                if (i < list.length - 1) html += "<hr class='left-margin' />";
             }
             html += "</div>";
 

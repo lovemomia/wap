@@ -7,7 +7,7 @@
 
 <@override name="body">
     <div class="content has-fix-header has-fix-footer"></div>
-    <div class="header fixed bg-main"><div class="left city">上海</div>松果亲子</div>
+    <div class="header fixed bg-main color-white"><div class="left city">上海</div>松果亲子</div>
     <div class="footer fixed">
         <div class="left w50">
             <div><img src="/img/jpk3x02.png"></div>

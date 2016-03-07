@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title><@block name="title" ></@block></title>
-    <link rel="stylesheet" type="text/css" href="/css/main_v2.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
     <@block name="css" ></@block>
 </head>
 <body>

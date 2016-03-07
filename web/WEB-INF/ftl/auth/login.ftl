@@ -6,8 +6,8 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>用户登录<div class="right"><a href="/auth/register">注册</a></div></div>
-    <div class="content">
-        <div class="form top-margin">
+    <div class="content top-margin">
+        <div class="form">
             <dl>
                 <dt class="letter-sp8">手机号</dt>
                 <dd class="left">
@@ -15,7 +15,7 @@
                     <input type="tel" id="mobile" placeholder="输入手机号码" />
                 </dd>
             </dl>
-            <hr class="sep" />
+            <hr class="left-margin" />
             <dl>
                 <dt class="letter-sp32">密码</dt>
                 <dd class="left">
@@ -24,13 +24,10 @@
                 </dd>
             </dl>
         </div>
+        <div class="password-link"><a href="/auth/password">忘记密码</a></div>
+        <div class="btn"><button id="btn_login" class="btn-main-lg">登录</button></div>
+        <div class="register-link"><a href="/auth/register">注册</a></div>
     </div>
-
-    <div class="password-link"><a href="/auth/password">忘记密码</a></div>
-    <div class="btn">
-        <button id="btn_login" class="btn-lg-main">登录</button>
-    </div>
-    <div class="register-link"><a href="/auth/register">注册</a></div>
 </@override>
 
 <@override name="js">

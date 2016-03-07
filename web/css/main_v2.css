@@ -47,6 +47,10 @@ a {
     color: #00c49d;
 }
 
+.bg-transparent {
+    background-color: transparent;
+}
+
 .left { float: left; }
 .right { float: right; }
 
@@ -65,6 +69,7 @@ a {
 .bottom-padding { padding-bottom: 0.1rem }
 .left-padding { padding-left: 0.1rem; }
 .right-padding { padding-right: 0.1rem; }
+.all-padding { padding: 0.1rem }
 
 .top-border { border-top: 1px solid #e1e1e1; }
 .bottom-border { border-bottom: 1px solid #e1e1e1; }
@@ -83,7 +88,7 @@ a {
     border-top: 1px solid #e1e1e1;
     border-bottom: 1px solid #e1e1e1;
     background-color: #ffffff;
-    color: #333333;
+    color: #666666;
     text-align: left;
 }
 

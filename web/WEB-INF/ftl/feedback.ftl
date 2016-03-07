@@ -27,8 +27,8 @@
     </div>
 </div>
 
-<div class="btn top-margin">
-    <button id="btn_commit" class="btn-lg-main">提交</button>
+<div class="btn top-padding">
+    <button id="btn_commit" class="btn-main-lg">提交</button>
 </div>
 </@override>
 

@@ -7,7 +7,7 @@
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>我的订单</div>
     <div class="content">
-        <div class="tab bg-white bottom-border">
+        <div class="tab bg-white">
             <div id="not_payed" class="left" onclick="window.location.href='/user/order?status=2'">未付款</div>
             <div id="payed" class="left" onclick="window.location.href='/user/order?status=3'">已付款</div>
             <div id="all" class="left" onclick="window.location.href='/user/order?status=1'">全部</div>

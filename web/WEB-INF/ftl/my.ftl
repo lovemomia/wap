@@ -13,7 +13,6 @@
                     <div class="img left"><img id="avatar" src="${user.avatar}" /></div>
                     <div class="info left">
                         <div id="nickname">${user.nickName}</div>
-                        <div id="children"></div>
                     </div>
                     <div class="arrow right"><img src="/img/allow3x.png"/></div>
                 </div>
@@ -21,7 +20,7 @@
                 <div class="line large">
                     <div class="not-login-tips">您还没有登录哦~</div>
                     <div class="not-login-button">
-                        <button id="btn_login" class="btn btn-sm-main">立即登录</button>
+                        <button id="btn_login" class="btn btn-main-sm">立即登录</button>
                     </div>
                     <div style="clear: both;"></div>
                 </div>
@@ -34,7 +33,7 @@
                 <div class="title left">预约课程</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
-            <hr class="sep" />
+            <hr class="left-margin" />
             <div class="line" onclick="window.location.href='/user/booked'">
                 <div class="img left"><img src="/img/yixuanx3x.png" /></div>
                 <div class="title left">已选课程</div>
@@ -48,7 +47,7 @@
                 <div class="title left">我的订单</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
-            <hr class="sep" />
+            <hr class="left-margin" />
             <div class="line" onclick="window.location.href='/user/coupon'">
                 <div class="img left"><img src="/img/hongbao3x.png" /></div>
                 <div class="title left">我的红包</div>
@@ -56,7 +55,7 @@
             </div>
         </div>
 
-        <div class="form top-margin">
+        <div class="form v-margin">
             <div class="line" onclick="window.location.href='/feedback'">
                 <div class="img left"><img src="/img/yijian3x.png" /></div>
                 <div class="title left">意见反馈</div>
@@ -65,8 +64,8 @@
         </div>
         
         <#if user??>
-            <div class="btn top-margin-lg bottom-margin">
-                <button id="btn_logout" class="btn-lg-main">退出登录</button>
+            <div class="btn v-padding">
+                <button id="btn_logout" class="btn-main-lg">退出登录</button>
             </div>
         </#if>
     </div>

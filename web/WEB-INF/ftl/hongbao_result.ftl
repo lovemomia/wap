@@ -2,6 +2,10 @@
 
 <@override name="css">
     <style type="text/css">
+        .content {
+            text-align: center;
+        }
+
         p {
             margin: 0.1rem 0;
         }

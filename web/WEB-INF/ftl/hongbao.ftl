@@ -10,7 +10,7 @@
         <div><img src="/img/hongbao.png"></div>
         <div><input id="mobile" type="tel" placeholder="请输入手机号" /></div>
         <div class="msg"></div>
-        <div><button id="get_coupon" class="btn-lg-orange disable">马上领取</button></div>
+        <div><button id="get_coupon" class="btn-orange-lg disable">马上领取</button></div>
         <div class="rules"><hr class="left" />活动规则<hr class="right" /></div>
         <div class="desc">
             <p>1.  红包仅限新用户领取，已经领取过或者购买过课程的用户不能重复领取</p>
