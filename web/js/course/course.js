@@ -51,6 +51,9 @@ $(function () {
     $(".experience").html(sg.common.sections_html($(".experience").html()));
     $("#tips").html(sg.common.sections_html($("#tips").html()));
     $("#notice").html(sg.common.sections_html($("#notice").html()));
+    $(".notice.content").each(function(){
+        $(this).html(sg.common.sections_html($(this).html()));
+    });
     $("#institution").html(sg.common.sections_html($("#institution").html()));
 
     $(".tabs").tabs();

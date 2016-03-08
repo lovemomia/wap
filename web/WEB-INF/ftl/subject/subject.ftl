@@ -16,31 +16,21 @@
 
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
         <#if (subject.courses?? && subject.courses.totalCount>0)>
-            <div class="subject list bottom-border">
+            <div class="courses bottom-border">
                 <#list subject.courses.list as course>
-                    <a href="/course?id=${course.id}">
-                        <div class="element">
-                            <div class="left"><img src="${course.cover}" /></div>
-                            <div class="right">
-                                <div class="title overflow-hidden">${course.title}</div>
-                                <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
-                                <div class="desc overflow-hidden">${course.region}</div>
-                                <div class="price">
-                                    <#if (course.price > 0)>
-                                        <span>价值 </span><span class="number">${course.price}</span><span>元</span>
-                                    <#else>
-                                        <span class="free">公益课</span>
-                                    </#if>
-                                </div>
+                    <div class="course" style="background-image: url('${course.cover}')">
+                        <a href="/course?id=${course.id}">
+                            <#if (course.joined>0)>
+                                <div class="joined">${course.joined}人参加</div>
+                            </#if>
+                            <div class="info gradient">
+                                <div class="title">${course.title}</div>
+                                <div class="age">${course.age}</div>
                             </div>
-                            <div style="clear: both;"></div>
-                        </div>
-                        <#if (course_index < subject.courses.list?size - 1)>
-                            <hr class="sep" />
-                        </#if>
-                    </a>
+                        </a>
+                    </div>
                 </#list>
-                <#if (subject.courses.nextIndex?? && subject.courses.nextIndex > 0)>
+                <#if (subject.courses.nextIndex?? && subject.courses.nextIndex>0)>
                     <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
                 </#if>
             </div>
@@ -50,6 +40,63 @@
                 <div class="tips">
                     <p>目前还没有可选课程，我们会尽快推出的哦~</p>
                 </div>
+            </div>
+        </#if>
+
+        <#if (subject.comments?? && subject.comments.totalCount>0)>
+            <div class="subject comment v-border top-margin">
+                <div class="title">用户评价</div>
+                <hr class="left-margin" />
+                <#list subject.comments.list as comment>
+                    <#if (comment_index == 0)>
+                    <div>
+                        <div class="comment-avatar left">
+                            <#if (comment.avatar?length>0)>
+                                <img src="${comment.avatar}" />
+                            <#else>
+                                <img src="/img/avatar02.png" />
+                            </#if>
+                        </div>
+                        <div class="comment-info right top-margin bottom-margin">
+                            <div>
+                                <div class="nickname left">${comment.nickName}</div>
+                                <div class="addtime right">${comment.addTime}</div>
+                                <div style="clear:both"></div>
+                            </div>
+                            <div>
+                                <#if (comment.children?size>0)>
+                                    <div class="children left">${comment.children[0]}</div>
+                                </#if>
+                                <div class="right">
+                                    <#list 1..5 as i>
+                                        <#if (5-comment.star<i)>
+                                            <img class="star" src="/img/dianliang2x.png" />
+                                        <#else>
+                                            <img class="star" src="/img/budianliang2x.png" />
+                                        </#if>
+                                    </#list>
+                                </div>
+                                <div style="clear:both"></div>
+                            </div>
+                            <hr class=""/>
+                            <div class="comment-content">${comment.content}</div>
+                            <#if (comment.imgs?size>0)>
+                                <#list comment.imgs as img>
+                                    <#if (img_index%3==0)>
+                                    <div class="comment-img">
+                                    </#if>
+                                    <img src="${img}" />
+                                    <#if (img_index%3==2 || (img_index+1) == comment.imgs?size)>
+                                        <div style="clear:both"></div>
+                                    </div>
+                                    </#if>
+                                </#list>
+                            </#if>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    </#if>
+                </#list>
             </div>
         </#if>
 

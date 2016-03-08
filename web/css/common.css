@@ -21,6 +21,7 @@ img {
 }
 
 a {
+    color: #666666;
     text-decoration: none;
     border: none;
 }
@@ -308,13 +309,14 @@ div.error {
 .list .element .right .title {
     height: 0.36rem;
     line-height: 0.36rem;
-    font-size: 0.18rem;
+    font-size: 0.17rem;
 }
 
 .list .element .right .desc {
     height: 0.25rem;
     line-height: 0.25rem;
     font-size: 0.16rem;
+    color: #999999;
 }
 
 

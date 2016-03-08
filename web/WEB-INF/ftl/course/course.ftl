@@ -6,7 +6,6 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-transparent"><div class="back left"><img src="/img/back3x.png"></div>课程详情</div>
     <#if !(course.cancelable?? && course.cancelable == true) && (course.buyable || course.trial??)>
         <div class="content has-fix-footer">
     <#else>
@@ -14,6 +13,7 @@
     </#if>
 
     <#if (course.cancelable?? && course.cancelable == true)>
+        <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>课程详情</div>
         <div class="list">
             <div class="element">
                 <div class="left"><img src="${course.cover}" /></div>
@@ -26,7 +26,8 @@
             </div>
         </div>
     <#else>
-        <#if course.imgs?size == 0>
+        <#if (course.imgs?size == 0)>
+            <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>课程详情</div>
         <#else>
             <div class="course img">
                 <#if course.imgs?size == 1>
@@ -52,6 +53,7 @@
                         </ul>
                     </div>
                 </#if>
+                <div class="header bg-transparent fix-parent"><div class="back left"><img src="/img/back3x.png"></div></div>
             </div>
         </#if>
 
@@ -73,19 +75,19 @@
     </div>
 
     <#if (course.cancelable?? && course.cancelable==true)>
-        <div id="btn_cancel" class="top-margin">
-            <button class="btn-lg-main">取消预约</button>
+        <div id="btn_cancel" class="top-margin btn">
+            <button class="btn-main-lg">取消预约</button>
         </div>
     </#if>
 
     <#if course.place??>
-        <div id="skuplace" class="course text no-bottom-border top-margin">
-            <div class="title left">课程表</div>
+        <div id="skuplace" class="course top-border top-margin">
+            <div class="title left no-border">课程表</div>
             <div class="arrow right"><img src="/img/allow3x.png" /></div>
             <div style="clear:both"></div>
         </div>
-        <div class="bg-white"><hr class="sep"/></div>
-        <div class="course place text no-top-border">
+        <div class="bg-white"><hr class="left-margin"/></div>
+        <div class="course place text bottom-border">
             <div class="name">${course.place.name}</div>
             <div class="info"><div class="left img right-margin"><img src="/img/weizhi3x.png" /></div>${course.place.address}</div>
             <div class="info"><div class="left img right-margin"><img src="/img/shijian3x.png" /></div>${course.place.scheduler}</div>
@@ -100,7 +102,7 @@
             <li><a href="#panel-3">用户评价</a></li>
         </ul>
 
-        <div id="panel-1">
+        <div id="panel-1" class="bottom-border">
             <div id="goal" class="course text no-border">${course.goal}</div>
             <#if course.detail??>
             <div class="course detail bottom-padding">
@@ -129,17 +131,14 @@
             </#if>
 
             <#if course.teachers??>
-                <div class="bg-white"><hr class="sep"/></div>
                 <div id="teacher" class="course text no-border">
                     <div class="title">专业讲师</div>
                 </div>
                 <#list course.teachers as teacher>
-                    <div class="bg-white"><hr class="sep"/></div>
-                    <#if teacher_index + 1 = course.teachers?size>
-                    <div class="course teacher text no-top-border">
-                    <#else>
-                    <div class="course teacher text no-border">
+                    <#if (teacher_index>0)>
+                        <div class="bg-white"><hr class="left-margin"/></div>
                     </#if>
+                    <div class="course teacher text">
                     <div class="left"><img src="${teacher.avatar}" /></div>
                     <div class="right">
                         <div class="name overflow-hidden">${teacher.name}</div>
@@ -153,16 +152,21 @@
         </div>
         <div id="panel-2">
             <#if (course.buyable?? && course.buyable) || (course.trial?? && course.trial)>
-                <div id="notice" class="course text no-top-border">${course.notice}</div>
+                <div id="notice" class="text bottom-border">${course.notice}</div>
             <#else>
-                <div id="notice" class="course text no-top-border">${course.subjectNotice}</div>
+                <div id="subject_notice" class="text bottom-border">
+                    <#list course.subjectNotice as notice>
+                        <div class="notice title">${notice.title}</div>
+                        <div class="notice content">${notice.content}</div>
+                    </#list>
+                </div>
             </#if>
         </div>
         <div id="panel-3">
             <#if (course.comments?? && course.comments.totalCount>0)>
-                <div class="course comment bottom-border">
+                <div class="course comment bg-white bottom-border">
                     <#list course.comments.list as comment>
-                        <#if (comment_index > 0)><div class="bg-white"><hr class="sep"/></div></#if>
+                        <#if (comment_index > 0)><hr class="left-margin" /></#if>
                         <div>
                             <div class="comment-avatar left">
                                 <#if (comment.avatar?length>0)>
@@ -210,6 +214,11 @@
                             <div style="clear:both"></div>
                         </div>
                     </#list>
+                </div>
+            <#else>
+                <div class="logo"><img src="/img/logo3x.png"></div>
+                <div class="tips">
+                    <p>目前还没有任何评价，快去抢沙发吧~</p>
                 </div>
             </#if>
         </div>
