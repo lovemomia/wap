@@ -2,7 +2,6 @@
 
 <@override name="css">
     <link rel="stylesheet" type="text/css" href="/css/scroll.css">
-    <link rel="stylesheet" type="text/css" href="/css/feed/feed.css">
     <link rel="stylesheet" type="text/css" href="/css/subject/subject.css">
 </@override>
 
@@ -18,8 +17,8 @@
         <#if (subject.courses?? && subject.courses.totalCount>0)>
             <div class="courses bottom-border">
                 <#list subject.courses.list as course>
-                    <div class="course" style="background-image: url('${course.cover}')">
-                        <a href="/course?id=${course.id}">
+                    <a href="/course?id=${course.id}">
+                        <div class="course" style="background-image: url('${course.cover}')">
                             <#if (course.joined>0)>
                                 <div class="joined">${course.joined}人参加</div>
                             </#if>
@@ -27,8 +26,8 @@
                                 <div class="title">${course.title}</div>
                                 <div class="age">${course.age}</div>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </#list>
                 <#if (subject.courses.nextIndex?? && subject.courses.nextIndex>0)>
                     <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
