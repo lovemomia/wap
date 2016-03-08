@@ -58,6 +58,7 @@ a {
 }
 
 .course .desc .intro .tag {
+    margin-right: 0.05rem;
     padding: 0.03rem 0.05rem 0.02rem 0.05rem;
     background-color: #e1e1e1;
     color: #999999;

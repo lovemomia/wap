@@ -14,12 +14,12 @@ sg.index = {
 
     read_data: function (city, start) {
         if (start == 0) {
-            sg.common.get(sg.config.api + "/v2/index", {
+            sg.common.get(sg.config.api + "/v3/index", {
                 city: city,
                 start: start
             }, sg.index.success_init);
         } else {
-            sg.common.get(sg.config.api + "/v2/index", {
+            sg.common.get(sg.config.api + "/v3/index", {
                 city: city,
                 start: start
             }, sg.index.success_more);
@@ -28,13 +28,12 @@ sg.index = {
 
     success_init: function (data) {
         generate_banners_html(data.banners);
-        generate_icons_html(data.icons);
         generate_events_html(data.events);
+        generate_topic_html(data.topics);
 
         if (data.courses.totalCount > 0) {
             var html = "";
-            html += "<div class='free'>";
-            html += "<div class='title'><hr class='left' />热门推荐<hr class='right' /></div>";
+            html += "<div class='free top-margin'>";
             html += "</div>";
 
             $(".content").append(html);
@@ -70,30 +69,6 @@ sg.index = {
             $(".content").append(html);
 
             if (banners.length > 1) sg.scroll.scroll_img();
-        }
-
-        function generate_icons_html(icons) {
-            if (icons == undefined || icons.length == 0) return;
-
-            var line = Math.ceil(icons.length / 4);
-            var html = "";
-            html += "<div class='icons'>";
-            for (var i = 0; i < line; i++) {
-                html += "<div class='icons-line'>";
-                for (var j = 0; j < 4; j++) {
-                    if (j + i * 4 >= icons.length) break;
-                    var icon = icons[j + i * 4];
-                    html += "<a class='icon' href='" + icon.action + "'>";
-                    html += "<img src='" + icon.img + "' />";
-                    html += "<div class='title overflow-hidden'>" + icon.title + "</div>";
-                    html += "</a>"
-                }
-                html += "<div style='clear:both'></div>";
-                html += "</div>"
-            }
-            html += "</div>";
-
-            $(".content").append(html);
         }
 
         function generate_events_html(events) {
@@ -137,6 +112,25 @@ sg.index = {
                 return html;
             }
         }
+
+        function generate_topic_html(topics) {
+            if (topics == undefined || topics.length == 0) return;
+
+            var topic = topics[0];
+            var html = "";
+            html += "<a href='/topic?id=" + topic.id + "'>";
+            html += "<div class='topic v-border top-margin bg-white'>";
+            html += "<img src='/img/topic.png' />";
+            html += "<div class='title'>" + topic.title + "</div>";
+            html += "<div><hr class='left'/><div class='left sub-title overflow-hidden'>" + topic.subTitle + "</div><hr class='right' /><div style='clear: both' /></div>";
+            html += "<img class='topic-icon' src='/img/topic-icon.png' />";
+            html += "<div class='joined'><span>" + topic.joined + "人在讨论</span></div>";
+            html += "<div class='arrow right'><img src='/img/allow3x.png'/></div>";
+            html += "</div>";
+            html += "</a>";
+
+            $(".content").append(html);
+        }
     },
 
     success_more: function (data) {
@@ -162,19 +156,20 @@ sg.index = {
             function generate_course_html(course) {
                 var html = "";
                 html += "<a href='/course/buyable?id=" + course.id + "'>";
-                html += "<div class='subject scrollable'>";
+                html += "<div class='subject scrollable bottom-border'>";
                 html += "<div class='cover' style='background-image: url(" + course.cover + ")'>";
                 if (course.status == 2) {
                     html += "<img class='sold-out' src='/img/full.png'>";
                 }
                 html += "</div>";
                 html += "<div class='desc'>";
+                html += "<div class='left'>";
                 html += "<div class='title overflow-hidden'>" + course.title + "</div>";
-                var intro = course.age + " | " + course.scheduler + " | " + course.region;
+                var intro = "<span class='tags'>" + course.subject + "</span> " + course.scheduler + " | " + course.region;
                 if (intro.length == 6) intro = "";
                 html += "<div class='intro overflow-hidden'>" + intro + "</div>";
-                html += "<div class='tags overflow-hidden'>" + course.subject + "</div>";
-                html += "<div class='price'>￥<span class='number'>" + course.price + "</span>/次</div>"
+                html += "</div>";
+                html += "<div class='price right left-border'><span class='number'>" + course.price + "</span>元</div>"
                 html += "</div>";
                 if (course.joined > 0) {
                     html += "<div class='joined'>" + course.joined + "人参加</div>";
