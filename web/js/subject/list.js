@@ -25,7 +25,7 @@ sg.subjectlist = {
                 } else {
                     html += "<a href='/subjectdetail?id=" + subject.id + "'>";
                 }
-                html += "<div class='subject'>";
+                html += "<div class='subject bottom-border'>";
                 html += "<div class='cover' style='background-image: url(" + subject.cover + ")'></div>";
                 html += "<div class='desc'>";
                 html += "<div class='title overflow-hidden'>" + subject.title + "</div>";

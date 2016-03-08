@@ -20,6 +20,4 @@ $(function () {
         if (gift == 1) window.location.href = "/gift/placeorder?id=" + sg.common.param("id") + "&_src=gift";
         else window.location.href = "/subject/placeorder?id=" + sg.common.param("id");
     });
-
-    $(".tabs").tabs();
 });

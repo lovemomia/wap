@@ -4,8 +4,7 @@ a {
 
 .course {
     position: relative;
-    margin: 0 0.125rem 0.135rem 0.125rem;
-    box-shadow: 0.03rem 0.04rem 0.02rem #e6e6e6;
+    margin: 0 0 0.125rem 0;
 }
 
 .course .cover {
@@ -58,16 +57,16 @@ a {
     font-size: 0.15rem;
 }
 
-.course .desc .tags {
-    height: 0.25rem;
-    line-height: 0.25rem;
-    font-size: 0.15rem;
+.course .desc .intro .tag {
+    padding: 0.03rem 0.05rem 0.02rem 0.05rem;
+    background-color: #e1e1e1;
+    color: #999999;
 }
 
 .course .desc .price {
     position: absolute;
     right: 0.35rem;
-    bottom: 0.11rem;
+    bottom: 0.115rem;
     width: 0.5rem;
     text-align: left;
     color: #f67531
@@ -80,7 +79,7 @@ a {
 .course .desc .origin-price {
     position: absolute;
     right: 0.125rem;
-    bottom: 0.11rem;
+    bottom: 0.115rem;
     width: 0.5rem;
     text-align: right;
     color: #999999;
