@@ -28,5 +28,6 @@ a {
 .subject .desc .title {
     height: 0.32rem;
     line-height: 0.32rem;
-    font-size: 0.19rem;
+    font-size: 0.17rem;
+    color: #444444;
 }
