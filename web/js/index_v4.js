@@ -16,12 +16,14 @@ sg.index = {
         if (start == 0) {
             sg.common.get(sg.config.api + "/v3/index", {
                 city: city,
-                start: start
+                start: start,
+                utoken: sg.common.cookie.get("utoken")
             }, sg.index.success_init);
         } else {
             sg.common.get(sg.config.api + "/v3/index", {
                 city: city,
-                start: start
+                start: start,
+                utoken: sg.common.cookie.get("utoken")
             }, sg.index.success_more);
         }
     },
@@ -29,6 +31,7 @@ sg.index = {
     success_init: function (data) {
         generate_banners_html(data.banners);
         generate_events_html(data.events);
+        generate_subjects_html(data.subjectCourseType, data.subjects);
         generate_topic_html(data.topics);
 
         if (data.courses.totalCount > 0) {
@@ -77,6 +80,7 @@ sg.index = {
             var line = Math.ceil(events.length / 2);
             var html = "";
             html += "<div class='events'>";
+            html += "<div class='head title'><span class='wave'>~</span>新用户专享<span class='wave'>~</span></div>";
             for (var i = 0; i < line; i++) {
                 html += "<div class='events-line'>";
 
@@ -102,8 +106,8 @@ sg.index = {
             function generate_event_html(event, index) {
                 var html = "";
                 html += "<div class='left'>";
-                html += "<div class='title overflow-hidden color" + index + "'>" + event.title + "</div>";
-                html += "<div class='desc overflow-hidden'>" + event.desc + "</div>";
+                html += "<div class='title overflow-hidden'>" + event.title + "</div>";
+                html += "<div class='desc'><span class='overflow-hidden color" + index + "'>" + event.desc + "</span></div>";
                 html += "</div>";
                 html += "<div class='right'>";
                 html += "<img src='" + event.img + "' />";
@@ -111,6 +115,49 @@ sg.index = {
 
                 return html;
             }
+        }
+
+        function generate_subjects_html(subjectCourseType, subjects) {
+            if (subjects == undefined || subjects.length == 0) return;
+
+            var html = "";
+            html += "<div class='subjects'>";
+            for (var i = 0; i < subjects.length; i++) {
+                var subject = subjects[i];
+                html += "<a href='/subjectdetail?id=" + subject.id + "'>";
+                html += "<div class='subject top-margin' style='background-image: url(\"" + subject.cover + "\")'>";
+                html += "</div>";
+                html += "</a>";
+
+                var courses = subject.courses;
+                if (courses == undefined || courses.length < 2) continue;
+
+                html += "<div class='courses bg-white v-border top-margin'>";
+                html += "<div class='head title'><span class='wave'>~</span>";
+                if (subjectCourseType == 1) html += "本周热门课程";
+                else html += "本周新开课程";
+                html += "<span class='wave'>~</span></div>";
+                if (courses.length == 2) html += "<div class='courses c2'>";
+                else html += "<div class='c3'>";
+                for (var j = 0; j < Math.min(courses.length, 3); j++) {
+                    var course = courses[j];
+                    html += "<a href='/course?id=" + course.id + "'>";
+                    html += "<div class='course left'>";
+                    html += "<div class='cover' style='background-image: url(\"" + course.cover + "\");'></div>";
+                    html += "<div class='key-word'>" + course.keyWord + "</div>";
+                    html += "<div class='age'>" + course.age + "</div>";
+                    html += "<div class='joined'>" + course.joined + "人参加</div>";
+                    html += "</div>";
+                    html += "</a>";
+                }
+                html += "<div style='clear: both;'></div>";
+
+                html += "</div>";
+                html += "</div>";
+            }
+            html += "</div>";
+
+            $(".content").append(html);
         }
 
         function generate_topic_html(topics) {
@@ -169,7 +216,7 @@ sg.index = {
                 if (intro.length == 6) intro = "";
                 html += "<div class='intro overflow-hidden'>" + intro + "</div>";
                 html += "</div>";
-                html += "<div class='price right left-border'><span class='number'>" + course.price + "</span>元</div>"
+                html += "<div class='price right'><span class='number'>" + course.price + "</span>元</div>"
                 html += "</div>";
                 if (course.joined > 0) {
                     html += "<div class='joined'>" + course.joined + "人参加</div>";

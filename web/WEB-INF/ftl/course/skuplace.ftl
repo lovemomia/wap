@@ -34,8 +34,8 @@
                             </#if>
                                 <div class="left">
                                     <div class="name">${sku.place.name}</div>
-                                    <div class="address"><div class="img right-margin"><img src="/img/weizhi3x.png" /></div>${sku.place.address}<div style="clear: both;"></div></div>
                                     <div class="time"><div class="img right-margin"><img src="/img/shijian3x.png" /></div>${sku.time}<div style="clear: both;"></div></div>
+                                    <div class="address"><div class="img right-margin"><img src="/img/weizhi3x.png" /></div>${sku.place.address}<div style="clear: both;"></div></div>
                                     <#if (sku.closed?? && sku.closed == true)>
                                         <div class="stock full">报名已截止</div>
                                     <#elseif sku.stock == 0>
