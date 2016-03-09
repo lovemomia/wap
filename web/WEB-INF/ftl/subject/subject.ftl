@@ -9,9 +9,11 @@
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>${subject.subject.title}</div>
     <div class="content has-fix-footer">
 
-        <div class="subject img">
-            <img src="${subject.subject.cover}" />
-        </div>
+        <#if (subject.subject.imgs?size>0)>
+            <div class="subject img">
+                <img src="${subject.subject.imgs[0]}" />
+            </div>
+        </#if>
 
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
         <#if (subject.courses?? && subject.courses.totalCount>0)>
