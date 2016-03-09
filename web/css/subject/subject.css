@@ -18,6 +18,10 @@
     font-size: 0.25rem;
 }
 
+.price span.price-desc {
+    width: 0.5rem;
+}
+
 .subject .button {
     height: 0.45rem;
     line-height: 0.45rem;
@@ -238,4 +242,10 @@
     padding: 0.125rem;
     text-align: center;
     background-color: #ffffff;
+}
+
+.price span.price-desc {
+    width: 0.35rem;
+    font-size: 0.17rem;
+    line-height: 0.18rem;
 }

@@ -110,7 +110,7 @@
     </div>
 
     <div class="footer fixed">
-        <div class="left price top-border">课程包<span class="left-margin">¥ </span><span class="number">${subject.subject.price}</span><span>起</span></div>
+        <div class="left price top-border"><span class="left-margin">¥ </span><span class="number">${subject.cheapestSkuPrice}</span><span>起/${subject.cheapestSkuTimeUnit}</span><span class="price-desc right">${subject.cheapestSkuDesc}</span></div>
         <#if subject.subject.status==1>
             <div class="right"><button id="btn_buy" class="btn-orange">立即抢购</button></div>
         <#else>

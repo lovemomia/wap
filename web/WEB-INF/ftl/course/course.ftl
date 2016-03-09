@@ -6,7 +6,7 @@
 </@override>
 
 <@override name="body">
-    <#if !(course.cancelable?? && course.cancelable == true) && (course.buyable || course.trial??)>
+    <#if !(course.cancelable?? && course.cancelable == true)>
         <div class="content has-fix-footer">
     <#else>
         <div class="content bottom-padding">
@@ -243,6 +243,12 @@
                 <#else>
                     <div class="right"><button class="btn-gray">已经售完</button></div>
                 </#if>
+                <div style="clear:both"></div>
+            </div>
+        <#else>
+            <div class="footer fixed">
+                <div class="left price top-border"><span class="left-margin">¥ </span><span class="number">${course.cheapestSkuPrice}</span><span>起/${course.cheapestSkuTimeUnit}</span><span class="price-desc right">${course.cheapestSkuDesc}</span></div>
+                <div class="right"><button id="btn_buy_subject" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
                 <div style="clear:both"></div>
             </div>
         </#if>

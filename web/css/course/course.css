@@ -418,3 +418,9 @@
 .tips p {
     margin: 0.1rem 0;
 }
+
+.price span.price-desc {
+    width: 0.35rem;
+    font-size: 0.17rem;
+    line-height: 0.18rem;
+}

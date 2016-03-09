@@ -44,6 +44,10 @@ $(function () {
         window.location.href = "/subject/placeorder?id=" + $(this).attr("sid");
     });
 
+    $("#btn_buy_subject").on('click', function () {
+        window.location.href = "/subject/placeorder?id=" + $(this).attr("sid");
+    });
+
     $("#goal").html(sg.common.sections_html($("#goal").html()));
     $(".detail-text").each(function () {
         $(this).html(sg.common.sections_html($(this).html()));
