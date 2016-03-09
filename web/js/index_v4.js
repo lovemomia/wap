@@ -165,7 +165,7 @@ sg.index = {
 
             var topic = topics[0];
             var html = "";
-            html += "<a href='/topic?id=" + topic.id + "'>";
+            html += "<a id='topic' href='javascript:void(0)'>";
             html += "<div class='topic v-border top-margin bg-white'>";
             html += "<img src='/img/topic.png' />";
             html += "<div class='title'>" + topic.title + "</div>";
@@ -177,6 +177,12 @@ sg.index = {
             html += "</a>";
 
             $(".content").append(html);
+
+            $("#topic").on('click', function () {
+                if (confirm("该功能目前只能在APP上使用，快去下载APP吧~")) {
+                    window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.youxing.duola";
+                }
+            });
         }
     },
 
