@@ -30,7 +30,7 @@ sg.index = {
 
     success_init: function (data) {
         generate_banners_html(data.banners);
-        generate_events_html(data.events);
+        generate_events_html(data.eventsTitle, data.events);
         generate_subjects_html(data.subjectCourseType, data.subjects);
         generate_topic_html(data.topics);
 
@@ -74,13 +74,13 @@ sg.index = {
             if (banners.length > 1) sg.scroll.scroll_img();
         }
 
-        function generate_events_html(events) {
+        function generate_events_html(eventsTitle, events) {
             if (events == undefined || events.length == 0) return;
 
             var line = Math.ceil(events.length / 2);
             var html = "";
             html += "<div class='events'>";
-            html += "<div class='head title'><span class='wave'>~</span>新用户专享<span class='wave'>~</span></div>";
+            html += "<div class='head title'><span class='wave'>~</span>" + eventsTitle + "<span class='wave'>~</span></div>";
             for (var i = 0; i < line; i++) {
                 html += "<div class='events-line'>";
 
@@ -165,7 +165,7 @@ sg.index = {
 
             var topic = topics[0];
             var html = "";
-            html += "<a id='topic' href='javascript:void(0)'>";
+            html += "<a href='/discuss/topic?id=" + topic.id + "'>";
             html += "<div class='topic v-border top-margin bg-white'>";
             html += "<img src='/img/topic.png' />";
             html += "<div class='title'>" + topic.title + "</div>";
@@ -177,12 +177,6 @@ sg.index = {
             html += "</a>";
 
             $(".content").append(html);
-
-            $("#topic").on('click', function () {
-                if (confirm("该功能目前只能在APP上使用，快去下载APP吧~")) {
-                    window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.youxing.duola";
-                }
-            });
         }
     },
 
