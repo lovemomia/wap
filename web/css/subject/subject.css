@@ -86,6 +86,13 @@
     border-bottom-left-radius: 0.05rem;
 }
 
+.course .info .age img {
+    float: left;
+    margin: 0.03rem 0.05rem 0 0;
+    width: 0.15rem;
+    height: 0.15rem;
+}
+
 .gradient {
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));

@@ -26,7 +26,7 @@
                             </#if>
                             <div class="info gradient">
                                 <div class="title">${course.title}</div>
-                                <div class="age">${course.age}</div>
+                                <div class="age"><img src="/img/ren3x.png" />${course.age}</div>
                             </div>
                         </div>
                     </a>
