@@ -84,8 +84,14 @@
     text-align: left;
     line-height: 0.22rem;
 }
+
 .reply .reply-star img {
     width: 0.16rem;
     height: 0.175rem;
     margin-right: 0.05rem;
+}
+
+.tips {
+    text-align: center;
+    color: #999999;
 }

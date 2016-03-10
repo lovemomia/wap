@@ -46,6 +46,8 @@
                     <div style="clear:both"></div>
                 </div>
             </#list>
+        <#else>
+            <div class="tips"><p>目前还没有人参与讨论，快来发表下你的观点吧~</p></div>
         </#if>
     </div>
     <div class="footer fixed">
