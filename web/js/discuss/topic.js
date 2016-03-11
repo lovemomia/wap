@@ -69,7 +69,7 @@ sg.topic = {
             $("#body").html(topic.content);
         }
 
-        var replies = data.topic;
+        var replies = data.replies;
         var totalCount = replies.totalCount;
         if (totalCount > 0) {
             $("#totalCount").html(totalCount);
