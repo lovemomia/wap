@@ -10,6 +10,7 @@
         <div class="title">${topic.topic.title}</div>
         <div class="body">${topic.topic.content}</div>
         <div class="replies-title bottom-border">所有回答<span>${topic.replies.totalCount}</span></div>
+        <div class="new-reply"></div>
         <#if (topic.replies.totalCount>0)>
             <#list topic.replies.list as reply>
                 <div class="reply">

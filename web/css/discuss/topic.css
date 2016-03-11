@@ -95,3 +95,35 @@
     text-align: center;
     color: #999999;
 }
+
+.footer.has-textarea {
+    padding: 0.1rem 0.125rem;
+    height: 2rem;
+    border-top: 1px solid #e1e1e1;
+    text-align: left;
+}
+
+.footer textarea {
+    width: 2.9rem;
+    height: 1.8rem;
+}
+
+.has-fixed-footer.has-textarea {
+    margin-bottom: 2.125rem;
+}
+
+#btn_reply {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.125rem;
+}
+
+#btn_cancel {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.125rem;
+}
+
+.new-reply p {
+    padding: 0 0.125rem;
+}
