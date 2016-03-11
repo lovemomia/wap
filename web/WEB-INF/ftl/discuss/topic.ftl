@@ -37,16 +37,17 @@
                         <div class="reply-content">${reply.content}</div>
                         <div class="reply-star">
                             <#if reply.stared==true>
-                                <img class="left" src="/img/zan_active3x.png" />
+                                <img class="left star" src="/img/zan_active3x.png" reply-id="${reply.id}" stared="1" star-count="${reply.staredCount}" />
                             <#else>
-                                <img class="left" src="/img/zan3x.png" />
+                                <img class="left star" src="/img/zan3x.png" reply-id="${reply.id}" stared="0" star-count="${reply.staredCount}" />
                             </#if>
-                            ${reply.staredCount}
+                            <span>${reply.staredCount}</span>
                         </div>
                     </div>
                     <div style="clear:both"></div>
                 </div>
             </#list>
+            <#if topic.replies.nextIndex??><div class="view-all top-border">查看更多</div></#if>
         <#else>
             <div class="tips"><p>目前还没有人参与讨论，快来发表下你的观点吧~</p></div>
         </#if>

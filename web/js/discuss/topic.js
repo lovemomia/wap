@@ -1,4 +1,40 @@
 $(function () {
+    $(".star").on("click", function () {
+        if (!sg.common.is_login()) {
+            if (confirm("需要登录后才能操作，快去登录吧")) sg.common.redirect_login();
+        } else {
+            var reply_id = $(this).attr("reply-id");
+            var stared = $(this).attr("stared");
+            var star_count = $(this).attr("star-count");
+            var star = $(this);
+            if (stared == 1) {
+                sg.common.post(sg.config.api + "/discuss/reply/unstar", {
+                    utoken: sg.common.cookie.get("utoken"),
+                    replyid: reply_id
+                }, function () {
+                    star.attr("src", "/img/zan3x.png");
+                    star.attr("stared", 0);
+                    star.attr("star-count", Math.max(0, star_count - 1));
+                    star.next().html(Math.max(0, star_count - 1));
+                });
+            } else {
+                sg.common.post(sg.config.api + "/discuss/reply/star", {
+                    utoken: sg.common.cookie.get("utoken"),
+                    replyid: reply_id
+                }, function () {
+                    star.attr("src", "/img/zan_active3x.png");
+                    star.attr("stared", 1);
+                    star.attr("star-count", Math.max(0, star_count + 1));
+                    star.next().html(Math.max(0, star_count + 1));
+                });
+            }
+        }
+    });
+
+    $(".view-all").on("click", function () {
+        window.location.href = "/discuss/replies.ftl?topicid=" + sg.common.param("id");
+    });
+
     $("#btn_join").on("click", click_join);
 
     function click_join () {

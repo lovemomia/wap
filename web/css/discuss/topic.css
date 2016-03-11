@@ -127,3 +127,10 @@
 .new-reply p {
     padding: 0 0.125rem;
 }
+
+.view-all {
+    padding: 0.125rem;
+    font-size: 0.18rem;
+    color: #999999;
+    text-align: center;
+}
