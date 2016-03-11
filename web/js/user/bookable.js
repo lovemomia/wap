@@ -33,7 +33,7 @@ sg.bookable = {
             $(".content").append(html);
 
             if (data.nextIndex != undefined) sg.common.bind_scrollin(function () {
-                sg.bookable.more(sg.bookable.param_oid(), data.nextIndex);
+                sg.bookable.more(sg.bookable.param("oid"), data.nextIndex);
             });
         } else {
             var html = "";
