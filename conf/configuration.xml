@@ -16,6 +16,10 @@
         <Key>578890d82212ae548d883bc7a201cdf4</Key>
     </Validation>
 
+    <Service>
+        <User>http://localhost:7070</User>
+    </Service>
+
     <Image>
         <Domain>http://s.momia.cn</Domain>
     </Image>
