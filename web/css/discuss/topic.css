@@ -76,7 +76,7 @@
 }
 
 .has-fixed-footer {
-    margin-bottom: 0.675rem;
+    padding-bottom: 0.675rem;
 }
 
 .footer {
@@ -111,7 +111,7 @@
 }
 
 .has-fixed-footer.has-textarea {
-    margin-bottom: 2.125rem;
+    padding-bottom: 2.125rem;
 }
 
 #btn_reply {

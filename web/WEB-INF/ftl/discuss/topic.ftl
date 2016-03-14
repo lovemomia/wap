@@ -6,11 +6,13 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>话题讨论</div>
-    <div class="content bottom-border bg-white has-fixed-footer ">
-        <div id="title" class="title"></div>
-        <div id="body" class="body"></div>
-        <div class="replies-title bottom-border">所有回答<span id="totalCount">0</span></div>
-        <div class="new-reply bg-white"></div>
+    <div class="content has-fixed-footer ">
+        <div class="topic bottom-border bg-white">
+            <div id="title" class="title"></div>
+            <div id="body" class="body"></div>
+            <div class="replies-title bottom-border">所有回答<span id="totalCount">0</span></div>
+            <div class="new-reply bg-white"></div>
+        </div>
     </div>
     <div class="footer fixed">
         <button id="btn_join" class="btn-orange">参与讨论</button>

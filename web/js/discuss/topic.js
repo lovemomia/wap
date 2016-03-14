@@ -84,7 +84,7 @@ sg.topic = {
             }
             html += "</div>";
 
-            $(".content").append(html);
+            $(".topic").append(html);
 
             if (replies.nextIndex != undefined) sg.common.bind_scrollin(function () {
                 sg.topic.more(sg.common.param("id"), replies.nextIndex);
@@ -95,7 +95,7 @@ sg.topic = {
             html += "<p>目前还没有人参与讨论，快来发表下你的观点吧~</p>";
             html += "</div>";
 
-            $(".content").append(html);
+            $(".topic").append(html);
         }
 
         function generate_replie_html(reply) {
