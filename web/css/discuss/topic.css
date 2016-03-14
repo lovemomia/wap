@@ -114,6 +114,13 @@
     padding-bottom: 2.125rem;
 }
 
+textarea {
+    border-color: #e1e1e1;
+    border-radius: 0;
+    font-size: 0.16rem;
+    box-shadow: none;
+}
+
 #btn_reply {
     position: absolute;
     top: 0.1rem;
