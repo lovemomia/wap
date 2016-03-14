@@ -117,7 +117,7 @@ sg.index = {
             }
         }
 
-        function generate_subjects_html(subjectCourseType, subjects) {
+        function generate_subjects_html(subjects) {
             if (subjects == undefined || subjects.length == 0) return;
 
             var html = "";
@@ -145,8 +145,8 @@ sg.index = {
                     html += "<div class='cover' style='background-image: url(\"" + course.cover + "\");'></div>";
                     html += "<div class='key-word'>" + course.keyWord + "</div>";
                     html += "<div class='age'>" + course.age + "</div>";
-                    if (subjectCourseType == 1) html += "<div class='joined'>" + course.joined + "人参加</div>";
-                    else html += "<div class='joined'>" + course.feature + "人参加</div>";
+                    if (subject.subjectCourseType == 1) html += "<div class='joined'>" + course.joined + "人参加</div>";
+                    else html += "<div class='joined'>" + course.feature + "</div>";
                     html += "</div>";
                     html += "</a>";
                 }
