@@ -9,11 +9,9 @@ $(function () {
             if (confirm("需要登录后才能发表看法，快去登录吧")) sg.common.redirect_login();
         } else {
             var html = "";
-            html += "<div>";
             html += "<textarea id='reply_content' placeholder='说说你的看法吧（200字以内）' />";
             html += "<button id='btn_reply' class='btn-main'>发表</button>";
             html += "<button id='btn_cancel' class='btn-main'>取消</button>";
-            html += "</div>";
 
             $(".content").addClass("has-textarea");
             $(".footer").addClass("has-textarea");
