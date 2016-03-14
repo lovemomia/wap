@@ -134,8 +134,7 @@ sg.index = {
 
                 html += "<div class='courses bg-white v-border top-margin'>";
                 html += "<div class='head title'><span class='wave'>~</span>";
-                if (subjectCourseType == 1) html += "本周热门课程";
-                else html += "本周新开课程";
+                html += subject.coursesTitle;
                 html += "<span class='wave'>~</span></div>";
                 if (courses.length == 2) html += "<div class='courses c2'>";
                 else html += "<div class='c3'>";
@@ -146,7 +145,8 @@ sg.index = {
                     html += "<div class='cover' style='background-image: url(\"" + course.cover + "\");'></div>";
                     html += "<div class='key-word'>" + course.keyWord + "</div>";
                     html += "<div class='age'>" + course.age + "</div>";
-                    html += "<div class='joined'>" + course.joined + "人参加</div>";
+                    if (subjectCourseType == 1) html += "<div class='joined'>" + course.joined + "人参加</div>";
+                    else html += "<div class='joined'>" + course.feature + "人参加</div>";
                     html += "</div>";
                     html += "</a>";
                 }
