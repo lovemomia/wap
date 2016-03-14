@@ -31,7 +31,7 @@ sg.index = {
     success_init: function (data) {
         generate_banners_html(data.banners);
         generate_events_html(data.eventsTitle, data.events);
-        generate_subjects_html(data.subjectCourseType, data.subjects);
+        generate_subjects_html(data.subjects);
         generate_topic_html(data.topics);
 
         if (data.courses.totalCount > 0) {
