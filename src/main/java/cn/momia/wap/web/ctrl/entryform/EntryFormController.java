@@ -28,7 +28,7 @@ public class EntryFormController extends AbstractController {
 
         sql = "INSERT INTO SG_EntryForm (ChildName, Mobile, AddTime) VALUES (?, ?, NOW())";
         if (jdbcTemplate.update(sql, new Object[] { childname, mobile }) > 0) {
-            smsServiceApi.notify(mobile, "您已报名成功");
+            smsServiceApi.notify(mobile, "提示，您已获得“小小牙医”入场券，活动时间：3月18日16:00，地点：星光幼儿园多功能厅，请准时入场凭短信领取礼品。");
             return MomiaHttpResponse.SUCCESS;
         }
         return MomiaHttpResponse.FAILED;
