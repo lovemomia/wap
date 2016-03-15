@@ -145,7 +145,7 @@
                         <div class="education overflow-hidden">${teacher.education}</div>
                     </div>
                     <div style="clear:both"></div>
-                    <div class="experience overflow-hidden">${teacher.experience}</div>
+                    <div class="experience">${teacher.experience}</div>
                 </div>
                 </#list>
             </#if>
