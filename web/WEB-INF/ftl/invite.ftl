@@ -76,7 +76,7 @@
                         childname: childName,
                         mobile: mobile
                     }, function (data) {
-                        alert("报名成功");
+                        alert("您已报名成功，\n我们将把详细信息发送至您的手机，\n请注意查收。");
                     });
                 }
             });
