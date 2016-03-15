@@ -17,8 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/test")
 public class TestController {
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+    @Autowired private JdbcTemplate jdbcTemplate;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView list() {
