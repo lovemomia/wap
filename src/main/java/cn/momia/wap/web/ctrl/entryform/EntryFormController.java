@@ -23,7 +23,7 @@ public class EntryFormController extends AbstractController {
         if (StringUtils.isBlank(childname)) return MomiaHttpResponse.FAILED("孩子姓名不能为空");
         if (MobileUtil.isInvalid(mobile)) return MomiaHttpResponse.FAILED("无效的手机号码");
 
-        String sql = "SELECT COUNT(1) FROM SG_EntryForm WHERE ChildName=? AND Mobile=? AND Status<>0";
+        String sql = "SELECT COUNT(1) FROM SG_EntryForm WHERE Mobile=? AND Status<>0";
         if (jdbcTemplate.queryForList(sql, new Object[]{childname, mobile}, Long.class).get(0) > 0) return MomiaHttpResponse.SUCCESS;
 
         sql = "INSERT INTO SG_EntryForm (ChildName, Mobile, AddTime) VALUES (?, ?, NOW())";
