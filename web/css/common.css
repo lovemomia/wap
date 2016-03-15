@@ -154,6 +154,17 @@ div.error {
     border-radius: 4px;
 }
 
+.btn-gray {
+    display: inline-block;
+    padding: 0.1rem 0.2rem;
+    height: 100%;
+    font-size: 0.17rem;
+    color: #ffffff;
+    background: #cccccc;
+    border: none;
+    border-radius: 4px;
+}
+
 
 /** form **/
 .form {
