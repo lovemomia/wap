@@ -7,16 +7,29 @@
         }
 
         input {
-            width: 3.6rem;
+            margin: 0.1rem 0;
+            padding: 0 0.125rem;
+            width: 3.2rem;
             height: 0.4rem;
             border-color: #e1e1e1;
             font-size: 0.16rem;
+            border: none;
+            border-radius: 0.05rem;
+        }
+
+        .content {
+            padding-bottom: 0.5rem;
+        }
+
+        .btn {
+            margin-top: 0.25rem
         }
 
         .invite {
-            width: 100%;
-            height: 11.02rem;
-            background-image: url("http://s.sogokids.com/2016-03-14/35bc5ab0cf4b7b6d6358988d6ee54ec3.jpg");
+            margin: 0.1rem auto;
+            width: 3.8rem;
+            height: 10.45rem;
+            background-image: url("http://s.sogokids.com/2016-03-15/02b15033e83048d9ecb181b18fd6b747.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
@@ -24,8 +37,8 @@
         #btn_submit {
             display: inline-block;
             padding: 0.1rem 0.2rem;
-            width: 3.6rem;
-            height: 0.578rem;
+            width: 3.2rem;
+            height: 0.51rem;
             font-size: 0.19rem;
             color: #ffffff;
             background-color: transparent;
@@ -38,11 +51,11 @@
 </@override>
 
 <@override name="body">
-    <div class="content bottom-padding">
+    <div class="content">
         <div class="invite"></div>
-        <div class="top-margin"><input type="text" id="childname" placeholder="输入孩子姓名" /></div>
-        <div class="top-margin bottom-padding"><input type="tel" id="mobile" placeholder="输入手机号码" /></div>
-        <div class="btn top-padding bottom-padding">
+        <div class="top-padding"><input type="text" id="childname" placeholder="输入孩子姓名" /></div>
+        <div><input type="tel" id="mobile" placeholder="输入手机号码" /></div>
+        <div class="btn">
             <button id="btn_submit"></button>
         </div>
     </div>
