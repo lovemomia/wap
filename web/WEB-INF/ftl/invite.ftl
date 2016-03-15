@@ -1,4 +1,4 @@
-<@override name="title"></@override>
+<@override name="title">邀请函</@override>
 
 <@override name="css">
     <style type="text/css">
