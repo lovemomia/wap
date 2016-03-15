@@ -83,13 +83,15 @@
                             <div class="comment-content">${comment.content}</div>
                             <#if (comment.imgs?size>0)>
                                 <#list comment.imgs as img>
-                                    <#if (img_index%3==0)>
-                                    <div class="comment-img">
-                                    </#if>
-                                    <img src="${img}" />
-                                    <#if (img_index%3==2 || (img_index+1) == comment.imgs?size)>
-                                        <div style="clear:both"></div>
-                                    </div>
+                                    <#if (img_index<3)>
+                                        <#if (img_index%3==0)>
+                                        <div class="comment-img">
+                                        </#if>
+                                        <img src="${img}" />
+                                        <#if (img_index%3==2 || (img_index+1) == comment.imgs?size)>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        </#if>
                                     </#if>
                                 </#list>
                             </#if>
