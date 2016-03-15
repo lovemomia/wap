@@ -16,7 +16,7 @@ $(function () {
             $(".content").addClass("has-textarea");
             $(".footer").addClass("has-textarea");
             $(".footer").html(html);
-
+            $('#reply_content').focus();
             $("#btn_reply").on("click", click_reply);
             $("#btn_cancel").on("click", click_cancel);
         }
