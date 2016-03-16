@@ -37,6 +37,7 @@ $(function () {
         } else {
             var invite = sessionStorage.getItem("invite");
             if (invite == null) invite = "";
+            var couponCode = sg.common.param("ccode", "");
             var order = {
                 skus: [
                     {
@@ -50,7 +51,8 @@ $(function () {
                     name: name,
                     mobile: mobile
                 },
-                inviteCode: invite
+                inviteCode: invite,
+                couponCode: couponCode
             };
 
             sg.common.post(sg.config.api + "/subject/order", {
