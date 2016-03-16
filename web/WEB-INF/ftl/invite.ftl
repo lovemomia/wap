@@ -19,6 +19,7 @@
 
         .content {
             padding-bottom: 0.5rem;
+            text-align: center;
         }
 
         .btn {
