@@ -30,7 +30,7 @@ public class SubjectController extends AbstractController {
         if (StringUtils.isBlank(utoken)) {
             String referer = request.getHeader("Referer");
             StringBuffer url = request.getRequestURL().append("?").append(request.getQueryString());
-            return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()) + "&back=" + URLEncoder.encode(referer));
+            return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()) + "&back=" + (StringUtils.isBlank(referer) ? "/" : URLEncoder.encode(referer)));
         }
 
         JSONObject params = (JSONObject) get("/v2/subject/sku?utoken=" + utoken + "&id=" + id + (courseId > 0 ? "&coid=" + courseId : ""));
