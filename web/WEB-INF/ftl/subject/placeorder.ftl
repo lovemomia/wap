@@ -59,7 +59,7 @@
     </div>
 
     <div class="footer fixed">
-        <div class="left price top-border">总价：¥ <span id="total_fee" class="number">0</span> <span class="coupon">${params.discount}</span></div>
+        <div class="left price top-border">总价：¥ <span id="total_fee" class="number">0</span> <span class="coupon" discount="${params.discount}"></span></div>
         <div class="right"><button id="btn_submit" class="btn-orange">提交订单</button></div>
         <div style="clear:both"></div>
     </div>

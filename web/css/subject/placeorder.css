@@ -147,3 +147,8 @@
     height: 0.64rem;
     border-radius: 0;
 }
+
+.coupon {
+    font-size: 0.13rem;
+    color: #888888;
+}

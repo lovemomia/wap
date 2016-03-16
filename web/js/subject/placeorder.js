@@ -14,7 +14,16 @@ $(function () {
         element.addClass("on");
         element.children(".sel").children("img").attr("src", "/img/sel2x.png");
 
-        $("#total_fee").html(element.attr("price"));
+        var price = new Number(element.attr("price"));
+        var discount = new Number($(".coupon").attr("discount"));
+        $(".coupon").html("");
+        if (price > discount) {
+            price = (price - discount).toFixed(2);
+            $("#total_fee").html(price);
+            $(".coupon").html("(已减 " + $(".coupon").attr("discount") + ")");
+        } else {
+            $("#total_fee").html(element.attr("price"));
+        }
 
         sessionStorage.setItem("skuId", element.attr("id"));
         sessionStorage.setItem("price", element.attr("price"));

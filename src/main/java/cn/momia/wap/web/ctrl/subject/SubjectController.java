@@ -51,11 +51,11 @@ public class SubjectController extends AbstractController {
             params.put("skus", filteredSkusJson);
         }
 
-        params.put("discount", "");
+        params.put("discount", 0);
         if (!StringUtils.isBlank(code)) {
             JSONObject couponCode = (JSONObject) get("/coupon/code?code=" + code);
             int couponCodeId = couponCode.getInteger("id");
-            if (couponCodeId > 0) params.put("discount", " 减 " + couponCode.get("discount"));
+            if (couponCodeId > 0) params.put("discount", couponCode.getBigDecimal("discount"));
         }
 
         return new ModelAndView("subject/placeorder", "params", params);
