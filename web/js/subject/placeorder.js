@@ -4,18 +4,22 @@ $(function () {
     sessionStorage.removeItem("subjectId");
 
     $(".sku").on("click", function () {
+        doClick($(this));
+    });
+
+    function doClick (element) {
         $(".sku.on .sel img").attr("src", "/img/notsel2x.png");
         $(".sku.on").removeClass("on");
 
-        $(this).addClass("on");
-        $(this).children(".sel").children("img").attr("src", "/img/sel2x.png");
+        element.addClass("on");
+        element.children(".sel").children("img").attr("src", "/img/sel2x.png");
 
-        $("#total_fee").html($(this).attr("price"));
+        $("#total_fee").html(element.attr("price"));
 
-        sessionStorage.setItem("skuId", $(this).attr("id"));
-        sessionStorage.setItem("price", $(this).attr("price"));
-        sessionStorage.setItem("subjectId", $(this).attr("sid"));
-    });
+        sessionStorage.setItem("skuId", element.attr("id"));
+        sessionStorage.setItem("price", element.attr("price"));
+        sessionStorage.setItem("subjectId", element.attr("sid"));
+    }
 
     $("#packages").on("click", function () {
         window.location.href = "/subjectdetail?id=" + sg.common.param("id");
@@ -61,6 +65,11 @@ $(function () {
             }, sg.placeorder.success);
         }
     });
+
+    var skuId = sg.common.param("sid", 0);
+    if (skuId > 0) {
+        doClick($("#" + skuId));
+    }
 });
 
 sg.placeorder = {

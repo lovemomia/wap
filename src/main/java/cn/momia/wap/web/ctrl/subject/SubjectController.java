@@ -24,7 +24,8 @@ public class SubjectController extends AbstractController {
     public ModelAndView placeorder(HttpServletRequest request,
                                    @RequestParam long id,
                                    @RequestParam(required = false, value = "coid", defaultValue = "0") long courseId,
-                                   @RequestParam(required = false, value = "sid", defaultValue = "0") long skuId) {
+                                   @RequestParam(required = false, value = "sid", defaultValue = "0") long skuId,
+                                   @RequestParam(required = false, value = "ccode", defaultValue = "") String code) {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) {
             String referer = request.getHeader("Referer");
@@ -46,6 +47,13 @@ public class SubjectController extends AbstractController {
                 }
             }
             params.put("skus", filteredSkusJson);
+        }
+
+        params.put("discount", "");
+        if (!StringUtils.isBlank(code)) {
+            JSONObject couponCode = (JSONObject) get("/coupon/code?code=" + code);
+            int couponCodeId = couponCode.getInteger("id");
+            if (couponCodeId > 0) params.put("discount", couponCode.get("discount"));
         }
 
         return new ModelAndView("subject/placeorder", "params", params);
