@@ -1,6 +1,7 @@
 package cn.momia.wap.web.ctrl.subject;
 
 import cn.momia.wap.web.ctrl.AbstractController;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,10 @@ public class SubjectController extends AbstractController {
     }
 
     @RequestMapping(value = "/subject/placeorder", method = RequestMethod.GET)
-    public ModelAndView placeorder(HttpServletRequest request, @RequestParam long id, @RequestParam(required = false, value = "coid", defaultValue = "0") long courseId) {
+    public ModelAndView placeorder(HttpServletRequest request,
+                                   @RequestParam long id,
+                                   @RequestParam(required = false, value = "coid", defaultValue = "0") long courseId,
+                                   @RequestParam(required = false, value = "sid", defaultValue = "0") long skuId) {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) {
             String referer = request.getHeader("Referer");
@@ -30,6 +34,19 @@ public class SubjectController extends AbstractController {
 
         JSONObject params = (JSONObject) get("/v2/subject/sku?utoken=" + utoken + "&id=" + id + (courseId > 0 ? "&coid=" + courseId : ""));
         if (courseId > 0) params.put("courseOrder", true);
+
+        if (skuId > 0) {
+            JSONArray filteredSkusJson = new JSONArray();
+            JSONArray skusJson = params.getJSONArray("skus");
+            for (int i = 0; i < skusJson.size(); i++) {
+                JSONObject skuJson = skusJson.getJSONObject(i);
+                if (skuJson.getLong("id") == skuId) {
+                    filteredSkusJson.add(skuJson);
+                    break;
+                }
+            }
+            params.put("skus", filteredSkusJson);
+        }
 
         return new ModelAndView("subject/placeorder", "params", params);
     }
