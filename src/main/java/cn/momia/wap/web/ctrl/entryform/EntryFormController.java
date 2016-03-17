@@ -2,7 +2,7 @@ package cn.momia.wap.web.ctrl.entryform;
 
 import cn.momia.api.user.SmsServiceApi;
 import cn.momia.common.core.http.MomiaHttpResponse;
-import cn.momia.common.core.util.MobileUtil;
+import cn.momia.common.core.util.MomiaUtil;
 import cn.momia.wap.web.ctrl.AbstractController;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class EntryFormController extends AbstractController {
     @RequestMapping(value = "/submit", method = RequestMethod.POST)
     public MomiaHttpResponse submit(@RequestParam String childname, @RequestParam String mobile) {
         if (StringUtils.isBlank(childname)) return MomiaHttpResponse.FAILED("孩子姓名不能为空");
-        if (MobileUtil.isInvalid(mobile)) return MomiaHttpResponse.FAILED("无效的手机号码");
+        if (MomiaUtil.isInvalidMobile(mobile)) return MomiaHttpResponse.FAILED("无效的手机号码");
 
         String sql = "SELECT COUNT(1) FROM SG_EntryForm WHERE Mobile=? AND Status<>0";
         if (jdbcTemplate.queryForList(sql, new Object[]{ mobile }, Long.class).get(0) > 0) return MomiaHttpResponse.SUCCESS;

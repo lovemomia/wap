@@ -4,18 +4,31 @@ $(function () {
     sessionStorage.removeItem("subjectId");
 
     $(".sku").on("click", function () {
+        doClick($(this));
+    });
+
+    function doClick (element) {
         $(".sku.on .sel img").attr("src", "/img/notsel2x.png");
         $(".sku.on").removeClass("on");
 
-        $(this).addClass("on");
-        $(this).children(".sel").children("img").attr("src", "/img/sel2x.png");
+        element.addClass("on");
+        element.children(".sel").children("img").attr("src", "/img/sel2x.png");
 
-        $("#total_fee").html($(this).attr("price"));
+        var price = new Number(element.attr("price"));
+        var discount = new Number($(".coupon").attr("discount"));
+        $(".coupon").html("");
+        if (price > discount) {
+            price = (price - discount).toFixed(2);
+            $("#total_fee").html(price);
+            $(".coupon").html("(已减 " + $(".coupon").attr("discount") + ")");
+        } else {
+            $("#total_fee").html(element.attr("price"));
+        }
 
-        sessionStorage.setItem("skuId", $(this).attr("id"));
-        sessionStorage.setItem("price", $(this).attr("price"));
-        sessionStorage.setItem("subjectId", $(this).attr("sid"));
-    });
+        sessionStorage.setItem("skuId", element.attr("id"));
+        sessionStorage.setItem("price", element.attr("price"));
+        sessionStorage.setItem("subjectId", element.attr("sid"));
+    }
 
     $("#packages").on("click", function () {
         window.location.href = "/subjectdetail?id=" + sg.common.param("id");
@@ -37,6 +50,7 @@ $(function () {
         } else {
             var invite = sessionStorage.getItem("invite");
             if (invite == null) invite = "";
+            var couponCode = sg.common.param("ccode", "");
             var order = {
                 skus: [
                     {
@@ -50,7 +64,8 @@ $(function () {
                     name: name,
                     mobile: mobile
                 },
-                inviteCode: invite
+                inviteCode: invite,
+                couponCode: couponCode
             };
 
             sg.common.post(sg.config.api + "/subject/order", {
@@ -59,6 +74,11 @@ $(function () {
             }, sg.placeorder.success);
         }
     });
+
+    var skuId = sg.common.param("sid", 0);
+    if (skuId > 0) {
+        doClick($("#" + skuId));
+    }
 });
 
 sg.placeorder = {

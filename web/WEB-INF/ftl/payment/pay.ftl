@@ -32,10 +32,10 @@
             </div>
         </div>
         <div class="title">选择支付方式</div>
-        <div id="pay_types" class="pay"></div>
+        <div id="pay_types" class="pay bottom-margin"></div>
 
-        <div class="btn top-margin-lg">
-            <button id="btn_pay" class="btn-lg-orange">确认支付</button>
+        <div class="btn top-padding">
+            <button id="btn_pay" class="btn-orange-lg">确认支付</button>
         </div>
     </div>
 </@override>

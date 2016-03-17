@@ -38,7 +38,7 @@ sg.trial = {
                     } else {
                         html += "<a href='/course/trial?id=" + course.id + "'>";
                     }
-                    html += "<div class='course scrollable'>";
+                    html += "<div class='course scrollable bottom-border'>";
                     html += "<div class='cover' style='background-image: url(" + course.cover + ")'>";
                     if (course.status == 2) {
                         html += "<img class='sold-out' src='/img/full.png'>";
@@ -46,11 +46,11 @@ sg.trial = {
                     html += "</div>";
                     html += "<div class='desc'>";
                     html += "<div class='title overflow-hidden'>" + course.title + "</div>";
-                    var intro = course.age + " | " + course.scheduler + " | " + course.region;
+                    var intro = "<span class='tag'>" + course.subject + "</span> " + course.age + " | " + course.region;
                     if (intro.length == 6) intro = "";
                     html += "<div class='intro overflow-hidden'>" + intro + "</div>";
-                    html += "<div class='tags overflow-hidden'>" + course.subject + "</div>";
-                    html += "<div class='price'>￥<span class='number'>" + course.price + "</span>/次</div>"
+                    html += "<div class='price'>￥<span class='number'>" + course.price + "</span></div>";
+                    html += "<div class='origin-price'>￥" + course.originalPrice + "</div>";
                     html += "</div>";
                     if (course.joined > 0) {
                         html += "<div class='joined'>" + course.joined + "人参加</div>";

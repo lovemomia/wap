@@ -2,6 +2,10 @@ body {
     background-color: #ffffff;
 }
 
+.content {
+    text-align: center;
+}
+
 .logo {
     padding: 0.5rem 0 0.2rem 0;
     width: 100%;

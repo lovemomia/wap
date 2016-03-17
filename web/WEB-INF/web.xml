@@ -95,11 +95,11 @@
 
     <error-page>
         <error-code>400</error-code>
-        <location>/error/400</location>
+        <location>/error/500</location>
     </error-page>
     <error-page>
         <error-code>403</error-code>
-        <location>/error/403</location>
+        <location>/error/500</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>
@@ -107,7 +107,7 @@
     </error-page>
     <error-page>
         <error-code>405</error-code>
-        <location>/error/405</location>
+        <location>/error/500</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>

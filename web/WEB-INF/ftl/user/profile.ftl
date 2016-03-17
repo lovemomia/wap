@@ -15,13 +15,13 @@
                 <div class="avatar right"><img id="avatar" src="${user.avatar}" /></div>
                 <input type="file" id="browsefile" name="file">
             </div>
-            <hr class="sep">
+            <hr class="left-margin" />
             <div id="nickname" class="line">
                 <div class="left letter-sp32">昵称</div>
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>
                 <div class="info right">${user.nickName}</div>
             </div>
-            <hr class="sep">
+            <hr class="left-margin" />
             <div class="line">
                 <div class="left letter-sp8">手机号</div>
                 <div class="info right">${user.mobile}</div>
@@ -33,7 +33,7 @@
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>
                 <div class="info right">${user.sex}</div>
             </div>
-            <hr class="sep">
+            <hr class="left-margin" />
             <div id="address" class="line">
                 <div class="left letter-sp8">常住地</div>
                 <div class="arrow right"><img src="/img/allow3x.png" /></div>

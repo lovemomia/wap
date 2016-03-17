@@ -126,6 +126,8 @@ sg.common = {
     url_path: function (url) {
         var splits = url.split("//");
 
+        if (splits.length == 1) return splits[0];
+
         var start = splits[1].indexOf("/");
         var path = splits[1].substring(start);
 

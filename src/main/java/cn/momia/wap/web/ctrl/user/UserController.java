@@ -1,6 +1,5 @@
 package cn.momia.wap.web.ctrl.user;
 
-import cn.momia.common.core.http.MomiaHttpResponse;
 import cn.momia.common.webapp.config.Configuration;
 import cn.momia.wap.web.ctrl.AbstractController;
 import com.alibaba.fastjson.JSONObject;
@@ -24,8 +23,7 @@ public class UserController extends AbstractController {
         String utoken = getUtoken(request);
         if (!StringUtils.isBlank(utoken)) {
             try {
-                MomiaHttpResponse resp = get("/user?utoken=" + utoken);
-                return new ModelAndView("my", "user", resp.getData());
+                return new ModelAndView("my", "user", get("/user?utoken=" + utoken));
             } catch (Exception e) {
                 LOGGER.error("fail to get user info", e);
             }
@@ -39,8 +37,7 @@ public class UserController extends AbstractController {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(request.getRequestURL().toString()) + "&back=" + request.getHeader("Referer"));
 
-        MomiaHttpResponse resp = get("/user?utoken=" + utoken);
-        return new ModelAndView("user/profile", "user", resp.getData());
+        return new ModelAndView("user/profile", "user", get("/user?utoken=" + utoken));
     }
 
     @RequestMapping(value = { "/share", "/user/share" }, method = RequestMethod.GET)
@@ -48,8 +45,7 @@ public class UserController extends AbstractController {
         String utoken = getUtoken(request);
         if (StringUtils.isBlank(utoken)) return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(request.getRequestURL().toString()) + "&back=" + request.getHeader("Referer"));
 
-        MomiaHttpResponse resp = get("/coupon/share?utoken=" + utoken);
-        JSONObject share = (JSONObject) resp.getData();
+        JSONObject share = (JSONObject) get("/coupon/share?utoken=" + utoken);
         String queryString = request.getQueryString();
         share.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), request.getRequestURL() + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));
 

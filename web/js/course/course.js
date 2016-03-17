@@ -44,6 +44,10 @@ $(function () {
         window.location.href = "/subject/placeorder?id=" + $(this).attr("sid");
     });
 
+    $("#btn_buy_subject").on('click', function () {
+        window.location.href = "/subject/placeorder?id=" + $(this).attr("sid");
+    });
+
     $("#goal").html(sg.common.sections_html($("#goal").html()));
     $(".detail-text").each(function () {
         $(this).html(sg.common.sections_html($(this).html()));
@@ -51,5 +55,10 @@ $(function () {
     $(".experience").html(sg.common.sections_html($(".experience").html()));
     $("#tips").html(sg.common.sections_html($("#tips").html()));
     $("#notice").html(sg.common.sections_html($("#notice").html()));
+    $(".notice.content").each(function(){
+        $(this).html(sg.common.sections_html($(this).html()));
+    });
     $("#institution").html(sg.common.sections_html($("#institution").html()));
+
+    $(".tabs").tabs();
 });

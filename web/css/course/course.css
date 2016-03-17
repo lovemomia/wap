@@ -2,7 +2,6 @@
     padding: 0.1rem;
     font-size: 0.19rem;
     background-color: #ffffff;
-    color: #222222;
     text-align: left;
 }
 
@@ -42,13 +41,95 @@
     font-size: 0.18rem;
 }
 
-.course.img {
+#skuplace {
+    padding: 0.125rem;
+    height: 0.5rem;
+    background-color: #ffffff;
+    font-size: 0.17rem;
+}
+
+#skuplace .title {
+    margin: 0.02rem 0 0 0;
+    padding: 0;
+    height: 0.25rem;
+    line-height: 0.25rem;
+    font-size: 0.17rem;
+    border: none;
+}
+
+.arrow img {
+    margin-top: 0.04rem;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.tabs {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #e1e1e1;
+}
+
+.ui-tabs .ui-tabs-nav {
+    margin: 0;
+    padding: 0;
+    height: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    border-radius: 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 0;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 1.333rem;
+    height: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    float: left;
+    text-decoration: none;
+    padding: 0.15rem 0.1rem 0 0.1rem;
+}
+
+.ui-tabs .ui-tabs-nav li a {
     width: 100%;
-    height: 2.5rem;
+    height: 0.5rem;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    border-bottom: 0.02rem solid #00c49d;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+    color: #00c49d;
+}
+
+.text {
+    padding: 0.125rem;
+    background-color: #ffffff;
+}
+
+.course.img {
+    position: relative;
+    width: 100%;
+    height: 2.7rem;
 }
 
 .course.img .scroll_wrap {
-    height: 2.5rem;
+    height: 2.7rem;
 }
 
 .course.text.no-top-padding {
@@ -79,8 +160,9 @@
 }
 
 .course .tag.img {
-    width: 0.25rem;
-    height: 0.25rem;
+    padding-top: 0.02rem;
+    width: 0.2rem;
+    height: 0.22rem;
 }
 
 .course .tag.desc {
@@ -88,7 +170,7 @@
     margin-right: 0.15rem;
     height: 0.25rem;
     line-height: 0.25rem;
-    color: #00c49d;
+    color: #999999;
 }
 
 .course .right.tag.desc {
@@ -97,17 +179,21 @@
 }
 
 .course.text .title {
+    border-left: 0.06rem solid #00c49d;
+    margin: 0.05rem 0;
+    padding-left: 0.1rem;
     height: 0.3rem;
     line-height: 0.3rem;
     font-size: 0.19rem;
 }
 
 .course.comment {
+    padding: 0 0.025rem;
     background-color: #ffffff;
 }
 
 .course.comment .comment-avatar {
-    padding: 0.1rem;
+    padding: 0.11rem;
     width: 0.8rem;
 }
 
@@ -118,7 +204,7 @@
 }
 
 .course.comment .comment-info {
-    width: 3.2rem;
+    width: 3.15rem;
     text-align: left;
 }
 
@@ -127,7 +213,7 @@
     line-height: 0.3rem;
 }
 
-.course.comment .comment-info .addtime,.children {
+.course.comment .comment-info .addtime, .children {
     color: #999999;
     line-height: 0.3rem;
 }
@@ -154,17 +240,22 @@
 .course.comment .comment-img img {
     float: left;
     margin-right: 0.1rem;
-    width: 0.96rem;
-    height: 0.96rem;
+    width: 0.94rem;
+    height: 0.94rem;
 }
 
 .course.comment .comment-img img:last-child {
     padding-right: 0;
 }
 
+#goal {
+    color: #666666;
+}
+
 .course.detail {
     background-color: #ffffff;
     text-align: left;
+    color: #666666;
 }
 
 .course.detail .title {
@@ -173,6 +264,7 @@
     line-height: 0.25rem;
     font-size: 0.17rem;
     font-weight: bold;
+    color: #555555;
 }
 
 .course.detail .title .idx {
@@ -188,8 +280,12 @@
     border-radius: 0.125rem;
 }
 
-.course.detail .img,.detail-text {
+.course.detail .img, .detail-text {
     padding: 0.1rem 0.1rem 0 0.1rem;
+}
+
+.course.place {
+    color: #666666;
 }
 
 .course.place .img {
@@ -209,7 +305,7 @@
 .course.place .info {
     line-height: 0.25rem;
     font-size: 0.14rem;
-    color: #666666;
+    color: #999999;
 }
 
 .course .bookimg {
@@ -222,15 +318,55 @@
 }
 
 .course.teacher .left {
-    width: 0.9rem;
+    width: 0.7rem;
 }
 
 .course.teacher .left img {
-    border-radius: 0.45rem;
+    border-radius: 0.35rem;
 }
 
 .course.teacher .right {
-    width: 2.8rem;
+    width: 3rem;
+}
+
+.course.teacher .right .name {
+    font-size: 0.18rem;
+    line-height: 0.4rem;
+}
+
+.course.teacher .experience {
+    padding-top: 0.05rem;
+}
+
+#subject_notice.text {
+    padding: 0.125rem;
+    background-color: #ffffff;
+}
+
+#subject_notice.text .notice {
+    font-size: 0.16rem;
+}
+
+#subject_notice.text .notice.title {
+    height: 0.35rem;
+    line-height: 0.35rem;
+    font-size: 0.17rem;
+}
+
+#subject_notice.text .notice.content {
+    margin-bottom: 0.2rem;
+    text-align: left;
+    color: #888888;
+}
+
+#subject_notice.text .notice.content:last-child {
+    margin-bottom: 0;
+}
+
+.header.fix-parent {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .footer {
@@ -257,8 +393,34 @@
     color: #f67531;
 }
 
-.btn-orange,.btn-gray {
+.btn-orange, .btn-gray {
     width: 1.5rem;
     height: 0.64rem;
     border-radius: 0;
+}
+
+.logo {
+    padding: 0.5rem 0 0.2rem 0;
+    width: 100%;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.tips {
+    height: 0.6rem;
+    font-size: 0.16rem;
+    color: #999999;
+    text-align: center;
+}
+
+.tips p {
+    margin: 0.1rem 0;
+}
+
+.price span.price-desc {
+    width: 0.35rem;
+    font-size: 0.17rem;
+    line-height: 0.18rem;
 }

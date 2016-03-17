@@ -5,17 +5,21 @@
 }
 
 .wuhongbao {
-    padding: 1.5rem 1.4rem 0.3rem 1.4rem;
+    padding: 0.5rem 1.4rem 0.125rem 1.4rem;
 }
 
 .tip {
-    padding-bottom: 0.3rem;
     color: #aaaaaa;
+    text-align: center;
+}
+
+.list {
+    background-color: #f0f0f0;
 }
 
 .coupon {
     position: relative;
-    margin: 0.1rem 0.2rem 0.2rem 0.2rem;
+    margin: 0 0.2rem 0.2rem 0.2rem;
     height: 1.45rem;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -32,16 +36,12 @@
     width: 0.8rem;
 }
 
-.list {
-    background-color: #f0f0f0;
-}
-
 .list .coupon .element {
     height: 0.8rem;
 }
 
 .list .coupon .element .discount {
-    margin-top: 0.15rem;
+    padding-top: 0.13rem;
     text-align: center;
     font-size: 0.2rem;
     color: #00c49d;
@@ -69,6 +69,7 @@
 .link {
     padding: 0.1rem 0;
     font-size: 0.15rem;
+    text-align: center;
 }
 
 .link a {

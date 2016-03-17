@@ -34,7 +34,7 @@ public class AbstractController {
         return "";
     }
 
-    protected MomiaHttpResponse get(String url) {
+    protected Object get(String url) {
         try {
             HttpClient httpClient = HttpClients.createDefault();
 
@@ -50,7 +50,7 @@ public class AbstractController {
             if (momiaHttpResponse.isTokenExpired()) throw new MomiaLoginException();
             if (!momiaHttpResponse.isSuccessful()) throw new MomiaErrorException(momiaHttpResponse.getErrmsg());
 
-            return momiaHttpResponse;
+            return momiaHttpResponse.getData();
         } catch (IOException e) {
             throw new MomiaErrorException(e.getMessage());
         }
@@ -68,11 +68,11 @@ public class AbstractController {
         LOGGER.error("exception!!", exception);
 
         if (exception instanceof MomiaErrorException) {
-            return new ModelAndView("error", "msg", exception.getMessage());
+            return new ModelAndView("error/error", "msg", exception.getMessage());
         } else if (exception instanceof MomiaLoginException) {
             return new ModelAndView("auth/login");
         } else {
-            return new ModelAndView("error", "msg", "网络异常，请稍后再试");
+            return new ModelAndView("error/error", "msg", "网络异常，请稍后再试");
         }
     }
 }

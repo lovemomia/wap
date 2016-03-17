@@ -10,7 +10,8 @@
 .tips {
     height: 0.6rem;
     font-size: 0.16rem;
-    color: #888888;
+    color: #999999;
+    text-align: center;
 }
 
 .tips p {

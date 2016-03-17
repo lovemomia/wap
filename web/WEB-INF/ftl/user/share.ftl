@@ -12,7 +12,7 @@
             <p>发红包邀请新用户好友，好友使用你的红包后，</p>
             <p>你可以获得50元返现哦~</p>
         </div>
-        <div class="bottom-margin"><button id="btn_share" class="btn-lg-orange">邀请好友</button></div>
+        <div class="bottom-margin btn"><button id="btn_share" class="btn-orange-lg">邀请好友</button></div>
     </div>
 </@override>
 

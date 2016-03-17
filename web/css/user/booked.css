@@ -1,12 +1,14 @@
 .tab {
     width: 100%;
-    height: 0.55rem;
-    color: #333333;
+    height: 0.5rem;
+    text-align: center;
 }
 
 .tab .left {
     width: 50%;
-    line-height: 0.53rem;
+    height: 0.5rem;
+    line-height: 0.48rem;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .tab .left.on {
@@ -18,37 +20,8 @@
     position: relative;
 }
 
-.list .booked .element {
-    margin-left: 0.1rem;
-    padding-left: 0;
-}
-
 .list .element .right {
     position: relative;
-}
-
-.list .element .right .price {
-    position: absolute;
-    right: 0;
-    bottom: 0.05rem;
-    height: 0.2rem;
-    line-height: 0.2rem;
-    font-size: 0.14rem;
-    color: #f67531
-}
-
-.list .element .right .price span {
-    color: #333333;
-}
-
-.list .element .right .price span.number {
-    color: #f67531;
-    font-size: 0.2rem;
-}
-
-.list .element .right .price span.free {
-    color: #f67531;
-    font-size: 0.18rem;
 }
 
 .logo {
@@ -63,7 +36,8 @@
 .tips {
     height: 0.6rem;
     font-size: 0.16rem;
-    color: #888888;
+    color: #999999;
+    text-align: center;
 }
 
 .tips p {

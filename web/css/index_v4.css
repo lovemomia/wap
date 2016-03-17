@@ -1,0 +1,324 @@
+.city {
+    margin-right: -0.7rem;
+    width: 0.7rem;
+    font-size: 0.18rem;
+}
+
+.banner {
+    width: 100%;
+    height: 2.25rem;
+}
+
+.banner .scroll_wrap {
+    height: 2.25rem;
+}
+
+.banner .scroll_position {
+    right: 0.3rem;
+    text-align: right;
+}
+
+.head.title {
+    padding: 0.125rem 0;
+    text-align: center;
+    color: #333333;
+    font-size: 0.2rem;
+}
+
+.head.title span.wave {
+    padding: 0 0.125rem;
+    color: #00c49d;
+    font-size: 0.3rem;
+    font-weight: bold;
+}
+
+.events {
+    margin-top: 0.125rem;
+    padding: 0 0.08rem 0.125rem 0.08rem;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #ffffff;
+}
+
+.events-line {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.events-line a {
+    color: #333333;
+}
+
+.events-line:last-child {
+    border: none;
+}
+
+.event {
+    padding: 0.05rem;
+    width: 1.92rem;
+    text-align: left;
+}
+
+.event.left {
+    padding-right: 0.1rem;
+}
+
+.event.right {
+    padding-left: 0.1rem;
+}
+
+.event .left {
+    width: 1.05rem;
+    height: 0.7rem;
+}
+
+.event .title {
+    height: 0.33rem;
+    line-height: 0.33rem;
+    font-size: 0.18rem;
+    color: #333333;
+}
+
+.event .desc {
+    margin-top: 0.05rem;
+    max-width: 1.15rem;
+    font-size: 0.11rem;
+}
+
+.event .desc .color1 {
+    padding: 0.03rem 0.08rem;
+    border-radius: 0.15rem;
+    border: 1px solid #8cd034;
+    color: #8cd034;
+}
+
+.event .desc .color2 {
+    padding: 0.03rem 0.08rem;
+    border-radius: 0.15rem;
+    border: 1px solid #ff709b;
+    color: #ff709b;
+}
+
+.event .desc .color3 {
+    padding: 0.03rem 0.08rem;
+    border-radius: 0.15rem;
+    border: 1px solid #ff961b;
+    color: #ff961b;
+}
+
+.event .desc .color4 {
+    padding: 0.03rem 0.08rem;
+    border-radius: 0.15rem;
+    border: 1px solid #59bfef;
+    color: #59bfef;
+}
+
+.event img {
+    width: 0.67rem;
+    height: 0.67rem;
+}
+
+.topic {
+    position: relative;
+    height: 2.25rem;
+    text-align: center;
+}
+
+.topic img {
+    margin: 0.17rem auto;
+    width: 0.525rem;
+    height: 0.32rem;
+}
+
+.topic .title {
+    font-size: 0.18rem;
+    color: #333333;
+}
+
+.topic .sub-title {
+    width: 1.8rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    color: #999999;
+    text-align: center;
+}
+
+.topic hr {
+    margin-top: 0.18rem;
+    width: 0.6rem;
+    height: 1px;
+    border: 0;
+    background-color: #cccccc;
+}
+
+.topic hr.left {
+    margin-left: 0.5rem;
+}
+
+.topic hr.right {
+    margin-right: 0.5rem;
+}
+
+.topic .topic-icon {
+    margin: 0.05rem auto;
+    width: 0.48rem;
+    height: 0.35rem;
+}
+
+.topic .joined {
+    margin-top: 0.1rem;
+}
+
+.topic .joined span {
+    padding: 0.05rem 0.1rem 0.05rem 0.1rem;
+    border-radius: 0.04rem;
+    font-size: 0.11rem;
+    border: 1px solid #666666;
+}
+
+.topic .arrow img {
+    position: absolute;
+    top: 1.025rem;
+    right: 0.125rem;
+    margin: 0;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.subjects .subject {
+    width: 100%;
+    height: 2.25rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.subjects .courses {
+    padding: 0 0.125rem;
+}
+
+.subjects .courses .course {
+    padding: 0.1rem;
+    width: 1.25rem;
+    height: 2.25rem;
+    text-align: center;
+}
+
+.subjects .courses .c2 .course {
+    margin: 0 0.31rem;
+}
+
+.subjects .courses .course .cover {
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.subjects .courses .course .key-word {
+    padding: 0.1rem 0;
+    height: 0.4rem;
+    font-size: 0.18rem;
+    color: #333333;
+}
+
+.subjects .courses .course .age {
+    height: 0.3rem;
+    font-size: 0.15rem;
+    color: #f67531;
+}
+
+.subjects .courses .course .joined {
+    height: 0.25rem;
+    font-size: 0.12rem;
+    color: #999999;
+}
+
+.free .subject {
+    position: relative;
+    margin-bottom: 0.125rem;
+}
+
+.free .subject .cover {
+    position: relative;
+    width: 100%;
+    height: 2.01rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.free .subject .sold-out {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.free .subject .joined {
+    position: absolute;
+    top: 0.3rem;
+    right: 0;
+    padding: 0.02rem 0.1rem 0.03rem 0.15rem;
+    background-image: url("/img/label3x.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-size: 0.12rem;
+}
+
+.free .subject .desc {
+    position: relative;
+    padding: 0.1rem 0.125rem;
+    width: 100%;
+    height: 0.76rem;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.free .subject .desc .left {
+    width: 2.95rem;
+}
+
+.free .subject .desc .title {
+    height: 0.32rem;
+    line-height: 0.32rem;
+    font-size: 0.18rem;
+    color: #333333;
+}
+
+.free .subject .desc .intro {
+    height: 0.25rem;
+    line-height: 0.25rem;
+    font-size: 0.125rem;
+    color: #666666;
+}
+
+.free .subject .desc .intro .tags {
+    margin-right: 0.05rem;
+    padding: 0.03rem 0.05rem 0.02rem 0.05rem;
+    background-color: #e1e1e1;
+    color: #999999;
+}
+
+.free .subject .desc .price {
+    margin: 0.08rem 0;
+    width: 0.79rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    color: #f67531;
+    text-align: center;
+
+}
+
+.free .subject .desc .price .number {
+    font-size: 0.24rem;
+}
+
+.more {
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border-top: 1px solid #e1e1e1;
+    background-color: #ffffff;
+    font-size: 0.175rem;
+    color: #999999;
+}

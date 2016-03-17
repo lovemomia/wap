@@ -1,6 +1,5 @@
 package cn.momia.wap.web.ctrl.course;
 
-import cn.momia.common.core.http.MomiaHttpResponse;
 import cn.momia.common.core.util.TimeUtil;
 import cn.momia.wap.web.ctrl.AbstractController;
 import com.alibaba.fastjson.JSONArray;
@@ -37,8 +36,7 @@ public class CourseController extends AbstractController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView course(@RequestParam long id) {
-        MomiaHttpResponse resp = get("/v2/course?id=" + id);
-        JSONObject courseJson = (JSONObject) resp.getData();
+        JSONObject courseJson = (JSONObject) get("/v3/course?id=" + id);
         courseJson.put("buyable", false);
 
         return new ModelAndView("course/course", "course", courseJson);
@@ -46,8 +44,7 @@ public class CourseController extends AbstractController {
 
     @RequestMapping(value = "/trial", method = RequestMethod.GET)
     public ModelAndView trial(@RequestParam long id) {
-        MomiaHttpResponse resp = get("/v2/course?id=" + id);
-        JSONObject courseJson = (JSONObject) resp.getData();
+        JSONObject courseJson = (JSONObject) get("/v3/course?id=" + id);
         courseJson.put("trial", true);
 
         return new ModelAndView("course/course", "course", courseJson);
@@ -55,20 +52,17 @@ public class CourseController extends AbstractController {
 
     @RequestMapping(value = "/buyable", method = RequestMethod.GET)
     public ModelAndView buyable(@RequestParam long id) {
-        MomiaHttpResponse resp = get("/v2/course?id=" + id);
-        return new ModelAndView("course/course", "course", resp.getData());
+        return new ModelAndView("course/course", "course", get("/v3/course?id=" + id));
     }
 
     @RequestMapping(value = "/cancelable", method = RequestMethod.GET)
     public ModelAndView cancelable(HttpServletRequest request, @RequestParam long id, @RequestParam(value = "bid") long bookingId) {
         String utoken = getUtoken(request);
 
-        MomiaHttpResponse resp = get("/v2/course?id=" + id);
-        JSONObject courseJson = (JSONObject) resp.getData();
+        JSONObject courseJson = (JSONObject) get("/v3/course?id=" + id);
         courseJson.put("cancelable", true);
 
-        MomiaHttpResponse skuResp = get("/user/booked/sku?utoken=" + utoken + "&bid=" + bookingId);
-        JSONObject skuJson = (JSONObject) skuResp.getData();
+        JSONObject skuJson = (JSONObject) get("/user/booked/sku?utoken=" + utoken + "&bid=" + bookingId);
         JSONObject placeJson = skuJson.getJSONObject("place");
         courseJson.put("address", placeJson == null ? "" : placeJson.getString("address"));
         courseJson.put("scheduler", skuJson.getString("scheduler"));
@@ -80,24 +74,23 @@ public class CourseController extends AbstractController {
     public ModelAndView skuplace(@RequestParam long id,
                                  @RequestParam(required = false, defaultValue = "2") int status,
                                  @RequestParam(required = false, defaultValue = "0") long pid) {
-        MomiaHttpResponse resp;
+        JSONArray datesJson;
         Calendar calendar = Calendar.getInstance();
         int month = calendar.get(Calendar.MONTH) + 1;
         int nextMonth = month + 1;
         if (nextMonth > 12) nextMonth = 1;
         switch (status) {
             case SKU_PLACE_STATUS_CURRENT_MONTH:
-                resp = get("/course/sku/month" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id + "&month=" + month);
+                datesJson = (JSONArray) get("/course/sku/month" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id + "&month=" + month);
                 break;
             case SKU_PLACE_STATUS_NEXT_MONTH:
-                resp = get("/course/sku/month" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id + "&month=" + nextMonth);
+                datesJson = (JSONArray) get("/course/sku/month" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id + "&month=" + nextMonth);
                 break;
             default:
-                resp = get("/course/sku/week" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id);
+                datesJson = (JSONArray) get("/course/sku/week" + (pid > 0 ? "/bookable" : "/notend") + "?id=" + id);
         }
 
         List<JSONObject> dates = new ArrayList<JSONObject>();
-        JSONArray datesJson = (JSONArray) resp.getData();
         for (int i = 0; i < datesJson.size(); i++) {
             JSONObject dateJson = datesJson.getJSONObject(i);
             String dateStr = dateJson.getString("date");
@@ -123,21 +116,6 @@ public class CourseController extends AbstractController {
         return new ModelAndView("course/skuplace", "params", params);
     }
 
-    @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public ModelAndView detail(@RequestParam long id) {
-        return new ModelAndView("course/detail", "detail", getDetail(id));
-    }
-
-    private JSONObject getDetail(long id) {
-        MomiaHttpResponse resp = get("/course/detail?id=" + id);
-        return (JSONObject) resp.getData();
-    }
-
-    @RequestMapping(value = "/detail/app", method = RequestMethod.GET)
-    public ModelAndView detailApp(@RequestParam long id) {
-        return new ModelAndView("course/detail_app", "detail", getDetail(id));
-    }
-
     @RequestMapping(value = "/material", method = RequestMethod.GET)
     public ModelAndView material(HttpServletRequest request, @RequestParam int id) {
         String utoken = getUtoken(request);
@@ -147,8 +125,7 @@ public class CourseController extends AbstractController {
             return new ModelAndView("redirect:/auth/login?ref=" + URLEncoder.encode(url.toString()) + "&back=" + URLEncoder.encode(referer));
         }
 
-        MomiaHttpResponse resp = get("/teacher/material?utoken=" + utoken + "&mid=" + id);
-        JSONObject material = (JSONObject) resp.getData();
+        JSONObject material = (JSONObject) get("/teacher/material?utoken=" + utoken + "&mid=" + id);
 
         return new ModelAndView("course/material", "material", material);
     }

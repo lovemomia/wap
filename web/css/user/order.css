@@ -1,12 +1,14 @@
 .tab {
     width: 100%;
-    height: 0.55rem;
-    color: #333333;
+    height: 0.5rem;
+    text-align: center;
 }
 
 .tab .left {
-    width: 33%;
-    line-height: 0.53rem;
+    width: 1.333rem;
+    height: 0.5rem;
+    line-height: 0.48rem;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .tab .left.on {
@@ -26,13 +28,10 @@
 .list .order .btn {
     position: absolute;
     top: 0.35rem;
-    right: 0.1rem;
+    right: 0.125rem;
     width: 0.85rem;
     height: 0.4rem;
-}
-
-.list .order .btn .btn-orange {
-    padding-top: 0.05rem;
+    text-align: right;
 }
 
 .logo {
@@ -47,7 +46,8 @@
 .tips {
     height: 0.6rem;
     font-size: 0.16rem;
-    color: #888888;
+    color: #999999;
+    text-align: center;
 }
 
 .tips p {

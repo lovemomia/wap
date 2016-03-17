@@ -2,7 +2,6 @@
 
 <@override name="css">
     <link rel="stylesheet" type="text/css" href="/css/scroll.css">
-    <link rel="stylesheet" type="text/css" href="/css/feed/feed.css">
     <link rel="stylesheet" type="text/css" href="/css/subject/subject.css">
 </@override>
 
@@ -10,156 +9,110 @@
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>${subject.subject.title}</div>
     <div class="content has-fix-footer">
 
-        <#if subject.subject.imgs?size == 0>
-        <#else>
+        <#if (subject.subject.imgs?size>0)>
             <div class="subject img">
-                <#if subject.subject.imgs?size == 1>
-                    <#list subject.subject.imgs as img>
-                        <img src="${img}" />
-                    </#list>
-                <#else>
-                    <div id="scroll_img" class="scroll_box">
-                        <ul id="scroll_wrap" class="scroll_wrap">
-                            <#list subject.subject.imgs as img>
-                                <li><img src="${img}" /></li>
-                            </#list>
-                        </ul>
-
-                        <ul id="scroll_position" class="scroll_position">
-                            <#list subject.subject.imgs as img>
-                                <#if img_index == 0>
-                                    <li class="on"><a href="javascript:void(0);"></a></li>
-                                <#else>
-                                    <li><a href="javascript:void(0);"></a></li>
-                                </#if>
-                            </#list>
-                        </ul>
-                    </div>
-                </#if>
+                <img src="${subject.subject.imgs[0]}" />
             </div>
         </#if>
 
-        <div class="subject text no-border">
-            <div class="left tag img"><img src="/img/tag3x.png"/></div>
-            <div class="left tag desc">适合${subject.subject.age}</div>
-            <#if (subject.subject.joined > 0)>
-                <div class="right tag desc">${subject.subject.joined}人已参加</div>
-                <div class="right tag img"><img src="/img/tag_gray3x.png"/></div>
-            </#if>
-            <div style="clear:both"></div>
-        </div>
-        <div class="bg-white"><hr class="sep"/></div>
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
-
-        <div class="tabs top-margin">
-            <ul>
-                <li><a href="#panel-1">可选课程</a></li>
-                <li><a href="#panel-2">购买须知</a></li>
-                <#--<li><a href="#panel-3">成长说</a></li>-->
-            </ul>
-            <div id="panel-1">
-                <#if (subject.courses?? && subject.courses.totalCount>0)>
-                <div class="subject list bottom-border">
-                    <#list subject.courses.list as course>
-                        <a href="/course?id=${course.id}">
-                        <div class="element">
-                            <div class="left"><img src="${course.cover}" /></div>
-                            <div class="right">
-                                <div class="title overflow-hidden">${course.title}</div>
-                                <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
-                                <div class="desc overflow-hidden">${course.region}</div>
-                                <div class="price">
-                                <#if (course.price > 0)>
-                                    <span>价值 </span><span class="number">${course.price}</span><span>元</span>
-                                <#else>
-                                    <span class="free">公益课</span>
-                                </#if>
-                                </div>
+        <#if (subject.courses?? && subject.courses.totalCount>0)>
+            <div class="courses bottom-border">
+                <#list subject.courses.list as course>
+                    <a href="/course?id=${course.id}">
+                        <div class="course" style="background-image: url('${course.cover}')">
+                            <#if (course.joined>0)>
+                                <div class="joined">${course.joined}人参加</div>
+                            </#if>
+                            <div class="info gradient">
+                                <div class="title">${course.title}</div>
+                                <div class="age"><img src="/img/ren3x.png" />${course.age}</div>
                             </div>
-                            <div style="clear: both;"></div>
                         </div>
-                        <#if (course_index < subject.courses.list?size - 1)>
-                            <hr class="sep" />
-                        </#if>
-                        </a>
-                    </#list>
-                    <#if (subject.courses.nextIndex?? && subject.courses.nextIndex > 0)>
-                        <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
-                    </#if>
-                </div>
-                <#else>
-                    <div class="logo"><img src="/img/logo3x.png"></div>
-                    <div class="tips">
-                        <p>目前还没有可选课程，我们会尽快推出的哦~</p>
-                    </div>
+                    </a>
+                </#list>
+                <#if (subject.courses.nextIndex?? && subject.courses.nextIndex>0)>
+                    <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
                 </#if>
             </div>
-            <div id="panel-2">
-                <div class="subject text no-top-border">
-                    <#list subject.subject.notice as notice>
-                        <div class="notice title">${notice.title}</div>
-                        <div class="notice content">${notice.content}</div>
-                    </#list>
+        <#else>
+            <div class="bg-white bottom-border">
+                <div class="logo"><img src="/img/logo3x.png"></div>
+                <div class="tips">
+                    <p>目前还没有可选课程，我们会尽快推出的哦~</p>
                 </div>
             </div>
-            <#--<div id="panel-3">-->
-                <#--<#if (subject.feeds?? && subject.feeds.totalCount>0)>-->
-                    <#--<div class="subject list bottom-border">-->
-                        <#--<#list subject.feeds.list as feed>-->
-                            <#--<div class="feed">-->
-                            <#--<div class="feed-avatar left">-->
-                                <#--<#if (feed.avatar?length > 0)>-->
-                                    <#--<img src="${feed.avatar}" />-->
-                                <#--<#else>-->
-                                    <#--<img src="/img/avatar02.png" />-->
-                                <#--</#if>-->
-                            <#--</div>-->
-                            <#--<div class="feed-info right top-margin bottom-margin">-->
-                                <#--<div>-->
-                                    <#--<div class="nickname left">${feed.nickName}</div>-->
-                                    <#--<div class="addtime right">${feed.addTime}</div>-->
-                                    <#--<div style="clear:both"></div>-->
-                                    <#--</div>-->
-                                <#--<div>-->
-                                    <#--<#if (feed.children?size > 0)>-->
-                                        <#--<div class="children left">${feed.children[0]}</div>-->
-                                    <#--</#if>-->
-                                    <#--<div style="clear:both"></div>-->
-                                    <#--</div>-->
-                                <#--<hr class="sep full"/>-->
-                                <#--<#if (feed.content?length > 0)><div class="feed-content">${feed.content}</div></#if>-->
-                                <#--<#if (feed.imgs?size>0)>-->
-                                    <#--<#list feed.imgs as img>-->
-                                        <#--<#if (img_index%3==0)>-->
-                                        <#--<div class="feed-img">-->
-                                        <#--</#if>-->
-                                        <#--<img src="${img}" />-->
-                                        <#--<#if (img_index%3==2 || (img_index+1) == feed.imgs?size)>-->
-                                            <#--<div style="clear:both"></div>-->
-                                        <#--</div>-->
-                                        <#--</#if>-->
-                                    <#--</#list>-->
-                                <#--</#if>-->
-                                <#--</div>-->
-                            <#--<div style="clear:both"></div>-->
-                            <#--</div>-->
-                            <#--<#if (feed_index < subject.feeds.list?size - 1)>-->
-                                <#--<hr class="sep" />-->
-                            <#--</#if>-->
-                        <#--</#list>-->
-                    <#--</div>-->
-                <#--<#else>-->
-                    <#--<div class="logo"><img src="/img/logo3x.png"></div>-->
-                    <#--<div class="tips">-->
-                        <#--<p>目前还没有内容哦~</p>-->
-                    <#--</div>-->
-                <#--</#if>-->
-            <#--</div>-->
+        </#if>
+
+        <#if (subject.comments?? && subject.comments.totalCount>0)>
+            <div class="subject comment v-border top-margin">
+                <div class="title">用户评价</div>
+                <hr class="left-margin" />
+                <#list subject.comments.list as comment>
+                    <#if (comment_index == 0)>
+                    <div>
+                        <div class="comment-avatar left">
+                            <#if (comment.avatar?length>0)>
+                                <img src="${comment.avatar}" />
+                            <#else>
+                                <img src="/img/avatar02.png" />
+                            </#if>
+                        </div>
+                        <div class="comment-info right top-margin bottom-margin">
+                            <div>
+                                <div class="nickname left">${comment.nickName}</div>
+                                <div class="addtime right">${comment.addTime}</div>
+                                <div style="clear:both"></div>
+                            </div>
+                            <div>
+                                <#if (comment.children?size>0)>
+                                    <div class="children left">${comment.children[0]}</div>
+                                </#if>
+                                <div class="right">
+                                    <#list 1..5 as i>
+                                        <#if (5-comment.star<i)>
+                                            <img class="star" src="/img/dianliang2x.png" />
+                                        <#else>
+                                            <img class="star" src="/img/budianliang2x.png" />
+                                        </#if>
+                                    </#list>
+                                </div>
+                                <div style="clear:both"></div>
+                            </div>
+                            <hr class=""/>
+                            <div class="comment-content">${comment.content}</div>
+                            <#if (comment.imgs?size>0)>
+                                <#list comment.imgs as img>
+                                    <#if (img_index<3)>
+                                        <#if (img_index%3==0)>
+                                        <div class="comment-img">
+                                        </#if>
+                                        <img src="${img}" />
+                                        <#if (img_index%3==2 || (img_index+1) == comment.imgs?size)>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        </#if>
+                                    </#if>
+                                </#list>
+                            </#if>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    </#if>
+                </#list>
+            </div>
+        </#if>
+
+        <div class="subject text top-margin v-border">
+            <#list subject.subject.notice as notice>
+                <div class="notice title">${notice.title}</div>
+                <div class="notice content">${notice.content}</div>
+            </#list>
         </div>
     </div>
 
     <div class="footer fixed">
-        <div class="left price top-border">课程包<span class="left-margin">¥ </span><span class="number">${subject.subject.price}</span><span>起</span></div>
+        <div class="left price top-border"><span class="left-margin">¥ </span><span class="number">${subject.subject.cheapestSkuPrice}</span><span>起/${subject.subject.cheapestSkuTimeUnit}</span><span class="price-desc right">${subject.subject.cheapestSkuDesc}</span></div>
         <#if subject.subject.status==1>
             <div class="right"><button id="btn_buy" class="btn-orange">立即抢购</button></div>
         <#else>

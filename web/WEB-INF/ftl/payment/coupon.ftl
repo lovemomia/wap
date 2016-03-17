@@ -6,7 +6,7 @@
 
 <@override name="body">
     <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>选择红包</div>
-    <div class="content"></div>
+    <div class="content top-padding"></div>
 </@override>
 
 <@override name="js">
