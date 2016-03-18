@@ -20,7 +20,7 @@ $(function () {
         if (price > discount) {
             price = (price - discount).toFixed(2);
             $("#total_fee").html(price);
-            $(".coupon").html("(已减 " + $(".coupon").attr("discount") + ")");
+            if (discount > 0) $(".coupon").html("(已减 " + $(".coupon").attr("discount") + ")");
         } else {
             $("#total_fee").html(element.attr("price"));
         }

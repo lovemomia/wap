@@ -36,16 +36,12 @@ public class CourseController extends AbstractController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView course(@RequestParam long id) {
-        JSONObject courseJson = (JSONObject) get("/v3/course?id=" + id);
-        courseJson.put("buyable", false);
-
-        return new ModelAndView("course/course", "course", courseJson);
+        return new ModelAndView("course/course", "course", get("/v3/course?id=" + id));
     }
 
     @RequestMapping(value = "/trial", method = RequestMethod.GET)
     public ModelAndView trial(@RequestParam long id) {
-        JSONObject courseJson = (JSONObject) get("/v3/course?id=" + id);
-        courseJson.put("buyable", true);
+        JSONObject courseJson = (JSONObject) get("/v3/course?trial=1&id=" + id);
         courseJson.put("trial", true);
 
         return new ModelAndView("course/course", "course", courseJson);
@@ -53,7 +49,7 @@ public class CourseController extends AbstractController {
 
     @RequestMapping(value = "/buyable", method = RequestMethod.GET)
     public ModelAndView buyable(@RequestParam long id) {
-        JSONObject courseJson = (JSONObject) get("/v3/course?id=" + id);
+        JSONObject courseJson = (JSONObject) get("/v3/course?recommend=1&id=" + id);
         courseJson.put("buyable", true);
 
         return new ModelAndView("course/course", "course", courseJson);

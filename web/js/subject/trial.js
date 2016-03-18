@@ -34,7 +34,7 @@ sg.trial = {
                 function generate_course_html(course) {
                     var html = "";
                     if (sessionStorage.getItem("_src") != null) {
-                        html += "<a href='" + sg.config.appname + "://coursedetail?id=" + course.id + "'>";
+                        html += "<a href='" + sg.config.appname + "://coursedetail?recommend=1&id=" + course.id + "'>";
                     } else {
                         html += "<a href='/course/trial?id=" + course.id + "'>";
                     }
