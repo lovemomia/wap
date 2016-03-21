@@ -20,22 +20,6 @@ $(function () {
         window.location.href = "/course/skuplace?id=" + id;
     });
 
-    $("#book").on("click", function () {
-        window.location.href = "/course/book?id=" + id;
-    });
-
-    $("#detail").on("click", function () {
-        window.location.href = "/course/detail?id=" + id;
-    });
-
-    $("#teacher").on("click", function () {
-        window.location.href = "/course/teacher?id=" + id;
-    });
-
-    $("#institution").on("click", function () {
-        window.location.href = "/institution/detail?id=" + id;
-    });
-
     $("#btn_buy").on('click', function () {
         window.location.href = "/subject/placeorder?id=" + $(this).attr("sid") + "&coid=" + id;
     });
@@ -58,7 +42,6 @@ $(function () {
     $(".notice.content").each(function(){
         $(this).html(sg.common.sections_html($(this).html()));
     });
-    $("#institution").html(sg.common.sections_html($("#institution").html()));
 
     $(".tabs").tabs();
 });
