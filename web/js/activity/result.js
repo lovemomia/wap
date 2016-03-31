@@ -7,7 +7,7 @@ $(function () {
     var aid = sg.common.param("aid", 0);
     if (aid > 0) {
         $(".back").on("click", function () {
-            window.location.href = "/activity/" + aid;
+            window.location.href = "/activity/detail/" + aid;
         });
     }
 });
