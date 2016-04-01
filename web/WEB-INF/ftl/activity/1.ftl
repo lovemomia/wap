@@ -1,4 +1,4 @@
-<@override name="title">邀请函</@override>
+<@override name="title">优贝恩国际小使者邀请函</@override>
 
 <@override name="css">
     <style type="text/css">
