@@ -138,7 +138,11 @@
                         if (entryId > 0) {
                             window.location.href = "/activity/pay?aid=" + 1 + "&eid=" + entryId;
                         } else {
-                            alert("报名成功");
+                            alert("报名成功，我们会把邀请函通过短信发送到您的手机");
+                            sg.common.post(sg.config.api + "/activity/notify", {
+                                aid: 1,
+                                mobile: mobile
+                            });
                         }
                     });
                 }

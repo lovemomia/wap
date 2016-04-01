@@ -16,7 +16,7 @@ sg.result = {
     success: function (data) {
         if (data == true) {
             $(".content .title").html("付款成功");
-            $(".content .desc").html("您已报名成功");
+            $(".content .desc").html("您已报名成功，我们会把邀请函通过短信发送到您的手机");
         } else {
             $(".content .title").html("付款失败");
             $(".content .desc").html("如果支付系统已扣款，请与客服联系");
