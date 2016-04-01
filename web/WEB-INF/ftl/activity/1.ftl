@@ -142,7 +142,7 @@
                             sg.common.post(sg.config.api + "/activity/notify", {
                                 aid: 1,
                                 mobile: mobile
-                            });
+                            }, function () {});
                         }
                     });
                 }
