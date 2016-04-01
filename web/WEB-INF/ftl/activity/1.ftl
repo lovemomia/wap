@@ -89,13 +89,13 @@
                 wx.onMenuShareAppMessage({
                     title: '${activity.title}',
                     desc: '${activity.desc}',
-                    link: 'http://m.sogokids.com/activity/1',
+                    link: 'http://m.sogokids.com/activity/detail/1',
                     imgUrl: '${activity.cover}'
                 });
 
                 wx.onMenuShareTimeline({
                     title: '${activity.title}',
-                    link: 'http://m.sogokids.com/activity/1',
+                    link: 'http://m.sogokids.com/activity/detail/1',
                     imgUrl: '${activity.cover}'
                 });
 
