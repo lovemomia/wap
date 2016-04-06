@@ -145,8 +145,9 @@ sg.index = {
                     html += "<div class='cover' style='background-image: url(\"" + course.cover + "\");'></div>";
                     html += "<div class='key-word'>" + course.keyWord + "</div>";
                     html += "<div class='age'>" + course.age + "</div>";
-                    if (subject.subjectCourseType == 1 && course.joined>0) html += "<div class='joined'>" + course.joined + "人参加</div>";
-                    else html += "<div class='joined'>" + course.feature + "</div>";
+                    if (subject.subjectCourseType == 1) {
+                        if (course.joined >= 10) html += "<div class='joined'>" + course.joined + "人参加</div>";
+                    } else html += "<div class='joined'>" + course.feature + "</div>";
                     html += "</div>";
                     html += "</a>";
                 }
