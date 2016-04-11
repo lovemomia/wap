@@ -133,7 +133,7 @@ sg.topic = {
             } else {
                 var reply_id = $(this).attr("reply-id");
                 var stared = $(this).attr("stared");
-                var star_count = $(this).attr("star-count");
+                var star_count = new Number($(this).attr("star-count"));
                 var star = $(this);
                 if (stared == 1) {
                     sg.common.post(sg.config.api + "/discuss/reply/unstar", {
