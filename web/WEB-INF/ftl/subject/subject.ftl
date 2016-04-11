@@ -16,9 +16,9 @@
         </#if>
 
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
-        <#if (subject.courses?? && subject.courses.totalCount>0)>
+        <#if (subject.courses?? && subject.courses?size>0)>
             <div class="courses bottom-border">
-                <#list subject.courses.list as course>
+                <#list subject.courses as course>
                     <a href="/course?id=${course.id}">
                         <div class="course" style="background-image: url('${course.cover}')">
                             <#if (course.joined>0)>
