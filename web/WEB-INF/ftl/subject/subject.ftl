@@ -31,9 +31,6 @@
                         </div>
                     </a>
                 </#list>
-                <#if (subject.courses.nextIndex?? && subject.courses.nextIndex>0)>
-                    <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
-                </#if>
             </div>
         <#else>
             <div class="bg-white bottom-border">
