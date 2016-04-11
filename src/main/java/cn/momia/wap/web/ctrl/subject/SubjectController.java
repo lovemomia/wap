@@ -17,7 +17,7 @@ import java.net.URLEncoder;
 public class SubjectController extends AbstractController {
     @RequestMapping(value = "/subjectdetail", method = RequestMethod.GET)
     public ModelAndView subject(@RequestParam long id) {
-        return new ModelAndView("subject/subject", "subject", get("/v2/subject?id=" + id));
+        return new ModelAndView("subject/subject", "subject", get("/v3/subject?id=" + id));
     }
 
     @RequestMapping(value = "/subject/placeorder", method = RequestMethod.GET)
