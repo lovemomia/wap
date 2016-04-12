@@ -231,7 +231,11 @@
                 <#if course.status==1>
                     <div class="right"><button id="btn_buy" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
                 <#else>
-                    <div class="right"><button class="btn-gray">已经售完</button></div>
+                    <#if (course.packageId && course.packageId>0)>
+                        <div class="right"><button class="btn_booking" coid="${course.id}" pid="${course.packageId}">立即预约</button></div>
+                    <#else>
+                        <div class="right"><button class="btn-gray">已经售完</button></div>
+                    </#if>
                 </#if>
                 <div style="clear:both"></div>
             </div>
@@ -241,14 +245,22 @@
                 <#if course.status==1>
                     <div class="right"><button id="btn_try" sid="${course.subjectId}" class="btn-orange">加入试听</button></div>
                 <#else>
-                    <div class="right"><button class="btn-gray">已经售完</button></div>
+                    <#if (course.packageId && course.packageId>0)>
+                        <div class="right"><button class="btn_booking" coid="${course.id}" pid="${course.packageId}">立即预约</button></div>
+                    <#else>
+                        <div class="right"><button class="btn-gray">已经售完</button></div>
+                    </#if>
                 </#if>
                 <div style="clear:both"></div>
             </div>
         <#else>
             <div class="footer fixed">
                 <div class="left price top-border"><span class="left-margin">¥ </span><span class="number">${course.cheapestSkuPrice}</span><span>起/${course.cheapestSkuTimeUnit}</span><span class="price-desc right">${course.cheapestSkuDesc}</span></div>
-                <div class="right"><button id="btn_buy_subject" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+                <#if (course.packageId && course.packageId>0)>
+                    <div class="right"><button class="btn_booking" coid="${course.id}" pid="${course.packageId}">立即预约</button></div>
+                <#else>
+                    <div class="right"><button id="btn_buy_subject" sid="${course.subjectId}" class="btn-orange">立即抢购</button></div>
+                </#if>
                 <div style="clear:both"></div>
             </div>
         </#if>
