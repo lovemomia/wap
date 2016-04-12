@@ -35,21 +35,24 @@ public class CourseController extends AbstractController {
     public static final String[] MONTHS = { "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" };
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView course(@RequestParam long id) {
-        return new ModelAndView("course/course", "course", get("/v3/course?id=" + id));
+    public ModelAndView course(HttpServletRequest request, @RequestParam long id) {
+        String utoken = getUtoken(request);
+        return new ModelAndView("course/course", "course", get("/v3/course?id=" + id + (StringUtils.isBlank(utoken) ? "" : "&utoken=" + utoken)));
     }
 
     @RequestMapping(value = "/trial", method = RequestMethod.GET)
-    public ModelAndView trial(@RequestParam long id) {
-        JSONObject courseJson = (JSONObject) get("/v3/course?trial=1&id=" + id);
+    public ModelAndView trial(HttpServletRequest request, @RequestParam long id) {
+        String utoken = getUtoken(request);
+        JSONObject courseJson = (JSONObject) get("/v3/course?trial=1&id=" + id + (StringUtils.isBlank(utoken) ? "" : "&utoken=" + utoken));
         courseJson.put("trial", true);
 
         return new ModelAndView("course/course", "course", courseJson);
     }
 
     @RequestMapping(value = "/buyable", method = RequestMethod.GET)
-    public ModelAndView buyable(@RequestParam long id) {
-        JSONObject courseJson = (JSONObject) get("/v3/course?recommend=1&id=" + id);
+    public ModelAndView buyable(HttpServletRequest request, @RequestParam long id) {
+        String utoken = getUtoken(request);
+        JSONObject courseJson = (JSONObject) get("/v3/course?recommend=1&id=" + id + (StringUtils.isBlank(utoken) ? "" : "&utoken=" + utoken));
         courseJson.put("buyable", true);
 
         return new ModelAndView("course/course", "course", courseJson);
