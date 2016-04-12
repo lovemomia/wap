@@ -32,6 +32,10 @@ $(function () {
         window.location.href = "/subject/placeorder?id=" + $(this).attr("sid");
     });
 
+    $("#btn_booking").on('click', function () {
+        window.location.href = "/course/skuplace?id=" + $(this).attr("coid") + "&pid=" + $(this).attr("pid");
+    });
+
     $("#goal").html(sg.common.sections_html($("#goal").html()));
     $(".detail-text").each(function () {
         $(this).html(sg.common.sections_html($(this).html()));
