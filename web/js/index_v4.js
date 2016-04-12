@@ -31,8 +31,7 @@ sg.index = {
     success_init: function (data) {
         generate_banners_html(data.banners);
         generate_events_html(data.eventsTitle, data.events);
-        generate_subjects_html(data.subjects);
-        generate_topic_html(data.topics);
+        generate_subjects_html(data.subjects, data.topics);
 
         if (data.courses.totalCount > 0) {
             var html = "";
@@ -117,7 +116,7 @@ sg.index = {
             }
         }
 
-        function generate_subjects_html(subjects) {
+        function generate_subjects_html(subjects, topics) {
             if (subjects == undefined || subjects.length == 0) return;
 
             var html = "";
@@ -155,16 +154,17 @@ sg.index = {
 
                 html += "</div>";
                 html += "</div>";
+
+                if (topics != undefined || topics.length > i) {
+                    html += generate_topic_html(topics[i]);
+                }
             }
             html += "</div>";
 
             $(".content").append(html);
         }
 
-        function generate_topic_html(topics) {
-            if (topics == undefined || topics.length == 0) return;
-
-            var topic = topics[0];
+        function generate_topic_html(topic) {
             var html = "";
             html += "<a href='/discuss/topic?id=" + topic.id + "'>";
             html += "<div class='topic v-border top-margin bg-white'>";
@@ -177,7 +177,7 @@ sg.index = {
             html += "</div>";
             html += "</a>";
 
-            $(".content").append(html);
+            return html;
         }
     },
 
