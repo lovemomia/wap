@@ -80,6 +80,14 @@
             </select>
         </div>
         <div class="tip">* 亲子体验课建议父母参加</div>
+        <div>
+            <select id="extra">
+                <option value ="">选择场次时间</option>
+                <option value ="4月20号下午1:00-2:30">4月20号下午1:00-2:30</option>
+                <option value ="4月20号下午3:00-4:30">4月20号下午3:00-4:30</option>
+                <option value ="4月21号下午1:00-3:00">4月21号下午1:00-3:00</option>
+            </select>
+        </div>
         <div><input type="tel" id="mobile" placeholder="输入手机号码" /></div>
         <div class="btn">
             <button id="btn_submit"></button>
@@ -140,11 +148,14 @@
             $("#btn_submit").on("click", function () {
                 var childName = $("#childname").val();
                 var relation = $("#relation").val();
+                var extra = $("#extra").val();
                 var mobile = $("#mobile").val();
                 if (!childName || childName == "") {
                     alert("孩子姓名不能为空");
                 } else if (!relation || relation == "") {
                     alert("请选择与孩子的关系")
+                } else if (!extra || extra == "") {
+                    alert("请选择场次时间")
                 } else if (!mobile || mobile == "" || sg.common.is_invalid_mobile(mobile)) {
                     alert("无效的手机号吗");
                 } else {
@@ -152,7 +163,8 @@
                         aid: 2,
                         cname: childName,
                         mobile: mobile,
-                        relation: relation
+                        relation: relation,
+                        extra: extra
                     }, function (data) {
                         var entryId = new Number(data);
                         if (entryId > 0) {
