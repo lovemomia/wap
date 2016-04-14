@@ -148,14 +148,11 @@
             $("#btn_submit").on("click", function () {
                 var childName = $("#childname").val();
                 var relation = $("#relation").val();
-                var extra = $("#extra").val();
                 var mobile = $("#mobile").val();
                 if (!childName || childName == "") {
                     alert("孩子姓名不能为空");
                 } else if (!relation || relation == "") {
                     alert("请选择与孩子的关系")
-                } else if (!extra || extra == "") {
-                    alert("请选择场次时间")
                 } else if (!mobile || mobile == "" || sg.common.is_invalid_mobile(mobile)) {
                     alert("无效的手机号吗");
                 } else {
@@ -163,8 +160,7 @@
                         aid: 2,
                         cname: childName,
                         mobile: mobile,
-                        relation: relation,
-                        extra: extra
+                        relation: relation
                     }, function (data) {
                         var entryId = new Number(data);
                         if (entryId > 0) {
