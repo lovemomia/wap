@@ -80,14 +80,6 @@
             </select>
         </div>
         <div class="tip">* 亲子体验课建议父母参加</div>
-        <div>
-            <select id="extra">
-                <option value ="">选择场次时间</option>
-                <option value ="4月20号下午1:00-2:30">4月20号下午1:00-2:30</option>
-                <option value ="4月20号下午3:00-4:30">4月20号下午3:00-4:30</option>
-                <option value ="4月21号下午1:00-3:00">4月21号下午1:00-3:00</option>
-            </select>
-        </div>
         <div><input type="tel" id="mobile" placeholder="输入手机号码" /></div>
         <div class="btn">
             <button id="btn_submit"></button>
