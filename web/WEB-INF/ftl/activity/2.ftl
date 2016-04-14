@@ -161,7 +161,8 @@
                             alert("报名成功，我们会把邀请函通过短信发送到您的手机");
                             sg.common.post(sg.config.api + "/activity/notify", {
                                 aid: 2,
-                                mobile: mobile
+                                mobile: mobile,
+                                cname: childName
                             }, function () {});
                         }
                     });
