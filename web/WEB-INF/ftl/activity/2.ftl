@@ -98,7 +98,7 @@
                 timestamp: ${activity.config.timeStamp}, // 必填，生成签名的时间戳
                 nonceStr: '${activity.config.nonceStr}', // 必填，生成签名的随机串
                 signature: '${activity.config.sign}',// 必填，签名，见附录1
-                jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
 
             wx.ready(function() {
@@ -115,9 +115,15 @@
                     imgUrl: '${activity.cover}'
                 });
 
+                wx.onMenuShareQQ({
+                    title: '${activity.title}',
+                    desc: '${activity.desc}',
+                    link: 'http://m.sogokids.com/activity/detail/2',
+                    imgUrl: '${activity.cover}'
+                });
+
                 wx.hideMenuItems({
                     menuList: [
-                        'menuItem:share:qq',
                         'menuItem:share:weiboApp',
                         'menuItem:favorite',
                         'menuItem:share:facebook',
