@@ -9,8 +9,8 @@
         .content {
             padding-top: 1.6rem;
             width: 100%;
-            height: 6.35rem;
-            background-image: url("http://s.sogokids.com/2016-04-18/ff7015164aa621c84533888cb97ef4a5.jpg");
+            height: 6.63rem;
+            background-image: url("http://s.sogokids.com/2016-04-19/0bd56587d94b2ac6b3a119af8357e1a1.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }

@@ -8,8 +8,8 @@
 
         .content {
             width: 100%;
-            height: 6.35rem;
-            background-image: url("http://s.sogokids.com/2016-04-18/891df6cac178c7ff2318d569b70b789b.jpg");
+            height: 6.63rem;
+            background-image: url("http://s.sogokids.com/2016-04-19/961a71213b00253f9bb8ba78f7cdbe70.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
