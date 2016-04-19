@@ -70,7 +70,7 @@
                         html += "<div class='success'>恭喜您已获得" + userCoupon.discount + "元红包，可在购买松果课程时使用。</div>"
                         $(".desc").html(html);
                     } else if (data.status == 2) {
-                        html += "<div class='dup'>您已领取过该红包了，不能重复领取哦~</div>"
+                        html += "<div class='dup'>您已领取过红包了，不能重复领取哦~</div>"
                         $(".desc").html(html);
                     } else {
                         html += "<div class='fail'>领取失败，请与客服联系~</div>"
