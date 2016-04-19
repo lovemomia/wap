@@ -10,7 +10,7 @@
             padding-top: 1.6rem;
             width: 100%;
             height: 6.63rem;
-            background-image: url("http://s.sogokids.com/2016-04-19/0bd56587d94b2ac6b3a119af8357e1a1.jpg");
+            background-image: url("http://s.sogokids.com/2016-04-19/a5a93fd6275672e718cd4d8773a3cb70.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
@@ -21,6 +21,7 @@
         }
 
         .discount {
+            margin-top: 0.1rem;
             font-size: 0.3rem;
             color: #ff0000;
         }
@@ -30,17 +31,20 @@
         }
 
         .dup {
-            margin-top: 0.2rem;
-            color: #333333;
-        }
-
-        .fail {
             margin-top: 0.3rem;
             color: #333333;
         }
 
+        .fail {
+            margin-top: 0.4rem;
+            color: #333333;
+        }
+
         .btn {
-            margin-top: 1.5rem;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 5rem;
         }
     </style>
 </@override>

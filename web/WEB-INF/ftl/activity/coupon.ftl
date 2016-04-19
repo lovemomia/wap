@@ -9,7 +9,7 @@
         .content {
             width: 100%;
             height: 6.63rem;
-            background-image: url("http://s.sogokids.com/2016-04-19/961a71213b00253f9bb8ba78f7cdbe70.jpg");
+            background-image: url("http://s.sogokids.com/2016-04-19/3ccc8832f849a8a6e4f581ab8aa301ec.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
