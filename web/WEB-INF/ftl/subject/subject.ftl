@@ -16,9 +16,36 @@
         </#if>
 
         <div id="intro" class="subject text no-top-border">${subject.subject.intro}</div>
-        <#if (subject.courses?? && subject.courses.totalCount>0)>
-            <div class="courses bottom-border">
-                <#list subject.courses.list as course>
+
+        <#if (subject.newCourses?? && subject.newCourses?size>0)>
+        <div class="module">
+            <div class="head">最新开班</div>
+            <hr class="green" />
+            <div class="list">
+                <#list subject.newCourses as course>
+                    <#if (course_index>0)><hr class="sep"></#if>
+                    <a href="/course?id=${course.id}&sid=${course.skuId}">
+                        <div class="element">
+                            <div class="left"><img src="${course.cover}"></div>
+                            <div class="right">
+                                <div class="title overflow-hidden">${course.title}</div>
+                                <div class="desc overflow-hidden">${course.age} | ${course.scheduler}</div>
+                                <div class="desc overflow-hidden">${course.region}</div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </a>
+                </#list>
+            </div>
+        </div>
+        </#if>
+
+        <#if (subject.courses?? && subject.courses?size>0)>
+        <div class="module">
+            <div class="head">所有课程</div>
+            <hr class="green" />
+            <div class="courses bottom-border top-padding">
+                <#list subject.courses as course>
                     <a href="/course?id=${course.id}">
                         <div class="course" style="background-image: url('${course.cover}')">
                             <#if (course.joined>0)>
@@ -31,10 +58,8 @@
                         </div>
                     </a>
                 </#list>
-                <#if (subject.courses.nextIndex?? && subject.courses.nextIndex>0)>
-                    <div class="more top-border"><a href="/subject/courses?sid=${subject.subject.id}">查看更多</a></div>
-                </#if>
             </div>
+        </div>
         <#else>
             <div class="bg-white bottom-border">
                 <div class="logo"><img src="/img/logo3x.png"></div>

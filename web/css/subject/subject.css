@@ -256,3 +256,25 @@
     font-size: 0.17rem;
     line-height: 0.18rem;
 }
+
+.module {
+    background-color: #ffffff;
+}
+
+.module .head {
+    margin: 0 0.1rem 0 0.1rem;
+    padding: 0.1rem 0.05rem;
+    text-align: center;
+    color: #00c49d;
+    font-size: 0.18rem;
+    border-bottom: 0.05rem solid #00c49d;
+}
+
+hr.green {
+    margin: 0.05rem 0.1rem 0.08rem 0.1rem;
+    background-color: #00c49d;
+}
+
+hr.sep {
+    margin-left: 0.1rem;
+}

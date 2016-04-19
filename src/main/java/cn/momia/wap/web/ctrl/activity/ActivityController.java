@@ -19,8 +19,13 @@ import java.util.Map;
 @Controller
 @RequestMapping("/activity")
 public class ActivityController extends AbstractController {
+    @RequestMapping(value = "/coupon/{id}", method = RequestMethod.GET)
+    public ModelAndView activityCoupon(@PathVariable String id) {
+        return new ModelAndView("activity/coupon", "coupon", get("/coupon?id=" + id));
+    }
+
     @RequestMapping(value = "/detail/{aid}", method = RequestMethod.GET)
-    public ModelAndView activity1(HttpServletRequest request, @PathVariable int aid) {
+    public ModelAndView activity(HttpServletRequest request, @PathVariable int aid) {
         JSONObject activityJson = (JSONObject) get("/activity?id=" + aid);
         String queryString = request.getQueryString();
         activityJson.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), request.getRequestURL() + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));

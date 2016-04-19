@@ -393,7 +393,7 @@
     color: #f67531;
 }
 
-.btn-orange, .btn-gray {
+.btn-main, .btn-orange, .btn-gray {
     width: 1.5rem;
     height: 0.64rem;
     border-radius: 0;
