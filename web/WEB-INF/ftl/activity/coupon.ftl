@@ -27,7 +27,6 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>红包</div>
     <div class="content">
         <button id="btn_receive" class="btn-main"></button>
     </div>

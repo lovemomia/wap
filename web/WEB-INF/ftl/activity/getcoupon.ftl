@@ -46,7 +46,6 @@
 </@override>
 
 <@override name="body">
-    <div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>红包</div>
     <div class="content">
         <div class="desc"></div>
         <div class="btn"><button id="btn_use" class="btn-main">立即使用</button></div>
