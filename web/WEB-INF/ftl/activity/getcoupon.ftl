@@ -70,7 +70,7 @@
                     var html = "";
                     if (data.status == 1) {
                         var userCoupon = data.userCoupon;
-                        html += "<div class='discount'>" + userCoupon.discount + "</div>"
+                        html += "<div class='discount'>￥" + userCoupon.discount + "</div>"
                         html += "<div class='success'>恭喜您已获得" + userCoupon.discount + "元红包，可在购买松果课程时使用。</div>"
                         $(".desc").html(html);
                     } else if (data.status == 2) {
