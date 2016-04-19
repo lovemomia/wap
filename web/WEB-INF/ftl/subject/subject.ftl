@@ -48,9 +48,7 @@
                 <#list subject.courses as course>
                     <a href="/course?id=${course.id}">
                         <div class="course" style="background-image: url('${course.cover}')">
-                            <#if (course.joined>0)>
-                                <div class="joined">${course.joined}人参加</div>
-                            </#if>
+                            <div class="lesson">LESSON ${course_index + 1}</div>
                             <div class="info gradient">
                                 <div class="title">${course.title}</div>
                                 <div class="age"><img src="/img/ren3x.png" />${course.age}</div>
@@ -104,7 +102,6 @@
                                 </div>
                                 <div style="clear:both"></div>
                             </div>
-                            <hr class=""/>
                             <div class="comment-content">${comment.content}</div>
                             <#if (comment.imgs?size>0)>
                                 <#list comment.imgs as img>

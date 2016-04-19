@@ -196,7 +196,6 @@
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
-                                <hr class="sep full"/>
                                 <div class="comment-content">${comment.content}</div>
                                 <#if (comment.imgs?size>0)>
                                     <#list comment.imgs as img>
