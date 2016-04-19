@@ -155,7 +155,7 @@ sg.index = {
                 html += "</div>";
                 html += "</div>";
 
-                if (topics != undefined || topics.length > i) {
+                if (topics != undefined && topics.length > i) {
                     html += generate_topic_html(topics[i]);
                 }
             }
