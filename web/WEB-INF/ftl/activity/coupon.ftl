@@ -15,7 +15,7 @@
         }
 
         #btn_receive {
-            margin-top: 2.45rem;
+            margin-top: 2.5rem;
             width: 1.25rem;
             height: 1.25rem;
             background-color: transparent;
