@@ -69,7 +69,7 @@
                     var html = "";
                     if (data.status == 1) {
                         html += "<div class='discount'>￥" + data.discount + "</div>";
-                        html += "<div class='success'>您已获得总额" + data.discount + "元的" + data.count + "个红包，可在购买松果课程时使用。</div>"
+                        html += "<div class='success'>您已获得总额" + data.discount + "元的" + data.count + "个红包，可在购买课程时使用。</div>"
                         $(".desc").html(html);
                     } else if (data.status == 2) {
                         html += "<div class='dup'>您已领取过红包了，不能重复领取哦~</div>";
