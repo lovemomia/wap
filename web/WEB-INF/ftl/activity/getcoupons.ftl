@@ -60,18 +60,16 @@
     <script type="text/javascript">
         $(function () {
             if (!sg.common.is_login()) {
+                alert("只有注册登录后才能领取哦~");
                 sg.common.redirect_login();
             } else {
-                var id = sg.common.param("id");
-                sg.common.post(sg.config.api + "/activity/coupon", {
-                    utoken: sg.common.cookie.get("utoken"),
-                    coupon: id
+                sg.common.post(sg.config.api + "/activity/coupons", {
+                    utoken: sg.common.cookie.get("utoken")
                 }, function (data) {
                     var html = "";
                     if (data.status == 1) {
-                        var userCoupon = data.userCoupon;
-                        html += "<div class='discount'>￥" + userCoupon.discount + "</div>";
-                        html += "<div class='success'>恭喜您已获得" + userCoupon.discount + "元红包，可在购买松果课程时使用。</div>"
+                        html += "<div class='discount'>￥" + data.discount + "</div>";
+                        html += "<div class='success'>您已获得总额" + data.discount + "元的" + data.count + "个红包，可在购买松果课程时使用。</div>"
                         $(".desc").html(html);
                     } else if (data.status == 2) {
                         html += "<div class='dup'>您已领取过红包了，不能重复领取哦~</div>";
