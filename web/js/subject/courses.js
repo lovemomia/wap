@@ -6,7 +6,7 @@ $(function () {
 
 sg.courselist = {
     more: function (id, pid, start) {
-        sg.common.get(sg.config.api + "/subject/course", {
+        sg.common.get(sg.config.api + "/subject/course/bookable", {
             id: id,
             pid: pid,
             start: start
