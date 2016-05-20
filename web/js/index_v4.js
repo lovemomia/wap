@@ -32,6 +32,7 @@ sg.index = {
         generate_banners_html(data.banners);
         generate_events_html(data.eventsTitle, data.events);
         generate_subjects_html(data.subjects, data.topics);
+        generate_recommends_html(data.recommends);
 
         if (data.courses.totalCount > 0) {
             var html = "";
@@ -111,6 +112,36 @@ sg.index = {
                 html += "<div class='right'>";
                 html += "<img src='" + event.img + "' />";
                 html += "</div>";
+
+                return html;
+            }
+        }
+
+        function generate_recommends_html(recommends) {
+            if (recommends == undefined || recommends.length == 0) return;
+
+            var html = "";
+            html += "<div class='free top-margin'>";
+            for (var i = 0; i < recommends.length; i++) {
+                html += generate_recommend_html(recommends[i]);
+            }
+            html += "</div>";
+
+            $(".content").append(html);
+
+            function generate_recommend_html(recommend) {
+                var html = "";
+                html += "<a href='" + recommend.action + "'>";
+                html += "<div class='subject scrollable bottom-border'>";
+                html += "<div class='cover' style='background-image: url(" + recommend.cover + ")'></div>";
+                html += "<div class='desc'>";
+                html += "<div class='left'>";
+                html += "<div class='title overflow-hidden'>" + recommend.title + "</div>";
+                html += "<div class='intro overflow-hidden'>" + recommend.desc + "</div>";
+                html += "</div>";
+                html += "</div>";
+                html += "</div>";
+                html += "</a>";
 
                 return html;
             }
