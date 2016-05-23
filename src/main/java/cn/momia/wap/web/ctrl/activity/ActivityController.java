@@ -30,7 +30,8 @@ public class ActivityController extends AbstractController {
         String queryString = request.getQueryString();
         activityJson.put("config", new WxConfig(Configuration.getString("Weixin.JsApiAppId"), request.getRequestURL() + (StringUtils.isBlank(queryString) ? "" : ("?" + queryString))));
 
-        return new ModelAndView("activity/" + aid, "activity", activityJson);
+        if (aid <= 2) return new ModelAndView("activity/" + aid, "activity", activityJson);
+        return new ModelAndView("activity/template", "activity", activityJson);
     }
 
     @RequestMapping(value = "/pay", method = RequestMethod.GET)
