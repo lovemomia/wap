@@ -54,6 +54,21 @@ $(function () {
         }
     });
 
+    $("#btn_login_code").on("click", function () {
+        var mobile = $("#mobile").val();
+        var code = $("#code").val();
+        if (!mobile || mobile == "" || sg.common.is_invalid_mobile(mobile)) {
+            alert("无效的手机号吗");
+        } else if (!code || code == "") {
+            alert("验证码不能为空");
+        } else {
+            sg.common.post(sg.config.api + "/auth/login/code", {
+                mobile: mobile,
+                code: code
+            }, sg.auth.auth_success);
+        }
+    });
+
     $("#btn_password").on("click", function () {
         var mobile = $("#mobile").val();
         var password = $("#password").val();
