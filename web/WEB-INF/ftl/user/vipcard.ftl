@@ -48,6 +48,7 @@
                             password: password
                         }, function (data) {
                             if (data) alert("激活成功");
+                            window.location.href = "/my";
                         });
                     }
                 });
