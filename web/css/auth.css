@@ -19,13 +19,25 @@
 
 .password-link {
     padding-right: 0.2rem;
-    width: 100%;
+    width: 50%;
     height: 0.45rem;
     line-height: 0.45rem;
     text-align: right;
 }
 
 .password-link a {
+    color: #00c49d;
+}
+
+.code-link {
+    padding-left: 0.2rem;
+    width: 50%;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    text-align: left;
+}
+
+.code-link a {
     color: #00c49d;
 }
 

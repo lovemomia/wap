@@ -16,20 +16,20 @@
                 </dd>
             </dl>
             <hr class="left-margin" />
-            <dl class="code">
-                <dt class="letter-sp8">验证码</dt>
+            <dl>
+                <dt class="letter-sp32">密码</dt>
                 <dd class="left">
                     <i></i>
-                    <input type="tel" id="code" name="code" placeholder="短信验证码">
-                </dd>
-
-                <dd class="right btn">
-                    <button id="btn_getcode" class="btn-main-sm">获取验证码</button>
+                    <input type="password" id="password" placeholder="输入密码" />
                 </dd>
             </dl>
         </div>
-        <div class="password-link"><a href="/auth/login">使用密码登录</a></div>
-        <div class="btn"><button id="btn_login_code" class="btn-main-lg">登录</button></div>
+        <div>
+            <div class="code-link left"><a href="/auth/login">使用验证码登录</a></div>
+            <div class="password-link right"><a href="/auth/password">忘记密码</a></div>
+            <div style="clear: both" />
+        </div>
+        <div class="btn"><button id="btn_login" class="btn-main-lg">登录</button></div>
         <div class="register-link"><a href="/auth/register">注册</a></div>
     </div>
 </@override>

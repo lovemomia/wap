@@ -70,7 +70,7 @@ public class AbstractController {
         if (exception instanceof MomiaErrorException) {
             return new ModelAndView("error/error", "msg", exception.getMessage());
         } else if (exception instanceof MomiaLoginException) {
-            return new ModelAndView("auth/login");
+            return new ModelAndView("/WEB-INF/ftl/auth/loginpassword.ftl");
         } else {
             return new ModelAndView("error/error", "msg", "网络异常，请稍后再试");
         }
