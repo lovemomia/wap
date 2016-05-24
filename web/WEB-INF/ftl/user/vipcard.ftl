@@ -32,6 +32,7 @@
     <script type="text/javascript">
         $(function () {
             if (!sg.common.is_login()) {
+                alert("只有注册用户才能使用VIP卡，请先登录或注册");
                 sg.common.redirect_login();
             } else {
                 $("#btn_register").on("click", function () {
