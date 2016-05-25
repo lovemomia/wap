@@ -55,7 +55,7 @@
             </div>
             <hr class="left-margin" />
             <div class="line" onclick="window.location.href='/user/vipcard'">
-                <div class="img left"><img src="/img/hongbao3x.png" /></div>
+                <div class="img left"><img src="/img/gift3x.png" /></div>
                 <div class="title left">激活VIP卡</div>
                 <div class='arrow right'><img src='/img/allow3x.png' /></div>
             </div>
