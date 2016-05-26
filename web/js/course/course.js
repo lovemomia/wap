@@ -40,7 +40,9 @@ $(function () {
     $(".detail-text").each(function () {
         $(this).html(sg.common.sections_html($(this).html()));
     });
-    $(".experience").html(sg.common.sections_html($(".experience").html()));
+    $(".experience").each(function () {
+        $(this).html(sg.common.sections_html($(this).html()));
+    });
     $("#tips").html(sg.common.sections_html($("#tips").html()));
     $("#notice").html(sg.common.sections_html($("#notice").html()));
     $(".notice.content").each(function(){
