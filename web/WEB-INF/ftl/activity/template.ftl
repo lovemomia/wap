@@ -105,13 +105,13 @@
                     title: '${activity.title}',
                     desc: '${activity.desc}',
                     link: 'http://m.sogokids.com/activity/detail/${activity.id}',
-                    imgUrl: '${activity.cover}'
+                    imgUrl: '${activity.icon}'
                 });
 
                 wx.onMenuShareTimeline({
                     title: '${activity.title}',
                     link: 'http://m.sogokids.com/activity/detail/${activity.id}',
-                    imgUrl: '${activity.cover}'
+                    imgUrl: '${activity.icon}'
                 });
 
                 wx.hideMenuItems({
