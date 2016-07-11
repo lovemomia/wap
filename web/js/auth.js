@@ -39,6 +39,25 @@ $(function () {
         }
     });
 
+    $("#btn_register_sale").on("click", function () {
+        var mobile = $("#mobile").val();
+        var code = $("#code").val();
+        var saleCode = $("#saleCode").val();
+        if (!mobile || mobile == "" || sg.common.is_invalid_mobile(mobile)) {
+            alert("无效的手机号吗");
+        } else if (!code || code == "") {
+            alert("验证码不能为空");
+        } else if(!saleCode || saleCode == "") {
+            alert("标识符不能为空")
+        }else {
+            sg.common.post(sg.config.api + "/auth/register/sale", {
+                mobile: mobile,
+                code: code,
+                saleCode: saleCode
+            }, sg.auth.auth_success);
+        }
+    });
+
     $("#btn_login").on("click", function () {
         var mobile = $("#mobile").val();
         var password = $("#password").val();
