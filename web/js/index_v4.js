@@ -121,7 +121,7 @@ sg.index = {
             if (recommends == undefined || recommends.length == 0) return;
 
             var html = "";
-            html += "<div class='free top-margin'>";
+            html += "<div class='mend top-margin'>";
             for (var i = 0; i < recommends.length; i++) {
                 html += generate_recommend_html(recommends[i]);
             }
