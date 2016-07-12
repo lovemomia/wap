@@ -5,10 +5,9 @@
 </@override>
 
 <@override name="body">
-<div class="header bg-white bottom-border"><div class="back left"><img src="/img/back3x.png"></div>用户注册<div class="right"><a href="/auth/login">登录</a></div></div>
+<div class="header bg-white bottom-border">用户注册</div>
 <div class="content top-padding">
     <div class="form bottom-margin">
-        <hr class="left-margin" />
         <dl>
             <dt class="letter-sp8">手机号</dt>
             <dd class="left">
@@ -28,6 +27,7 @@
                 <button id="btn_getcode" class="btn-main-sm">获取验证码</button>
             </dd>
         </dl>
+        <hr class="left-margin" />
         <dl>
             <dt class="letter-sp32">标识符</dt>
             <dd class="left">
